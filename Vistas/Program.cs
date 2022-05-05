@@ -19,10 +19,6 @@ namespace Vistas
             fLogin.FormClosed += FormClosed;
             fLogin.Show();
             Application.Run();
-            //Application.Run(new FrmMain());
-            //Application.Run(new FrmAltaClientes());
-            //Application.Run(new FrmAltaObrasSociales());
-            //Application.Run(new FrmAltaProductos());
         }
 
         static void FormClosed(object sender, FormClosedEventArgs e)

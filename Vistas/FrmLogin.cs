@@ -28,32 +28,32 @@ namespace Vistas
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            bool usuarioEncontrado = false;
-            Usuario usuario1 = new Usuario(1, "Juan", "juan", "Juan Gomez", 1);
-            Usuario usuario2 = new Usuario(2, "Pedro", "pedro", "Pedro Mendez", 2);
-            Usuario usuario3 = new Usuario(3, "Maria", "maria", "Maria Lopez", 3);
+            bool bUsuarioEncontrado = false;
+            Usuario oUsuario1 = new Usuario(1, "Juan", "juan", "Juan Gomez", 1);
+            Usuario oUsuario2 = new Usuario(2, "Pedro", "pedro", "Pedro Mendez", 2);
+            Usuario oUsuario3 = new Usuario(3, "Maria", "maria", "Maria Lopez", 3);
 
-            Usuario[] usuarios = new Usuario[] { usuario1, usuario2, usuario3 };
+            Usuario[] usuarios = new Usuario[] { oUsuario1, oUsuario2, oUsuario3 };
 
             FrmMain frmMain = new FrmMain();
 
-            string usuario = txtUsuario.Text;
-            string password = txtPassword.Text;
+            string szUsuario = txtUsuario.Text;
+            string szPassword = txtPassword.Text;
 
-            if (usuario != String.Empty && password != String.Empty)
+            if (szUsuario != String.Empty && szPassword != String.Empty)
             {
                 foreach (Usuario usu in usuarios)
                 {
-                    if (usu.Usu_NombreUsuario == usuario && usu.Usu_Contrasenia == password)
+                    if (usu.Usu_NombreUsuario == szUsuario && usu.Usu_Contrasenia == szPassword)
                     {
-                        usuarioEncontrado = true;
+                        bUsuarioEncontrado = true;
                         break;
                     }
                 }
 
-                if (usuarioEncontrado)
+                if (bUsuarioEncontrado)
                 {
-                    MessageBox.Show("Bienvenido " + usuario + "!");
+                    MessageBox.Show("Bienvenido " + szUsuario + "!");
                     txtPassword.Text = String.Empty;
                     this.Hide();
                     Form FrmMain = new FrmMain();
