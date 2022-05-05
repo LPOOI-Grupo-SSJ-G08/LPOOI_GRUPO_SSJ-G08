@@ -28,24 +28,69 @@ namespace Vistas
 
         private void btnAgregarObraSocial_Click(object sender, EventArgs e)
         {
-            string cuit = txtCUIT.Text;
-            string razonSocial = txtRazonSocial.Text;
-            string direccion = txtDireccion.Text;
-            string telefono = txtTelefono.Text;
-
-            if (cuit != String.Empty && razonSocial != String.Empty && direccion != String.Empty && telefono != String.Empty)
+            HideErrorLabels();
+            bool bErrorFound = false;
+            ValidateTextBoxs(ref bErrorFound);
+            
+            if (!bErrorFound)
             {
-                DialogResult dialogoResult = MessageBox.Show("¿Está seguro de que desea guardar este registro?",
+                string szCuit = txtCUIT.Text;
+                string szRazonSocial = txtRazonSocial.Text;
+                string szDireccion = txtDireccion.Text;
+                string szTelefono = txtTelefono.Text;
+
+                 DialogResult dialogoResult = MessageBox.Show("¿Está seguro de que desea guardar este registro?",
                 "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogoResult == DialogResult.Yes)
                 {
-                    ObraSocial oObraSocial = new ObraSocial(cuit, razonSocial, direccion, telefono);
-                    MessageBox.Show(oObraSocial.MostrarDatos(), "Obra Social agregada");
+                    ObraSocial oObraSocial = new ObraSocial(szCuit, szRazonSocial, szDireccion, szTelefono);
+                    MessageBox.Show("Datos de la Obra Social: " +
+                                    "\n\n CUIT : " + oObraSocial.Os_CUIT +
+                                    "\n Razon Social : " + oObraSocial.Os_RazonSocial +
+                                    "\n Dirección : " + oObraSocial.Os_Direccion +
+                                    "\n Telefono : " + oObraSocial.Os_Telefono, "Obra Social agregada");
+                    ClearTextBoxs();
                 }
             }
-            else
+        }
+
+        public void HideErrorLabels()
+        {
+            lblValidRazonSocial.Hide();
+            lblValidDireccion.Hide();
+            lblValidCUIT.Hide();
+            lblValidTelefono.Hide();
+        }
+
+        private void ClearTextBoxs()
+        {
+            txtRazonSocial.Clear();
+            txtDireccion.Clear();
+            txtCUIT.Clear();
+            txtTelefono.Clear();
+        }
+
+        private void ValidateTextBoxs(ref bool bErrorFound)
+        {
+            if (string.IsNullOrEmpty(txtRazonSocial.Text))
             {
-                MessageBox.Show("Llene todos los campos.", "Faltan llenar campos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lblValidRazonSocial.Show();
+                bErrorFound = true;
+            }
+            if (string.IsNullOrEmpty(txtDireccion.Text))
+            {
+                lblValidDireccion.Show();
+                bErrorFound = true;
+            }
+            if (!txtCUIT.Text.All(char.IsDigit) || string.IsNullOrEmpty(txtCUIT.Text))
+            {
+                lblValidCUIT.Show();
+                bErrorFound = true;
+            }
+            if (!txtTelefono.Text.All(char.IsDigit) || string.IsNullOrEmpty(txtTelefono.Text))
+            {
+                lblValidTelefono.Show();
+                bErrorFound = true;
             }
         }
 
