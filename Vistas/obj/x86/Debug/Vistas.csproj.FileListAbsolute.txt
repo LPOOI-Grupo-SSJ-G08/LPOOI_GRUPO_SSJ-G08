@@ -13,3 +13,5 @@ C:\Users\admin\documents\visual studio 2010\Projects\TP1_Demo\Vistas\obj\x86\Deb
 C:\Users\admin\documents\visual studio 2010\Projects\TP1_Demo\Vistas\obj\x86\Debug\Vistas.FrmAltaClientes.resources
 C:\Users\admin\documents\visual studio 2010\Projects\TP1_Demo\Vistas\obj\x86\Debug\Vistas.FrmAltaProductos.resources
 C:\Users\admin\documents\visual studio 2010\Projects\TP1_Demo\Vistas\obj\x86\Debug\Vistas.FrmAltaObrasSociales.resources
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.exe
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.pdb
