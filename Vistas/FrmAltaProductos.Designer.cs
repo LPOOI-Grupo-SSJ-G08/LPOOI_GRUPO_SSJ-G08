@@ -39,6 +39,10 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblValidPrecio = new System.Windows.Forms.Label();
+            this.lblValidDescripcion = new System.Windows.Forms.Label();
+            this.lblValidCategoria = new System.Windows.Forms.Label();
+            this.lblValidCodigo = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +51,7 @@
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(98, 164);
+            this.lblCategoria.Location = new System.Drawing.Point(94, 145);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(65, 17);
             this.lblCategoria.TabIndex = 1;
@@ -57,7 +61,7 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(77, 208);
+            this.lblDescripcion.Location = new System.Drawing.Point(73, 205);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(86, 17);
             this.lblDescripcion.TabIndex = 2;
@@ -67,7 +71,7 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(111, 252);
+            this.lblPrecio.Location = new System.Drawing.Point(107, 265);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(52, 17);
             this.lblPrecio.TabIndex = 3;
@@ -77,7 +81,7 @@
             // 
             this.txtCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoria.Location = new System.Drawing.Point(207, 161);
+            this.txtCategoria.Location = new System.Drawing.Point(203, 143);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(145, 23);
             this.txtCategoria.TabIndex = 5;
@@ -86,7 +90,7 @@
             // 
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(207, 205);
+            this.txtDescripcion.Location = new System.Drawing.Point(203, 203);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(145, 23);
             this.txtDescripcion.TabIndex = 6;
@@ -95,7 +99,7 @@
             // 
             this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(207, 249);
+            this.txtPrecio.Location = new System.Drawing.Point(203, 263);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(145, 23);
             this.txtPrecio.TabIndex = 7;
@@ -138,7 +142,7 @@
             // 
             this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(207, 117);
+            this.txtCodigo.Location = new System.Drawing.Point(203, 83);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(145, 23);
             this.txtCodigo.TabIndex = 4;
@@ -147,7 +151,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(107, 120);
+            this.lblCodigo.Location = new System.Drawing.Point(103, 85);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(56, 17);
             this.lblCodigo.TabIndex = 0;
@@ -157,6 +161,10 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lblValidPrecio);
+            this.panel1.Controls.Add(this.lblValidDescripcion);
+            this.panel1.Controls.Add(this.lblValidCategoria);
+            this.panel1.Controls.Add(this.lblValidCodigo);
             this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Controls.Add(this.lblCodigo);
             this.panel1.Controls.Add(this.lblCategoria);
@@ -172,6 +180,51 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(420, 380);
             this.panel1.TabIndex = 10;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblValidPrecio
+            // 
+            this.lblValidPrecio.AutoSize = true;
+            this.lblValidPrecio.ForeColor = System.Drawing.Color.Red;
+            this.lblValidPrecio.Location = new System.Drawing.Point(203, 289);
+            this.lblValidPrecio.Name = "lblValidPrecio";
+            this.lblValidPrecio.Size = new System.Drawing.Size(142, 13);
+            this.lblValidPrecio.TabIndex = 14;
+            this.lblValidPrecio.Text = "Proporcione un precio válido";
+            this.lblValidPrecio.Visible = false;
+            // 
+            // lblValidDescripcion
+            // 
+            this.lblValidDescripcion.AutoSize = true;
+            this.lblValidDescripcion.ForeColor = System.Drawing.Color.Red;
+            this.lblValidDescripcion.Location = new System.Drawing.Point(203, 229);
+            this.lblValidDescripcion.Name = "lblValidDescripcion";
+            this.lblValidDescripcion.Size = new System.Drawing.Size(142, 13);
+            this.lblValidDescripcion.TabIndex = 13;
+            this.lblValidDescripcion.Text = "Proporcione una descripción";
+            this.lblValidDescripcion.Visible = false;
+            // 
+            // lblValidCategoria
+            // 
+            this.lblValidCategoria.AutoSize = true;
+            this.lblValidCategoria.ForeColor = System.Drawing.Color.Red;
+            this.lblValidCategoria.Location = new System.Drawing.Point(203, 169);
+            this.lblValidCategoria.Name = "lblValidCategoria";
+            this.lblValidCategoria.Size = new System.Drawing.Size(134, 13);
+            this.lblValidCategoria.TabIndex = 12;
+            this.lblValidCategoria.Text = "Proporcione una categoría";
+            this.lblValidCategoria.Visible = false;
+            // 
+            // lblValidCodigo
+            // 
+            this.lblValidCodigo.AutoSize = true;
+            this.lblValidCodigo.ForeColor = System.Drawing.Color.Red;
+            this.lblValidCodigo.Location = new System.Drawing.Point(203, 109);
+            this.lblValidCodigo.Name = "lblValidCodigo";
+            this.lblValidCodigo.Size = new System.Drawing.Size(162, 13);
+            this.lblValidCodigo.TabIndex = 11;
+            this.lblValidCodigo.Text = "Este campo solo admite números";
+            this.lblValidCodigo.Visible = false;
             // 
             // lblTitulo
             // 
@@ -211,5 +264,9 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblValidPrecio;
+        private System.Windows.Forms.Label lblValidDescripcion;
+        private System.Windows.Forms.Label lblValidCategoria;
+        private System.Windows.Forms.Label lblValidCodigo;
     }
 }

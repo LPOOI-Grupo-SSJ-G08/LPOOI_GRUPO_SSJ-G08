@@ -28,31 +28,70 @@ namespace Vistas
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            string codigo = txtCodigo.Text;
-            string categoria = txtCategoria.Text;
-            string descripcion = txtDescripcion.Text;
-            string precio = txtPrecio.Text;
+            HideErrorLabels();
+            bool bErrorFound = false;
+            ValidateTextBoxs(ref bErrorFound);
 
-            if (codigo != String.Empty && categoria != String.Empty && descripcion != String.Empty && precio != String.Empty)
+            if (!bErrorFound)
             {
-                if (Convert.ToDecimal(precio) > 0)
-                {
-                    DialogResult dialogoResult = MessageBox.Show("¿Está seguro de que desea guardar este registro?",
+                string szCodigo = txtCodigo.Text;
+                string szCategoria = txtCategoria.Text;
+                string szDescripcion = txtDescripcion.Text;
+                string szPrecio = txtPrecio.Text;
+
+                DialogResult dialogoResult = MessageBox.Show("¿Está seguro de que desea guardar este registro?",
                         "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialogoResult == DialogResult.Yes)
-                    {
-                        Producto oProducto = new Producto(codigo, categoria, descripcion, Convert.ToDecimal(precio));
-                        MessageBox.Show(oProducto.MostrarDatos(), "Producto agregado");
-                    }
-                }
-                else
+                if (dialogoResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Debe proporcionar un precio válido.", "Precio incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Producto oProducto = new Producto(szCodigo, szCategoria, szDescripcion, Convert.ToDecimal(szPrecio));
+                    MessageBox.Show("Datos del Producto: " +
+                                    "\n\n Código : " + oProducto.Prod_Codigo +
+                                    "\n Categoría : " + oProducto.Prod_Categoria +
+                                    "\n Descripción : " + oProducto.Prod_Descripcion +
+                                    "\n Precio : " + oProducto.Prod_Precio, "Producto agregado");
+                    ClearTextBoxs();
                 }
             }
-            else
+
+        }
+
+        public void HideErrorLabels()
+        {
+            lblValidCategoria.Hide();
+            lblValidCodigo.Hide();
+            lblValidDescripcion.Hide();
+            lblValidPrecio.Hide();
+        }
+
+        private void ClearTextBoxs()
+        {
+            txtCategoria.Clear();
+            txtCodigo.Clear();
+            txtDescripcion.Clear();
+            txtPrecio.Clear();
+        }
+
+        private void ValidateTextBoxs(ref bool bErrorFound)
+        {
+            if (string.IsNullOrEmpty(txtCategoria.Text))
             {
-                MessageBox.Show("Llene todos los campos.", "Faltan llenar campos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lblValidCategoria.Show();
+                bErrorFound = true;
+            }
+            if (string.IsNullOrEmpty(txtDescripcion.Text))
+            {
+                lblValidDescripcion.Show();
+                bErrorFound = true;
+            }
+            if (!txtCodigo.Text.All(char.IsDigit) || string.IsNullOrEmpty(txtCodigo.Text))
+            {
+                lblValidCodigo.Show();
+                bErrorFound = true;
+            }
+            if (!txtPrecio.Text.All(char.IsDigit) || string.IsNullOrEmpty(txtPrecio.Text))            
+            {
+                lblValidPrecio.Show();
+                bErrorFound = true;
             }
         }
 
@@ -71,6 +110,11 @@ namespace Vistas
         {
             Button btn = (Button)sender;
             btn.BackColor = Color.SeaGreen;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
