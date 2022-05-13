@@ -28,30 +28,14 @@ namespace Vistas
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            bool bUsuarioEncontrado = false;
-            Usuario oUsuario1 = new Usuario(1, "Juan", "juan", "Juan Gomez", 1);
-            Usuario oUsuario2 = new Usuario(2, "Pedro", "pedro", "Pedro Mendez", 2);
-            Usuario oUsuario3 = new Usuario(3, "Maria", "maria", "Maria Lopez", 3);
-
-            Usuario[] usuarios = new Usuario[] { oUsuario1, oUsuario2, oUsuario3 };
-
-            FrmMain frmMain = new FrmMain();
-
             string szUsuario = txtUsuario.Text;
             string szPassword = txtPassword.Text;
 
             if (szUsuario != String.Empty && szPassword != String.Empty)
             {
-                foreach (Usuario usu in usuarios)
-                {
-                    if (usu.Usu_NombreUsuario == szUsuario && usu.Usu_Contrasenia == szPassword)
-                    {
-                        bUsuarioEncontrado = true;
-                        break;
-                    }
-                }
+                int iRol = TrabajarUsuario.search_usuario(szUsuario, szPassword);
 
-                if (bUsuarioEncontrado)
+                if (iRol != 0)
                 {
                     MessageBox.Show("Bienvenido " + szUsuario + "!");
                     txtPassword.Text = String.Empty;
