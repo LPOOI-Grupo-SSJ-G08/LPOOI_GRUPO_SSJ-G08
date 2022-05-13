@@ -43,13 +43,22 @@ namespace ClasesBase
             set { rol_Codigo = value; }
         }
 
-        public Usuario(int idUsuario, string nombreUsuario, string contrasenia, string apellidoNombre, int rolCodigo)
+        public Usuario()
         {
-            this.usu_Id = idUsuario;
+
+        }
+        public Usuario( string nombreUsuario, string contrasenia, string apellidoNombre, int rolCodigo)
+        {
+ 
             this.usu_NombreUsuario = nombreUsuario;
             this.usu_Contrasenia = contrasenia;
             this.usu_ApellidoNombre = apellidoNombre;
             this.rol_Codigo = rolCodigo;
         }
+
+        public override string ToString()
+        {
+            return string.Format("Usuario: {0} ,Contraseña: {1},NombreCompleto: {2} , RolId: {3}",usu_NombreUsuario ,usu_Contrasenia, usu_ApellidoNombre,rol_Codigo );
+        }  
     }
 }

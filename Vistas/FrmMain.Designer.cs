@@ -35,6 +35,7 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.BtnUsuarios = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,9 +46,9 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(134, 256);
+            this.btnSalir.Location = new System.Drawing.Point(224, 277);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(92, 30);
+            this.btnSalir.Size = new System.Drawing.Size(120, 30);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -78,7 +79,7 @@
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductos.ForeColor = System.Drawing.Color.White;
-            this.btnProductos.Location = new System.Drawing.Point(36, 172);
+            this.btnProductos.Location = new System.Drawing.Point(36, 152);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(120, 30);
             this.btnProductos.TabIndex = 2;
@@ -95,7 +96,7 @@
             this.btnObrasSociales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnObrasSociales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnObrasSociales.ForeColor = System.Drawing.Color.White;
-            this.btnObrasSociales.Location = new System.Drawing.Point(205, 172);
+            this.btnObrasSociales.Location = new System.Drawing.Point(205, 152);
             this.btnObrasSociales.Name = "btnObrasSociales";
             this.btnObrasSociales.Size = new System.Drawing.Size(120, 30);
             this.btnObrasSociales.TabIndex = 3;
@@ -125,6 +126,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.BtnUsuarios);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnSistema);
             this.panel1.Controls.Add(this.btnObrasSociales);
@@ -133,7 +135,7 @@
             this.panel1.Controls.Add(this.btnProductos);
             this.panel1.Location = new System.Drawing.Point(112, 56);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 300);
+            this.panel1.Size = new System.Drawing.Size(360, 319);
             this.panel1.TabIndex = 5;
             // 
             // label1
@@ -145,6 +147,21 @@
             this.label1.Size = new System.Drawing.Size(170, 26);
             this.label1.TabIndex = 6;
             this.label1.Text = "Menú Principal";
+            // 
+            // BtnUsuarios
+            // 
+            this.BtnUsuarios.BackColor = System.Drawing.Color.SeaGreen;
+            this.BtnUsuarios.FlatAppearance.BorderSize = 0;
+            this.BtnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUsuarios.ForeColor = System.Drawing.Color.White;
+            this.BtnUsuarios.Location = new System.Drawing.Point(36, 222);
+            this.BtnUsuarios.Name = "BtnUsuarios";
+            this.BtnUsuarios.Size = new System.Drawing.Size(120, 30);
+            this.BtnUsuarios.TabIndex = 6;
+            this.BtnUsuarios.Text = "Usuarios";
+            this.BtnUsuarios.UseVisualStyleBackColor = false;
+            this.BtnUsuarios.Click += new System.EventHandler(this.BtnUsuarios_Click);
             // 
             // FrmMain
             // 
@@ -169,6 +186,7 @@
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnUsuarios;
 
     }
 }

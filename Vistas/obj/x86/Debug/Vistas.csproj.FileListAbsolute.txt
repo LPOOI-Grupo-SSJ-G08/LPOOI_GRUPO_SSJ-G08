@@ -32,3 +32,17 @@ C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\
 C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Repositorios\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.exe
 C:\Repositorios\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.pdb
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\bin\Debug\Vistas.exe
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\bin\Debug\Vistas.pdb
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\bin\Debug\ClasesBase.dll
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\bin\Debug\ClasesBase.pdb
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmAltaClientes.resources
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmAltaObrasSociales.resources
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmAltaProductos.resources
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmLogin.resources
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmMain.resources
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmAltaUsuario.resources
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmUsuario.resources
