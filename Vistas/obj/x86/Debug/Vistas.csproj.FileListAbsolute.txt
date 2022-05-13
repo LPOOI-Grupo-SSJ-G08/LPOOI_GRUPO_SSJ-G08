@@ -30,3 +30,5 @@ C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\
 C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
 C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Repositorios\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.exe
+C:\Repositorios\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.pdb
