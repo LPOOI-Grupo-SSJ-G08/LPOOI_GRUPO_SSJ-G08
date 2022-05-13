@@ -38,6 +38,8 @@
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.dgvListaUsuarios = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -134,11 +136,20 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // dgvListaUsuarios
+            // 
+            this.dgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaUsuarios.Location = new System.Drawing.Point(404, 49);
+            this.dgvListaUsuarios.Name = "dgvListaUsuarios";
+            this.dgvListaUsuarios.Size = new System.Drawing.Size(271, 229);
+            this.dgvListaUsuarios.TabIndex = 10;
+            // 
             // FrmAltaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 396);
+            this.ClientSize = new System.Drawing.Size(701, 396);
+            this.Controls.Add(this.dgvListaUsuarios);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.cmbRol);
@@ -151,6 +162,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmAltaUsuario";
             this.Text = "FrmAltaUsuario";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,5 +180,6 @@
         private System.Windows.Forms.ComboBox cmbRol;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.DataGridView dgvListaUsuarios;
     }
 }

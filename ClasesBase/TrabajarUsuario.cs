@@ -63,16 +63,12 @@ namespace ClasesBase
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString );
             SqlCommand cmd = new SqlCommand();
-            
-            cmd.CommandText = "SELECT ";
-            cmd.CommandText += " rol_Codigo as 'Rol', ";
-            cmd.CommandText += " usu_NombreUsuario as 'Usuario' , ";
-            cmd.CommandText += " usu_Contrasenia as 'Contraseña'";
-            cmd.CommandText += " usu_ApellidoNombre as 'Nombre'";
+
+            cmd.CommandText = "SELECT * FROM Usuario";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
-
-            SqlDataAdapter da = new SqlDataAdapter(cdm);
+          
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
 
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -80,6 +76,20 @@ namespace ClasesBase
             return dt;
 
         }
-        
+
+        public static void baja_usuarios(int idUsuario)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "DELETE FROM Usuario WHERE usu_Id=" + idUsuario + ";";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+
+
+        }
     }
 }

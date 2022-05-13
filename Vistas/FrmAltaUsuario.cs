@@ -14,7 +14,9 @@ namespace Vistas
     {
         public FrmAltaUsuario()
         {
+            
             InitializeComponent();
+            this.cargarUsuarios();
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
@@ -68,16 +70,21 @@ namespace Vistas
                 ouser.Usu_ApellidoNombre = txtNombreompleto.Text;
                 ouser.Usu_NombreUsuario = txtUsuario.Text;
                 ouser.Rol_Codigo = numRol;
-                MessageBox.Show(ouser.ToString());
+               // MessageBox.Show(ouser.ToString());
 
                 TrabajarUsuario.agregarUsuario(ouser);
-
-
+                this.cargarUsuarios();
+                
             }
             catch (Exception efe)
             {
                 MessageBox.Show("Ha fallado" + efe.Message);
             }
+        }
+
+        private void cargarUsuarios()
+        {
+            dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
