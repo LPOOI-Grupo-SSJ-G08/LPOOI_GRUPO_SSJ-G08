@@ -6,38 +6,69 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ClasesBase;
 
 namespace Vistas
 {
     public partial class FrmUsuario : Form
     {
+        Usuario usuarioTmp;
         public FrmUsuario()
         {
             InitializeComponent();
+            dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
         }
 
         private void btnAltaUsuario_Click(object sender, EventArgs e)
         {
-            FrmAltaUsuario frmAltaUsuario = new FrmAltaUsuario();
+            FrmAltaModificarUsuario frmAltaUsuario = new FrmAltaModificarUsuario();
             frmAltaUsuario.Show();
+            this.Close();
         }
 
         private void btnModificarUsuario_Click(object sender, EventArgs e)
         {
-            FrmModificarUsuario frmModificarUsuario = new FrmModificarUsuario();
-            frmModificarUsuario.Show();
+            FrmAltaModificarUsuario frmAltaUsuario = new FrmAltaModificarUsuario(this.usuarioTmp);
+            frmAltaUsuario.Show();
+            this.Close();
         }
 
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
-            FrmBajaUsuario frmBajaUsuario = new FrmBajaUsuario();
-            frmBajaUsuario.Show();
+           TrabajarUsuario.baja_usuarios((int)dgvListaUsuarios.CurrentRow.Cells[0].Value);
+           dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
+            
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             
             this.Close();
+        }
+
+        private void txtNombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+            if (txtNombreUsuario.Text == "")
+            {
+                dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
+            }
+
+            
+            if (txtNombreUsuario.TextLength >= 2)
+            {
+                dgvListaUsuarios.DataSource = TrabajarUsuario.buscar_usuario(txtNombreUsuario.Text);
+            }
+        }
+
+        private void dgvListaUsuarios_CurrentCellChanged(object sender, EventArgs e)
+        {
+            
+            if (dgvListaUsuarios.CurrentRow != null) {
+                int valor = (int)dgvListaUsuarios.CurrentRow.Cells[0].Value;
+                this.usuarioTmp = TrabajarUsuario.buscar_usuario(valor);
+            }
         }
     }
 }

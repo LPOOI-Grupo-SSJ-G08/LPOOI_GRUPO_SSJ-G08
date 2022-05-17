@@ -44,6 +44,5 @@ C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vista
 C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmMain.resources
 C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
 C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
-C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmAltaUsuario.resources
 C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmUsuario.resources
-C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmBajaUsuario.resources
+C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmAltaModificarUsuario.resources

@@ -1,6 +1,6 @@
 ﻿namespace Vistas
 {
-    partial class FrmAltaUsuario
+    partial class FrmAltaModificarUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,7 @@
             this.txtNombreompleto = new System.Windows.Forms.TextBox();
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.dgvListaUsuarios = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -84,7 +84,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(202, 20);
             this.txtUsuario.TabIndex = 4;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // txtContrasenia
             // 
@@ -93,7 +92,6 @@
             this.txtContrasenia.PasswordChar = '*';
             this.txtContrasenia.Size = new System.Drawing.Size(202, 20);
             this.txtContrasenia.TabIndex = 5;
-            this.txtContrasenia.TextChanged += new System.EventHandler(this.txtContrasenia_TextChanged);
             // 
             // txtNombreompleto
             // 
@@ -101,7 +99,6 @@
             this.txtNombreompleto.Name = "txtNombreompleto";
             this.txtNombreompleto.Size = new System.Drawing.Size(202, 20);
             this.txtNombreompleto.TabIndex = 6;
-            this.txtNombreompleto.TextChanged += new System.EventHandler(this.txtNombreompleto_TextChanged);
             // 
             // cmbRol
             // 
@@ -114,7 +111,6 @@
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(202, 21);
             this.cmbRol.TabIndex = 7;
-            this.cmbRol.SelectedIndexChanged += new System.EventHandler(this.cmbRol_SelectedIndexChanged);
             // 
             // btnAgregar
             // 
@@ -126,15 +122,15 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // btnCancelar
+            // btnVolver
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(63, 240);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(118, 39);
-            this.btnCancelar.TabIndex = 9;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnVolver.Location = new System.Drawing.Point(63, 240);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(118, 39);
+            this.btnVolver.TabIndex = 9;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // dgvListaUsuarios
             // 
@@ -144,13 +140,13 @@
             this.dgvListaUsuarios.Size = new System.Drawing.Size(271, 229);
             this.dgvListaUsuarios.TabIndex = 10;
             // 
-            // FrmAltaUsuario
+            // FrmAltaModificarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 396);
             this.Controls.Add(this.dgvListaUsuarios);
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.cmbRol);
             this.Controls.Add(this.txtNombreompleto);
@@ -160,7 +156,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "FrmAltaUsuario";
+            this.Name = "FrmAltaModificarUsuario";
             this.Text = "FrmAltaUsuario";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).EndInit();
             this.ResumeLayout(false);
@@ -179,7 +175,7 @@
         private System.Windows.Forms.TextBox txtNombreompleto;
         private System.Windows.Forms.ComboBox cmbRol;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.DataGridView dgvListaUsuarios;
     }
 }
