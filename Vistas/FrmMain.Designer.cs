@@ -30,9 +30,9 @@
         {
             this.btnSalir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlContenedor = new System.Windows.Forms.Panel();
-            this.lblUsuarioActual = new System.Windows.Forms.Label();
             this.lblRolActual = new System.Windows.Forms.Label();
+            this.lblUsuarioActual = new System.Windows.Forms.Label();
+            this.pnlContenedor = new System.Windows.Forms.Panel();
             this.mnuStrip = new System.Windows.Forms.MenuStrip();
             this.mnuItemSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuItemUsuarios = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,12 +72,14 @@
             this.panel1.Size = new System.Drawing.Size(646, 60);
             this.panel1.TabIndex = 5;
             // 
-            // pnlContenedor
+            // lblRolActual
             // 
-            this.pnlContenedor.Location = new System.Drawing.Point(139, 66);
-            this.pnlContenedor.Name = "pnlContenedor";
-            this.pnlContenedor.Size = new System.Drawing.Size(646, 496);
-            this.pnlContenedor.TabIndex = 7;
+            this.lblRolActual.AutoSize = true;
+            this.lblRolActual.Location = new System.Drawing.Point(420, 32);
+            this.lblRolActual.Name = "lblRolActual";
+            this.lblRolActual.Size = new System.Drawing.Size(23, 13);
+            this.lblRolActual.TabIndex = 6;
+            this.lblRolActual.Text = "Rol";
             // 
             // lblUsuarioActual
             // 
@@ -89,14 +91,12 @@
             this.lblUsuarioActual.TabIndex = 5;
             this.lblUsuarioActual.Text = "Nombre Usuario";
             // 
-            // lblRolActual
+            // pnlContenedor
             // 
-            this.lblRolActual.AutoSize = true;
-            this.lblRolActual.Location = new System.Drawing.Point(420, 32);
-            this.lblRolActual.Name = "lblRolActual";
-            this.lblRolActual.Size = new System.Drawing.Size(23, 13);
-            this.lblRolActual.TabIndex = 6;
-            this.lblRolActual.Text = "Rol";
+            this.pnlContenedor.Location = new System.Drawing.Point(139, 66);
+            this.pnlContenedor.Name = "pnlContenedor";
+            this.pnlContenedor.Size = new System.Drawing.Size(646, 496);
+            this.pnlContenedor.TabIndex = 7;
             // 
             // mnuStrip
             // 
@@ -120,6 +120,7 @@
             this.mnuItemSistema.Name = "mnuItemSistema";
             this.mnuItemSistema.Size = new System.Drawing.Size(130, 60);
             this.mnuItemSistema.Text = "Sistema";
+            this.mnuItemSistema.Click += new System.EventHandler(this.mnuItemSistema_Click);
             // 
             // mnuItemUsuarios
             // 

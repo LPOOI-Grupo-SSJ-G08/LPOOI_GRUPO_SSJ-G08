@@ -12,6 +12,8 @@ namespace Vistas
 {
     public partial class FrmMain : Form
     {
+        private Form activeForm = null;
+
         public FrmMain()
         {
             InitializeComponent();
@@ -23,21 +25,24 @@ namespace Vistas
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogoResult == DialogResult.Yes)
             {
-                //this.Close();
-                Application.Exit();
+                FrmLogin frmLogin = new FrmLogin();
+                frmLogin.Activate();
+                frmLogin.Show();
+                this.Close();
             }
         }
 
         private void AbrirFormHijo(Form frmHijo)
         {
-            if (pnlContenedor.Controls.Count > 0)
+            if (activeForm != null)
             {
-                pnlContenedor.Controls.RemoveAt(0);
+                activeForm.Close();
             }
+            this.activeForm = frmHijo;
             frmHijo.TopLevel = false;
             frmHijo.Dock = DockStyle.Fill;
             frmHijo.FormBorderStyle = FormBorderStyle.None;
-            pnlContenedor.Controls.Add(frmHijo);
+            this.pnlContenedor.Controls.Add(frmHijo);
             pnlContenedor.Tag = frmHijo;
             frmHijo.Show();
         }
@@ -56,6 +61,8 @@ namespace Vistas
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            AbrirFormHijo(new FrmInicio());
+            mnuItemSistema.BackColor = SystemColors.ControlDark;
             if (lblRolActual.Text != "Auditor")
             {
                 mnuItemUsuarios.Visible = false;
@@ -63,22 +70,23 @@ namespace Vistas
                 mnuItemClientes.Visible = false;
                 mnuItemVentas.Visible = false;
             }
-            else
-            {
-                //AbrirFormHijo(new FrmGestionUsuarios());
-            }
             if (lblRolActual.Text == "Administrador")
             {
                 mnuItemUsuarios.Visible = true;
                 mnuItemProductos.Visible = true;
-                //AbrirFormHijo(new FrmGestionUsuarios());
             }
             if (lblRolActual.Text == "Operador")
             {
                 mnuItemClientes.Visible = true;
                 mnuItemVentas.Visible = true;
-                //AbrirFormHijo(new FrmGestionClientes());
             }
+        }
+
+        private void mnuItemSistema_Click(object sender, EventArgs e)
+        {
+            PintarBotones();
+            mnuItemSistema.BackColor = SystemColors.ControlDark;
+            AbrirFormHijo(new FrmInicio());
         }
 
         private void mnuItemUsuarios_Click(object sender, EventArgs e)
@@ -124,5 +132,6 @@ namespace Vistas
                 mnuStrip.Items[i].BackColor = SystemColors.Control;
             }
         }
+
     }
 }
