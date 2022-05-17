@@ -12,9 +12,24 @@ namespace ClasesBase
     {
 
 
+        public static string get_rol(int iRolCodigo)
+        {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT Rol_Descripcion FROM Roles WHERE Rol_Codigo=@codigo";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn;
+            cmd.Parameters.AddWithValue("@codigo", iRolCodigo);
 
-        public static int search_usuario(string szUsername, string szPassword)
+            cn.Open();
+            string szRolDescripcion = cmd.ExecuteScalar().ToString();
+            cn.Close();
+
+            return szRolDescripcion;
+        }
+
+        public static int validate_login(string szUsername, string szPassword)
         {
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
@@ -23,7 +38,8 @@ namespace ClasesBase
             cmd.CommandText += " ISNULL(Rol_Codigo, 0) ";
             cmd.CommandText += " FROM Usuario ";
             cmd.CommandText += " WHERE ";
-            cmd.CommandText += " Usu_NombreUsuario=@user AND Usu_Contrasenia=@pass";
+            cmd.CommandText += " Usu_NombreUsuario=@user COLLATE SQL_Latin1_General_CP1_CS_AS AND ";
+            cmd.CommandText += " Usu_Contrasenia=@pass COLLATE SQL_Latin1_General_CP1_CS_AS";
             cmd.CommandType = CommandType.Text;
 
             cmd.Connection = cn;
@@ -34,10 +50,10 @@ namespace ClasesBase
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 
             cn.Open();
-            int iRol = Convert.ToInt32(cmd.ExecuteScalar());
+            int iRolCodigo = Convert.ToInt32(cmd.ExecuteScalar());
             cn.Close();
 
-            return iRol;
+            return iRolCodigo;
         }
     }
 }

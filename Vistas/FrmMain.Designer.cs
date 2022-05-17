@@ -29,23 +29,29 @@
         private void InitializeComponent()
         {
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnSistema = new System.Windows.Forms.Button();
-            this.btnProductos = new System.Windows.Forms.Button();
-            this.btnObrasSociales = new System.Windows.Forms.Button();
-            this.btnClientes = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pnlContenedor = new System.Windows.Forms.Panel();
+            this.lblUsuarioActual = new System.Windows.Forms.Label();
+            this.lblRolActual = new System.Windows.Forms.Label();
+            this.mnuStrip = new System.Windows.Forms.MenuStrip();
+            this.mnuItemSistema = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuItemUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuItemProductos = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuItemClientes = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuItemVentas = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuItemObrasSociales = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
+            this.mnuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSalir.BackColor = System.Drawing.SystemColors.Control;
             this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(134, 256);
+            this.btnSalir.Location = new System.Drawing.Point(538, 15);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(92, 30);
             this.btnSalir.TabIndex = 4;
@@ -55,120 +61,140 @@
             this.btnSalir.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             this.btnSalir.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
-            // btnSistema
-            // 
-            this.btnSistema.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnSistema.FlatAppearance.BorderSize = 0;
-            this.btnSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSistema.ForeColor = System.Drawing.Color.White;
-            this.btnSistema.Location = new System.Drawing.Point(36, 79);
-            this.btnSistema.Name = "btnSistema";
-            this.btnSistema.Size = new System.Drawing.Size(120, 30);
-            this.btnSistema.TabIndex = 0;
-            this.btnSistema.Text = "Sistema";
-            this.btnSistema.UseVisualStyleBackColor = false;
-            this.btnSistema.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            this.btnSistema.MouseHover += new System.EventHandler(this.btn_MouseHover);
-            // 
-            // btnProductos
-            // 
-            this.btnProductos.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnProductos.FlatAppearance.BorderSize = 0;
-            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.ForeColor = System.Drawing.Color.White;
-            this.btnProductos.Location = new System.Drawing.Point(36, 172);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(120, 30);
-            this.btnProductos.TabIndex = 2;
-            this.btnProductos.Text = "Productos";
-            this.btnProductos.UseVisualStyleBackColor = false;
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
-            this.btnProductos.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            this.btnProductos.MouseHover += new System.EventHandler(this.btn_MouseHover);
-            // 
-            // btnObrasSociales
-            // 
-            this.btnObrasSociales.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnObrasSociales.FlatAppearance.BorderSize = 0;
-            this.btnObrasSociales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnObrasSociales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnObrasSociales.ForeColor = System.Drawing.Color.White;
-            this.btnObrasSociales.Location = new System.Drawing.Point(205, 172);
-            this.btnObrasSociales.Name = "btnObrasSociales";
-            this.btnObrasSociales.Size = new System.Drawing.Size(120, 30);
-            this.btnObrasSociales.TabIndex = 3;
-            this.btnObrasSociales.Text = "Obras Sociales";
-            this.btnObrasSociales.UseVisualStyleBackColor = false;
-            this.btnObrasSociales.Click += new System.EventHandler(this.btnObrasSociales_Click);
-            this.btnObrasSociales.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            this.btnObrasSociales.MouseHover += new System.EventHandler(this.btn_MouseHover);
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.ForeColor = System.Drawing.Color.White;
-            this.btnClientes.Location = new System.Drawing.Point(205, 79);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(120, 30);
-            this.btnClientes.TabIndex = 1;
-            this.btnClientes.Text = "Clientes";
-            this.btnClientes.UseVisualStyleBackColor = false;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            this.btnClientes.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            this.btnClientes.MouseHover += new System.EventHandler(this.btn_MouseHover);
-            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnSistema);
-            this.panel1.Controls.Add(this.btnObrasSociales);
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.lblRolActual);
+            this.panel1.Controls.Add(this.lblUsuarioActual);
             this.panel1.Controls.Add(this.btnSalir);
-            this.panel1.Controls.Add(this.btnClientes);
-            this.panel1.Controls.Add(this.btnProductos);
-            this.panel1.Location = new System.Drawing.Point(112, 56);
+            this.panel1.Location = new System.Drawing.Point(139, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 300);
+            this.panel1.Size = new System.Drawing.Size(646, 60);
             this.panel1.TabIndex = 5;
             // 
-            // label1
+            // pnlContenedor
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(95, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 26);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Menú Principal";
+            this.pnlContenedor.Location = new System.Drawing.Point(139, 66);
+            this.pnlContenedor.Name = "pnlContenedor";
+            this.pnlContenedor.Size = new System.Drawing.Size(646, 496);
+            this.pnlContenedor.TabIndex = 7;
+            // 
+            // lblUsuarioActual
+            // 
+            this.lblUsuarioActual.AutoSize = true;
+            this.lblUsuarioActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioActual.Location = new System.Drawing.Point(420, 9);
+            this.lblUsuarioActual.Name = "lblUsuarioActual";
+            this.lblUsuarioActual.Size = new System.Drawing.Size(107, 16);
+            this.lblUsuarioActual.TabIndex = 5;
+            this.lblUsuarioActual.Text = "Nombre Usuario";
+            // 
+            // lblRolActual
+            // 
+            this.lblRolActual.AutoSize = true;
+            this.lblRolActual.Location = new System.Drawing.Point(420, 32);
+            this.lblRolActual.Name = "lblRolActual";
+            this.lblRolActual.Size = new System.Drawing.Size(23, 13);
+            this.lblRolActual.TabIndex = 6;
+            this.lblRolActual.Text = "Rol";
+            // 
+            // mnuStrip
+            // 
+            this.mnuStrip.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mnuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuItemSistema,
+            this.mnuItemUsuarios,
+            this.mnuItemProductos,
+            this.mnuItemClientes,
+            this.mnuItemVentas,
+            this.mnuItemObrasSociales});
+            this.mnuStrip.Location = new System.Drawing.Point(0, 0);
+            this.mnuStrip.Name = "mnuStrip";
+            this.mnuStrip.Size = new System.Drawing.Size(136, 562);
+            this.mnuStrip.TabIndex = 11;
+            this.mnuStrip.Text = "menuStrip2";
+            // 
+            // mnuItemSistema
+            // 
+            this.mnuItemSistema.AutoSize = false;
+            this.mnuItemSistema.Name = "mnuItemSistema";
+            this.mnuItemSistema.Size = new System.Drawing.Size(130, 60);
+            this.mnuItemSistema.Text = "Sistema";
+            // 
+            // mnuItemUsuarios
+            // 
+            this.mnuItemUsuarios.AutoSize = false;
+            this.mnuItemUsuarios.Name = "mnuItemUsuarios";
+            this.mnuItemUsuarios.Size = new System.Drawing.Size(130, 60);
+            this.mnuItemUsuarios.Text = "Usuarios";
+            this.mnuItemUsuarios.Click += new System.EventHandler(this.mnuItemUsuarios_Click);
+            // 
+            // mnuItemProductos
+            // 
+            this.mnuItemProductos.AutoSize = false;
+            this.mnuItemProductos.Name = "mnuItemProductos";
+            this.mnuItemProductos.Size = new System.Drawing.Size(130, 60);
+            this.mnuItemProductos.Text = "Productos";
+            this.mnuItemProductos.Click += new System.EventHandler(this.mnuItemProductos_Click);
+            // 
+            // mnuItemClientes
+            // 
+            this.mnuItemClientes.AutoSize = false;
+            this.mnuItemClientes.Name = "mnuItemClientes";
+            this.mnuItemClientes.Size = new System.Drawing.Size(130, 60);
+            this.mnuItemClientes.Text = "Clientes";
+            this.mnuItemClientes.Click += new System.EventHandler(this.mnuItemClientes_Click);
+            // 
+            // mnuItemVentas
+            // 
+            this.mnuItemVentas.AutoSize = false;
+            this.mnuItemVentas.Name = "mnuItemVentas";
+            this.mnuItemVentas.Size = new System.Drawing.Size(130, 60);
+            this.mnuItemVentas.Text = "Ventas";
+            this.mnuItemVentas.Click += new System.EventHandler(this.mnuItemVentas_Click);
+            // 
+            // mnuItemObrasSociales
+            // 
+            this.mnuItemObrasSociales.AutoSize = false;
+            this.mnuItemObrasSociales.Name = "mnuItemObrasSociales";
+            this.mnuItemObrasSociales.Size = new System.Drawing.Size(130, 60);
+            this.mnuItemObrasSociales.Text = "Obras Sociales";
+            this.mnuItemObrasSociales.Click += new System.EventHandler(this.mnuItemObrasSociales_Click);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 412);
+            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.mnuStrip);
+            this.Controls.Add(this.pnlContenedor);
             this.Controls.Add(this.panel1);
             this.Name = "FrmMain";
             this.Text = "Menu principal";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.mnuStrip.ResumeLayout(false);
+            this.mnuStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnSistema;
-        private System.Windows.Forms.Button btnProductos;
-        private System.Windows.Forms.Button btnObrasSociales;
-        private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlContenedor;
+        public System.Windows.Forms.Label lblRolActual;
+        public System.Windows.Forms.Label lblUsuarioActual;
+        private System.Windows.Forms.MenuStrip mnuStrip;
+        private System.Windows.Forms.ToolStripMenuItem mnuItemSistema;
+        private System.Windows.Forms.ToolStripMenuItem mnuItemUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem mnuItemProductos;
+        private System.Windows.Forms.ToolStripMenuItem mnuItemClientes;
+        private System.Windows.Forms.ToolStripMenuItem mnuItemVentas;
+        private System.Windows.Forms.ToolStripMenuItem mnuItemObrasSociales;
 
     }
 }
