@@ -203,9 +203,10 @@ namespace Vistas {
             tabCtlVenta.SelectedTab = tpgAgregarProducto;
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
         #endregion
-
-
-
     }
 }
