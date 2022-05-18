@@ -13,12 +13,14 @@ using ClasesBase;
 namespace Vistas {
     public partial class FrmAltaVentas : Form {
 
+        /*
         protected override void OnPaint(PaintEventArgs e) {
             base.OnPaint(e);
             Rectangle Forma = new Rectangle(new Point(0, 0), this.ClientSize);
             LinearGradientBrush Gradiente = new LinearGradientBrush(Forma, Color.SeaGreen, Color.DarkSeaGreen, LinearGradientMode.BackwardDiagonal);
             e.Graphics.FillRegion(Gradiente, new Region(Forma));
         }
+         * */
 
         private DataTable Productos;
         private DataTable ProductosDetalles;
