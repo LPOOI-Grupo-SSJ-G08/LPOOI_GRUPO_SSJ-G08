@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -12,6 +13,13 @@ using ClasesBase;
 namespace Vistas {
     public partial class FrmAltaVentas : Form {
 
+        protected override void OnPaint(PaintEventArgs e) {
+            base.OnPaint(e);
+            Rectangle Forma = new Rectangle(new Point(0, 0), this.ClientSize);
+            LinearGradientBrush Gradiente = new LinearGradientBrush(Forma, Color.SeaGreen, Color.DarkSeaGreen, LinearGradientMode.BackwardDiagonal);
+            e.Graphics.FillRegion(Gradiente, new Region(Forma));
+        }
+
         private DataTable Productos;
         private DataTable ProductosDetalles;
 
@@ -20,14 +28,14 @@ namespace Vistas {
         }
 
         private void FrmAltaVentas_Load(object sender, EventArgs e) {
-            cargarClientes();
-            cargarProductos(); 
+            CargarClientes();
+            CargarProductos(); 
             setDateTimePicker();
-            setValuesDefault(); 
-            iniciarDetalleProductos();
+            setValuesDefaultVentaDetalle(); 
+            IniciarDetalleProductos();
         }
 
-        private void iniciarDetalleProductos() {
+        private void IniciarDetalleProductos() {
             ProductosDetalles = new DataTable();
             ProductosDetalles.Clear();
             ProductosDetalles.Columns.Add("Código", typeof(string));
@@ -37,7 +45,7 @@ namespace Vistas {
             dgvProductosSeleccionados.DataSource = ProductosDetalles;
         }
 
-        private void cargarClientes() {
+        private void CargarClientes() {
             cmbClientes.DisplayMember = "NombreCompleto";
             cmbClientes.ValueMember = "Cli_DNI";
             DataTable dt = TrabajarVenta.getAllClientes();
@@ -53,7 +61,7 @@ namespace Vistas {
             dtpFechaVenta.Format = DateTimePickerFormat.Custom;
         }
 
-        private void cargarProductos() {
+        private void CargarProductos() {
             //cmbProductos.DisplayMember = "CodigoDescripcion";
             //cmbProductos.ValueMember = "Prod_Codigo";
             DataTable dt = TrabajarVenta.getAllProductos();
@@ -67,27 +75,80 @@ namespace Vistas {
             //cmbProductos.DataSource = dt;
         }
 
-        private void setValuesDefault() {
+        private void setValuesDefaultVentaDetalle() {
             nudProdCantidad.Value = 1;
             txtProdTotal.Text = "";
             txtProdPrecio.Text = "";
             txtProdCodigo.Text = "";
         }
 
-        private void actualizarPrecio() {
+        private void setValuesDefault() {
+            dtpFechaVenta.MinDate = DateTime.Today;
+            IniciarDetalleProductos();
+        }
+
+        private void ActualizarPrecio() {
             txtProdTotal.Text = (nudProdCantidad.Value * Convert.ToDecimal(txtProdPrecio.Text)).ToString();
             //Convert.ToDecimal(txtProdCantidad.Text)
         }
 
-        private void agregarProducto() {
-            DataRow detalle = ProductosDetalles.NewRow();
-            detalle["Código"] = txtProdCodigo.Text;
-            detalle["Precio Unitario"] = txtProdPrecio.Text;
-            detalle["Cantidad"] = nudProdCantidad.Value;
-            detalle["Total"] = txtProdTotal.Text;
-            ProductosDetalles.Rows.Add(detalle);
-            setValuesDefault();
+        private void AgregarProducto() {
+            if (!DetalleVentaEstaVacio()) {
+                DataRow detalle = ProductosDetalles.NewRow();
+                detalle["Código"] = txtProdCodigo.Text;
+                detalle["Precio Unitario"] = txtProdPrecio.Text;
+                detalle["Cantidad"] = nudProdCantidad.Value;
+                detalle["Total"] = txtProdTotal.Text;
+                ProductosDetalles.Rows.Add(detalle);
+                setValuesDefaultVentaDetalle();
+
+                //Seleccionar el panel activo luego de añadir un producto
+                tabCtlVenta.SelectedTab = tpgDetalleVenta;
+            } else {
+                MessageBox.Show("Seleccione un producto", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
+
+        private bool DetalleVentaEstaVacio() {
+            if (txtProdCodigo.Text.Length > 0 && txtProdPrecio.Text.Length > 0 && txtProdTotal.Text.Length > 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        private void GuardarVenta() {
+            try {
+                Venta oVenta = new Venta();
+                oVenta.Cli_DNI = cmbClientes.SelectedValue.ToString();
+                oVenta.Ven_Fecha = dtpFechaVenta.Value;
+
+                //Guardo la Venta realizada y obtengo el ID de la misma
+                int ventaNro = TrabajarVenta.agregarVenta(oVenta);
+
+                //Recorre el DataTable con los productos seleccionados y carga cada uno en la BD
+                foreach (DataRow row in ProductosDetalles.Rows) {
+                    VentaDetalle oVentaDetalle = new VentaDetalle();
+                    oVentaDetalle.Ven_Nro = ventaNro;
+                    oVentaDetalle.Prod_Codigo = row[0].ToString();
+                    oVentaDetalle.Det_Precio = Convert.ToDecimal(row[1].ToString());
+                    oVentaDetalle.Det_Cantidad = Convert.ToDecimal(row[2].ToString());
+                    oVentaDetalle.Det_Total = Convert.ToDecimal(row[3].ToString());
+
+                    TrabajarVenta.agregarDetalleVenta(oVentaDetalle);
+                }
+
+                MessageBox.Show("Venta guardada exitosamente", "Guardado");
+            } catch (Exception e) {
+                MessageBox.Show("Exception: " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool ProductosSeleccionadosEstaVacio() {
+            return ProductosDetalles.Rows.Count > 0;
+        }
+
+        #region Componentes
 
         private void cmbProductos_SelectionChangeCommitted(object sender, EventArgs e) {
 
@@ -109,45 +170,42 @@ namespace Vistas {
                 int filaActual = dgvProductos.CurrentRow.Index;
                 txtProdCodigo.Text = dgvProductos.Rows[filaActual].Cells["Código"].Value.ToString();
                 txtProdPrecio.Text = dgvProductos.Rows[filaActual].Cells["Precio"].Value.ToString();
-                actualizarPrecio();
+                ActualizarPrecio();
             }
         }
 
         private void nudProdCantidad_ValueChanged(object sender, EventArgs e) {
-            actualizarPrecio();
+            ActualizarPrecio();
         }
 
         private void btnAgregarDetalle_Click(object sender, EventArgs e) {
-            agregarProducto();
+            AgregarProducto();
         }
 
-        private void brnGuardarVenta_Click(object sender, EventArgs e) {
-            //label2.Text = ProductosDetalles.Rows.Count.ToString();
-            if (VentaDetalleIsEmpty()) {
-                
-                Venta oVenta = new Venta();
-                oVenta.Cli_DNI = cmbClientes.SelectedValue.ToString();
-                oVenta.Ven_Fecha = dtpFechaVenta.Value;
-                int ventaNro = TrabajarVenta.agregarVenta(oVenta);
-                //label1.Text = Convert.ToString(ventaNro);
-                //label2.Text = ProductosDetalles.Rows.Count.ToString();
-                
-                foreach (DataRow row in ProductosDetalles.Rows) {
-                    
-                    VentaDetalle oVentaDetalle = new VentaDetalle();
-                    oVentaDetalle.Ven_Nro = ventaNro;
-                    oVentaDetalle.Prod_Codigo = row[0].ToString();
-                    oVentaDetalle.Det_Precio = Convert.ToDecimal(row[1].ToString());
-                    oVentaDetalle.Det_Cantidad = Convert.ToDecimal(row[2].ToString());
-                    oVentaDetalle.Det_Total = Convert.ToDecimal(row[3].ToString());
-
-                    TrabajarVenta.agregarDetalleVenta(oVentaDetalle);
+        private void btnGuardarVenta_Click(object sender, EventArgs e) {
+            //Verifico que hayan productos cargados en el detalle
+            if (ProductosSeleccionadosEstaVacio()) {
+                var dialogResult = MessageBox.Show("¿Guardar venta?", "Guardar", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes) {
+                    GuardarVenta();
+                    setValuesDefault();
                 }
+            } else {
+                MessageBox.Show("No se seleccionó ningún producto.\nDebe agregar al menos uno.", "¡Atención! Sin Productos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private bool VentaDetalleIsEmpty() {
-            return ProductosDetalles.Rows.Count > 0;
+        private void btnAgregarNuevoProducto_MouseHover(object sender, EventArgs e) {
+            tltAgregarProducto.SetToolTip(btnAgregarNuevoProducto, "Añadir producto");
         }
+
+        private void btnAgregarNuevoProducto_Click(object sender, EventArgs e) {
+            tabCtlVenta.SelectedTab = tpgAgregarProducto;
+        }
+
+        #endregion
+
+
+
     }
 }

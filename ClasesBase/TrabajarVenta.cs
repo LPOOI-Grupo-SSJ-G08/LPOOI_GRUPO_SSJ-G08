@@ -38,7 +38,6 @@ namespace ClasesBase {
         }
 
         public static int agregarVenta(Venta venta) {
-
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "INSERT INTO Venta(Ven_Fecha, Cli_DNI) values(@fechaVenta, @dniCLiente); SELECT SCOPE_IDENTITY()";
@@ -55,24 +54,6 @@ namespace ClasesBase {
             cn.Close();
 
             return iVentaNro;
-
-            /*
-            DataTable dt = new DataTable();
-
-            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Venta(Ven_Fecha, Cli_DNI) values(@fechaVenta, @dniCLiente)";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cn;
-
-            cmd.Parameters.AddWithValue("@fechaVenta", venta.Ven_Fecha);
-            cmd.Parameters.AddWithValue("@dniCLiente", venta.Cli_DNI);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-
-            return dt;
-             * */
         }
 
         public static void agregarDetalleVenta(VentaDetalle ventaDetalle) {
@@ -87,8 +68,6 @@ namespace ClasesBase {
             cmd.Parameters.AddWithValue("@detPrecio", ventaDetalle.Det_Precio);
             cmd.Parameters.AddWithValue("@detCantidad", ventaDetalle.Det_Cantidad);
             cmd.Parameters.AddWithValue("@detTotal", ventaDetalle.Det_Total);
-
-            //SqlDataAdapter da = new SqlDataAdapter(cmd);
 
             cn.Open();
             int iVentaNro = Convert.ToInt32(cmd.ExecuteScalar());
