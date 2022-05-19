@@ -40,9 +40,10 @@
             // 
             // btnAltaUsuario
             // 
-            this.btnAltaUsuario.Location = new System.Drawing.Point(40, 104);
+            this.btnAltaUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAltaUsuario.Location = new System.Drawing.Point(18, 104);
             this.btnAltaUsuario.Name = "btnAltaUsuario";
-            this.btnAltaUsuario.Size = new System.Drawing.Size(118, 46);
+            this.btnAltaUsuario.Size = new System.Drawing.Size(118, 50);
             this.btnAltaUsuario.TabIndex = 0;
             this.btnAltaUsuario.Text = "Alta Usuario";
             this.btnAltaUsuario.UseVisualStyleBackColor = true;
@@ -50,9 +51,10 @@
             // 
             // btnModificarUsuario
             // 
-            this.btnModificarUsuario.Location = new System.Drawing.Point(39, 200);
+            this.btnModificarUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnModificarUsuario.Location = new System.Drawing.Point(18, 204);
             this.btnModificarUsuario.Name = "btnModificarUsuario";
-            this.btnModificarUsuario.Size = new System.Drawing.Size(117, 46);
+            this.btnModificarUsuario.Size = new System.Drawing.Size(118, 50);
             this.btnModificarUsuario.TabIndex = 1;
             this.btnModificarUsuario.Text = "Modificar Usuario";
             this.btnModificarUsuario.UseVisualStyleBackColor = true;
@@ -60,9 +62,10 @@
             // 
             // btnEliminarUsuario
             // 
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(38, 297);
+            this.btnEliminarUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(18, 304);
             this.btnEliminarUsuario.Name = "btnEliminarUsuario";
-            this.btnEliminarUsuario.Size = new System.Drawing.Size(118, 46);
+            this.btnEliminarUsuario.Size = new System.Drawing.Size(118, 50);
             this.btnEliminarUsuario.TabIndex = 2;
             this.btnEliminarUsuario.Text = "Eliminar Usuario";
             this.btnEliminarUsuario.UseVisualStyleBackColor = true;
@@ -70,9 +73,10 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(285, 367);
+            this.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSalir.Location = new System.Drawing.Point(242, 385);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(335, 31);
+            this.btnSalir.Size = new System.Drawing.Size(200, 40);
             this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -80,16 +84,18 @@
             // 
             // dgvListaUsuarios
             // 
+            this.dgvListaUsuarios.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaUsuarios.Location = new System.Drawing.Point(198, 104);
+            this.dgvListaUsuarios.Location = new System.Drawing.Point(155, 104);
             this.dgvListaUsuarios.Name = "dgvListaUsuarios";
-            this.dgvListaUsuarios.Size = new System.Drawing.Size(556, 239);
+            this.dgvListaUsuarios.Size = new System.Drawing.Size(500, 250);
             this.dgvListaUsuarios.TabIndex = 4;
             this.dgvListaUsuarios.CurrentCellChanged += new System.EventHandler(this.dgvListaUsuarios_CurrentCellChanged);
             // 
             // txtNombreUsuario
             // 
-            this.txtNombreUsuario.Location = new System.Drawing.Point(285, 45);
+            this.txtNombreUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNombreUsuario.Location = new System.Drawing.Point(269, 45);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(335, 20);
             this.txtNombreUsuario.TabIndex = 5;
@@ -97,19 +103,20 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 45);
+            this.label1.Location = new System.Drawing.Point(81, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 17);
+            this.label1.Size = new System.Drawing.Size(182, 17);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Ingrese nombre de usuario";
+            this.label1.Text = "Ingrese nombre de usuario:";
             // 
-            // FrmUsuario
+            // FrmGestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 410);
+            this.ClientSize = new System.Drawing.Size(684, 462);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombreUsuario);
             this.Controls.Add(this.dgvListaUsuarios);
@@ -117,7 +124,7 @@
             this.Controls.Add(this.btnEliminarUsuario);
             this.Controls.Add(this.btnModificarUsuario);
             this.Controls.Add(this.btnAltaUsuario);
-            this.Name = "FrmUsuario";
+            this.Name = "FrmGestionUsuarios";
             this.Text = "FrmUsuario";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).EndInit();
             this.ResumeLayout(false);

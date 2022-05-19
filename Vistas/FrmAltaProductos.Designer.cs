@@ -47,9 +47,10 @@
             // 
             // lblCategoria
             // 
+            this.lblCategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(167, 175);
+            this.lblCategoria.Location = new System.Drawing.Point(158, 175);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(65, 17);
             this.lblCategoria.TabIndex = 1;
@@ -57,9 +58,10 @@
             // 
             // lblDescripcion
             // 
+            this.lblDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(146, 235);
+            this.lblDescripcion.Location = new System.Drawing.Point(137, 235);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(86, 17);
             this.lblDescripcion.TabIndex = 2;
@@ -67,9 +69,10 @@
             // 
             // lblPrecio
             // 
+            this.lblPrecio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(180, 295);
+            this.lblPrecio.Location = new System.Drawing.Point(171, 295);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(52, 17);
             this.lblPrecio.TabIndex = 3;
@@ -77,39 +80,40 @@
             // 
             // txtCategoria
             // 
-            this.txtCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoria.Location = new System.Drawing.Point(276, 173);
+            this.txtCategoria.Location = new System.Drawing.Point(267, 173);
             this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(145, 23);
+            this.txtCategoria.Size = new System.Drawing.Size(180, 23);
             this.txtCategoria.TabIndex = 5;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(276, 233);
+            this.txtDescripcion.Location = new System.Drawing.Point(267, 233);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(145, 23);
+            this.txtDescripcion.Size = new System.Drawing.Size(180, 23);
             this.txtDescripcion.TabIndex = 6;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPrecio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(276, 293);
+            this.txtPrecio.Location = new System.Drawing.Point(267, 293);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(145, 23);
+            this.txtPrecio.Size = new System.Drawing.Size(180, 23);
             this.txtPrecio.TabIndex = 7;
             // 
             // btnAgregarProducto
             // 
+            this.btnAgregarProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgregarProducto.BackColor = System.Drawing.Color.SeaGreen;
             this.btnAgregarProducto.FlatAppearance.BorderSize = 0;
-            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnAgregarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarProducto.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(153, 350);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(140, 350);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(106, 30);
             this.btnAgregarProducto.TabIndex = 8;
@@ -121,12 +125,13 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancelar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(319, 350);
+            this.btnCancelar.Location = new System.Drawing.Point(341, 350);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 30);
             this.btnCancelar.TabIndex = 9;
@@ -138,18 +143,19 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodigo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(276, 113);
+            this.txtCodigo.Location = new System.Drawing.Point(267, 113);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(145, 23);
+            this.txtCodigo.Size = new System.Drawing.Size(180, 23);
             this.txtCodigo.TabIndex = 4;
             // 
             // lblCodigo
             // 
+            this.lblCodigo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(176, 115);
+            this.lblCodigo.Location = new System.Drawing.Point(167, 115);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(56, 17);
             this.lblCodigo.TabIndex = 0;
@@ -157,9 +163,10 @@
             // 
             // lblValidPrecio
             // 
+            this.lblValidPrecio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblValidPrecio.AutoSize = true;
             this.lblValidPrecio.ForeColor = System.Drawing.Color.Red;
-            this.lblValidPrecio.Location = new System.Drawing.Point(276, 319);
+            this.lblValidPrecio.Location = new System.Drawing.Point(267, 319);
             this.lblValidPrecio.Name = "lblValidPrecio";
             this.lblValidPrecio.Size = new System.Drawing.Size(142, 13);
             this.lblValidPrecio.TabIndex = 14;
@@ -168,9 +175,10 @@
             // 
             // lblValidDescripcion
             // 
+            this.lblValidDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblValidDescripcion.AutoSize = true;
             this.lblValidDescripcion.ForeColor = System.Drawing.Color.Red;
-            this.lblValidDescripcion.Location = new System.Drawing.Point(276, 259);
+            this.lblValidDescripcion.Location = new System.Drawing.Point(267, 259);
             this.lblValidDescripcion.Name = "lblValidDescripcion";
             this.lblValidDescripcion.Size = new System.Drawing.Size(142, 13);
             this.lblValidDescripcion.TabIndex = 13;
@@ -179,9 +187,10 @@
             // 
             // lblValidCategoria
             // 
+            this.lblValidCategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblValidCategoria.AutoSize = true;
             this.lblValidCategoria.ForeColor = System.Drawing.Color.Red;
-            this.lblValidCategoria.Location = new System.Drawing.Point(276, 199);
+            this.lblValidCategoria.Location = new System.Drawing.Point(267, 199);
             this.lblValidCategoria.Name = "lblValidCategoria";
             this.lblValidCategoria.Size = new System.Drawing.Size(134, 13);
             this.lblValidCategoria.TabIndex = 12;
@@ -190,9 +199,10 @@
             // 
             // lblValidCodigo
             // 
+            this.lblValidCodigo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblValidCodigo.AutoSize = true;
             this.lblValidCodigo.ForeColor = System.Drawing.Color.Red;
-            this.lblValidCodigo.Location = new System.Drawing.Point(276, 139);
+            this.lblValidCodigo.Location = new System.Drawing.Point(267, 139);
             this.lblValidCodigo.Name = "lblValidCodigo";
             this.lblValidCodigo.Size = new System.Drawing.Size(162, 13);
             this.lblValidCodigo.TabIndex = 11;
@@ -201,9 +211,10 @@
             // 
             // lblTitulo
             // 
+            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(203, 62);
+            this.lblTitulo.Location = new System.Drawing.Point(212, 62);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(161, 24);
             this.lblTitulo.TabIndex = 10;
