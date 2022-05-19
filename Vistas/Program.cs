@@ -17,7 +17,7 @@ namespace Vistas
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmAltaVentas());
             
-            var fLogin = new FrmLogin();
+            var fLogin = new FrmListadoVentas();
             fLogin.FormClosed += FormClosed;
             fLogin.Show();
             Application.Run();
