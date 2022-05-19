@@ -106,13 +106,12 @@
     <EmbeddedResource Include="FrmAltaProductos.resx">
       <DependentUpon>FrmAltaProductos.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
+
     <EmbeddedResource Include="FrmAltaModificarUsuario.resx">
       <DependentUpon>FrmAltaModificarUsuario.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAltaVentas.resx">
       <DependentUpon>FrmAltaVentas.cs</DependentUpon>
->>>>>>> origin/master
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
