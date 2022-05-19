@@ -64,11 +64,18 @@
     <Compile Include="FrmAltaProductos.Designer.cs">
       <DependentUpon>FrmAltaProductos.cs</DependentUpon>
     </Compile>
+
     <Compile Include="FrmAltaModificarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAltaModificarUsuario.Designer.cs">
       <DependentUpon>FrmAltaModificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAltaVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAltaVentas.Designer.cs">
+      <DependentUpon>FrmAltaVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -99,8 +106,13 @@
     <EmbeddedResource Include="FrmAltaProductos.resx">
       <DependentUpon>FrmAltaProductos.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="FrmAltaModificarUsuario.resx">
       <DependentUpon>FrmAltaModificarUsuario.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="FrmAltaVentas.resx">
+      <DependentUpon>FrmAltaVentas.cs</DependentUpon>
+>>>>>>> origin/master
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -142,6 +154,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bag-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-square.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
