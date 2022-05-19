@@ -64,17 +64,13 @@ namespace Vistas
 
         private void txtNombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
-            if (txtNombreUsuario.Text == "")
-            {
-                dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
-            }
-
             
             if (txtNombreUsuario.TextLength >= 2)
             {
                 dgvListaUsuarios.DataSource = TrabajarUsuario.buscar_usuario(txtNombreUsuario.Text);
             }
+            else
+                dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
         }
 
         private void dgvListaUsuarios_CurrentCellChanged(object sender, EventArgs e)
