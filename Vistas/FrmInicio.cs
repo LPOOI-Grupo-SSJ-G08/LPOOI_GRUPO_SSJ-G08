@@ -6,20 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using ClasesBase;
 
 namespace Vistas
 {
-    public partial class FrmListadoVentas : Form
+    public partial class FrmInicio : Form
     {
-        public FrmListadoVentas()
+        public FrmInicio()
         {
             InitializeComponent();
-        }
-
-        private void FrmListadoVentas_Load(object sender, EventArgs e)
-        {
-            grdVentas.DataSource = TrabajarVenta.getAllVentas();
         }
     }
 }

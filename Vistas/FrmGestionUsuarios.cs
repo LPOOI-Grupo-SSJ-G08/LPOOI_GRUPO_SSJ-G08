@@ -10,10 +10,10 @@ using ClasesBase;
 
 namespace Vistas
 {
-    public partial class FrmUsuario : Form
+    public partial class FrmGestionUsuarios : Form
     {
         Usuario usuarioTmp;
-        public FrmUsuario()
+        public FrmGestionUsuarios()
         {
             InitializeComponent();
             dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
@@ -21,14 +21,14 @@ namespace Vistas
 
         private void btnAltaUsuario_Click(object sender, EventArgs e)
         {
-            FrmAltaModificarUsuario frmAltaUsuario = new FrmAltaModificarUsuario();
+            FrmModificarUsuario frmAltaUsuario = new FrmModificarUsuario();
             frmAltaUsuario.Show();
             this.Close();
         }
 
         private void btnModificarUsuario_Click(object sender, EventArgs e)
         {
-            FrmAltaModificarUsuario frmAltaUsuario = new FrmAltaModificarUsuario(this.usuarioTmp);
+            FrmModificarUsuario frmAltaUsuario = new FrmModificarUsuario(this.usuarioTmp);
             frmAltaUsuario.Show();
             this.Close();
         }

@@ -10,17 +10,17 @@ using ClasesBase;
 
 namespace Vistas
 {
-    public partial class FrmAltaModificarUsuario : Form
+    public partial class FrmModificarUsuario : Form
     {
         Usuario usuarioTmp;
-        public FrmAltaModificarUsuario()
+        public FrmModificarUsuario()
         {
             InitializeComponent();
             this.cargarUsuarios();
             this.esconder();
         }
         
-        public FrmAltaModificarUsuario(Usuario usuario)
+        public FrmModificarUsuario(Usuario usuario)
         {
             this.usuarioTmp = usuario;
             InitializeComponent();
@@ -185,7 +185,7 @@ namespace Vistas
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            FrmUsuario frmUsuario = new FrmUsuario();
+            FrmGestionUsuarios frmUsuario = new FrmGestionUsuarios();
             frmUsuario.Show();
             this.Close();
         }

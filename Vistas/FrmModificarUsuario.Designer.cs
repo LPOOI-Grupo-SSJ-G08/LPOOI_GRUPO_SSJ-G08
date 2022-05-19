@@ -1,6 +1,6 @@
 ﻿namespace Vistas
 {
-    partial class FrmAltaModificarUsuario
+    partial class FrmModificarUsuario
     {
         /// <summary>
         /// Required designer variable.
