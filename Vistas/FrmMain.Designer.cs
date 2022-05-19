@@ -192,6 +192,7 @@
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlCabecera);
             this.Name = "FrmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.pnlCabecera.ResumeLayout(false);

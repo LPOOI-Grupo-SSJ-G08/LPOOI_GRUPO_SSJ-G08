@@ -81,6 +81,7 @@
             // 
             // dgwClientes
             // 
+            this.dgwClientes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgwClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwClientes.Location = new System.Drawing.Point(5, 198);
             this.dgwClientes.Name = "dgwClientes";
@@ -344,6 +345,7 @@
             // 
             // pnlDatosCliente
             // 
+            this.pnlDatosCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlDatosCliente.Controls.Add(this.label1);
             this.pnlDatosCliente.Controls.Add(this.lblValidNroCarnet);
             this.pnlDatosCliente.Controls.Add(this.txtNombre);
@@ -394,6 +396,7 @@
             // 
             // pnlConsultas
             // 
+            this.pnlConsultas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlConsultas.Controls.Add(this.txtBusquedaApellido);
             this.pnlConsultas.Controls.Add(this.label2);
             this.pnlConsultas.Controls.Add(this.txtBusquedaDireccion);
@@ -408,6 +411,7 @@
             // 
             // pnlCabecera
             // 
+            this.pnlCabecera.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlCabecera.Controls.Add(this.lblGestionClientes);
             this.pnlCabecera.Location = new System.Drawing.Point(5, 0);
             this.pnlCabecera.Name = "pnlCabecera";

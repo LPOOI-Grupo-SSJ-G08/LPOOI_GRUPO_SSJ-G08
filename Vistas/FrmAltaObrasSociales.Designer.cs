@@ -47,9 +47,10 @@
             // 
             // lblCUIT
             // 
+            this.lblCUIT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCUIT.AutoSize = true;
             this.lblCUIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCUIT.Location = new System.Drawing.Point(199, 127);
+            this.lblCUIT.Location = new System.Drawing.Point(188, 127);
             this.lblCUIT.Name = "lblCUIT";
             this.lblCUIT.Size = new System.Drawing.Size(43, 17);
             this.lblCUIT.TabIndex = 0;
@@ -57,9 +58,10 @@
             // 
             // lblRazonSocial
             // 
+            this.lblRazonSocial.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRazonSocial.AutoSize = true;
             this.lblRazonSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRazonSocial.Location = new System.Drawing.Point(147, 183);
+            this.lblRazonSocial.Location = new System.Drawing.Point(136, 183);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(95, 17);
             this.lblRazonSocial.TabIndex = 1;
@@ -67,9 +69,10 @@
             // 
             // lblDireccion
             // 
+            this.lblDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.Location = new System.Drawing.Point(171, 239);
+            this.lblDireccion.Location = new System.Drawing.Point(160, 239);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(71, 17);
             this.lblDireccion.TabIndex = 2;
@@ -77,9 +80,10 @@
             // 
             // lblTelefono
             // 
+            this.lblTelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(174, 295);
+            this.lblTelefono.Location = new System.Drawing.Point(163, 295);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(68, 17);
             this.lblTelefono.TabIndex = 3;
@@ -87,48 +91,49 @@
             // 
             // txtCUIT
             // 
-            this.txtCUIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCUIT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCUIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCUIT.Location = new System.Drawing.Point(279, 125);
+            this.txtCUIT.Location = new System.Drawing.Point(268, 125);
             this.txtCUIT.Name = "txtCUIT";
-            this.txtCUIT.Size = new System.Drawing.Size(145, 23);
+            this.txtCUIT.Size = new System.Drawing.Size(180, 23);
             this.txtCUIT.TabIndex = 4;
             // 
             // txtRazonSocial
             // 
-            this.txtRazonSocial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRazonSocial.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRazonSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazonSocial.Location = new System.Drawing.Point(279, 181);
+            this.txtRazonSocial.Location = new System.Drawing.Point(268, 181);
             this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(145, 23);
+            this.txtRazonSocial.Size = new System.Drawing.Size(180, 23);
             this.txtRazonSocial.TabIndex = 5;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(279, 237);
+            this.txtDireccion.Location = new System.Drawing.Point(268, 237);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(145, 23);
+            this.txtDireccion.Size = new System.Drawing.Size(180, 23);
             this.txtDireccion.TabIndex = 6;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(279, 293);
+            this.txtTelefono.Location = new System.Drawing.Point(268, 293);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(145, 23);
+            this.txtTelefono.Size = new System.Drawing.Size(180, 23);
             this.txtTelefono.TabIndex = 7;
             // 
             // btnAgregarObraSocial
             // 
+            this.btnAgregarObraSocial.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgregarObraSocial.BackColor = System.Drawing.Color.SeaGreen;
             this.btnAgregarObraSocial.FlatAppearance.BorderSize = 0;
-            this.btnAgregarObraSocial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarObraSocial.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnAgregarObraSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarObraSocial.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarObraSocial.Location = new System.Drawing.Point(150, 350);
+            this.btnAgregarObraSocial.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAgregarObraSocial.Location = new System.Drawing.Point(139, 350);
             this.btnAgregarObraSocial.Name = "btnAgregarObraSocial";
             this.btnAgregarObraSocial.Size = new System.Drawing.Size(106, 30);
             this.btnAgregarObraSocial.TabIndex = 8;
@@ -140,12 +145,13 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancelar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(318, 350);
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCancelar.Location = new System.Drawing.Point(342, 350);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 30);
             this.btnCancelar.TabIndex = 9;
@@ -157,9 +163,10 @@
             // 
             // lblValidDireccion
             // 
+            this.lblValidDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblValidDireccion.AutoSize = true;
             this.lblValidDireccion.ForeColor = System.Drawing.Color.Red;
-            this.lblValidDireccion.Location = new System.Drawing.Point(276, 263);
+            this.lblValidDireccion.Location = new System.Drawing.Point(265, 263);
             this.lblValidDireccion.Name = "lblValidDireccion";
             this.lblValidDireccion.Size = new System.Drawing.Size(131, 13);
             this.lblValidDireccion.TabIndex = 13;
@@ -168,9 +175,10 @@
             // 
             // lblValidRazonSocial
             // 
+            this.lblValidRazonSocial.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblValidRazonSocial.AutoSize = true;
             this.lblValidRazonSocial.ForeColor = System.Drawing.Color.Red;
-            this.lblValidRazonSocial.Location = new System.Drawing.Point(276, 207);
+            this.lblValidRazonSocial.Location = new System.Drawing.Point(265, 207);
             this.lblValidRazonSocial.Name = "lblValidRazonSocial";
             this.lblValidRazonSocial.Size = new System.Drawing.Size(128, 13);
             this.lblValidRazonSocial.TabIndex = 12;
@@ -179,9 +187,10 @@
             // 
             // lblValidCUIT
             // 
+            this.lblValidCUIT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblValidCUIT.AutoSize = true;
             this.lblValidCUIT.ForeColor = System.Drawing.Color.Red;
-            this.lblValidCUIT.Location = new System.Drawing.Point(276, 151);
+            this.lblValidCUIT.Location = new System.Drawing.Point(265, 151);
             this.lblValidCUIT.Name = "lblValidCUIT";
             this.lblValidCUIT.Size = new System.Drawing.Size(162, 13);
             this.lblValidCUIT.TabIndex = 11;
@@ -190,9 +199,10 @@
             // 
             // lblTitulo
             // 
+            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(193, 62);
+            this.lblTitulo.Location = new System.Drawing.Point(182, 62);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(185, 24);
             this.lblTitulo.TabIndex = 10;
@@ -200,9 +210,10 @@
             // 
             // lblValidTelefono
             // 
+            this.lblValidTelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblValidTelefono.AutoSize = true;
             this.lblValidTelefono.ForeColor = System.Drawing.Color.Red;
-            this.lblValidTelefono.Location = new System.Drawing.Point(276, 319);
+            this.lblValidTelefono.Location = new System.Drawing.Point(265, 319);
             this.lblValidTelefono.Name = "lblValidTelefono";
             this.lblValidTelefono.Size = new System.Drawing.Size(162, 13);
             this.lblValidTelefono.TabIndex = 14;
