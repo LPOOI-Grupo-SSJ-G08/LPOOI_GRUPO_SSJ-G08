@@ -73,5 +73,20 @@ namespace ClasesBase {
             int iVentaNro = Convert.ToInt32(cmd.ExecuteScalar());
             cn.Close();
         }
+
+        public static DataTable getAllVentas()
+        {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM Venta";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
     }
 }
