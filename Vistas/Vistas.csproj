@@ -64,6 +64,13 @@
     <Compile Include="FrmAltaProductos.Designer.cs">
       <DependentUpon>FrmAltaProductos.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="FrmAltaModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAltaModificarUsuario.Designer.cs">
+      <DependentUpon>FrmAltaModificarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAltaVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +95,12 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsuario.Designer.cs">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAltaClientes.resx">
@@ -98,6 +111,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAltaProductos.resx">
       <DependentUpon>FrmAltaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="FrmAltaModificarUsuario.resx">
+      <DependentUpon>FrmAltaModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAltaVentas.resx">
       <DependentUpon>FrmAltaVentas.cs</DependentUpon>
@@ -110,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUsuario.resx">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
