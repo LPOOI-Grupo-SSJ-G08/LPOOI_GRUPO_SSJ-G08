@@ -34,10 +34,25 @@ namespace Vistas
         }
 
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
-        {
-           TrabajarUsuario.baja_usuarios((int)dgvListaUsuarios.CurrentRow.Cells[0].Value);
-           dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
-            
+        {   
+            try
+            {
+                var dialogoConfirmacion = MessageBox.Show("Desea eliminar a este usuario?", "Confirmar", MessageBoxButtons.YesNo);
+                if (dialogoConfirmacion == DialogResult.No)
+                {
+                    MessageBox.Show("Usuario no eliminado");
+                    return;
+                }
+
+                TrabajarUsuario.baja_usuarios((int)dgvListaUsuarios.CurrentRow.Cells[0].Value);
+                dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
+                MessageBox.Show("Usuario eliminado correctamente");
+            }
+            catch(Exception efe)
+            {
+                MessageBox.Show("Problemas al eliminar usuario " + efe);
+            }
+               
             
         }
 

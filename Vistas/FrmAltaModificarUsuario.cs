@@ -105,9 +105,17 @@ namespace Vistas
 
         private void ModificarUsuarios()
         {
-            this.setUsuario(this.usuarioTmp);
-            TrabajarUsuario.modificar_usuario(this.usuarioTmp);
-            this.cargarUsuarios();
+            try
+            {
+                this.setUsuario(this.usuarioTmp);
+                TrabajarUsuario.modificar_usuario(this.usuarioTmp);
+                MessageBox.Show("Usuario modificado correctamente");
+                this.cargarUsuarios();
+            }
+            catch (Exception efe)
+            {
+                MessageBox.Show("No se ha podido modificar el usuario "+ efe);
+            }
         }
 
         private void cargarUsuarios()
