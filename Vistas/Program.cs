@@ -15,10 +15,11 @@ namespace Vistas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var fLogin = new FrmLogin();
-            fLogin.FormClosed += FormClosed;
-            fLogin.Show();
-            Application.Run();
+            Application.Run(new FrmGestionClientes());
+            //var fLogin = new FrmLogin();
+            //fLogin.FormClosed += FormClosed;
+            //fLogin.Show();
+            //Application.Run();
         }
 
         static void FormClosed(object sender, FormClosedEventArgs e)

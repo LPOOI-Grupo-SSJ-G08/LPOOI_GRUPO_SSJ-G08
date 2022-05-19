@@ -55,6 +55,8 @@ namespace ClasesBase
             set { cli_NroCarnet = value; }
         }
 
+        public Cliente() { }
+
         public Cliente(string nombre, string apellido, string dni, string direccion, string cuit, string nroCarnet)
         {
             this.cli_Nombre = nombre;
@@ -63,23 +65,6 @@ namespace ClasesBase
             this.cli_Direccion = direccion;
             this.os_CUIT = cuit;
             this.cli_NroCarnet = nroCarnet;
-        }
-
-        public String MostrarDatos(){
-            StringBuilder sb = new StringBuilder();
-            sb.Append("Nombre: ");
-            sb.Append(this.cli_Nombre);
-            sb.Append("\nApellido: ");
-            sb.Append(this.cli_Apellido);
-            sb.Append("\nDNI: ");
-            sb.Append(this.cli_DNI);
-            sb.Append("\nDireccion: ");
-            sb.Append(this.cli_Direccion);
-            sb.Append("\nCUIT: ");
-            sb.Append(this.os_CUIT);
-            sb.Append("\nNumero de Carnet: ");
-            sb.Append(this.cli_NroCarnet);
-            return sb.ToString();
         }
     }
 }
