@@ -22,7 +22,6 @@ C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\
 C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\bin\Debug\ClasesBase.dll
 C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\bin\Debug\ClasesBase.pdb
 C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmAltaClientes.resources
 C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmAltaObrasSociales.resources
 C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmAltaProductos.resources
 C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmLogin.resources
@@ -45,3 +44,8 @@ C:\Repositorios\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmMain.resource
 C:\Repositorios\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
 C:\Repositorios\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Repositorios\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmGestionClientes.resources
+C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmAltaVentas.resources
+C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmListadoVentas.resources
+C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmModificarUsuario.resources
+C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmGestionUsuarios.resources

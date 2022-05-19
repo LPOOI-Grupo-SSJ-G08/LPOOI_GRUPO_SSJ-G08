@@ -25,6 +25,7 @@ namespace Vistas
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogoResult == DialogResult.Yes)
             {
+                this.activeForm.Close();
                 FrmLogin frmLogin = new FrmLogin();
                 frmLogin.Activate();
                 frmLogin.Show();
@@ -62,75 +63,82 @@ namespace Vistas
         private void FrmMain_Load(object sender, EventArgs e)
         {
             AbrirFormHijo(new FrmInicio());
-            mnuItemSistema.BackColor = SystemColors.ControlDark;
+            //btnSistema.BackColor = SystemColors.ControlDark;
+
             if (lblRolActual.Text != "Auditor")
             {
-                mnuItemUsuarios.Visible = false;
-                mnuItemProductos.Visible = false;
-                mnuItemClientes.Visible = false;
-                mnuItemVentas.Visible = false;
+                btnUsuarios.Enabled = false;
+                btnProductos.Enabled = false;
+                btnClientes.Enabled = false;
+                btnVentas.Enabled = false;
             }
             if (lblRolActual.Text == "Administrador")
             {
-                mnuItemUsuarios.Visible = true;
-                mnuItemProductos.Visible = true;
+                btnUsuarios.Enabled = true;
+                btnProductos.Enabled = true;
             }
             if (lblRolActual.Text == "Operador")
             {
-                mnuItemClientes.Visible = true;
-                mnuItemVentas.Visible = true;
+                btnClientes.Enabled = true;
+                btnVentas.Enabled = true;
             }
-        }
-
-        private void mnuItemSistema_Click(object sender, EventArgs e)
-        {
-            PintarBotones();
-            mnuItemSistema.BackColor = SystemColors.ControlDark;
-            AbrirFormHijo(new FrmInicio());
-        }
-
-        private void mnuItemUsuarios_Click(object sender, EventArgs e)
-        {
-            PintarBotones();
-            mnuItemUsuarios.BackColor = SystemColors.ControlDark;
-            //AbrirFormHijo(new FrmUsuario());
-            //AbrirFormHijo(new FrmGestionUsuarios());
-        }
-
-        private void mnuItemProductos_Click(object sender, EventArgs e)
-        {
-            PintarBotones();
-            mnuItemProductos.BackColor = SystemColors.ControlDark;
-            AbrirFormHijo(new FrmAltaProductos());
-        }
-
-        private void mnuItemClientes_Click(object sender, EventArgs e)
-        {
-            PintarBotones();
-            mnuItemClientes.BackColor = SystemColors.ControlDark;
-            AbrirFormHijo(new FrmAltaClientes());
-        }
-
-        private void mnuItemVentas_Click(object sender, EventArgs e)
-        {
-            PintarBotones();
-            mnuItemVentas.BackColor = SystemColors.ControlDark;
-            //AbrirFormHijo(new FrmAltaVentas());
-        }
-
-        private void mnuItemObrasSociales_Click(object sender, EventArgs e)
-        {
-            PintarBotones();
-            mnuItemObrasSociales.BackColor = SystemColors.ControlDark;
-            AbrirFormHijo(new FrmAltaObrasSociales());
         }
 
         private void PintarBotones()
         {
-            for (int i = 0; i < mnuStrip.Items.Count; i++)
-            {
-                mnuStrip.Items[i].BackColor = SystemColors.Control;
-            }
+            //for (int i = 0; i < mnuStrip.Items.Count; i++)
+            //{
+            //    mnuStrip.Items[i].BackColor = SystemColors.Control;
+            //}
+        }
+
+        private void btnSistema_Click(object sender, EventArgs e)
+        {
+            //PintarBotones();
+            //btnSistema.BackColor = SystemColors.ControlDark;
+            AbrirFormHijo(new FrmInicio());
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            //PintarBotones();
+            //btnUsuarios.BackColor = SystemColors.ControlDark;
+            AbrirFormHijo(new FrmGestionUsuarios());
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            //PintarBotones();
+            //btnProductos.BackColor = SystemColors.ControlDark;
+            AbrirFormHijo(new FrmAltaProductos());
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            //PintarBotones();
+            //btnClientes.BackColor = SystemColors.ControlDark;
+            AbrirFormHijo(new FrmGestionClientes());
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            //PintarBotones();
+            //btnVentas.BackColor = SystemColors.ControlDark;
+            AbrirFormHijo(new FrmAltaVentas());
+        }
+
+        private void btnListadoVentas_Click(object sender, EventArgs e)
+        {
+            //PintarBotones();
+            //btnListadoVentas.BackColor = SystemColors.ControlDark;
+            AbrirFormHijo(new FrmListadoVentas());
+        }
+
+        private void btnObrasSociales_Click(object sender, EventArgs e)
+        {
+            //PintarBotones();
+            //btnObrasSociales.BackColor = SystemColors.ControlDark;
+            AbrirFormHijo(new FrmAltaObrasSociales());
         }
 
     }

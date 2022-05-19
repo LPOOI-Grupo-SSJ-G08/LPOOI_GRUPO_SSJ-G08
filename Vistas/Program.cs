@@ -15,6 +15,11 @@ namespace Vistas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            //Application.Run(new FrmAltaVentas());
+            //Application.Run(new FrmListadoVentas());
+            //Application.Run(new FrmGestionClientes());
+
             var fLogin = new FrmLogin();
             fLogin.FormClosed += FormClosed;
             fLogin.Show();
