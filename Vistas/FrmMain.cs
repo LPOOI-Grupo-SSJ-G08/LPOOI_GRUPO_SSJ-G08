@@ -65,5 +65,11 @@ namespace Vistas
             btn.BackColor = Color.SeaGreen;
         }
 
+        private void BtnUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuario frmUsuarios = new FrmUsuario();
+            frmUsuarios.Show();
+        }
+
     }
 }

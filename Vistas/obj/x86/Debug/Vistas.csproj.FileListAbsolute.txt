@@ -46,3 +46,7 @@ C:\Repositorios\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.Properties.Resou
 C:\Repositorios\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Repositorios\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmGestionClientes.resources
+C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmAltaModificarUsuario.resources
+C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmAltaVentas.resources
+C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmListadoVentas.resources
+C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmUsuario.resources
