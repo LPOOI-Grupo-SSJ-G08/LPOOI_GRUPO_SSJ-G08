@@ -37,7 +37,7 @@ namespace Vistas
         {   
             try
             {
-                var dialogoConfirmacion = MessageBox.Show("Desea eliminar a este usuario?", "Confirmar", MessageBoxButtons.YesNo);
+                var dialogoConfirmacion = MessageBox.Show("Desea eliminar a " + dgvListaUsuarios.CurrentRow.Cells[1].Value+"?", "Confirmar", MessageBoxButtons.YesNo);
                 if (dialogoConfirmacion == DialogResult.No)
                 {
                     MessageBox.Show("Usuario no eliminado");

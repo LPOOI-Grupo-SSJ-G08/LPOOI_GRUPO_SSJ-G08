@@ -17,6 +17,7 @@ namespace Vistas
         {
             InitializeComponent();
             this.cargarUsuarios();
+            this.esconder();
         }
         
         public FrmAltaModificarUsuario(Usuario usuario)
@@ -41,6 +42,8 @@ namespace Vistas
             }
 
             btnAgregar.Text = "Modificar";
+
+            this.esconder();
         }
 
 
@@ -54,7 +57,6 @@ namespace Vistas
             {
                 this.ModificarUsuarios();
             }
-
         }
 
         private void setUsuario(Usuario ouser)
@@ -87,30 +89,48 @@ namespace Vistas
                 {
                     MessageBox.Show("Usuario no agregado");
                     return;
-                    // Limpiamos campos
                 }
                 try
                 {
-                   this.setUsuario(ouser);
-                   TrabajarUsuario.agregarUsuario(ouser);
-                   this.cargarUsuarios();
+                    if (this.comprobarAltaModificarUsuario() && !this.comprobarUsuarioExistente(txtUsuario.Text))
+                    {
+                       this.setUsuario(ouser);
+                       TrabajarUsuario.agregarUsuario(ouser);
+                       this.cargarUsuarios();
+                       this.esconder();
+                       this.limpiarCampos(); 
+                    }
+                   
 
                 }
                 catch (Exception efe)
                 {
-                    MessageBox.Show("Ha fallado" + efe.Message);
+                    MessageBox.Show("Ha fallado - " + efe.Message);
                 }
         }
 
 
         private void ModificarUsuarios()
-        {
+        {   
             try
             {
-                this.setUsuario(this.usuarioTmp);
-                TrabajarUsuario.modificar_usuario(this.usuarioTmp);
-                MessageBox.Show("Usuario modificado correctamente");
-                this.cargarUsuarios();
+
+
+                if (this.comprobarAltaModificarUsuario() && !this.comprobarUsuarioExistente(txtUsuario.Text))
+                {
+                    var dialogoConfirmacion = MessageBox.Show("Desea modificar a este usuario?", "Confirmar", MessageBoxButtons.YesNo);
+                    if (dialogoConfirmacion == DialogResult.No)
+                    {
+                        MessageBox.Show("Usuario no modificado");
+                        return;
+                    }
+                    this.setUsuario(this.usuarioTmp);
+                    TrabajarUsuario.modificar_usuario(this.usuarioTmp);
+                    MessageBox.Show("Usuario modificado correctamente");
+                    this.cargarUsuarios();
+                    this.esconder();
+                }
+                            
             }
             catch (Exception efe)
             {
@@ -118,6 +138,46 @@ namespace Vistas
             }
         }
 
+        private bool comprobarAltaModificarUsuario()
+        {
+            bool bandera=true;
+            try
+            {
+                if (txtUsuario.TextLength < 3)
+                {
+                    lblValidUsuario.Show();
+                    bandera = false;
+                }
+                else
+                    lblValidUsuario.Hide();
+                
+                if (txtContrasenia.TextLength < 3)
+                {                  
+                    lblValidContrasenia.Show();
+                    bandera = false;
+                }
+                else
+                    lblValidContrasenia.Hide();
+
+                if (txtNombreompleto.TextLength < 3)
+                {
+                    lblValidNombreCompleto.Show();
+                    bandera = false;
+                }
+                else
+                    lblValidNombreCompleto.Hide();
+
+            }
+            catch (Exception efe)
+            {
+                    lblValidUsuario.Show();
+                    lblValidContrasenia.Show();
+                    lblValidNombreCompleto.Show();
+                    bandera = false;
+            }
+
+            return bandera;
+        }
         private void cargarUsuarios()
         {
             dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
@@ -130,8 +190,35 @@ namespace Vistas
             this.Close();
         }
 
-        
+        private void esconder()
+        {
+            lblValidUsuario.Hide();
+            lblValidContrasenia.Hide();
+            lblValidNombreCompleto.Hide();
+        }
 
+
+        private void limpiarCampos()
+        {
+            txtUsuario.Clear();
+            txtContrasenia.Clear();
+            txtNombreompleto.Clear();
+
+        }
+
+
+        private bool comprobarUsuarioExistente(string nombreUsuario)
+        {
+            if (TrabajarUsuario.comprobar_NombreUsuarioExistente(nombreUsuario))
+            {
+                MessageBox.Show("El usuario ya existe en el sistema");
+                return true;
+            }
+            else
+            {
+                return false;
+            }            
+        }
         
     }
 }

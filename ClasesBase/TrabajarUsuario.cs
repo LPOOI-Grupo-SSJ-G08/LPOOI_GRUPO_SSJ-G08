@@ -149,6 +149,29 @@ namespace ClasesBase
 
             return null;
         }
+
+        public static bool comprobar_NombreUsuarioExistente(string usu_nombreUsuario)
+        {
+
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM Usuario WHERE Usu_NombreUsuario ='" + usu_nombreUsuario + "';";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            bool bandera = false;
+            foreach (DataRow row in dt.Rows)
+            {
+               if (row["usu_nombreUsuario"].ToString()  == usu_nombreUsuario)
+                    bandera =true;
+              
+            }
+            return bandera;
+        }
     }
 }
 

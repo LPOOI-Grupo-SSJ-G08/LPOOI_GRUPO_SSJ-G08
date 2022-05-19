@@ -39,13 +39,16 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.dgvListaUsuarios = new System.Windows.Forms.DataGridView();
+            this.lblValidUsuario = new System.Windows.Forms.Label();
+            this.lblValidContrasenia = new System.Windows.Forms.Label();
+            this.lblValidNombreCompleto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 53);
+            this.label1.Location = new System.Drawing.Point(40, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 0;
@@ -54,7 +57,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 89);
+            this.label2.Location = new System.Drawing.Point(40, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 1;
@@ -63,7 +66,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 128);
+            this.label3.Location = new System.Drawing.Point(40, 157);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 2;
@@ -72,7 +75,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 163);
+            this.label4.Location = new System.Drawing.Point(40, 216);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 13);
             this.label4.TabIndex = 3;
@@ -87,7 +90,7 @@
             // 
             // txtContrasenia
             // 
-            this.txtContrasenia.Location = new System.Drawing.Point(153, 86);
+            this.txtContrasenia.Location = new System.Drawing.Point(153, 104);
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.PasswordChar = '*';
             this.txtContrasenia.Size = new System.Drawing.Size(202, 20);
@@ -95,7 +98,7 @@
             // 
             // txtNombreompleto
             // 
-            this.txtNombreompleto.Location = new System.Drawing.Point(153, 125);
+            this.txtNombreompleto.Location = new System.Drawing.Point(153, 154);
             this.txtNombreompleto.Name = "txtNombreompleto";
             this.txtNombreompleto.Size = new System.Drawing.Size(202, 20);
             this.txtNombreompleto.TabIndex = 6;
@@ -107,14 +110,15 @@
             "Administrador",
             "Auditor",
             "Operador"});
-            this.cmbRol.Location = new System.Drawing.Point(153, 163);
+            this.cmbRol.Location = new System.Drawing.Point(153, 213);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(202, 21);
             this.cmbRol.TabIndex = 7;
+            this.cmbRol.Text = "Operador";
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(237, 240);
+            this.btnAgregar.Location = new System.Drawing.Point(237, 305);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(118, 39);
             this.btnAgregar.TabIndex = 8;
@@ -124,7 +128,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(63, 240);
+            this.btnVolver.Location = new System.Drawing.Point(60, 305);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(118, 39);
             this.btnVolver.TabIndex = 9;
@@ -135,16 +139,52 @@
             // dgvListaUsuarios
             // 
             this.dgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaUsuarios.Location = new System.Drawing.Point(404, 49);
+            this.dgvListaUsuarios.Location = new System.Drawing.Point(389, 49);
             this.dgvListaUsuarios.Name = "dgvListaUsuarios";
-            this.dgvListaUsuarios.Size = new System.Drawing.Size(271, 229);
+            this.dgvListaUsuarios.Size = new System.Drawing.Size(429, 229);
             this.dgvListaUsuarios.TabIndex = 10;
+            // 
+            // lblValidUsuario
+            // 
+            this.lblValidUsuario.AutoSize = true;
+            this.lblValidUsuario.ForeColor = System.Drawing.Color.Red;
+            this.lblValidUsuario.Location = new System.Drawing.Point(150, 70);
+            this.lblValidUsuario.Name = "lblValidUsuario";
+            this.lblValidUsuario.Size = new System.Drawing.Size(160, 13);
+            this.lblValidUsuario.TabIndex = 16;
+            this.lblValidUsuario.Text = "Debe contener al menos 3 letras";
+            this.lblValidUsuario.Visible = false;
+            // 
+            // lblValidContrasenia
+            // 
+            this.lblValidContrasenia.AutoSize = true;
+            this.lblValidContrasenia.ForeColor = System.Drawing.Color.Red;
+            this.lblValidContrasenia.Location = new System.Drawing.Point(150, 127);
+            this.lblValidContrasenia.Name = "lblValidContrasenia";
+            this.lblValidContrasenia.Size = new System.Drawing.Size(160, 13);
+            this.lblValidContrasenia.TabIndex = 17;
+            this.lblValidContrasenia.Text = "Debe contener al menos 3 letras";
+            this.lblValidContrasenia.Visible = false;
+            // 
+            // lblValidNombreCompleto
+            // 
+            this.lblValidNombreCompleto.AutoSize = true;
+            this.lblValidNombreCompleto.ForeColor = System.Drawing.Color.Red;
+            this.lblValidNombreCompleto.Location = new System.Drawing.Point(150, 177);
+            this.lblValidNombreCompleto.Name = "lblValidNombreCompleto";
+            this.lblValidNombreCompleto.Size = new System.Drawing.Size(160, 13);
+            this.lblValidNombreCompleto.TabIndex = 18;
+            this.lblValidNombreCompleto.Text = "Debe contener al menos 3 letras";
+            this.lblValidNombreCompleto.Visible = false;
             // 
             // FrmAltaModificarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 396);
+            this.ClientSize = new System.Drawing.Size(830, 396);
+            this.Controls.Add(this.lblValidNombreCompleto);
+            this.Controls.Add(this.lblValidContrasenia);
+            this.Controls.Add(this.lblValidUsuario);
             this.Controls.Add(this.dgvListaUsuarios);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAgregar);
@@ -177,5 +217,8 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.DataGridView dgvListaUsuarios;
+        private System.Windows.Forms.Label lblValidUsuario;
+        private System.Windows.Forms.Label lblValidContrasenia;
+        private System.Windows.Forms.Label lblValidNombreCompleto;
     }
 }
