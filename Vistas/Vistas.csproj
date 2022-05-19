@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmAltaClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAltaClientes.Designer.cs">
-      <DependentUpon>FrmAltaClientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmAltaObrasSociales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,18 +64,23 @@
     <Compile Include="FrmGestionClientes.Designer.cs">
       <DependentUpon>FrmGestionClientes.cs</DependentUpon>
     </Compile>
-
-    <Compile Include="FrmAltaModificarUsuario.cs">
+    <Compile Include="FrmModificarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAltaModificarUsuario.Designer.cs">
-      <DependentUpon>FrmAltaModificarUsuario.cs</DependentUpon>
+    <Compile Include="FrmModificarUsuario.Designer.cs">
+      <DependentUpon>FrmModificarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAltaVentas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAltaVentas.Designer.cs">
       <DependentUpon>FrmAltaVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInicio.Designer.cs">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmListadoVentas.cs">
       <SubType>Form</SubType>
@@ -101,17 +100,14 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmUsuario.cs">
+    <Compile Include="FrmGestionUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmUsuario.Designer.cs">
-      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    <Compile Include="FrmGestionUsuarios.Designer.cs">
+      <DependentUpon>FrmGestionUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAltaClientes.resx">
-      <DependentUpon>FrmAltaClientes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmAltaObrasSociales.resx">
       <DependentUpon>FrmAltaObrasSociales.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,8 +117,8 @@
     <EmbeddedResource Include="FrmGestionClientes.resx">
       <DependentUpon>FrmGestionClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAltaModificarUsuario.resx">
-      <DependentUpon>FrmAltaModificarUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="FrmModificarUsuario.resx">
+      <DependentUpon>FrmModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAltaVentas.resx">
       <DependentUpon>FrmAltaVentas.cs</DependentUpon>
@@ -136,8 +132,8 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmUsuario.resx">
-      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGestionUsuarios.resx">
+      <DependentUpon>FrmGestionUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

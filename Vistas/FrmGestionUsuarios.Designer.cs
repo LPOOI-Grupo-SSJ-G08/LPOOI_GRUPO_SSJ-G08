@@ -1,6 +1,6 @@
 ﻿namespace Vistas
 {
-    partial class FrmUsuario
+    partial class FrmGestionUsuarios
     {
         /// <summary>
         /// Required designer variable.

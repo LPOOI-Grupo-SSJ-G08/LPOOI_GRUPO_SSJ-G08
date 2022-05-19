@@ -29,26 +29,32 @@
         private void InitializeComponent()
         {
             this.btnSalir = new System.Windows.Forms.Button();
+            this.pnlCabecera = new System.Windows.Forms.Panel();
+            this.lblRolActual = new System.Windows.Forms.Label();
+            this.lblUsuarioActual = new System.Windows.Forms.Label();
+            this.pnlContenedor = new System.Windows.Forms.Panel();
             this.btnSistema = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
-            this.btnObrasSociales = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.BtnUsuarios = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.btnVentas = new System.Windows.Forms.Button();
+            this.btnListadoVentas = new System.Windows.Forms.Button();
+            this.btnObrasSociales = new System.Windows.Forms.Button();
+            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pnlCabecera.SuspendLayout();
+            this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSalir.BackColor = System.Drawing.SystemColors.Control;
             this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(224, 277);
+            this.btnSalir.Location = new System.Drawing.Point(773, 10);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(120, 30);
+            this.btnSalir.Size = new System.Drawing.Size(80, 40);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -56,123 +62,141 @@
             this.btnSalir.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             this.btnSalir.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
+            // pnlCabecera
+            // 
+            this.pnlCabecera.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlCabecera.Controls.Add(this.lblRolActual);
+            this.pnlCabecera.Controls.Add(this.lblUsuarioActual);
+            this.pnlCabecera.Controls.Add(this.btnSalir);
+            this.pnlCabecera.Location = new System.Drawing.Point(0, 0);
+            this.pnlCabecera.Name = "pnlCabecera";
+            this.pnlCabecera.Size = new System.Drawing.Size(884, 60);
+            this.pnlCabecera.TabIndex = 5;
+            // 
+            // lblRolActual
+            // 
+            this.lblRolActual.AutoSize = true;
+            this.lblRolActual.Location = new System.Drawing.Point(693, 33);
+            this.lblRolActual.Name = "lblRolActual";
+            this.lblRolActual.Size = new System.Drawing.Size(23, 13);
+            this.lblRolActual.TabIndex = 6;
+            this.lblRolActual.Text = "Rol";
+            // 
+            // lblUsuarioActual
+            // 
+            this.lblUsuarioActual.AutoSize = true;
+            this.lblUsuarioActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioActual.Location = new System.Drawing.Point(693, 10);
+            this.lblUsuarioActual.Name = "lblUsuarioActual";
+            this.lblUsuarioActual.Size = new System.Drawing.Size(55, 16);
+            this.lblUsuarioActual.TabIndex = 5;
+            this.lblUsuarioActual.Text = "Usuario";
+            // 
+            // pnlContenedor
+            // 
+            this.pnlContenedor.Location = new System.Drawing.Point(139, 66);
+            this.pnlContenedor.Name = "pnlContenedor";
+            this.pnlContenedor.Size = new System.Drawing.Size(745, 496);
+            this.pnlContenedor.TabIndex = 7;
+            // 
             // btnSistema
             // 
-            this.btnSistema.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnSistema.FlatAppearance.BorderSize = 0;
-            this.btnSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSistema.ForeColor = System.Drawing.Color.White;
-            this.btnSistema.Location = new System.Drawing.Point(36, 79);
+            this.btnSistema.Location = new System.Drawing.Point(8, 8);
             this.btnSistema.Name = "btnSistema";
-            this.btnSistema.Size = new System.Drawing.Size(120, 30);
+            this.btnSistema.Size = new System.Drawing.Size(120, 60);
             this.btnSistema.TabIndex = 0;
             this.btnSistema.Text = "Sistema";
-            this.btnSistema.UseVisualStyleBackColor = false;
-            this.btnSistema.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            this.btnSistema.MouseHover += new System.EventHandler(this.btn_MouseHover);
+            this.btnSistema.UseVisualStyleBackColor = true;
+            this.btnSistema.Click += new System.EventHandler(this.btnSistema_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Location = new System.Drawing.Point(8, 78);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(120, 60);
+            this.btnUsuarios.TabIndex = 1;
+            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnProductos
             // 
-            this.btnProductos.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnProductos.FlatAppearance.BorderSize = 0;
-            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.ForeColor = System.Drawing.Color.White;
-            this.btnProductos.Location = new System.Drawing.Point(36, 152);
+            this.btnProductos.Location = new System.Drawing.Point(8, 148);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(120, 30);
+            this.btnProductos.Size = new System.Drawing.Size(120, 60);
             this.btnProductos.TabIndex = 2;
             this.btnProductos.Text = "Productos";
-            this.btnProductos.UseVisualStyleBackColor = false;
+            this.btnProductos.UseVisualStyleBackColor = true;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
-            this.btnProductos.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            this.btnProductos.MouseHover += new System.EventHandler(this.btn_MouseHover);
-            // 
-            // btnObrasSociales
-            // 
-            this.btnObrasSociales.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnObrasSociales.FlatAppearance.BorderSize = 0;
-            this.btnObrasSociales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnObrasSociales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnObrasSociales.ForeColor = System.Drawing.Color.White;
-            this.btnObrasSociales.Location = new System.Drawing.Point(205, 152);
-            this.btnObrasSociales.Name = "btnObrasSociales";
-            this.btnObrasSociales.Size = new System.Drawing.Size(120, 30);
-            this.btnObrasSociales.TabIndex = 3;
-            this.btnObrasSociales.Text = "Obras Sociales";
-            this.btnObrasSociales.UseVisualStyleBackColor = false;
-            this.btnObrasSociales.Click += new System.EventHandler(this.btnObrasSociales_Click);
-            this.btnObrasSociales.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            this.btnObrasSociales.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
             // btnClientes
             // 
-            this.btnClientes.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.ForeColor = System.Drawing.Color.White;
-            this.btnClientes.Location = new System.Drawing.Point(205, 79);
+            this.btnClientes.Location = new System.Drawing.Point(8, 218);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(120, 30);
-            this.btnClientes.TabIndex = 1;
+            this.btnClientes.Size = new System.Drawing.Size(120, 60);
+            this.btnClientes.TabIndex = 3;
             this.btnClientes.Text = "Clientes";
-            this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            this.btnClientes.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            this.btnClientes.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
-            // panel1
+            // btnVentas
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.BtnUsuarios);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnSistema);
-            this.panel1.Controls.Add(this.btnObrasSociales);
-            this.panel1.Controls.Add(this.btnSalir);
-            this.panel1.Controls.Add(this.btnClientes);
-            this.panel1.Controls.Add(this.btnProductos);
-            this.panel1.Location = new System.Drawing.Point(112, 56);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 319);
-            this.panel1.TabIndex = 5;
+            this.btnVentas.Location = new System.Drawing.Point(8, 288);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Size = new System.Drawing.Size(120, 60);
+            this.btnVentas.TabIndex = 4;
+            this.btnVentas.Text = "Ventas";
+            this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
-            // label1
+            // btnListadoVentas
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(95, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 26);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Menú Principal";
+            this.btnListadoVentas.Location = new System.Drawing.Point(8, 358);
+            this.btnListadoVentas.Name = "btnListadoVentas";
+            this.btnListadoVentas.Size = new System.Drawing.Size(120, 60);
+            this.btnListadoVentas.TabIndex = 5;
+            this.btnListadoVentas.Text = "Listado de ventas";
+            this.btnListadoVentas.UseVisualStyleBackColor = true;
+            this.btnListadoVentas.Click += new System.EventHandler(this.btnListadoVentas_Click);
             // 
-            // BtnUsuarios
+            // btnObrasSociales
             // 
-            this.BtnUsuarios.BackColor = System.Drawing.Color.SeaGreen;
-            this.BtnUsuarios.FlatAppearance.BorderSize = 0;
-            this.BtnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.BtnUsuarios.Location = new System.Drawing.Point(36, 222);
-            this.BtnUsuarios.Name = "BtnUsuarios";
-            this.BtnUsuarios.Size = new System.Drawing.Size(120, 30);
-            this.BtnUsuarios.TabIndex = 6;
-            this.BtnUsuarios.Text = "Usuarios";
-            this.BtnUsuarios.UseVisualStyleBackColor = false;
-            this.BtnUsuarios.Click += new System.EventHandler(this.BtnUsuarios_Click);
+            this.btnObrasSociales.Location = new System.Drawing.Point(8, 428);
+            this.btnObrasSociales.Name = "btnObrasSociales";
+            this.btnObrasSociales.Size = new System.Drawing.Size(120, 60);
+            this.btnObrasSociales.TabIndex = 6;
+            this.btnObrasSociales.Text = "Obras Soiales";
+            this.btnObrasSociales.UseVisualStyleBackColor = true;
+            this.btnObrasSociales.Click += new System.EventHandler(this.btnObrasSociales_Click);
+            // 
+            // pnlMenu
+            // 
+            this.pnlMenu.Controls.Add(this.btnSistema);
+            this.pnlMenu.Controls.Add(this.btnObrasSociales);
+            this.pnlMenu.Controls.Add(this.btnUsuarios);
+            this.pnlMenu.Controls.Add(this.btnListadoVentas);
+            this.pnlMenu.Controls.Add(this.btnProductos);
+            this.pnlMenu.Controls.Add(this.btnVentas);
+            this.pnlMenu.Controls.Add(this.btnClientes);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 66);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(136, 496);
+            this.pnlMenu.TabIndex = 7;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 412);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(884, 562);
+            this.Controls.Add(this.pnlContenedor);
+            this.Controls.Add(this.pnlMenu);
+            this.Controls.Add(this.pnlCabecera);
             this.Name = "FrmMain";
             this.Text = "Menu principal";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.FrmMain_Load);
+            this.pnlCabecera.ResumeLayout(false);
+            this.pnlCabecera.PerformLayout();
+            this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -180,13 +204,18 @@
         #endregion
 
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Panel pnlCabecera;
+        private System.Windows.Forms.Panel pnlContenedor;
+        public System.Windows.Forms.Label lblRolActual;
+        public System.Windows.Forms.Label lblUsuarioActual;
         private System.Windows.Forms.Button btnSistema;
+        private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnProductos;
-        private System.Windows.Forms.Button btnObrasSociales;
         private System.Windows.Forms.Button btnClientes;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnUsuarios;
+        private System.Windows.Forms.Button btnVentas;
+        private System.Windows.Forms.Button btnListadoVentas;
+        private System.Windows.Forms.Button btnObrasSociales;
+        private System.Windows.Forms.Panel pnlMenu;
 
     }
 }

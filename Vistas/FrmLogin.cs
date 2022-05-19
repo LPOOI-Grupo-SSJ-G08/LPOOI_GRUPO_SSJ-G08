@@ -33,15 +33,18 @@ namespace Vistas
 
             if (szUsuario != String.Empty && szPassword != String.Empty)
             {
-                int iRol = TrabajarUsuario.search_usuario(szUsuario, szPassword);
+                int iRolCodigo = TrabajarUsuario.validate_login(szUsuario, szPassword);
 
-                if (iRol != 0)
+                if (iRolCodigo != 0)
                 {
                     MessageBox.Show("Bienvenido " + szUsuario + "!");
-                    txtPassword.Text = String.Empty;
+                    
+                    FrmMain frmMain = new FrmMain();
+                    frmMain.lblUsuarioActual.Text = szUsuario;
+                    frmMain.lblRolActual.Text = TrabajarUsuario.get_rol(iRolCodigo);
+                    
                     this.Hide();
-                    Form FrmMain = new FrmMain();
-                    FrmMain.Show();
+                    frmMain.Show();
                     this.Close();
                 }
                 else
