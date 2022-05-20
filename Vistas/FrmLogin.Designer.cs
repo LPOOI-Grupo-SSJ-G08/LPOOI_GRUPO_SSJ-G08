@@ -43,7 +43,7 @@
             // btnIngresar
             // 
             this.btnIngresar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnIngresar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
             this.btnIngresar.FlatAppearance.BorderSize = 0;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -64,7 +64,7 @@
             this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(75, 47);
+            this.txtUsuario.Location = new System.Drawing.Point(93, 54);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(150, 23);
             this.txtUsuario.TabIndex = 0;
@@ -75,7 +75,7 @@
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(75, 108);
+            this.txtPassword.Location = new System.Drawing.Point(93, 115);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(150, 23);
             this.txtPassword.TabIndex = 1;
@@ -86,7 +86,7 @@
             this.imgPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.imgPassword.BackColor = System.Drawing.Color.Transparent;
             this.imgPassword.Image = global::Vistas.Properties.Resources.password;
-            this.imgPassword.Location = new System.Drawing.Point(39, 101);
+            this.imgPassword.Location = new System.Drawing.Point(57, 108);
             this.imgPassword.Name = "imgPassword";
             this.imgPassword.Size = new System.Drawing.Size(30, 30);
             this.imgPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -98,7 +98,7 @@
             this.imgUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.imgUsuario.BackColor = System.Drawing.Color.Transparent;
             this.imgUsuario.Image = global::Vistas.Properties.Resources.user;
-            this.imgUsuario.Location = new System.Drawing.Point(39, 40);
+            this.imgUsuario.Location = new System.Drawing.Point(57, 47);
             this.imgUsuario.Name = "imgUsuario";
             this.imgUsuario.Size = new System.Drawing.Size(30, 30);
             this.imgUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -108,7 +108,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.txtUsuario);
             this.panel1.Controls.Add(this.imgPassword);
             this.panel1.Controls.Add(this.btnIngresar);
@@ -123,6 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
             this.ClientSize = new System.Drawing.Size(484, 362);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

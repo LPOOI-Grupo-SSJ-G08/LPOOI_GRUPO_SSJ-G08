@@ -19,7 +19,7 @@ namespace Vistas
 
         private void FrmListadoVentas_Load(object sender, EventArgs e)
         {
-            grdVentas.DataSource = TrabajarVenta.getAllVentas();
+            dgvVentas.DataSource = TrabajarVenta.getAllVentas();
         }
     }
 }

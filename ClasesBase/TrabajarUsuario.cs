@@ -166,6 +166,28 @@ namespace ClasesBase
             return null;
         }
 
+        public static Usuario buscar_por_nombre_usuario(string nombreUsuario)
+        {
+
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM Usuario WHERE Usu_NombreUsuario =" + nombreUsuario + ";";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                Usuario usuario = new Usuario(int.Parse(row["usu_ID"].ToString()), row["usu_NombreUsuario"].ToString(), row["usu_Contrasenia"].ToString(), row["usu_ApellidoNombre"].ToString(), int.Parse(row["rol_Codigo"].ToString()));
+                return usuario;
+            }
+
+            return null;
+        }
+
         public static bool comprobar_NombreUsuarioExistente(string usu_nombreUsuario)
         {
 

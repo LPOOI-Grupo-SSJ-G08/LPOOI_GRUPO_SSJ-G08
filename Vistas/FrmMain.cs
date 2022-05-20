@@ -33,7 +33,7 @@ namespace Vistas
             }
         }
 
-        private void AbrirFormHijo(Form frmHijo)
+        internal void AbrirFormHijo(Form frmHijo)
         {
             if (activeForm != null)
             {
@@ -51,13 +51,13 @@ namespace Vistas
         private void btn_MouseHover(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            btn.BackColor = Color.DarkSeaGreen;
+            btn.BackColor = Color.Crimson;
         }
 
         private void btn_MouseLeave(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            btn.BackColor = Color.SeaGreen;
+            btn.BackColor = ColorTranslator.FromHtml("#1B998B");
         }
 
         private void FrmMain_Load(object sender, EventArgs e)

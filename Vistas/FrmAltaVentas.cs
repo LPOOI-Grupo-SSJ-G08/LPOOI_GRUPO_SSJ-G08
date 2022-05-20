@@ -201,5 +201,17 @@ namespace Vistas {
         }
 
         #endregion
+
+        private void btnAgregarDetalle_MouseHover(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = ColorTranslator.FromHtml("#575B58");
+        }
+
+        private void btnAgregarDetalle_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = ColorTranslator.FromHtml("#1B998B");
+        }
     }
 }

@@ -108,9 +108,9 @@
             // btnAgregarProducto
             // 
             this.btnAgregarProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregarProducto.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnAgregarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
             this.btnAgregarProducto.FlatAppearance.BorderSize = 0;
-            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarProducto.ForeColor = System.Drawing.Color.White;
             this.btnAgregarProducto.Location = new System.Drawing.Point(140, 350);
@@ -126,9 +126,9 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancelar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
             this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Location = new System.Drawing.Point(341, 350);

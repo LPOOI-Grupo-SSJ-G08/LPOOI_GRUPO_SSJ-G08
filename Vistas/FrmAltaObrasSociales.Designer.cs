@@ -128,11 +128,11 @@
             // btnAgregarObraSocial
             // 
             this.btnAgregarObraSocial.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregarObraSocial.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnAgregarObraSocial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
             this.btnAgregarObraSocial.FlatAppearance.BorderSize = 0;
-            this.btnAgregarObraSocial.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnAgregarObraSocial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarObraSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarObraSocial.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAgregarObraSocial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnAgregarObraSocial.Location = new System.Drawing.Point(139, 350);
             this.btnAgregarObraSocial.Name = "btnAgregarObraSocial";
             this.btnAgregarObraSocial.Size = new System.Drawing.Size(106, 30);
@@ -146,11 +146,11 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancelar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
             this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnCancelar.Location = new System.Drawing.Point(342, 350);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 30);
@@ -202,7 +202,7 @@
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(182, 62);
+            this.lblTitulo.Location = new System.Drawing.Point(200, 62);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(185, 24);
             this.lblTitulo.TabIndex = 10;
@@ -224,6 +224,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(584, 442);
             this.Controls.Add(this.lblValidTelefono);
             this.Controls.Add(this.lblValidDireccion);
