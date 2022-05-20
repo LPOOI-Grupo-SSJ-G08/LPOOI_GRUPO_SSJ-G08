@@ -47,7 +47,6 @@ C:\Repositorios\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\GenerateResource.write.
 C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmGestionClientes.resources
 C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmAltaVentas.resources
 C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmListadoVentas.resources
-C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmModificarUsuario.resources
 C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmGestionUsuarios.resources
 C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\bin\Debug\Vistas.exe
 C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\bin\Debug\Vistas.pdb
@@ -64,3 +63,4 @@ C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vista
 C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmGestionUsuarios.resources
 C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
 C:\Users\Yazmin\Documents\Facultad 2022\LPOO\Proyectos\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOI_GRUPO_SSJ-G08\Vistas\obj\x86\Debug\Vistas.FrmInicio.resources

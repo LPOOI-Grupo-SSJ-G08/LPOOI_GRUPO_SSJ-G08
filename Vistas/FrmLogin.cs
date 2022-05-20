@@ -28,7 +28,7 @@ namespace Vistas
 
                 if (iRolCodigo != 0)
                 {
-                    MessageBox.Show("Bienvenido " + szUsuario + "!");
+                    //MessageBox.Show("Bienvenido " + szUsuario + "!");
                     
                     FrmMain frmMain = new FrmMain();
                     frmMain.lblUsuarioActual.Text = szUsuario;

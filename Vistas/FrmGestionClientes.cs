@@ -34,6 +34,29 @@ namespace Vistas
             btnGuardar.Enabled = b;
             btnEliminar.Enabled = b;
             txtDNI.Enabled = !b;
+            cambiarColor(btnAgregar);
+            cambiarColor(btnGuardar);
+            cambiarColor(btnEliminar);
+        }
+
+        private void cambiarColor(Button btn)
+        {
+
+            if (btn.Enabled==false)
+            {
+                btn.BackColor = ColorTranslator.FromHtml("#575B58");
+            }
+            else
+            {
+                if (!(btn.Text == "Eliminar"))
+                {
+                    btn.BackColor = ColorTranslator.FromHtml("#1B998B");
+                }
+                else
+                {
+                    btn.BackColor = Color.Crimson;
+                }
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

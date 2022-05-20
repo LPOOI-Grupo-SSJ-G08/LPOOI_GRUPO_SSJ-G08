@@ -284,7 +284,29 @@ namespace Vistas
             btnAgregar.Enabled = !b;
             btnModificarUsuario.Enabled = b;
             btnEliminarUsuario.Enabled = b;
+            cambiarColor(btnAgregar);
+            cambiarColor(btnModificarUsuario);
+            cambiarColor(btnEliminarUsuario);
         }
 
+        private void cambiarColor(Button btn)
+        {
+
+            if (btn.Enabled == false)
+            {
+                btn.BackColor = ColorTranslator.FromHtml("#575B58");
+            }
+            else
+            {
+                if (!(btn.Text == "Eliminar"))
+                {
+                    btn.BackColor = ColorTranslator.FromHtml("#1B998B");
+                }
+                else
+                {
+                    btn.BackColor = Color.Crimson;
+                }
+            }
+        }
     }
 }
