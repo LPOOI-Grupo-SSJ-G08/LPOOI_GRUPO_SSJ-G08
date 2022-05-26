@@ -34,7 +34,7 @@
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -43,16 +43,28 @@
             this.lblValidCategoria = new System.Windows.Forms.Label();
             this.lblValidCodigo = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblConsultas = new System.Windows.Forms.Label();
+            this.lblGestionProductos = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCategoria
             // 
             this.lblCategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(158, 175);
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Location = new System.Drawing.Point(39, 117);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(65, 17);
+            this.lblCategoria.Size = new System.Drawing.Size(56, 15);
             this.lblCategoria.TabIndex = 1;
             this.lblCategoria.Text = "Catgoría:";
             // 
@@ -60,10 +72,10 @@
             // 
             this.lblDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(137, 235);
+            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.Location = new System.Drawing.Point(20, 169);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(86, 17);
+            this.lblDescripcion.Size = new System.Drawing.Size(75, 15);
             this.lblDescripcion.TabIndex = 2;
             this.lblDescripcion.Text = "Descripción:";
             // 
@@ -71,57 +83,57 @@
             // 
             this.lblPrecio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(171, 295);
+            this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Location = new System.Drawing.Point(50, 221);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(52, 17);
+            this.lblPrecio.Size = new System.Drawing.Size(45, 15);
             this.lblPrecio.TabIndex = 3;
             this.lblPrecio.Text = "Precio:";
             // 
             // txtCategoria
             // 
             this.txtCategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoria.Location = new System.Drawing.Point(267, 173);
+            this.txtCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategoria.Location = new System.Drawing.Point(100, 114);
             this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(180, 23);
+            this.txtCategoria.Size = new System.Drawing.Size(180, 21);
             this.txtCategoria.TabIndex = 5;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(267, 233);
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(100, 166);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(180, 23);
+            this.txtDescripcion.Size = new System.Drawing.Size(180, 21);
             this.txtDescripcion.TabIndex = 6;
             // 
             // txtPrecio
             // 
             this.txtPrecio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(267, 293);
+            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Location = new System.Drawing.Point(100, 218);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(180, 23);
+            this.txtPrecio.Size = new System.Drawing.Size(180, 21);
             this.txtPrecio.TabIndex = 7;
             // 
-            // btnAgregarProducto
+            // btnAgregar
             // 
-            this.btnAgregarProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
-            this.btnAgregarProducto.FlatAppearance.BorderSize = 0;
-            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarProducto.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(140, 350);
-            this.btnAgregarProducto.Name = "btnAgregarProducto";
-            this.btnAgregarProducto.Size = new System.Drawing.Size(106, 30);
-            this.btnAgregarProducto.TabIndex = 8;
-            this.btnAgregarProducto.Text = "Agregar";
-            this.btnAgregarProducto.UseVisualStyleBackColor = false;
-            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
-            this.btnAgregarProducto.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            this.btnAgregarProducto.MouseHover += new System.EventHandler(this.btn_MouseHover);
+            this.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(37, 298);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(80, 30);
+            this.btnAgregar.TabIndex = 8;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregarProducto_Click);
+            this.btnAgregar.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            this.btnAgregar.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
             // btnCancelar
             // 
@@ -129,11 +141,11 @@
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(341, 350);
+            this.btnCancelar.Location = new System.Drawing.Point(184, 298);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(106, 30);
+            this.btnCancelar.Size = new System.Drawing.Size(80, 30);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -144,20 +156,20 @@
             // txtCodigo
             // 
             this.txtCodigo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(267, 113);
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(100, 62);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(180, 23);
+            this.txtCodigo.Size = new System.Drawing.Size(180, 21);
             this.txtCodigo.TabIndex = 4;
             // 
             // lblCodigo
             // 
             this.lblCodigo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(167, 115);
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(46, 68);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(56, 17);
+            this.lblCodigo.Size = new System.Drawing.Size(49, 15);
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código:";
             // 
@@ -166,7 +178,7 @@
             this.lblValidPrecio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblValidPrecio.AutoSize = true;
             this.lblValidPrecio.ForeColor = System.Drawing.Color.Red;
-            this.lblValidPrecio.Location = new System.Drawing.Point(267, 319);
+            this.lblValidPrecio.Location = new System.Drawing.Point(97, 242);
             this.lblValidPrecio.Name = "lblValidPrecio";
             this.lblValidPrecio.Size = new System.Drawing.Size(142, 13);
             this.lblValidPrecio.TabIndex = 14;
@@ -178,7 +190,7 @@
             this.lblValidDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblValidDescripcion.AutoSize = true;
             this.lblValidDescripcion.ForeColor = System.Drawing.Color.Red;
-            this.lblValidDescripcion.Location = new System.Drawing.Point(267, 259);
+            this.lblValidDescripcion.Location = new System.Drawing.Point(97, 187);
             this.lblValidDescripcion.Name = "lblValidDescripcion";
             this.lblValidDescripcion.Size = new System.Drawing.Size(142, 13);
             this.lblValidDescripcion.TabIndex = 13;
@@ -190,7 +202,7 @@
             this.lblValidCategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblValidCategoria.AutoSize = true;
             this.lblValidCategoria.ForeColor = System.Drawing.Color.Red;
-            this.lblValidCategoria.Location = new System.Drawing.Point(267, 199);
+            this.lblValidCategoria.Location = new System.Drawing.Point(97, 138);
             this.lblValidCategoria.Name = "lblValidCategoria";
             this.lblValidCategoria.Size = new System.Drawing.Size(134, 13);
             this.lblValidCategoria.TabIndex = 12;
@@ -202,7 +214,7 @@
             this.lblValidCodigo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblValidCodigo.AutoSize = true;
             this.lblValidCodigo.ForeColor = System.Drawing.Color.Red;
-            this.lblValidCodigo.Location = new System.Drawing.Point(267, 139);
+            this.lblValidCodigo.Location = new System.Drawing.Point(97, 86);
             this.lblValidCodigo.Name = "lblValidCodigo";
             this.lblValidCodigo.Size = new System.Drawing.Size(162, 13);
             this.lblValidCodigo.TabIndex = 11;
@@ -213,37 +225,140 @@
             // 
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(212, 62);
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(89, 10);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(161, 24);
+            this.lblTitulo.Size = new System.Drawing.Size(122, 20);
             this.lblTitulo.TabIndex = 10;
             this.lblTitulo.Text = "Nuevo Producto";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(37, 348);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(80, 30);
+            this.btnGuardar.TabIndex = 15;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEliminar.BackColor = System.Drawing.Color.Crimson;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(184, 348);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(80, 30);
+            this.btnEliminar.TabIndex = 16;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.lblTitulo);
+            this.panel1.Controls.Add(this.btnGuardar);
+            this.panel1.Controls.Add(this.lblDescripcion);
+            this.panel1.Controls.Add(this.btnEliminar);
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Controls.Add(this.lblValidPrecio);
+            this.panel1.Controls.Add(this.txtCodigo);
+            this.panel1.Controls.Add(this.lblValidDescripcion);
+            this.panel1.Controls.Add(this.lblPrecio);
+            this.panel1.Controls.Add(this.lblCategoria);
+            this.panel1.Controls.Add(this.lblValidCategoria);
+            this.panel1.Controls.Add(this.btnAgregar);
+            this.panel1.Controls.Add(this.txtDescripcion);
+            this.panel1.Controls.Add(this.lblCodigo);
+            this.panel1.Controls.Add(this.lblValidCodigo);
+            this.panel1.Controls.Add(this.txtCategoria);
+            this.panel1.Controls.Add(this.txtPrecio);
+            this.panel1.Location = new System.Drawing.Point(384, 62);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(300, 400);
+            this.panel1.TabIndex = 17;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
+            this.panel2.Controls.Add(this.lblGestionProductos);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(684, 56);
+            this.panel2.TabIndex = 18;
+            // 
+            // dgvProductos
+            // 
+            this.dgvProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Location = new System.Drawing.Point(0, 228);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.Size = new System.Drawing.Size(378, 234);
+            this.dgvProductos.TabIndex = 19;
+            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.Controls.Add(this.lblConsultas);
+            this.panel3.Location = new System.Drawing.Point(0, 62);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(378, 160);
+            this.panel3.TabIndex = 20;
+            // 
+            // lblConsultas
+            // 
+            this.lblConsultas.AutoSize = true;
+            this.lblConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConsultas.Location = new System.Drawing.Point(149, 10);
+            this.lblConsultas.Name = "lblConsultas";
+            this.lblConsultas.Size = new System.Drawing.Size(80, 20);
+            this.lblConsultas.TabIndex = 0;
+            this.lblConsultas.Text = "Consultas";
+            // 
+            // lblGestionProductos
+            // 
+            this.lblGestionProductos.AutoSize = true;
+            this.lblGestionProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.lblGestionProductos.Location = new System.Drawing.Point(247, 16);
+            this.lblGestionProductos.Name = "lblGestionProductos";
+            this.lblGestionProductos.Size = new System.Drawing.Size(191, 24);
+            this.lblGestionProductos.TabIndex = 1;
+            this.lblGestionProductos.Text = "Gestión de Productos";
             // 
             // FrmAltaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 442);
-            this.Controls.Add(this.lblValidPrecio);
-            this.Controls.Add(this.lblValidDescripcion);
-            this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.lblValidCategoria);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.lblValidCodigo);
-            this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.txtCategoria);
-            this.Controls.Add(this.lblCodigo);
-            this.Controls.Add(this.btnAgregarProducto);
-            this.Controls.Add(this.lblCategoria);
-            this.Controls.Add(this.lblPrecio);
-            this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.lblDescripcion);
+            this.ClientSize = new System.Drawing.Size(684, 462);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.dgvProductos);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "FrmAltaProductos";
             this.Text = "Nuevo Producto";
+            this.Load += new System.EventHandler(this.FrmAltaProductos_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -255,7 +370,7 @@
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.Button btnAgregarProducto;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCodigo;
@@ -264,5 +379,13 @@
         private System.Windows.Forms.Label lblValidDescripcion;
         private System.Windows.Forms.Label lblValidCategoria;
         private System.Windows.Forms.Label lblValidCodigo;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dgvProductos;
+        private System.Windows.Forms.Label lblGestionProductos;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lblConsultas;
     }
 }
