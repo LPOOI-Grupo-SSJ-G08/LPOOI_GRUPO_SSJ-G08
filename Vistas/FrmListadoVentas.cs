@@ -37,5 +37,11 @@ namespace Vistas
         {
             dgvVentas.DataSource = TrabajarVenta.getVentasByCliente(cmbClientes.SelectedValue.ToString());
         }
+
+        private void btnListarVentasPorFechas_Click(object sender, EventArgs e)
+        {
+            dgvVentas.DataSource = TrabajarVenta.getVentasByFechas(dtpFechaInicio.Value.Date, dtpFechaFin.Value.Date.AddHours(23).AddMinutes(59).AddSeconds(59));
+        }
+
     }
 }
