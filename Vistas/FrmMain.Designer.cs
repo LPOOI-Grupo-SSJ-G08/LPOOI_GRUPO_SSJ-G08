@@ -91,7 +91,7 @@
             this.lblUsuarioActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.lblUsuarioActual.Location = new System.Drawing.Point(679, 10);
             this.lblUsuarioActual.Name = "lblUsuarioActual";
-            this.lblUsuarioActual.Size = new System.Drawing.Size(62, 16);
+            this.lblUsuarioActual.Size = new System.Drawing.Size(63, 16);
             this.lblUsuarioActual.TabIndex = 5;
             this.lblUsuarioActual.Text = "Usuario";
             // 
@@ -196,7 +196,7 @@
             this.btnObrasSociales.Name = "btnObrasSociales";
             this.btnObrasSociales.Size = new System.Drawing.Size(120, 60);
             this.btnObrasSociales.TabIndex = 6;
-            this.btnObrasSociales.Text = "Obras Soiales";
+            this.btnObrasSociales.Text = "Obras Sociales";
             this.btnObrasSociales.UseVisualStyleBackColor = false;
             this.btnObrasSociales.Click += new System.EventHandler(this.btnObrasSociales_Click);
             // 

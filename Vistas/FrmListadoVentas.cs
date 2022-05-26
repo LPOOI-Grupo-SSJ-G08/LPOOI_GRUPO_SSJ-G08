@@ -20,6 +20,22 @@ namespace Vistas
         private void FrmListadoVentas_Load(object sender, EventArgs e)
         {
             dgvVentas.DataSource = TrabajarVenta.getAllVentas();
+            CargarComboClientes();
+        }
+
+        private void CargarComboClientes()
+        {
+            DataTable dt = TrabajarCliente.list_clientes();
+            dt.Columns.Add("NombreCompleto", typeof(string), "Apellido + ', '+ Nombre");
+
+            cmbClientes.DisplayMember = "NombreCompleto";
+            cmbClientes.ValueMember = "DNI";
+            cmbClientes.DataSource = dt;
+        }
+
+        private void btnListarVentasPorCliente_Click(object sender, EventArgs e)
+        {
+            dgvVentas.DataSource = TrabajarVenta.getVentasByCliente(cmbClientes.SelectedValue.ToString());
         }
     }
 }
