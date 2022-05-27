@@ -17,6 +17,46 @@ namespace Vistas
             InitializeComponent();
         }
 
+        private void FrmAltaProductos_Load(object sender, EventArgs e)
+        {
+            CargarProductos();
+            HabilitarAcciones(false);
+        }
+
+        private void CargarProductos()
+        {
+            dgvProductos.DataSource = TrabajarProducto.list_productos();
+        }
+
+        private void HabilitarAcciones(bool b)
+        {
+            btnAgregar.Enabled = !b;
+            btnGuardar.Enabled = b;
+            btnEliminar.Enabled = b;
+            CambiarColor(btnAgregar);
+            CambiarColor(btnGuardar);
+            CambiarColor(btnEliminar);
+        }
+
+        private void CambiarColor(Button btn)
+        {
+            if (!btn.Enabled)
+            {
+                btn.BackColor = ColorTranslator.FromHtml("#575B58");
+            }
+            else
+            {
+                if (!(btn.Name == "btnEliminar"))
+                {
+                    btn.BackColor = ColorTranslator.FromHtml("#1B998B");
+                }
+                else
+                {
+                    btn.BackColor = Color.Crimson;
+                }
+            }
+        }
+
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             HideErrorLabels();
@@ -25,39 +65,95 @@ namespace Vistas
 
             if (!bErrorFound)
             {
-                string szCodigo = txtCodigo.Text;
-                string szCategoria = txtCategoria.Text;
-                string szDescripcion = txtDescripcion.Text;
-                string szPrecio = txtPrecio.Text;
-
-                DialogResult dialogoResult = MessageBox.Show("¿Está seguro de que desea guardar este registro?",
+                DialogResult dialogoResult = MessageBox.Show("¿Está seguro de que desea guardar este elemento?",
                         "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogoResult == DialogResult.Yes)
                 {
-                    Producto oProducto = new Producto(szCodigo, szCategoria, szDescripcion, Convert.ToDecimal(szPrecio));
-                    MessageBox.Show("Datos del Producto: " +
-                                    "\n\n Código : " + oProducto.Prod_Codigo +
-                                    "\n Categoría : " + oProducto.Prod_Categoria +
-                                    "\n Descripción : " + oProducto.Prod_Descripcion +
-                                    "\n Precio : " + oProducto.Prod_Precio, "Producto agregado");
+                    Producto oProducto = new Producto();
+                    oProducto.Prod_Categoria = txtCategoria.Text;
+                    oProducto.Prod_Descripcion = txtDescripcion.Text;
+                    oProducto.Prod_Precio = Convert.ToDecimal(txtPrecio.Text);
+
+                    TrabajarProducto.insert_producto(oProducto);
+
                     ClearTextBoxs();
+                    CargarProductos();
                 }
             }
 
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            ClearTextBoxs();
+            HideErrorLabels();
+            HabilitarAcciones(false);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            HideErrorLabels();
+            bool bErrorFound = false;
+            ValidateTextBoxs(ref bErrorFound);
+
+            if (!bErrorFound)
+            {
+                DialogResult dialogoResult = MessageBox.Show("¿Está seguro de que desea guardar los cambios?",
+                        "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogoResult == DialogResult.Yes)
+                {
+                    Producto oProducto = new Producto();
+                    oProducto.Prod_Codigo = txtCodigo.Text;
+                    oProducto.Prod_Categoria = txtCategoria.Text;
+                    oProducto.Prod_Descripcion = txtDescripcion.Text;
+                    oProducto.Prod_Precio = Convert.ToDecimal(txtPrecio.Text);
+
+                    TrabajarProducto.update_producto(oProducto);
+
+                    ClearTextBoxs();
+                    HabilitarAcciones(false);
+                    CargarProductos();
+                }
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogoResult = MessageBox.Show("¿Está seguro de que desea eliminar este elemento?",
+                "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogoResult == DialogResult.Yes)
+            {
+                TrabajarProducto.delete_producto(Convert.ToInt32(dgvProductos.CurrentRow.Cells["Codigo"].Value));
+                ClearTextBoxs();
+                HabilitarAcciones(false);
+                CargarProductos();
+            }
+        }
+
+        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvProductos.CurrentRow != null)
+            {
+                txtCodigo.Text = dgvProductos.CurrentRow.Cells["Codigo"].Value.ToString();
+                txtCategoria.Text = dgvProductos.CurrentRow.Cells["Categoria"].Value.ToString();
+                txtDescripcion.Text = dgvProductos.CurrentRow.Cells["Descripcion"].Value.ToString();
+                txtPrecio.Text = dgvProductos.CurrentRow.Cells["Precio"].Value.ToString();
+
+                HabilitarAcciones(true);
+            }
+        }
+
         public void HideErrorLabels()
         {
             lblValidCategoria.Hide();
-            lblValidCodigo.Hide();
             lblValidDescripcion.Hide();
             lblValidPrecio.Hide();
         }
 
         private void ClearTextBoxs()
         {
-            txtCategoria.Clear();
             txtCodigo.Clear();
+            txtCategoria.Clear();
             txtDescripcion.Clear();
             txtPrecio.Clear();
         }
@@ -74,38 +170,12 @@ namespace Vistas
                 lblValidDescripcion.Show();
                 bErrorFound = true;
             }
-            if (!txtCodigo.Text.All(char.IsDigit) || string.IsNullOrEmpty(txtCodigo.Text))
-            {
-                lblValidCodigo.Show();
-                bErrorFound = true;
-            }
             if (!txtPrecio.Text.All(char.IsDigit) || string.IsNullOrEmpty(txtPrecio.Text))            
             {
                 lblValidPrecio.Show();
                 bErrorFound = true;
             }
         }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btn_MouseHover(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackColor = ColorTranslator.FromHtml("#575B58");
-        }
-
-        private void btn_MouseLeave(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackColor = ColorTranslator.FromHtml("#1B998B");
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
     }
 }
