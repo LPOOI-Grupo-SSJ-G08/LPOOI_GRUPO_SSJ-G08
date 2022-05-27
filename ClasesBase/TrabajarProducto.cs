@@ -81,5 +81,28 @@ namespace ClasesBase
             cmd.ExecuteNonQuery();
             cn.Close();
         }
+
+        public static DataSet list_productos_vendidos_rango_fechas(DateTime fechaInicial, DateTime fechaFinal) {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand("selectProductosVendidosRangoFechas", cn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter param = new SqlParameter("@FechaInicial", SqlDbType.Date);
+            param.Direction = ParameterDirection.Input;
+            param.Value = fechaInicial;
+            da.SelectCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@FechaFinal", SqlDbType.Date);
+            param.Direction = ParameterDirection.Input;
+            param.Value = fechaFinal;
+            da.SelectCommand.Parameters.Add(param);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds, "view_productos_vendidos_rango_fechas");
+
+            return ds;
+        }
     }
 }
