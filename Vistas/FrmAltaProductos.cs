@@ -103,6 +103,7 @@ namespace Vistas
                 if (dialogoResult == DialogResult.Yes)
                 {
                     Producto oProducto = new Producto();
+                    oProducto.Prod_Codigo = txtCodigo.Text;
                     oProducto.Prod_Categoria = txtCategoria.Text;
                     oProducto.Prod_Descripcion = txtDescripcion.Text;
                     oProducto.Prod_Precio = Convert.ToDecimal(txtPrecio.Text);
@@ -133,6 +134,7 @@ namespace Vistas
         {
             if (dgvProductos.CurrentRow != null)
             {
+                txtCodigo.Text = dgvProductos.CurrentRow.Cells["Codigo"].Value.ToString();
                 txtCategoria.Text = dgvProductos.CurrentRow.Cells["Categoria"].Value.ToString();
                 txtDescripcion.Text = dgvProductos.CurrentRow.Cells["Descripcion"].Value.ToString();
                 txtPrecio.Text = dgvProductos.CurrentRow.Cells["Precio"].Value.ToString();
@@ -150,6 +152,7 @@ namespace Vistas
 
         private void ClearTextBoxs()
         {
+            txtCodigo.Clear();
             txtCategoria.Clear();
             txtDescripcion.Clear();
             txtPrecio.Clear();

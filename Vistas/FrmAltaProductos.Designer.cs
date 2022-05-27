@@ -48,6 +48,7 @@
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblConsultas = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -228,6 +229,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.txtCodigo);
             this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.lblDescripcion);
@@ -297,6 +299,15 @@
             this.lblConsultas.TabIndex = 0;
             this.lblConsultas.Text = "Consultas";
             // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(184, 50);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
+            this.txtCodigo.Size = new System.Drawing.Size(96, 20);
+            this.txtCodigo.TabIndex = 17;
+            this.txtCodigo.Visible = false;
+            // 
             // FrmAltaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,5 +354,6 @@
         private System.Windows.Forms.Label lblGestionProductos;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblConsultas;
+        private System.Windows.Forms.TextBox txtCodigo;
     }
 }
