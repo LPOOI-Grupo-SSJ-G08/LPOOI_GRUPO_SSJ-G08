@@ -65,7 +65,7 @@ namespace ClasesBase
             cn.Close();
         }
 
-        public static void delete_producto(string szCodigo)
+        public static void delete_producto(int iCodigo)
         {
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
@@ -75,7 +75,7 @@ namespace ClasesBase
 
             cmd.Connection = cn;
 
-            cmd.Parameters.AddWithValue("@codigo", szCodigo);
+            cmd.Parameters.AddWithValue("@codigo", iCodigo);
 
             cn.Open();
             cmd.ExecuteNonQuery();

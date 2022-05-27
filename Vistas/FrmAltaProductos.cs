@@ -33,7 +33,6 @@ namespace Vistas
             btnAgregar.Enabled = !b;
             btnGuardar.Enabled = b;
             btnEliminar.Enabled = b;
-            txtCodigo.Enabled = !b;
             CambiarColor(btnAgregar);
             CambiarColor(btnGuardar);
             CambiarColor(btnEliminar);
@@ -71,7 +70,6 @@ namespace Vistas
                 if (dialogoResult == DialogResult.Yes)
                 {
                     Producto oProducto = new Producto();
-                    oProducto.Prod_Codigo = txtCodigo.Text;
                     oProducto.Prod_Categoria = txtCategoria.Text;
                     oProducto.Prod_Descripcion = txtDescripcion.Text;
                     oProducto.Prod_Precio = Convert.ToDecimal(txtPrecio.Text);
@@ -79,6 +77,7 @@ namespace Vistas
                     TrabajarProducto.insert_producto(oProducto);
 
                     ClearTextBoxs();
+                    CargarProductos();
                 }
             }
 
@@ -104,7 +103,6 @@ namespace Vistas
                 if (dialogoResult == DialogResult.Yes)
                 {
                     Producto oProducto = new Producto();
-                    oProducto.Prod_Codigo = txtCodigo.Text;
                     oProducto.Prod_Categoria = txtCategoria.Text;
                     oProducto.Prod_Descripcion = txtDescripcion.Text;
                     oProducto.Prod_Precio = Convert.ToDecimal(txtPrecio.Text);
@@ -124,7 +122,7 @@ namespace Vistas
                 "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogoResult == DialogResult.Yes)
             {
-                TrabajarProducto.delete_producto(txtCodigo.Text);
+                TrabajarProducto.delete_producto(Convert.ToInt32(dgvProductos.CurrentRow.Cells["Codigo"].Value));
                 ClearTextBoxs();
                 HabilitarAcciones(false);
                 CargarProductos();
@@ -135,8 +133,6 @@ namespace Vistas
         {
             if (dgvProductos.CurrentRow != null)
             {
-                txtCodigo.Text = dgvProductos.CurrentRow.Cells["Codigo"].Value.ToString();
-                txtCodigo.Enabled = false;
                 txtCategoria.Text = dgvProductos.CurrentRow.Cells["Categoria"].Value.ToString();
                 txtDescripcion.Text = dgvProductos.CurrentRow.Cells["Descripcion"].Value.ToString();
                 txtPrecio.Text = dgvProductos.CurrentRow.Cells["Precio"].Value.ToString();
@@ -148,7 +144,6 @@ namespace Vistas
         public void HideErrorLabels()
         {
             lblValidCategoria.Hide();
-            lblValidCodigo.Hide();
             lblValidDescripcion.Hide();
             lblValidPrecio.Hide();
         }
@@ -156,7 +151,6 @@ namespace Vistas
         private void ClearTextBoxs()
         {
             txtCategoria.Clear();
-            txtCodigo.Clear();
             txtDescripcion.Clear();
             txtPrecio.Clear();
         }
@@ -171,11 +165,6 @@ namespace Vistas
             if (string.IsNullOrEmpty(txtDescripcion.Text))
             {
                 lblValidDescripcion.Show();
-                bErrorFound = true;
-            }
-            if (!txtCodigo.Text.All(char.IsDigit) || string.IsNullOrEmpty(txtCodigo.Text))
-            {
-                lblValidCodigo.Show();
                 bErrorFound = true;
             }
             if (!txtPrecio.Text.All(char.IsDigit) || string.IsNullOrEmpty(txtPrecio.Text))            
