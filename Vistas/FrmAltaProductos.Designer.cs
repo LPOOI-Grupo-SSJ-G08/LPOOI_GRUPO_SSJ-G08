@@ -43,12 +43,13 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblGestionProductos = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.lblConsultas = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -249,6 +250,15 @@
             this.panel1.Size = new System.Drawing.Size(300, 400);
             this.panel1.TabIndex = 17;
             // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(184, 50);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
+            this.txtCodigo.Size = new System.Drawing.Size(96, 20);
+            this.txtCodigo.TabIndex = 17;
+            this.txtCodigo.Visible = false;
+            // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -283,11 +293,28 @@
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.Controls.Add(this.btnConsultar);
             this.panel3.Controls.Add(this.lblConsultas);
             this.panel3.Location = new System.Drawing.Point(0, 62);
             this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(5);
             this.panel3.Size = new System.Drawing.Size(378, 160);
             this.panel3.TabIndex = 20;
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
+            this.btnConsultar.FlatAppearance.BorderSize = 0;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnConsultar.Location = new System.Drawing.Point(238, 125);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(5);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(130, 25);
+            this.btnConsultar.TabIndex = 1;
+            this.btnConsultar.Text = "Consultas avanzadas";
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // lblConsultas
             // 
@@ -298,15 +325,6 @@
             this.lblConsultas.Size = new System.Drawing.Size(80, 20);
             this.lblConsultas.TabIndex = 0;
             this.lblConsultas.Text = "Consultas";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(184, 50);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(96, 20);
-            this.txtCodigo.TabIndex = 17;
-            this.txtCodigo.Visible = false;
             // 
             // FrmAltaProductos
             // 
@@ -355,5 +373,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblConsultas;
         private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Button btnConsultar;
     }
 }

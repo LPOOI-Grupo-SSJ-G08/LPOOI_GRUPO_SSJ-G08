@@ -81,5 +81,58 @@ namespace ClasesBase
             cmd.ExecuteNonQuery();
             cn.Close();
         }
+
+        public static DataSet list_productos_vendidos_rango_fechas(DateTime fechaInicial, DateTime fechaFinal) {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand("selectProductosVendidosRangoFechas", cn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter param = new SqlParameter("@FechaInicial", SqlDbType.Date);
+            param.Direction = ParameterDirection.Input;
+            param.Value = fechaInicial;
+            da.SelectCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@FechaFinal", SqlDbType.Date);
+            param.Direction = ParameterDirection.Input;
+            param.Value = fechaFinal;
+            da.SelectCommand.Parameters.Add(param);
+
+            DataSet ds = new DataSet();
+            //da.Fill(ds, "view_productos_vendidos_rango_fechas");
+            da.Fill(ds, "view_productos_venta_cliente");
+
+            return ds;
+        }
+
+        public static DataSet list_productos_vendidos_por_cliente(string dni) {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand("selectProductosVendidosPorCliente", cn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter param = new SqlParameter("@ClienteDNI", SqlDbType.VarChar);
+            param.Direction = ParameterDirection.Input;
+            param.Value = dni;
+            da.SelectCommand.Parameters.Add(param);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds, "view_productos_venta_cliente");
+
+            return ds;
+        }
+
+        public static DataSet list_todos_productos_vendidos() {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand("selectTodosProductosVendidos", cn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            DataSet ds = new DataSet();
+            da.Fill(ds, "view_productos_venta_cliente");
+
+            return ds;
+        }
     }
 }
