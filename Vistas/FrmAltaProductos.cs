@@ -176,6 +176,11 @@ namespace Vistas
                 bErrorFound = true;
             }
         }
+
+        private void btnConsultar_Click(object sender, EventArgs e) {
+            FrmConsultaProductos frm = new FrmConsultaProductos();
+            frm.Show();
+        }
         
     }
 }
