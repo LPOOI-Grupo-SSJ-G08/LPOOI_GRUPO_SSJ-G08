@@ -48,8 +48,11 @@
             this.lblGestionProductos = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.chkOrden2 = new System.Windows.Forms.CheckBox();
+            this.chkOrden1 = new System.Windows.Forms.CheckBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.lblConsultas = new System.Windows.Forms.Label();
+            this.lblOrden = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -293,6 +296,9 @@
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.Controls.Add(this.lblOrden);
+            this.panel3.Controls.Add(this.chkOrden2);
+            this.panel3.Controls.Add(this.chkOrden1);
             this.panel3.Controls.Add(this.btnConsultar);
             this.panel3.Controls.Add(this.lblConsultas);
             this.panel3.Location = new System.Drawing.Point(0, 62);
@@ -300,6 +306,28 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(5);
             this.panel3.Size = new System.Drawing.Size(378, 160);
             this.panel3.TabIndex = 20;
+            // 
+            // chkOrden2
+            // 
+            this.chkOrden2.AutoSize = true;
+            this.chkOrden2.Location = new System.Drawing.Point(63, 135);
+            this.chkOrden2.Name = "chkOrden2";
+            this.chkOrden2.Size = new System.Drawing.Size(82, 17);
+            this.chkOrden2.TabIndex = 4;
+            this.chkOrden2.Text = "Descripcion";
+            this.chkOrden2.UseVisualStyleBackColor = true;
+            this.chkOrden2.CheckedChanged += new System.EventHandler(this.chkOrden2_CheckedChanged);
+            // 
+            // chkOrden1
+            // 
+            this.chkOrden1.AutoSize = true;
+            this.chkOrden1.Location = new System.Drawing.Point(63, 114);
+            this.chkOrden1.Name = "chkOrden1";
+            this.chkOrden1.Size = new System.Drawing.Size(71, 17);
+            this.chkOrden1.TabIndex = 3;
+            this.chkOrden1.Text = "Categoria";
+            this.chkOrden1.UseVisualStyleBackColor = true;
+            this.chkOrden1.CheckedChanged += new System.EventHandler(this.chkOrden1_CheckedChanged);
             // 
             // btnConsultar
             // 
@@ -325,6 +353,15 @@
             this.lblConsultas.Size = new System.Drawing.Size(80, 20);
             this.lblConsultas.TabIndex = 0;
             this.lblConsultas.Text = "Consultas";
+            // 
+            // lblOrden
+            // 
+            this.lblOrden.AutoSize = true;
+            this.lblOrden.Location = new System.Drawing.Point(12, 101);
+            this.lblOrden.Name = "lblOrden";
+            this.lblOrden.Size = new System.Drawing.Size(48, 13);
+            this.lblOrden.TabIndex = 26;
+            this.lblOrden.Text = "Ordenar:";
             // 
             // FrmAltaProductos
             // 
@@ -374,5 +411,8 @@
         private System.Windows.Forms.Label lblConsultas;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.CheckBox chkOrden1;
+        private System.Windows.Forms.CheckBox chkOrden2;
+        private System.Windows.Forms.Label lblOrden;
     }
 }
