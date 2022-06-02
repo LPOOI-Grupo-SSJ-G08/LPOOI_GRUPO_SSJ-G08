@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblGestionClientes = new System.Windows.Forms.Label();
             this.dgwClientes = new System.Windows.Forms.DataGridView();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -52,20 +53,19 @@
             this.lblValidDireccion = new System.Windows.Forms.Label();
             this.lblValidCUIT = new System.Windows.Forms.Label();
             this.lblValidNroCarnet = new System.Windows.Forms.Label();
-            this.txtBusquedaApellido = new System.Windows.Forms.TextBox();
-            this.txtBusquedaDireccion = new System.Windows.Forms.TextBox();
-            this.lblBusquedaApellido = new System.Windows.Forms.Label();
-            this.lblBusquedaDireccion = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.pnlDatosCliente = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlConsultas = new System.Windows.Forms.Panel();
-            this.pnlCabecera = new System.Windows.Forms.Panel();
-            this.chkOrdenar1 = new System.Windows.Forms.CheckBox();
-            this.chkOrdenar2 = new System.Windows.Forms.CheckBox();
             this.lblOrden = new System.Windows.Forms.Label();
+            this.chkOrdenar2 = new System.Windows.Forms.CheckBox();
+            this.chkOrdenar1 = new System.Windows.Forms.CheckBox();
+            this.pnlCabecera = new System.Windows.Forms.Panel();
+            this.lblBusqueda = new System.Windows.Forms.Label();
+            this.ttipBusqueda = new System.Windows.Forms.ToolTip(this.components);
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgwClientes)).BeginInit();
             this.pnlDatosCliente.SuspendLayout();
             this.pnlConsultas.SuspendLayout();
@@ -310,47 +310,15 @@
             this.lblValidNroCarnet.Text = "Este campo es numérico";
             this.lblValidNroCarnet.Visible = false;
             // 
-            // txtBusquedaApellido
-            // 
-            this.txtBusquedaApellido.Location = new System.Drawing.Point(103, 40);
-            this.txtBusquedaApellido.Name = "txtBusquedaApellido";
-            this.txtBusquedaApellido.Size = new System.Drawing.Size(200, 20);
-            this.txtBusquedaApellido.TabIndex = 5;
-            // 
-            // txtBusquedaDireccion
-            // 
-            this.txtBusquedaDireccion.Location = new System.Drawing.Point(103, 75);
-            this.txtBusquedaDireccion.Name = "txtBusquedaDireccion";
-            this.txtBusquedaDireccion.Size = new System.Drawing.Size(200, 20);
-            this.txtBusquedaDireccion.TabIndex = 6;
-            // 
-            // lblBusquedaApellido
-            // 
-            this.lblBusquedaApellido.AutoSize = true;
-            this.lblBusquedaApellido.Location = new System.Drawing.Point(50, 43);
-            this.lblBusquedaApellido.Name = "lblBusquedaApellido";
-            this.lblBusquedaApellido.Size = new System.Drawing.Size(47, 13);
-            this.lblBusquedaApellido.TabIndex = 7;
-            this.lblBusquedaApellido.Text = "Apellido:";
-            // 
-            // lblBusquedaDireccion
-            // 
-            this.lblBusquedaDireccion.AutoSize = true;
-            this.lblBusquedaDireccion.Location = new System.Drawing.Point(42, 78);
-            this.lblBusquedaDireccion.Name = "lblBusquedaDireccion";
-            this.lblBusquedaDireccion.Size = new System.Drawing.Size(55, 13);
-            this.lblBusquedaDireccion.TabIndex = 8;
-            this.lblBusquedaDireccion.Text = "Dirección:";
-            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnBuscar.Location = new System.Drawing.Point(305, 73);
+            this.btnBuscar.Location = new System.Drawing.Point(285, 45);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(60, 21);
             this.btnBuscar.TabIndex = 9;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -362,9 +330,9 @@
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnLimpiar.Location = new System.Drawing.Point(305, 38);
+            this.btnLimpiar.Location = new System.Drawing.Point(351, 45);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.Size = new System.Drawing.Size(60, 21);
             this.btnLimpiar.TabIndex = 10;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -426,20 +394,49 @@
             // 
             this.pnlConsultas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlConsultas.BackColor = System.Drawing.Color.Transparent;
+            this.pnlConsultas.Controls.Add(this.txtBusqueda);
+            this.pnlConsultas.Controls.Add(this.lblBusqueda);
             this.pnlConsultas.Controls.Add(this.lblOrden);
             this.pnlConsultas.Controls.Add(this.chkOrdenar2);
             this.pnlConsultas.Controls.Add(this.chkOrdenar1);
-            this.pnlConsultas.Controls.Add(this.txtBusquedaApellido);
             this.pnlConsultas.Controls.Add(this.label2);
-            this.pnlConsultas.Controls.Add(this.txtBusquedaDireccion);
-            this.pnlConsultas.Controls.Add(this.lblBusquedaApellido);
-            this.pnlConsultas.Controls.Add(this.lblBusquedaDireccion);
             this.pnlConsultas.Controls.Add(this.btnLimpiar);
             this.pnlConsultas.Controls.Add(this.btnBuscar);
             this.pnlConsultas.Location = new System.Drawing.Point(12, 73);
             this.pnlConsultas.Name = "pnlConsultas";
             this.pnlConsultas.Size = new System.Drawing.Size(422, 134);
             this.pnlConsultas.TabIndex = 23;
+            // 
+            // lblOrden
+            // 
+            this.lblOrden.AutoSize = true;
+            this.lblOrden.Location = new System.Drawing.Point(68, 95);
+            this.lblOrden.Name = "lblOrden";
+            this.lblOrden.Size = new System.Drawing.Size(48, 13);
+            this.lblOrden.TabIndex = 25;
+            this.lblOrden.Text = "Ordenar:";
+            // 
+            // chkOrdenar2
+            // 
+            this.chkOrdenar2.AutoSize = true;
+            this.chkOrdenar2.Location = new System.Drawing.Point(212, 94);
+            this.chkOrdenar2.Name = "chkOrdenar2";
+            this.chkOrdenar2.Size = new System.Drawing.Size(43, 17);
+            this.chkOrdenar2.TabIndex = 24;
+            this.chkOrdenar2.Text = "Z-A";
+            this.chkOrdenar2.UseVisualStyleBackColor = true;
+            this.chkOrdenar2.CheckedChanged += new System.EventHandler(this.chxOrdenar2_CheckedChanged);
+            // 
+            // chkOrdenar1
+            // 
+            this.chkOrdenar1.AutoSize = true;
+            this.chkOrdenar1.Location = new System.Drawing.Point(126, 94);
+            this.chkOrdenar1.Name = "chkOrdenar1";
+            this.chkOrdenar1.Size = new System.Drawing.Size(43, 17);
+            this.chkOrdenar1.TabIndex = 23;
+            this.chkOrdenar1.Text = "A-Z";
+            this.chkOrdenar1.UseVisualStyleBackColor = true;
+            this.chkOrdenar1.CheckedChanged += new System.EventHandler(this.chxOrdenar1_CheckedChanged);
             // 
             // pnlCabecera
             // 
@@ -452,36 +449,22 @@
             this.pnlCabecera.Size = new System.Drawing.Size(733, 52);
             this.pnlCabecera.TabIndex = 24;
             // 
-            // chkOrdenar1
+            // lblBusqueda
             // 
-            this.chkOrdenar1.AutoSize = true;
-            this.chkOrdenar1.Location = new System.Drawing.Point(107, 114);
-            this.chkOrdenar1.Name = "chkOrdenar1";
-            this.chkOrdenar1.Size = new System.Drawing.Size(43, 17);
-            this.chkOrdenar1.TabIndex = 23;
-            this.chkOrdenar1.Text = "A-Z";
-            this.chkOrdenar1.UseVisualStyleBackColor = true;
-            this.chkOrdenar1.CheckedChanged += new System.EventHandler(this.chxOrdenar1_CheckedChanged);
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Location = new System.Drawing.Point(11, 49);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(109, 13);
+            this.lblBusqueda.TabIndex = 26;
+            this.lblBusqueda.Text = "Ingrese su búsqueda:";
             // 
-            // chkOrdenar2
+            // txtBusqueda
             // 
-            this.chkOrdenar2.AutoSize = true;
-            this.chkOrdenar2.Location = new System.Drawing.Point(193, 114);
-            this.chkOrdenar2.Name = "chkOrdenar2";
-            this.chkOrdenar2.Size = new System.Drawing.Size(43, 17);
-            this.chkOrdenar2.TabIndex = 24;
-            this.chkOrdenar2.Text = "Z-A";
-            this.chkOrdenar2.UseVisualStyleBackColor = true;
-            this.chkOrdenar2.CheckedChanged += new System.EventHandler(this.chxOrdenar2_CheckedChanged);
-            // 
-            // lblOrden
-            // 
-            this.lblOrden.AutoSize = true;
-            this.lblOrden.Location = new System.Drawing.Point(49, 115);
-            this.lblOrden.Name = "lblOrden";
-            this.lblOrden.Size = new System.Drawing.Size(48, 13);
-            this.lblOrden.TabIndex = 25;
-            this.lblOrden.Text = "Ordenar:";
+            this.txtBusqueda.Location = new System.Drawing.Point(126, 45);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(150, 20);
+            this.txtBusqueda.TabIndex = 27;
+            this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
             // 
             // FrmGestionClientes
             // 
@@ -533,10 +516,6 @@
         private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtBusquedaApellido;
-        private System.Windows.Forms.TextBox txtBusquedaDireccion;
-        private System.Windows.Forms.Label lblBusquedaApellido;
-        private System.Windows.Forms.Label lblBusquedaDireccion;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Panel pnlDatosCliente;
@@ -547,6 +526,9 @@
         private System.Windows.Forms.CheckBox chkOrdenar2;
         private System.Windows.Forms.CheckBox chkOrdenar1;
         private System.Windows.Forms.Label lblOrden;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.Label lblBusqueda;
+        private System.Windows.Forms.ToolTip ttipBusqueda;
 
 
     }
