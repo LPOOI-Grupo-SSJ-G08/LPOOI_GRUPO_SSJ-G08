@@ -21,6 +21,7 @@ namespace Vistas
         {
             load_clientes();
             HabilitarAcciones(false);
+            ttipBusqueda.SetToolTip(txtBusqueda, "Búsqueda por Apellido o Dirección");
         }
 
         private void load_clientes()
@@ -139,15 +140,13 @@ namespace Vistas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string szApellido = txtBusquedaApellido.Text;
-            string szDireccion = txtBusquedaDireccion.Text;
+            realizarBusqueda();
+        }
 
-            if (szApellido != String.Empty && szDireccion != String.Empty)
-            {
-                dgwClientes.DataSource = TrabajarCliente.search_clientes(szApellido, szDireccion);
-            }
-            else
-            {
+        private void realizarBusqueda() {
+            if (txtBusqueda.Text != String.Empty) {
+                dgwClientes.DataSource = TrabajarCliente.search_clientes(txtBusqueda.Text);
+            } else {
                 load_clientes();
             }
         }
@@ -155,8 +154,7 @@ namespace Vistas
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             load_clientes();
-            txtBusquedaApellido.Clear();
-            txtBusquedaDireccion.Clear();
+            txtBusqueda.Clear();
         }
 
         private void dgwClientes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -225,6 +223,12 @@ namespace Vistas
             {
                 lblValidNroCarnet.Show();
                 bErrorFound = true;
+            }
+        }
+
+        private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e) {
+            if (e.KeyChar == (char)Keys.Enter) {
+                realizarBusqueda();
             }
         }
 

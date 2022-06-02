@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblGestionClientes = new System.Windows.Forms.Label();
             this.dgwClientes = new System.Windows.Forms.DataGridView();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -52,10 +53,6 @@
             this.lblValidDireccion = new System.Windows.Forms.Label();
             this.lblValidCUIT = new System.Windows.Forms.Label();
             this.lblValidNroCarnet = new System.Windows.Forms.Label();
-            this.txtBusquedaApellido = new System.Windows.Forms.TextBox();
-            this.txtBusquedaDireccion = new System.Windows.Forms.TextBox();
-            this.lblBusquedaApellido = new System.Windows.Forms.Label();
-            this.lblBusquedaDireccion = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.pnlDatosCliente = new System.Windows.Forms.Panel();
@@ -63,6 +60,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pnlConsultas = new System.Windows.Forms.Panel();
             this.pnlCabecera = new System.Windows.Forms.Panel();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.ttipBusqueda = new System.Windows.Forms.ToolTip(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgwClientes)).BeginInit();
             this.pnlDatosCliente.SuspendLayout();
             this.pnlConsultas.SuspendLayout();
@@ -307,47 +307,15 @@
             this.lblValidNroCarnet.Text = "Este campo es numérico";
             this.lblValidNroCarnet.Visible = false;
             // 
-            // txtBusquedaApellido
-            // 
-            this.txtBusquedaApellido.Location = new System.Drawing.Point(115, 42);
-            this.txtBusquedaApellido.Name = "txtBusquedaApellido";
-            this.txtBusquedaApellido.Size = new System.Drawing.Size(200, 20);
-            this.txtBusquedaApellido.TabIndex = 5;
-            // 
-            // txtBusquedaDireccion
-            // 
-            this.txtBusquedaDireccion.Location = new System.Drawing.Point(115, 77);
-            this.txtBusquedaDireccion.Name = "txtBusquedaDireccion";
-            this.txtBusquedaDireccion.Size = new System.Drawing.Size(200, 20);
-            this.txtBusquedaDireccion.TabIndex = 6;
-            // 
-            // lblBusquedaApellido
-            // 
-            this.lblBusquedaApellido.AutoSize = true;
-            this.lblBusquedaApellido.Location = new System.Drawing.Point(62, 45);
-            this.lblBusquedaApellido.Name = "lblBusquedaApellido";
-            this.lblBusquedaApellido.Size = new System.Drawing.Size(47, 13);
-            this.lblBusquedaApellido.TabIndex = 7;
-            this.lblBusquedaApellido.Text = "Apellido:";
-            // 
-            // lblBusquedaDireccion
-            // 
-            this.lblBusquedaDireccion.AutoSize = true;
-            this.lblBusquedaDireccion.Location = new System.Drawing.Point(54, 80);
-            this.lblBusquedaDireccion.Name = "lblBusquedaDireccion";
-            this.lblBusquedaDireccion.Size = new System.Drawing.Size(55, 13);
-            this.lblBusquedaDireccion.TabIndex = 8;
-            this.lblBusquedaDireccion.Text = "Dirección:";
-            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnBuscar.Location = new System.Drawing.Point(159, 106);
+            this.btnBuscar.Location = new System.Drawing.Point(94, 94);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(75, 22);
             this.btnBuscar.TabIndex = 9;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -359,9 +327,9 @@
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnLimpiar.Location = new System.Drawing.Point(240, 106);
+            this.btnLimpiar.Location = new System.Drawing.Point(201, 94);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 22);
             this.btnLimpiar.TabIndex = 10;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -423,11 +391,9 @@
             // 
             this.pnlConsultas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlConsultas.BackColor = System.Drawing.Color.Transparent;
-            this.pnlConsultas.Controls.Add(this.txtBusquedaApellido);
+            this.pnlConsultas.Controls.Add(this.label3);
+            this.pnlConsultas.Controls.Add(this.txtBusqueda);
             this.pnlConsultas.Controls.Add(this.label2);
-            this.pnlConsultas.Controls.Add(this.txtBusquedaDireccion);
-            this.pnlConsultas.Controls.Add(this.lblBusquedaApellido);
-            this.pnlConsultas.Controls.Add(this.lblBusquedaDireccion);
             this.pnlConsultas.Controls.Add(this.btnLimpiar);
             this.pnlConsultas.Controls.Add(this.btnBuscar);
             this.pnlConsultas.Location = new System.Drawing.Point(5, 58);
@@ -445,6 +411,23 @@
             this.pnlCabecera.Name = "pnlCabecera";
             this.pnlCabecera.Size = new System.Drawing.Size(677, 52);
             this.pnlCabecera.TabIndex = 24;
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(133, 46);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(220, 20);
+            this.txtBusqueda.TabIndex = 23;
+            this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 13);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Ingrese su búsqueda:";
             // 
             // FrmGestionClientes
             // 
@@ -496,10 +479,6 @@
         private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtBusquedaApellido;
-        private System.Windows.Forms.TextBox txtBusquedaDireccion;
-        private System.Windows.Forms.Label lblBusquedaApellido;
-        private System.Windows.Forms.Label lblBusquedaDireccion;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Panel pnlDatosCliente;
@@ -507,6 +486,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pnlConsultas;
         private System.Windows.Forms.Panel pnlCabecera;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.ToolTip ttipBusqueda;
+        private System.Windows.Forms.Label label3;
 
 
     }
