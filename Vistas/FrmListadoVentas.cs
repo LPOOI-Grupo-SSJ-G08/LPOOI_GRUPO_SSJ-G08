@@ -43,5 +43,10 @@ namespace Vistas
             dgvVentas.DataSource = TrabajarVenta.getVentasByFechas(dtpFechaInicio.Value.Date, dtpFechaFin.Value.Date.AddHours(23).AddMinutes(59).AddSeconds(59));
         }
 
+        private void btnLimpiarFiltros_Click(object sender, EventArgs e)
+        {
+            FrmListadoVentas_Load(null, null);
+        }
+
     }
 }

@@ -78,8 +78,8 @@ namespace ClasesBase {
         {
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM Venta";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "listar_ventas_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cn;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
