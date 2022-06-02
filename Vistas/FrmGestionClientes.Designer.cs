@@ -62,6 +62,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlConsultas = new System.Windows.Forms.Panel();
+            this.cmbOrdenCliente = new System.Windows.Forms.ComboBox();
             this.pnlCabecera = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgwClientes)).BeginInit();
             this.pnlDatosCliente.SuspendLayout();
@@ -423,6 +424,7 @@
             // 
             this.pnlConsultas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlConsultas.BackColor = System.Drawing.Color.Transparent;
+            this.pnlConsultas.Controls.Add(this.cmbOrdenCliente);
             this.pnlConsultas.Controls.Add(this.txtBusquedaApellido);
             this.pnlConsultas.Controls.Add(this.label2);
             this.pnlConsultas.Controls.Add(this.txtBusquedaDireccion);
@@ -434,6 +436,19 @@
             this.pnlConsultas.Name = "pnlConsultas";
             this.pnlConsultas.Size = new System.Drawing.Size(371, 134);
             this.pnlConsultas.TabIndex = 23;
+            // 
+            // cmbOrdenCliente
+            // 
+            this.cmbOrdenCliente.FormattingEnabled = true;
+            this.cmbOrdenCliente.Items.AddRange(new object[] {
+            "Ninguno",
+            "A-Z",
+            "Z-A"});
+            this.cmbOrdenCliente.Location = new System.Drawing.Point(0, 111);
+            this.cmbOrdenCliente.Name = "cmbOrdenCliente";
+            this.cmbOrdenCliente.Size = new System.Drawing.Size(99, 21);
+            this.cmbOrdenCliente.TabIndex = 23;
+            this.cmbOrdenCliente.SelectedIndexChanged += new System.EventHandler(this.cmbOrdenCliente_SelectedIndexChanged);
             // 
             // pnlCabecera
             // 
@@ -507,6 +522,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pnlConsultas;
         private System.Windows.Forms.Panel pnlCabecera;
+        private System.Windows.Forms.ComboBox cmbOrdenCliente;
 
 
     }

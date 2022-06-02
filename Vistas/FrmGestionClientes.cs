@@ -228,5 +228,29 @@ namespace Vistas
             }
         }
 
+        private void cmbOrdenCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataSet ds;
+            switch(cmbOrdenCliente.Text){
+                case "Ninguno":
+             
+                    dgwClientes.DataSource = TrabajarCliente.list_clientes();
+                    break;
+
+                case "A-Z":
+                    ds = TrabajarCliente.list_cliente_por_apellido('1'); //1 para listar en ascendente
+                    dgwClientes.DataSource = ds.Tables[0] ;
+                    dgwClientes.Refresh();
+                    break;
+                case "Z-A":
+                    ds = TrabajarCliente.list_cliente_por_apellido('0'); // 0 para listar en descendente
+                    dgwClientes.DataSource = ds.Tables[0];
+                    dgwClientes.Refresh();
+                    break;
+            }
+        }
+
+   
+
     }
 }

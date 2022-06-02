@@ -128,5 +128,26 @@ namespace ClasesBase
 
             return dt;
         }
+
+        public static DataSet list_cliente_por_apellido(char? tipoOrdenacion)
+        {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand( "listar_clientes_x_apellido" ,cn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter param;
+            param = new SqlParameter("@tipoOrdenacion", SqlDbType.VarChar);
+            param.Direction = ParameterDirection.Input;
+            param.Value = tipoOrdenacion;
+            da.SelectCommand.Parameters.Add(param);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds, "Clientes");
+
+
+            return ds;
+        }
     }
 }
