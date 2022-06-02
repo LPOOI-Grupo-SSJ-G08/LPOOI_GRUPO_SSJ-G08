@@ -114,7 +114,7 @@ namespace ClasesBase
             cmd.CommandText += " OS_CUIT as 'CUIT', ";
             cmd.CommandText += " Cli_NroCarnet as 'Nro de Carnet' ";
             cmd.CommandText += " FROM Cliente ";
-            cmd.CommandText += " WHERE Cli_Apellido LIKE @apellido AND Cli_Direccion LIKE @direccion ";
+            cmd.CommandText += " WHERE Cli_Apellido LIKE @apellido OR Cli_Direccion LIKE @direccion ";
             cmd.CommandType = CommandType.Text;
 
             cmd.Connection = cn;
