@@ -87,18 +87,50 @@ namespace Vistas {
 
         private void AgregarProducto() {
             if (!DetalleVentaEstaVacio()) {
-                DataRow detalle = ProductosDetalles.NewRow();
-                detalle["Código"] = txtProdCodigo.Text;
-                detalle["Precio Unitario"] = txtProdPrecio.Text;
-                detalle["Cantidad"] = nudProdCantidad.Value;
-                detalle["Total"] = txtProdTotal.Text;
-                ProductosDetalles.Rows.Add(detalle);
+                if (EstaEnTabla(txtProdCodigo.Text))
+                {
+                    ActualizarRow();
+                }
+                else
+                {
+                    DataRow detalle = ProductosDetalles.NewRow();
+                    detalle["Código"] = txtProdCodigo.Text;
+                    detalle["Precio Unitario"] = txtProdPrecio.Text;
+                    detalle["Cantidad"] = nudProdCantidad.Value;
+                    detalle["Total"] = txtProdTotal.Text;
+                    ProductosDetalles.Rows.Add(detalle);
+                }
                 setValuesDefaultVentaDetalle();
 
                 //Seleccionar el panel activo luego de añadir un producto
                 tabCtlVenta.SelectedTab = tpgDetalleVenta;
             } else {
                 MessageBox.Show("Seleccione un producto", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private bool EstaEnTabla(string pCodigo)
+        {
+            bool bFound = false;
+            foreach (DataRow row in ProductosDetalles.Rows)
+            {
+                if (row["Código"].ToString() == pCodigo)
+                    bFound = true;
+            }
+            return bFound;
+        }
+
+        private void ActualizarRow()
+        {
+            foreach (DataRow row in ProductosDetalles.Rows)
+            {
+                if (row["Código"].ToString() == txtProdCodigo.Text)
+                {
+                    decimal dCantidad = Convert.ToDecimal(row["Cantidad"].ToString()) + nudProdCantidad.Value;
+                    row["Cantidad"] = dCantidad;
+                    decimal dTotal = Convert.ToDecimal(row["Total"].ToString()) + Convert.ToDecimal(txtProdTotal.Text);
+                    row["Total"] = dTotal.ToString();
+                }
             }
         }
 
@@ -197,7 +229,7 @@ namespace Vistas {
         }
 
         private void btnCancelar_Click(object sender, EventArgs e) {
-            this.Close();
+            IniciarDetalleProductos();
         }
 
         #endregion
