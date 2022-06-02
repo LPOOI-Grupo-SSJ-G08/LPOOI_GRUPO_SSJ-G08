@@ -10,9 +10,9 @@ using ClasesBase;
 
 namespace Vistas
 {
-    public partial class FrmAltaProductos : Form
+    public partial class FrmGestionProductos : Form
     {
-        public FrmAltaProductos()
+        public FrmGestionProductos()
         {
             InitializeComponent();
         }

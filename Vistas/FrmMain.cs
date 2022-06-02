@@ -143,7 +143,7 @@ namespace Vistas
         private void btnProductos_Click(object sender, EventArgs e)
         {
             PintarBotones(btnProductos);
-            AbrirFormHijo(new FrmAltaProductos());
+            AbrirFormHijo(new FrmGestionProductos());
         }
 
         private void btnClientes_Click(object sender, EventArgs e)

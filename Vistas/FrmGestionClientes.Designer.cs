@@ -59,13 +59,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlConsultas = new System.Windows.Forms.Panel();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.lblBusqueda = new System.Windows.Forms.Label();
             this.lblOrden = new System.Windows.Forms.Label();
             this.chkOrdenar2 = new System.Windows.Forms.CheckBox();
             this.chkOrdenar1 = new System.Windows.Forms.CheckBox();
             this.pnlCabecera = new System.Windows.Forms.Panel();
-            this.lblBusqueda = new System.Windows.Forms.Label();
             this.ttipBusqueda = new System.Windows.Forms.ToolTip(this.components);
-            this.txtBusqueda = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgwClientes)).BeginInit();
             this.pnlDatosCliente.SuspendLayout();
             this.pnlConsultas.SuspendLayout();
@@ -407,10 +407,27 @@
             this.pnlConsultas.Size = new System.Drawing.Size(422, 134);
             this.pnlConsultas.TabIndex = 23;
             // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(126, 45);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(150, 20);
+            this.txtBusqueda.TabIndex = 27;
+            this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
+            // 
+            // lblBusqueda
+            // 
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Location = new System.Drawing.Point(11, 49);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(109, 13);
+            this.lblBusqueda.TabIndex = 26;
+            this.lblBusqueda.Text = "Ingrese su búsqueda:";
+            // 
             // lblOrden
             // 
             this.lblOrden.AutoSize = true;
-            this.lblOrden.Location = new System.Drawing.Point(68, 95);
+            this.lblOrden.Location = new System.Drawing.Point(118, 95);
             this.lblOrden.Name = "lblOrden";
             this.lblOrden.Size = new System.Drawing.Size(48, 13);
             this.lblOrden.TabIndex = 25;
@@ -419,7 +436,7 @@
             // chkOrdenar2
             // 
             this.chkOrdenar2.AutoSize = true;
-            this.chkOrdenar2.Location = new System.Drawing.Point(212, 94);
+            this.chkOrdenar2.Location = new System.Drawing.Point(262, 94);
             this.chkOrdenar2.Name = "chkOrdenar2";
             this.chkOrdenar2.Size = new System.Drawing.Size(43, 17);
             this.chkOrdenar2.TabIndex = 24;
@@ -430,7 +447,7 @@
             // chkOrdenar1
             // 
             this.chkOrdenar1.AutoSize = true;
-            this.chkOrdenar1.Location = new System.Drawing.Point(126, 94);
+            this.chkOrdenar1.Location = new System.Drawing.Point(176, 94);
             this.chkOrdenar1.Name = "chkOrdenar1";
             this.chkOrdenar1.Size = new System.Drawing.Size(43, 17);
             this.chkOrdenar1.TabIndex = 23;
@@ -448,23 +465,6 @@
             this.pnlCabecera.Name = "pnlCabecera";
             this.pnlCabecera.Size = new System.Drawing.Size(733, 52);
             this.pnlCabecera.TabIndex = 24;
-            // 
-            // lblBusqueda
-            // 
-            this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Location = new System.Drawing.Point(11, 49);
-            this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(109, 13);
-            this.lblBusqueda.TabIndex = 26;
-            this.lblBusqueda.Text = "Ingrese su búsqueda:";
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Location = new System.Drawing.Point(126, 45);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(150, 20);
-            this.txtBusqueda.TabIndex = 27;
-            this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
             // 
             // FrmGestionClientes
             // 
