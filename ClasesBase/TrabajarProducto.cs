@@ -134,5 +134,25 @@ namespace ClasesBase
 
             return ds;
         }
+
+        public static DataSet list_productos_por(char categoriaOrdenacion)
+        {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand("selectProductosPorDescOCateg",cn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter param;
+            param = new SqlParameter("categoria", SqlDbType.VarChar);
+            param.Direction = ParameterDirection.Input;
+            param.Value = categoriaOrdenacion;
+            da.SelectCommand.Parameters.Add(param);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds,"Producto");
+
+            return ds;
+        }
     }
 }

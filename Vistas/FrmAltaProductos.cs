@@ -181,6 +181,29 @@ namespace Vistas
             FrmConsultaProductos frm = new FrmConsultaProductos();
             frm.Show();
         }
+
+        private void cmbOrdenarProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataSet ds;
+            switch (cmbOrdenarProducto.Text)
+            {
+                case "Ninguno":
+
+                    dgvProductos.DataSource = TrabajarProducto.list_productos();
+                    break;
+
+                case "Categoria":
+                    ds = TrabajarProducto.list_productos_por('1'); //1 para listar por categoria
+                    dgvProductos.DataSource = ds.Tables[0];
+                    dgvProductos.Refresh();
+                    break;
+                case "Descripcion":
+                    ds = TrabajarProducto.list_productos_por('0'); // 0 para listar por descripcion
+                    dgvProductos.DataSource = ds.Tables[0];
+                    dgvProductos.Refresh();
+                    break;
+            }
+        }
         
     }
 }

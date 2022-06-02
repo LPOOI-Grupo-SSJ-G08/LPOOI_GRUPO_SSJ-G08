@@ -50,6 +50,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.lblConsultas = new System.Windows.Forms.Label();
+            this.cmbOrdenarProducto = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -293,6 +294,7 @@
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.Controls.Add(this.cmbOrdenarProducto);
             this.panel3.Controls.Add(this.btnConsultar);
             this.panel3.Controls.Add(this.lblConsultas);
             this.panel3.Location = new System.Drawing.Point(0, 62);
@@ -325,6 +327,19 @@
             this.lblConsultas.Size = new System.Drawing.Size(80, 20);
             this.lblConsultas.TabIndex = 0;
             this.lblConsultas.Text = "Consultas";
+            // 
+            // cmbOrdenarProducto
+            // 
+            this.cmbOrdenarProducto.FormattingEnabled = true;
+            this.cmbOrdenarProducto.Items.AddRange(new object[] {
+            "Ninguno",
+            "Categoria",
+            "Descripcion"});
+            this.cmbOrdenarProducto.Location = new System.Drawing.Point(8, 128);
+            this.cmbOrdenarProducto.Name = "cmbOrdenarProducto";
+            this.cmbOrdenarProducto.Size = new System.Drawing.Size(164, 21);
+            this.cmbOrdenarProducto.TabIndex = 2;
+            this.cmbOrdenarProducto.SelectedIndexChanged += new System.EventHandler(this.cmbOrdenarProducto_SelectedIndexChanged);
             // 
             // FrmAltaProductos
             // 
@@ -374,5 +389,6 @@
         private System.Windows.Forms.Label lblConsultas;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.ComboBox cmbOrdenarProducto;
     }
 }
