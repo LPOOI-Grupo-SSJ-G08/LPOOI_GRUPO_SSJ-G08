@@ -48,9 +48,10 @@
             this.lblGestionProductos = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.optDescripcion = new System.Windows.Forms.RadioButton();
+            this.optCategoria = new System.Windows.Forms.RadioButton();
+            this.optNinguno = new System.Windows.Forms.RadioButton();
             this.lblOrden = new System.Windows.Forms.Label();
-            this.chkOrden2 = new System.Windows.Forms.CheckBox();
-            this.chkOrden1 = new System.Windows.Forms.CheckBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.lblConsultas = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -296,9 +297,10 @@
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.Controls.Add(this.optDescripcion);
+            this.panel3.Controls.Add(this.optCategoria);
+            this.panel3.Controls.Add(this.optNinguno);
             this.panel3.Controls.Add(this.lblOrden);
-            this.panel3.Controls.Add(this.chkOrden2);
-            this.panel3.Controls.Add(this.chkOrden1);
             this.panel3.Controls.Add(this.btnConsultar);
             this.panel3.Controls.Add(this.lblConsultas);
             this.panel3.Location = new System.Drawing.Point(0, 62);
@@ -307,37 +309,50 @@
             this.panel3.Size = new System.Drawing.Size(428, 140);
             this.panel3.TabIndex = 20;
             // 
+            // optDescripcion
+            // 
+            this.optDescripcion.AutoSize = true;
+            this.optDescripcion.Location = new System.Drawing.Point(76, 69);
+            this.optDescripcion.Name = "optDescripcion";
+            this.optDescripcion.Size = new System.Drawing.Size(81, 17);
+            this.optDescripcion.TabIndex = 33;
+            this.optDescripcion.Text = "Descripcion";
+            this.optDescripcion.UseVisualStyleBackColor = true;
+            this.optDescripcion.CheckedChanged += new System.EventHandler(this.optDescripcion_CheckedChanged);
+            // 
+            // optCategoria
+            // 
+            this.optCategoria.AutoSize = true;
+            this.optCategoria.Location = new System.Drawing.Point(76, 90);
+            this.optCategoria.Name = "optCategoria";
+            this.optCategoria.Size = new System.Drawing.Size(70, 17);
+            this.optCategoria.TabIndex = 32;
+            this.optCategoria.Text = "Categoria";
+            this.optCategoria.UseVisualStyleBackColor = true;
+            this.optCategoria.CheckedChanged += new System.EventHandler(this.optCategoria_CheckedChanged);
+            // 
+            // optNinguno
+            // 
+            this.optNinguno.AutoSize = true;
+            this.optNinguno.Checked = true;
+            this.optNinguno.Location = new System.Drawing.Point(76, 111);
+            this.optNinguno.Name = "optNinguno";
+            this.optNinguno.Size = new System.Drawing.Size(65, 17);
+            this.optNinguno.TabIndex = 31;
+            this.optNinguno.TabStop = true;
+            this.optNinguno.Text = "Ninguno";
+            this.optNinguno.UseVisualStyleBackColor = true;
+            this.optNinguno.CheckedChanged += new System.EventHandler(this.optNinguno_CheckedChanged);
+            // 
             // lblOrden
             // 
             this.lblOrden.AutoSize = true;
             this.lblOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrden.Location = new System.Drawing.Point(64, 47);
+            this.lblOrden.Location = new System.Drawing.Point(12, 50);
             this.lblOrden.Name = "lblOrden";
             this.lblOrden.Size = new System.Drawing.Size(76, 15);
             this.lblOrden.TabIndex = 26;
             this.lblOrden.Text = "Ordenar por:";
-            // 
-            // chkOrden2
-            // 
-            this.chkOrden2.AutoSize = true;
-            this.chkOrden2.Location = new System.Drawing.Point(67, 98);
-            this.chkOrden2.Name = "chkOrden2";
-            this.chkOrden2.Size = new System.Drawing.Size(82, 17);
-            this.chkOrden2.TabIndex = 4;
-            this.chkOrden2.Text = "Descripción";
-            this.chkOrden2.UseVisualStyleBackColor = true;
-            this.chkOrden2.CheckedChanged += new System.EventHandler(this.chkOrden2_CheckedChanged);
-            // 
-            // chkOrden1
-            // 
-            this.chkOrden1.AutoSize = true;
-            this.chkOrden1.Location = new System.Drawing.Point(67, 77);
-            this.chkOrden1.Name = "chkOrden1";
-            this.chkOrden1.Size = new System.Drawing.Size(73, 17);
-            this.chkOrden1.TabIndex = 3;
-            this.chkOrden1.Text = "Categoría";
-            this.chkOrden1.UseVisualStyleBackColor = true;
-            this.chkOrden1.CheckedChanged += new System.EventHandler(this.chkOrden1_CheckedChanged);
             // 
             // btnConsultar
             // 
@@ -412,8 +427,9 @@
         private System.Windows.Forms.Label lblConsultas;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.CheckBox chkOrden1;
-        private System.Windows.Forms.CheckBox chkOrden2;
         private System.Windows.Forms.Label lblOrden;
+        private System.Windows.Forms.RadioButton optDescripcion;
+        private System.Windows.Forms.RadioButton optCategoria;
+        private System.Windows.Forms.RadioButton optNinguno;
     }
 }

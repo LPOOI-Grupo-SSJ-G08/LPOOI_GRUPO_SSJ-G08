@@ -59,11 +59,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlConsultas = new System.Windows.Forms.Panel();
+            this.optNinguno = new System.Windows.Forms.RadioButton();
+            this.optZ = new System.Windows.Forms.RadioButton();
+            this.optA = new System.Windows.Forms.RadioButton();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.lblOrden = new System.Windows.Forms.Label();
-            this.chkOrdenar2 = new System.Windows.Forms.CheckBox();
-            this.chkOrdenar1 = new System.Windows.Forms.CheckBox();
             this.pnlCabecera = new System.Windows.Forms.Panel();
             this.ttipBusqueda = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgwClientes)).BeginInit();
@@ -394,11 +395,12 @@
             // 
             this.pnlConsultas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlConsultas.BackColor = System.Drawing.Color.Transparent;
+            this.pnlConsultas.Controls.Add(this.optNinguno);
+            this.pnlConsultas.Controls.Add(this.optZ);
+            this.pnlConsultas.Controls.Add(this.optA);
             this.pnlConsultas.Controls.Add(this.txtBusqueda);
             this.pnlConsultas.Controls.Add(this.lblBusqueda);
             this.pnlConsultas.Controls.Add(this.lblOrden);
-            this.pnlConsultas.Controls.Add(this.chkOrdenar2);
-            this.pnlConsultas.Controls.Add(this.chkOrdenar1);
             this.pnlConsultas.Controls.Add(this.label2);
             this.pnlConsultas.Controls.Add(this.btnLimpiar);
             this.pnlConsultas.Controls.Add(this.btnBuscar);
@@ -406,6 +408,43 @@
             this.pnlConsultas.Name = "pnlConsultas";
             this.pnlConsultas.Size = new System.Drawing.Size(422, 134);
             this.pnlConsultas.TabIndex = 23;
+            // 
+            // optNinguno
+            // 
+            this.optNinguno.AutoSize = true;
+            this.optNinguno.Checked = true;
+            this.optNinguno.Location = new System.Drawing.Point(161, 91);
+            this.optNinguno.Name = "optNinguno";
+            this.optNinguno.Size = new System.Drawing.Size(65, 17);
+            this.optNinguno.TabIndex = 30;
+            this.optNinguno.TabStop = true;
+            this.optNinguno.Text = "Ninguno";
+            this.optNinguno.UseVisualStyleBackColor = true;
+            this.optNinguno.CheckedChanged += new System.EventHandler(this.optNinguno_CheckedChanged);
+            // 
+            // optZ
+            // 
+            this.optZ.AutoSize = true;
+            this.optZ.Location = new System.Drawing.Point(113, 91);
+            this.optZ.Name = "optZ";
+            this.optZ.Size = new System.Drawing.Size(42, 17);
+            this.optZ.TabIndex = 29;
+            this.optZ.TabStop = true;
+            this.optZ.Text = "Z-A";
+            this.optZ.UseVisualStyleBackColor = true;
+            this.optZ.CheckedChanged += new System.EventHandler(this.optZ_CheckedChanged);
+            // 
+            // optA
+            // 
+            this.optA.AutoSize = true;
+            this.optA.Location = new System.Drawing.Point(65, 91);
+            this.optA.Name = "optA";
+            this.optA.Size = new System.Drawing.Size(42, 17);
+            this.optA.TabIndex = 28;
+            this.optA.TabStop = true;
+            this.optA.Text = "A-Z";
+            this.optA.UseVisualStyleBackColor = true;
+            this.optA.CheckedChanged += new System.EventHandler(this.optA_CheckedChanged);
             // 
             // txtBusqueda
             // 
@@ -427,33 +466,11 @@
             // lblOrden
             // 
             this.lblOrden.AutoSize = true;
-            this.lblOrden.Location = new System.Drawing.Point(118, 95);
+            this.lblOrden.Location = new System.Drawing.Point(11, 95);
             this.lblOrden.Name = "lblOrden";
             this.lblOrden.Size = new System.Drawing.Size(48, 13);
             this.lblOrden.TabIndex = 25;
             this.lblOrden.Text = "Ordenar:";
-            // 
-            // chkOrdenar2
-            // 
-            this.chkOrdenar2.AutoSize = true;
-            this.chkOrdenar2.Location = new System.Drawing.Point(262, 94);
-            this.chkOrdenar2.Name = "chkOrdenar2";
-            this.chkOrdenar2.Size = new System.Drawing.Size(43, 17);
-            this.chkOrdenar2.TabIndex = 24;
-            this.chkOrdenar2.Text = "Z-A";
-            this.chkOrdenar2.UseVisualStyleBackColor = true;
-            this.chkOrdenar2.CheckedChanged += new System.EventHandler(this.chxOrdenar2_CheckedChanged);
-            // 
-            // chkOrdenar1
-            // 
-            this.chkOrdenar1.AutoSize = true;
-            this.chkOrdenar1.Location = new System.Drawing.Point(176, 94);
-            this.chkOrdenar1.Name = "chkOrdenar1";
-            this.chkOrdenar1.Size = new System.Drawing.Size(43, 17);
-            this.chkOrdenar1.TabIndex = 23;
-            this.chkOrdenar1.Text = "A-Z";
-            this.chkOrdenar1.UseVisualStyleBackColor = true;
-            this.chkOrdenar1.CheckedChanged += new System.EventHandler(this.chxOrdenar1_CheckedChanged);
             // 
             // pnlCabecera
             // 
@@ -523,12 +540,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pnlConsultas;
         private System.Windows.Forms.Panel pnlCabecera;
-        private System.Windows.Forms.CheckBox chkOrdenar2;
-        private System.Windows.Forms.CheckBox chkOrdenar1;
         private System.Windows.Forms.Label lblOrden;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.ToolTip ttipBusqueda;
+        private System.Windows.Forms.RadioButton optNinguno;
+        private System.Windows.Forms.RadioButton optZ;
+        private System.Windows.Forms.RadioButton optA;
 
 
     }
