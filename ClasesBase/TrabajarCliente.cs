@@ -101,7 +101,7 @@ namespace ClasesBase
             cn.Close();
         }
 
-        public static DataTable search_clientes(string szApellido, string szDireccion)
+        public static DataTable search_clientes(string szTextoBuscar)
         {
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
@@ -114,13 +114,12 @@ namespace ClasesBase
             cmd.CommandText += " OS_CUIT as 'CUIT', ";
             cmd.CommandText += " Cli_NroCarnet as 'Nro de Carnet' ";
             cmd.CommandText += " FROM Cliente ";
-            cmd.CommandText += " WHERE Cli_Apellido LIKE @apellido AND Cli_Direccion LIKE @direccion ";
+            cmd.CommandText += " WHERE Cli_Apellido LIKE @textoBuscar OR Cli_Direccion LIKE @textoBuscar ";
             cmd.CommandType = CommandType.Text;
 
             cmd.Connection = cn;
 
-            cmd.Parameters.AddWithValue("@apellido", "%" + szApellido + "%");
-            cmd.Parameters.AddWithValue("@direccion", "%" + szDireccion + "%");
+            cmd.Parameters.AddWithValue("@textoBuscar", "%" + szTextoBuscar + "%");
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

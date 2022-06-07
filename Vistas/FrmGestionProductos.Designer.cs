@@ -1,6 +1,6 @@
 ﻿namespace Vistas
 {
-    partial class FrmAltaProductos
+    partial class FrmGestionProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -48,11 +48,11 @@
             this.lblGestionProductos = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblOrden = new System.Windows.Forms.Label();
             this.chkOrden2 = new System.Windows.Forms.CheckBox();
             this.chkOrden1 = new System.Windows.Forms.CheckBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.lblConsultas = new System.Windows.Forms.Label();
-            this.lblOrden = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -248,7 +248,7 @@
             this.panel1.Controls.Add(this.txtDescripcion);
             this.panel1.Controls.Add(this.txtCategoria);
             this.panel1.Controls.Add(this.txtPrecio);
-            this.panel1.Location = new System.Drawing.Point(384, 62);
+            this.panel1.Location = new System.Drawing.Point(434, 62);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 400);
             this.panel1.TabIndex = 17;
@@ -269,7 +269,7 @@
             this.panel2.Controls.Add(this.lblGestionProductos);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(684, 56);
+            this.panel2.Size = new System.Drawing.Size(734, 56);
             this.panel2.TabIndex = 18;
             // 
             // lblGestionProductos
@@ -277,7 +277,7 @@
             this.lblGestionProductos.AutoSize = true;
             this.lblGestionProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGestionProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.lblGestionProductos.Location = new System.Drawing.Point(247, 16);
+            this.lblGestionProductos.Location = new System.Drawing.Point(272, 16);
             this.lblGestionProductos.Name = "lblGestionProductos";
             this.lblGestionProductos.Size = new System.Drawing.Size(191, 24);
             this.lblGestionProductos.TabIndex = 1;
@@ -287,9 +287,9 @@
             // 
             this.dgvProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(0, 228);
+            this.dgvProductos.Location = new System.Drawing.Point(0, 208);
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(378, 234);
+            this.dgvProductos.Size = new System.Drawing.Size(428, 254);
             this.dgvProductos.TabIndex = 19;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
@@ -304,28 +304,38 @@
             this.panel3.Location = new System.Drawing.Point(0, 62);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(5);
-            this.panel3.Size = new System.Drawing.Size(378, 160);
+            this.panel3.Size = new System.Drawing.Size(428, 140);
             this.panel3.TabIndex = 20;
+            // 
+            // lblOrden
+            // 
+            this.lblOrden.AutoSize = true;
+            this.lblOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrden.Location = new System.Drawing.Point(64, 47);
+            this.lblOrden.Name = "lblOrden";
+            this.lblOrden.Size = new System.Drawing.Size(76, 15);
+            this.lblOrden.TabIndex = 26;
+            this.lblOrden.Text = "Ordenar por:";
             // 
             // chkOrden2
             // 
             this.chkOrden2.AutoSize = true;
-            this.chkOrden2.Location = new System.Drawing.Point(63, 135);
+            this.chkOrden2.Location = new System.Drawing.Point(67, 98);
             this.chkOrden2.Name = "chkOrden2";
             this.chkOrden2.Size = new System.Drawing.Size(82, 17);
             this.chkOrden2.TabIndex = 4;
-            this.chkOrden2.Text = "Descripcion";
+            this.chkOrden2.Text = "Descripción";
             this.chkOrden2.UseVisualStyleBackColor = true;
             this.chkOrden2.CheckedChanged += new System.EventHandler(this.chkOrden2_CheckedChanged);
             // 
             // chkOrden1
             // 
             this.chkOrden1.AutoSize = true;
-            this.chkOrden1.Location = new System.Drawing.Point(63, 114);
+            this.chkOrden1.Location = new System.Drawing.Point(67, 77);
             this.chkOrden1.Name = "chkOrden1";
-            this.chkOrden1.Size = new System.Drawing.Size(71, 17);
+            this.chkOrden1.Size = new System.Drawing.Size(73, 17);
             this.chkOrden1.TabIndex = 3;
-            this.chkOrden1.Text = "Categoria";
+            this.chkOrden1.Text = "Categoría";
             this.chkOrden1.UseVisualStyleBackColor = true;
             this.chkOrden1.CheckedChanged += new System.EventHandler(this.chkOrden1_CheckedChanged);
             // 
@@ -335,7 +345,7 @@
             this.btnConsultar.FlatAppearance.BorderSize = 0;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnConsultar.Location = new System.Drawing.Point(238, 125);
+            this.btnConsultar.Location = new System.Drawing.Point(235, 80);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(5);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(130, 25);
@@ -354,26 +364,17 @@
             this.lblConsultas.TabIndex = 0;
             this.lblConsultas.Text = "Consultas";
             // 
-            // lblOrden
-            // 
-            this.lblOrden.AutoSize = true;
-            this.lblOrden.Location = new System.Drawing.Point(12, 101);
-            this.lblOrden.Name = "lblOrden";
-            this.lblOrden.Size = new System.Drawing.Size(48, 13);
-            this.lblOrden.TabIndex = 26;
-            this.lblOrden.Text = "Ordenar:";
-            // 
-            // FrmAltaProductos
+            // FrmGestionProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(684, 462);
+            this.ClientSize = new System.Drawing.Size(734, 462);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "FrmAltaProductos";
+            this.Name = "FrmGestionProductos";
             this.Text = "Nuevo Producto";
             this.Load += new System.EventHandler(this.FrmAltaProductos_Load);
             this.panel1.ResumeLayout(false);
