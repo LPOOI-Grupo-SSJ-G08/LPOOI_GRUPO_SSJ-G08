@@ -182,45 +182,27 @@ namespace Vistas
             frm.Show();
         }
 
-        private void chkOrden1_CheckedChanged(object sender, EventArgs e)
+        private void optDescripcion_CheckedChanged(object sender, EventArgs e)
         {
             DataSet ds;
-            if (chkOrden1.Checked)
-            {
-                chkOrden2.Enabled = false;
-                ds = TrabajarProducto.list_productos_por('1'); //1 para listar por categoria
-                dgvProductos.DataSource = ds.Tables[0];
-                dgvProductos.Refresh();
-            }
-            else
-            {
-                chkOrden2.Enabled = true;
-                dgvProductos.DataSource = TrabajarProducto.list_productos();
-            }
+            ds = TrabajarProducto.list_productos_por('0'); // 0 para listar por descripcion
+            dgvProductos.DataSource = ds.Tables[0];
+            dgvProductos.Refresh();
         }
 
-
-        private void chkOrden2_CheckedChanged(object sender, EventArgs e)
+        private void optCategoria_CheckedChanged(object sender, EventArgs e)
         {
             DataSet ds;
-            if (chkOrden2.Checked)
-            {
-                chkOrden1.Enabled = false;
-                ds = TrabajarProducto.list_productos_por('0'); // 0 para listar por descripcion
-                dgvProductos.DataSource = ds.Tables[0];
-                dgvProductos.Refresh();
-            }
-            else
-            {
-                chkOrden1.Enabled = true;
-                dgvProductos.DataSource = TrabajarProducto.list_productos();
-            }
-
+            ds = TrabajarProducto.list_productos_por('1'); //1 para listar por categoria
+            dgvProductos.DataSource = ds.Tables[0];
+            dgvProductos.Refresh();
         }
 
-        
-
-        
+        private void optNinguno_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvProductos.DataSource = TrabajarProducto.list_productos();
+        }
+ 
         
     }
 }

@@ -217,63 +217,6 @@ namespace Vistas
             }
         }
 
-   /*     private void cmbOrdenCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DataSet ds;
-            switch(cmbOrdenCliente.Text){
-                case "Ninguno":
-             
-                    dgwClientes.DataSource = TrabajarCliente.list_clientes();
-                    break;
-
-                case "A-Z":
-                    ds = TrabajarCliente.list_cliente_por_apellido('1'); //1 para listar en ascendente
-                    dgwClientes.DataSource = ds.Tables[0] ;
-                    dgwClientes.Refresh();
-                    break;
-                case "Z-A":
-                    ds = TrabajarCliente.list_cliente_por_apellido('0'); // 0 para listar en descendente
-                    dgwClientes.DataSource = ds.Tables[0];
-                    dgwClientes.Refresh();
-                    break;
-            }
-        }
-        */
-        private void chxOrdenar1_CheckedChanged(object sender, EventArgs e)
-        {
-            DataSet ds;
-            if (chkOrdenar1.Checked)
-            {
-                chkOrdenar2.Enabled = false;
-                ds = TrabajarCliente.list_cliente_por_apellido('1'); //1 para listar en ascendente
-                dgwClientes.DataSource = ds.Tables[0];
-                dgwClientes.Refresh();
-            }
-            else
-            {
-                chkOrdenar2.Enabled = true;
-                dgwClientes.DataSource = TrabajarCliente.list_clientes();
-            }
-        }
-
-        private void chxOrdenar2_CheckedChanged(object sender, EventArgs e)
-        {
-            DataSet ds;
-            if (chkOrdenar2.Checked)
-            {
-                chkOrdenar1.Enabled = false;
-                ds = TrabajarCliente.list_cliente_por_apellido('0'); // 0 para listar en descendente
-                dgwClientes.DataSource = ds.Tables[0];
-                dgwClientes.Refresh();
-            }
-            else
-            {
-                chkOrdenar1.Enabled = true;
-                dgwClientes.DataSource = TrabajarCliente.list_clientes();
-            }
-
-        }
-
         private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e) {
             if (e.KeyChar == (char)Keys.Enter) {
                 realizarBusqueda();
@@ -288,5 +231,28 @@ namespace Vistas
             }
         }
 
+        private void optA_CheckedChanged(object sender, EventArgs e)
+        {
+            DataSet ds;
+            ds = TrabajarCliente.list_cliente_por_apellido('1'); // 0 para listar en ascendente 
+            dgwClientes.DataSource = ds.Tables[0];
+            dgwClientes.Refresh();
+        }
+
+        private void optZ_CheckedChanged(object sender, EventArgs e)
+        {
+            DataSet ds;
+            ds = TrabajarCliente.list_cliente_por_apellido('0'); //1 para listar en descendente
+            dgwClientes.DataSource = ds.Tables[0];
+            dgwClientes.Refresh();
+        }
+
+        private void optNinguno_CheckedChanged(object sender, EventArgs e)
+        {
+            dgwClientes.DataSource = TrabajarCliente.list_clientes();
+        }
+
+
+       
     }
 }
