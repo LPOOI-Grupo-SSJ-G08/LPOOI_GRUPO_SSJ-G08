@@ -52,6 +52,12 @@
     <Compile Include="FrmAltaObrasSociales.Designer.cs">
       <DependentUpon>FrmAltaObrasSociales.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarCliente.Designer.cs">
+      <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAltaObrasSociales.resx">
       <DependentUpon>FrmAltaObrasSociales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarCliente.resx">
+      <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionProductos.resx">
       <DependentUpon>FrmGestionProductos.cs</DependentUpon>
