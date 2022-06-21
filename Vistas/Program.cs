@@ -19,7 +19,7 @@ namespace Vistas
             //Application.Run(new FrmAltaVentas());
             //Application.Run(new FrmListadoVentas());
             //Application.Run(new FrmGestionClientes());
-            //Application.Run(new FrmBuscarClientes());
+            //Application.Run(new FrmBuscarCliente());
 
             var fLogin = new FrmLogin();
             fLogin.FormClosed += FormClosed;

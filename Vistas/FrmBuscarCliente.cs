@@ -49,12 +49,12 @@ namespace Vistas
         
         private void optDES_CheckedChanged(object sender, EventArgs e)
         {
-            dgvClientes.Sort(dgvClientes.Columns["Apellido"], ListSortDirection.Descending);
+            dgvClientes.DataSource = TrabajarCliente.list_cliente_por_orden('0', txtBusqueda.Text);
         }
 
         private void optASC_CheckedChanged(object sender, EventArgs e)
         {
-            dgvClientes.Sort(dgvClientes.Columns["Apellido"], ListSortDirection.Ascending);
+            dgvClientes.DataSource = TrabajarCliente.list_cliente_por_orden('1', txtBusqueda.Text);
         }
 
         private void optNinguno_CheckedChanged(object sender, EventArgs e)

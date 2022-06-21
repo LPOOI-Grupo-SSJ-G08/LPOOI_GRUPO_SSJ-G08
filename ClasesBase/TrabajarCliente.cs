@@ -138,5 +138,23 @@ namespace ClasesBase
 
             return ds;
         }
+
+        public static DataTable list_cliente_por_orden(char? tipoOrdenacion, string szTextoBuscar)
+        {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listar_clientes_ordenados_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cn;
+            cmd.Parameters.AddWithValue("@textoBuscar", "%" + szTextoBuscar + "%");
+            cmd.Parameters.AddWithValue("@tipoOrdenacion", tipoOrdenacion);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
     }
 }
