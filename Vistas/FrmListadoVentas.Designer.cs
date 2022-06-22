@@ -32,6 +32,7 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnLimpiarFiltros = new System.Windows.Forms.Button();
             this.lblFin = new System.Windows.Forms.Label();
             this.lblInicio = new System.Windows.Forms.Label();
@@ -42,7 +43,7 @@
             this.btnListarVentasPorCliente = new System.Windows.Forms.Button();
             this.cmbClientes = new System.Windows.Forms.ComboBox();
             this.lblCliente = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnEliminarVenta = new System.Windows.Forms.Button();
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.panel1.SuspendLayout();
@@ -81,6 +82,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.btnEliminarVenta);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnLimpiarFiltros);
             this.panel1.Controls.Add(this.lblFin);
@@ -97,13 +99,23 @@
             this.panel1.Size = new System.Drawing.Size(200, 400);
             this.panel1.TabIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(74, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Filtros";
+            // 
             // btnLimpiarFiltros
             // 
             this.btnLimpiarFiltros.BackColor = System.Drawing.Color.Crimson;
             this.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarFiltros.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarFiltros.Location = new System.Drawing.Point(50, 355);
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(50, 280);
             this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
             this.btnLimpiarFiltros.Size = new System.Drawing.Size(100, 28);
             this.btnLimpiarFiltros.TabIndex = 8;
@@ -114,7 +126,7 @@
             // lblFin
             // 
             this.lblFin.AutoSize = true;
-            this.lblFin.Location = new System.Drawing.Point(27, 255);
+            this.lblFin.Location = new System.Drawing.Point(38, 212);
             this.lblFin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFin.Name = "lblFin";
             this.lblFin.Size = new System.Drawing.Size(24, 13);
@@ -124,7 +136,7 @@
             // lblInicio
             // 
             this.lblInicio.AutoSize = true;
-            this.lblInicio.Location = new System.Drawing.Point(27, 219);
+            this.lblInicio.Location = new System.Drawing.Point(27, 191);
             this.lblInicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInicio.Name = "lblInicio";
             this.lblInicio.Size = new System.Drawing.Size(35, 13);
@@ -134,7 +146,7 @@
             // dtpFechaInicio
             // 
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(71, 218);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(70, 185);
             this.dtpFechaInicio.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(105, 20);
@@ -143,7 +155,7 @@
             // dtpFechaFin
             // 
             this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFin.Location = new System.Drawing.Point(71, 253);
+            this.dtpFechaFin.Location = new System.Drawing.Point(70, 212);
             this.dtpFechaFin.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(105, 20);
@@ -153,7 +165,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(27, 189);
+            this.lblFecha.Location = new System.Drawing.Point(22, 162);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(101, 15);
             this.lblFecha.TabIndex = 4;
@@ -165,7 +177,7 @@
             this.btnListarVentasPorFechas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListarVentasPorFechas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarVentasPorFechas.ForeColor = System.Drawing.Color.White;
-            this.btnListarVentasPorFechas.Location = new System.Drawing.Point(60, 281);
+            this.btnListarVentasPorFechas.Location = new System.Drawing.Point(60, 247);
             this.btnListarVentasPorFechas.Margin = new System.Windows.Forms.Padding(2);
             this.btnListarVentasPorFechas.Name = "btnListarVentasPorFechas";
             this.btnListarVentasPorFechas.Size = new System.Drawing.Size(80, 28);
@@ -206,15 +218,19 @@
             this.lblCliente.TabIndex = 0;
             this.lblCliente.Text = "Filtrar por cliente:";
             // 
-            // label1
+            // btnEliminarVenta
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(74, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Filtros";
+            this.btnEliminarVenta.BackColor = System.Drawing.Color.Crimson;
+            this.btnEliminarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarVenta.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarVenta.Location = new System.Drawing.Point(50, 349);
+            this.btnEliminarVenta.Name = "btnEliminarVenta";
+            this.btnEliminarVenta.Size = new System.Drawing.Size(100, 28);
+            this.btnEliminarVenta.TabIndex = 10;
+            this.btnEliminarVenta.Text = "Eliminar";
+            this.btnEliminarVenta.UseVisualStyleBackColor = false;
+            this.btnEliminarVenta.Click += new System.EventHandler(this.btnEliminarVenta_Click);
             // 
             // FrmListadoVentas
             // 
@@ -255,5 +271,6 @@
         private System.Windows.Forms.Label lblFin;
         private System.Windows.Forms.Button btnLimpiarFiltros;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEliminarVenta;
     }
 }
