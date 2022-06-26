@@ -21,6 +21,9 @@ namespace Vistas
         {
             dgvVentas.DataSource = TrabajarVenta.getAllVentas();
             CargarComboClientes();
+            lblRegistros.Visible = false;
+            txtRegistros.Visible = false;
+            txtRegistros.Enabled = false;
         }
 
         private void CargarComboClientes()
@@ -36,6 +39,9 @@ namespace Vistas
         private void btnListarVentasPorCliente_Click(object sender, EventArgs e)
         {
             dgvVentas.DataSource = TrabajarVenta.getVentasByCliente(cmbClientes.SelectedValue.ToString());
+            lblRegistros.Visible = true;
+            txtRegistros.Visible = true;
+            txtRegistros.Text = TrabajarVenta.getCantidadVentasByCliente(cmbClientes.SelectedValue.ToString()).ToString();
         }
 
         private void btnListarVentasPorFechas_Click(object sender, EventArgs e)
@@ -45,6 +51,8 @@ namespace Vistas
 
         private void btnLimpiarFiltros_Click(object sender, EventArgs e)
         {
+            lblRegistros.Visible = false;
+            txtRegistros.Visible = false;
             FrmListadoVentas_Load(null, null);
         }
 

@@ -106,6 +106,27 @@ namespace ClasesBase {
             return dt;
         }
 
+        public static int getCantidadVentasByCliente(string szDNI)
+        {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "get_count_ventas_x_cliente_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cn;
+
+            cmd.Parameters.AddWithValue("@DNI", szDNI);
+            cmd.Parameters.Add("@cantidad_ventas", SqlDbType.Int);
+            cmd.Parameters["@cantidad_ventas"].Direction = ParameterDirection.Output;
+
+            cn.Open();
+            cmd.ExecuteNonQuery();
+            cn.Close();
+
+            int iCantidadVentas = (int) cmd.Parameters["@cantidad_ventas"].Value;
+
+            return iCantidadVentas;
+        }
+
         public static DataTable getVentasByFechas(DateTime fechaInicio, DateTime fechaFin)
         {
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
