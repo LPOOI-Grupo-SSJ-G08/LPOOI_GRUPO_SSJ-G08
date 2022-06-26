@@ -106,19 +106,9 @@ namespace ClasesBase
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT ";
-            cmd.CommandText += " Cli_DNI as 'DNI', ";
-            cmd.CommandText += " Cli_Nombre as 'Nombre', ";
-            cmd.CommandText += " Cli_Apellido as 'Apellido', ";
-            cmd.CommandText += " Cli_Direccion as 'Direccion', ";
-            cmd.CommandText += " OS_CUIT as 'CUIT', ";
-            cmd.CommandText += " Cli_NroCarnet as 'Nro de Carnet' ";
-            cmd.CommandText += " FROM Cliente ";
-            cmd.CommandText += " WHERE Cli_Apellido LIKE @textoBuscar OR Cli_Direccion LIKE @textoBuscar ";
-            cmd.CommandType = CommandType.Text;
-
+            cmd.CommandText = "list_clientes_x_filtros_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cn;
-
             cmd.Parameters.AddWithValue("@textoBuscar", "%" + szTextoBuscar + "%");
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -147,6 +137,24 @@ namespace ClasesBase
 
 
             return ds;
+        }
+
+        public static DataTable list_cliente_por_orden(char? tipoOrdenacion, string szTextoBuscar)
+        {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listar_clientes_ordenados_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cn;
+            cmd.Parameters.AddWithValue("@textoBuscar", "%" + szTextoBuscar + "%");
+            cmd.Parameters.AddWithValue("@tipoOrdenacion", tipoOrdenacion);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
         }
     }
 }
