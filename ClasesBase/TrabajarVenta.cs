@@ -144,5 +144,27 @@ namespace ClasesBase {
 
             return dt;
         }
+
+        public static int getCantidadVentasByFecha(DateTime fechaInicio, DateTime fechaFin)
+        {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "get_count_ventas_x_fechas_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cn;
+
+            cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio);
+            cmd.Parameters.AddWithValue("@FechaFin", fechaFin);
+            cmd.Parameters.Add("@cantidad_ventas", SqlDbType.Int);
+            cmd.Parameters["@cantidad_ventas"].Direction = ParameterDirection.Output;
+
+            cn.Open();
+            cmd.ExecuteNonQuery();
+            cn.Close();
+
+            int iCantidadVentas = (int)cmd.Parameters["@cantidad_ventas"].Value;
+
+            return iCantidadVentas;
+        }
     }
 }

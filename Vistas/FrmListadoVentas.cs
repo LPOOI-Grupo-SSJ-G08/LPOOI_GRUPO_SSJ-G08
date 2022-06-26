@@ -47,6 +47,9 @@ namespace Vistas
         private void btnListarVentasPorFechas_Click(object sender, EventArgs e)
         {
             dgvVentas.DataSource = TrabajarVenta.getVentasByFechas(dtpFechaInicio.Value.Date, dtpFechaFin.Value.Date.AddHours(23).AddMinutes(59).AddSeconds(59));
+            lblRegistros.Visible = true;
+            txtRegistros.Visible = true;
+            txtRegistros.Text = TrabajarVenta.getCantidadVentasByFecha(dtpFechaInicio.Value.Date, dtpFechaFin.Value.Date.AddHours(23).AddMinutes(59).AddSeconds(59)).ToString();
         }
 
         private void btnLimpiarFiltros_Click(object sender, EventArgs e)
