@@ -56,9 +56,8 @@
             this.pnlEncabezado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
             this.pnlEncabezado.Controls.Add(this.lblTitulo);
             this.pnlEncabezado.Location = new System.Drawing.Point(0, 0);
-            this.pnlEncabezado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(1101, 86);
+            this.pnlEncabezado.Size = new System.Drawing.Size(734, 56);
             this.pnlEncabezado.TabIndex = 1;
             // 
             // lblTitulo
@@ -66,10 +65,9 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.lblTitulo.Location = new System.Drawing.Point(432, 22);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(288, 14);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(243, 32);
+            this.lblTitulo.Size = new System.Drawing.Size(159, 24);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Listado de Ventas";
             // 
@@ -77,10 +75,9 @@
             // 
             this.dgvVentas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentas.Location = new System.Drawing.Point(0, 95);
-            this.dgvVentas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvVentas.Location = new System.Drawing.Point(0, 62);
             this.dgvVentas.Name = "dgvVentas";
-            this.dgvVentas.Size = new System.Drawing.Size(790, 538);
+            this.dgvVentas.Size = new System.Drawing.Size(527, 350);
             this.dgvVentas.TabIndex = 0;
             // 
             // panel1
@@ -97,20 +94,18 @@
             this.panel1.Controls.Add(this.btnListarVentasPorCliente);
             this.panel1.Controls.Add(this.cmbClientes);
             this.panel1.Controls.Add(this.lblCliente);
-            this.panel1.Location = new System.Drawing.Point(800, 95);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(533, 62);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 615);
+            this.panel1.Size = new System.Drawing.Size(200, 400);
             this.panel1.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(111, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(74, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 29);
+            this.label1.Size = new System.Drawing.Size(52, 20);
             this.label1.TabIndex = 9;
             this.label1.Text = "Filtros";
             // 
@@ -120,10 +115,9 @@
             this.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarFiltros.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarFiltros.Location = new System.Drawing.Point(75, 546);
-            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(50, 355);
             this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
-            this.btnLimpiarFiltros.Size = new System.Drawing.Size(150, 43);
+            this.btnLimpiarFiltros.Size = new System.Drawing.Size(100, 28);
             this.btnLimpiarFiltros.TabIndex = 8;
             this.btnLimpiarFiltros.Text = "Limpiar Filtros";
             this.btnLimpiarFiltros.UseVisualStyleBackColor = false;
@@ -132,45 +126,48 @@
             // lblFin
             // 
             this.lblFin.AutoSize = true;
-            this.lblFin.Location = new System.Drawing.Point(40, 392);
+            this.lblFin.Location = new System.Drawing.Point(27, 255);
+            this.lblFin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFin.Name = "lblFin";
-            this.lblFin.Size = new System.Drawing.Size(35, 20);
+            this.lblFin.Size = new System.Drawing.Size(24, 13);
             this.lblFin.TabIndex = 7;
             this.lblFin.Text = "Fin:";
             // 
             // lblInicio
             // 
             this.lblInicio.AutoSize = true;
-            this.lblInicio.Location = new System.Drawing.Point(40, 337);
+            this.lblInicio.Location = new System.Drawing.Point(27, 219);
+            this.lblInicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInicio.Name = "lblInicio";
-            this.lblInicio.Size = new System.Drawing.Size(50, 20);
+            this.lblInicio.Size = new System.Drawing.Size(35, 13);
             this.lblInicio.TabIndex = 6;
             this.lblInicio.Text = "Inicio:";
             // 
             // dtpFechaInicio
             // 
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(106, 335);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(71, 218);
+            this.dtpFechaInicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(156, 26);
+            this.dtpFechaInicio.Size = new System.Drawing.Size(105, 20);
             this.dtpFechaInicio.TabIndex = 5;
             // 
             // dtpFechaFin
             // 
             this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFin.Location = new System.Drawing.Point(106, 389);
+            this.dtpFechaFin.Location = new System.Drawing.Point(71, 253);
+            this.dtpFechaFin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(156, 26);
+            this.dtpFechaFin.Size = new System.Drawing.Size(105, 20);
             this.dtpFechaFin.TabIndex = 0;
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(40, 291);
-            this.lblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFecha.Location = new System.Drawing.Point(27, 189);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(150, 22);
+            this.lblFecha.Size = new System.Drawing.Size(101, 15);
             this.lblFecha.TabIndex = 4;
             this.lblFecha.Text = "Filtrar por fechas:";
             // 
@@ -180,9 +177,10 @@
             this.btnListarVentasPorFechas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListarVentasPorFechas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarVentasPorFechas.ForeColor = System.Drawing.Color.White;
-            this.btnListarVentasPorFechas.Location = new System.Drawing.Point(90, 432);
+            this.btnListarVentasPorFechas.Location = new System.Drawing.Point(60, 281);
+            this.btnListarVentasPorFechas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnListarVentasPorFechas.Name = "btnListarVentasPorFechas";
-            this.btnListarVentasPorFechas.Size = new System.Drawing.Size(120, 43);
+            this.btnListarVentasPorFechas.Size = new System.Drawing.Size(80, 28);
             this.btnListarVentasPorFechas.TabIndex = 3;
             this.btnListarVentasPorFechas.Text = "Aplicar";
             this.btnListarVentasPorFechas.UseVisualStyleBackColor = false;
@@ -194,10 +192,9 @@
             this.btnListarVentasPorCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListarVentasPorCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarVentasPorCliente.ForeColor = System.Drawing.Color.White;
-            this.btnListarVentasPorCliente.Location = new System.Drawing.Point(90, 178);
-            this.btnListarVentasPorCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnListarVentasPorCliente.Location = new System.Drawing.Point(60, 116);
             this.btnListarVentasPorCliente.Name = "btnListarVentasPorCliente";
-            this.btnListarVentasPorCliente.Size = new System.Drawing.Size(120, 43);
+            this.btnListarVentasPorCliente.Size = new System.Drawing.Size(80, 28);
             this.btnListarVentasPorCliente.TabIndex = 2;
             this.btnListarVentasPorCliente.Text = "Aplicar";
             this.btnListarVentasPorCliente.UseVisualStyleBackColor = false;
@@ -206,55 +203,54 @@
             // cmbClientes
             // 
             this.cmbClientes.FormattingEnabled = true;
-            this.cmbClientes.Location = new System.Drawing.Point(38, 131);
-            this.cmbClientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbClientes.Location = new System.Drawing.Point(25, 85);
             this.cmbClientes.Name = "cmbClientes";
-            this.cmbClientes.Size = new System.Drawing.Size(223, 28);
+            this.cmbClientes.Size = new System.Drawing.Size(150, 21);
             this.cmbClientes.TabIndex = 1;
             // 
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
             this.lblCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.Location = new System.Drawing.Point(33, 85);
-            this.lblCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCliente.Location = new System.Drawing.Point(22, 55);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(149, 22);
+            this.lblCliente.Size = new System.Drawing.Size(101, 15);
             this.lblCliente.TabIndex = 0;
             this.lblCliente.Text = "Filtrar por cliente:";
             // 
             // lblRegistros
             // 
+            this.lblRegistros.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRegistros.AutoSize = true;
             this.lblRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistros.Location = new System.Drawing.Point(18, 672);
-            this.lblRegistros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRegistros.Location = new System.Drawing.Point(17, 428);
             this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(209, 26);
+            this.lblRegistros.Size = new System.Drawing.Size(143, 18);
             this.lblRegistros.TabIndex = 4;
             this.lblRegistros.Text = "Registros devueltos:";
             // 
             // txtRegistros
             // 
+            this.txtRegistros.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegistros.Location = new System.Drawing.Point(242, 671);
-            this.txtRegistros.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtRegistros.Location = new System.Drawing.Point(161, 426);
             this.txtRegistros.Name = "txtRegistros";
-            this.txtRegistros.Size = new System.Drawing.Size(178, 30);
+            this.txtRegistros.Size = new System.Drawing.Size(120, 23);
             this.txtRegistros.TabIndex = 5;
             this.txtRegistros.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FrmListadoVentas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1101, 711);
+            this.ClientSize = new System.Drawing.Size(734, 445);
             this.Controls.Add(this.txtRegistros);
             this.Controls.Add(this.lblRegistros);
             this.Controls.Add(this.dgvVentas);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlEncabezado);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmListadoVentas";
             this.Text = "FrmListadoVentas";
             this.Load += new System.EventHandler(this.FrmListadoVentas_Load);
