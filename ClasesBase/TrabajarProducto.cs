@@ -176,5 +176,26 @@ namespace ClasesBase
 
             return iCantidadVentas;
         }
+
+        public static int getCantidadProductosByCliente(string szDNI)
+        {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "get_count_prod_x_cliente_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cn;
+
+            cmd.Parameters.AddWithValue("@DNI", szDNI);
+            cmd.Parameters.Add("@cantidad_productos", SqlDbType.Int);
+            cmd.Parameters["@cantidad_productos"].Direction = ParameterDirection.Output;
+
+            cn.Open();
+            cmd.ExecuteNonQuery();
+            cn.Close();
+
+            int iCantidadVentas = (int)cmd.Parameters["@cantidad_productos"].Value;
+
+            return iCantidadVentas;
+        }
     }
 }
