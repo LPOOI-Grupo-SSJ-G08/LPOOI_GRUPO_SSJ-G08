@@ -227,7 +227,7 @@
             // 
             this.lblRegistros.AutoSize = true;
             this.lblRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistros.Location = new System.Drawing.Point(18, 672);
+            this.lblRegistros.Location = new System.Drawing.Point(25, 658);
             this.lblRegistros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRegistros.Name = "lblRegistros";
             this.lblRegistros.Size = new System.Drawing.Size(209, 26);
@@ -237,7 +237,7 @@
             // txtRegistros
             // 
             this.txtRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegistros.Location = new System.Drawing.Point(242, 671);
+            this.txtRegistros.Location = new System.Drawing.Point(242, 656);
             this.txtRegistros.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRegistros.Name = "txtRegistros";
             this.txtRegistros.Size = new System.Drawing.Size(178, 30);

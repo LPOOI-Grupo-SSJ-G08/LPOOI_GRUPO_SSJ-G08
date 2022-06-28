@@ -24,14 +24,14 @@ namespace Vistas {
             DateTime fechaInicial = Convert.ToDateTime(dtpFechaInicial.Text);
             DateTime fechaFinal = Convert.ToDateTime(dtpFechaFinal.Text);
             DataSet ds = TrabajarProducto.list_productos_vendidos_rango_fechas(fechaInicial, fechaFinal);
-
+            txtRegistros.Text = TrabajarProducto.getCantidadProductosByFecha(fechaInicial, fechaFinal).ToString();
             dgvProductos.DataSource = ds.Tables[0];
             dgvProductos.Refresh();
         }
 
         private void cmbClientes_SelectionChangeCommitted(object sender, EventArgs e) {
             DataSet ds = TrabajarProducto.list_productos_vendidos_por_cliente(cmbClientes.SelectedValue.ToString());
-
+           
             dgvProductos.DataSource = ds.Tables[0];
             dgvProductos.Refresh();
         }
@@ -46,7 +46,7 @@ namespace Vistas {
 
         private void cargarTodosProductosVendidos() {
             DataSet ds = TrabajarProducto.list_todos_productos_vendidos();
-
+            txtRegistros.Text = "";
             dgvProductos.DataSource = ds.Tables[0];
             dgvProductos.Refresh();
         }
