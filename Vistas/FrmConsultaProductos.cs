@@ -18,6 +18,8 @@ namespace Vistas {
         private void FrmConsultaProductos_Load(object sender, EventArgs e) {
             cargarComboClientes();
             cargarTodosProductosVendidos();
+            lblRegistros.Hide();
+            txtRegistros.Hide();
         }
 
         private void btnBuscarPorFechas_Click(object sender, EventArgs e) {
@@ -27,13 +29,17 @@ namespace Vistas {
             txtRegistros.Text = TrabajarProducto.getCantidadProductosByFecha(fechaInicial, fechaFinal).ToString();
             dgvProductos.DataSource = ds.Tables[0];
             dgvProductos.Refresh();
+            lblRegistros.Show();
+            txtRegistros.Show();
         }
 
         private void cmbClientes_SelectionChangeCommitted(object sender, EventArgs e) {
             DataSet ds = TrabajarProducto.list_productos_vendidos_por_cliente(cmbClientes.SelectedValue.ToString());
-           
+            txtRegistros.Text = TrabajarProducto.getCantidadProductosByCliente(cmbClientes.SelectedValue.ToString()).ToString();
             dgvProductos.DataSource = ds.Tables[0];
             dgvProductos.Refresh();
+            lblRegistros.Show();
+            txtRegistros.Show();
         }
 
         private void cargarComboClientes() {
@@ -53,6 +59,8 @@ namespace Vistas {
 
         private void btnLimpiarFiltros_Click(object sender, EventArgs e) {
             cargarTodosProductosVendidos();
+            lblRegistros.Hide();
+            txtRegistros.Hide();
         }
     }
 }
