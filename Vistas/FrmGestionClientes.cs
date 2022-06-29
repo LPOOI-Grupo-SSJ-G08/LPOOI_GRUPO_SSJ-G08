@@ -17,19 +17,18 @@ namespace Vistas
             InitializeComponent();
         }
 
-        private void FrmGestionClientes_Load(object sender, EventArgs e)
-        {
+        private void FrmGestionClientes_Load(object sender, EventArgs e) {
             load_clientes();
             HabilitarAcciones(false);
             ttipBusqueda.SetToolTip(txtBusqueda, "Buscar por Apellido o Dirección");
             cargarCombosObrasSociales();
         }
 
-        private void load_clientes()
-        {
+        private void load_clientes() {
             int order = Convert.ToInt32(optA.Checked);
-            dgwClientes.DataSource = TrabajarCliente.search_clientes_order(txtBusqueda.Text, order);
-             
+            DataTable dt = TrabajarCliente.search_clientes_order(txtBusqueda.Text, order);
+            dgwClientes.DataSource = dt;
+            contarRegistrosDevueltos(dt);
         }
 
         private void HabilitarAcciones(bool b)
@@ -147,10 +146,9 @@ namespace Vistas
             realizarBusqueda();
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            load_clientes();
+        private void btnLimpiar_Click(object sender, EventArgs e) {
             txtBusqueda.Clear();
+            load_clientes();
         }
 
         private void dgwClientes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -234,15 +232,17 @@ namespace Vistas
         private void realizarBusqueda() {
             if (txtBusqueda.Text != String.Empty) {
                 int order = Convert.ToInt32(optA.Checked);
-                dgwClientes.DataSource = TrabajarCliente.search_clientes_order(txtBusqueda.Text, order);
+                DataTable dt = TrabajarCliente.search_clientes_order(txtBusqueda.Text, order);
+                dgwClientes.DataSource = dt;
+                contarRegistrosDevueltos(dt);
             } else {
                 load_clientes();
             }
         }
 
-        private void optA_CheckedChanged(object sender, EventArgs e)
-        {
+        private void optA_CheckedChanged(object sender, EventArgs e) {
             DataTable dt;
+
             if (txtBusqueda.Text.Length == 0) {
                 dt = TrabajarCliente.list_cliente_por_apellido('1'); // 0 para listar en ascendente 
             } else {
@@ -252,26 +252,25 @@ namespace Vistas
              
             dgwClientes.DataSource = dt;
             dgwClientes.Refresh();
+            contarRegistrosDevueltos(dt);
         }
 
-        private void optZ_CheckedChanged(object sender, EventArgs e)
-        {
+        private void optZ_CheckedChanged(object sender, EventArgs e) {
             DataTable dt;
+
             if (txtBusqueda.Text.Length == 0) {
                 dt = TrabajarCliente.list_cliente_por_apellido('0'); //1 para listar en descendente
             } else {
                 int order = Convert.ToInt32(optA.Checked);
                 dt = TrabajarCliente.search_clientes_order(txtBusqueda.Text, order);
             }
+
             dgwClientes.DataSource = dt;
             dgwClientes.Refresh();
+            contarRegistrosDevueltos(dt);
         }
 
         private void cargarCombosObrasSociales() {
-            /*
-            DataTable dt = TrabajarObraSocial.showAllObrasSociales();
-            dt.Columns.Add("CUITRazonSocial", typeof(string), "OS_CUIT + ' - ' + OS_RazonSocial");
-            */
             cmbObraSocial.DisplayMember = cmbObraSocialConsulta.DisplayMember = "CUITRazonSocial";
             cmbObraSocial.ValueMember = cmbObraSocialConsulta.ValueMember = "OS_CUIT";
             cmbObraSocial.DataSource = getTablaObrasSocial();
@@ -287,12 +286,30 @@ namespace Vistas
         }
 
         private void cmbObraSocialConsulta_SelectionChangeCommitted(object sender, EventArgs e) {
+            txtBusqueda.Text = "";
             int order = Convert.ToInt32(optA.Checked);
             string cuit = cmbObraSocialConsulta.SelectedValue.ToString();
-            dgwClientes.DataSource = TrabajarCliente.search_clientes_cuit_obra_social(cuit, order);
-            int cantidad = TrabajarCliente.search_clientes_cuit_obra_social_count(cuit);
-            lblCountRegistros.Text = Convert.ToString(cantidad);
+            DataTable dt = TrabajarCliente.search_clientes_cuit_obra_social(cuit, order);
+            dgwClientes.DataSource = dt;
+            contarRegistrosDevueltos(dt);
         }
-       
+
+        /*
+        private void cambiarLabelsMostrarRegistros() {
+            lblMostrar1.Visible = !lblMostrar1.Visible;
+            lblMostrar2.Visible = !lblMostrar2.Visible;
+            lblCountRegistros.Visible = !lblCountRegistros.Visible;
+        }
+
+        private void cambiarMostrarRegistros() {
+            if (lblCountRegistros.Visible) {
+                cambiarLabelsMostrarRegistros();
+            }
+        }
+         * */
+
+        private void contarRegistrosDevueltos(DataTable dt) {
+            lblCountRegistros.Text = Convert.ToString(dt.Rows.Count);
+        }
     }
 }
