@@ -52,6 +52,7 @@ namespace ClasesBase
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            
 
             return dt;
         }
@@ -118,7 +119,7 @@ namespace ClasesBase
             return dt;
         }
 
-        public static DataSet list_cliente_por_apellido(char? tipoOrdenacion)
+        public static DataTable list_cliente_por_apellido(char? tipoOrdenacion)
         {
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
@@ -132,11 +133,11 @@ namespace ClasesBase
             param.Value = tipoOrdenacion;
             da.SelectCommand.Parameters.Add(param);
 
-            DataSet ds = new DataSet();
-            da.Fill(ds, "Clientes");
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
 
-            return ds;
+            return dt;
         }
 
         public static DataTable list_cliente_por_orden(char? tipoOrdenacion, string szTextoBuscar)
@@ -155,6 +156,63 @@ namespace ClasesBase
             da.Fill(dt);
 
             return dt;
+        }
+
+        public static DataTable search_clientes_order(string szTextoBuscar, int tipoOrdenacion) {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "selectClientesFiltros";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cn;
+            cmd.Parameters.AddWithValue("@textoBuscar", szTextoBuscar);
+            cmd.Parameters.AddWithValue("@tipoOrdenacion", tipoOrdenacion);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        public static DataTable search_clientes_cuit_obra_social(string cuit, int tipoOrdenacion) {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "selectClientesCuit";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cn;
+            cmd.Parameters.AddWithValue("@cuitObraSocial", cuit);
+            cmd.Parameters.AddWithValue("@tipoOrdenacion", tipoOrdenacion);
+            SqlParameter param = new SqlParameter("@cantidadRegistros", SqlDbType.Int);
+            param.Direction = ParameterDirection.Output;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        public static int search_clientes_cuit_obra_social_count(string cuit) {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand("selectClientesCuitCount", cn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter param = new SqlParameter("@cuitObraSocial", SqlDbType.VarChar);
+            param.Direction = ParameterDirection.Input;
+            param.Value = cuit;
+            da.SelectCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@cantidadRegistros", SqlDbType.Int);
+            param.Direction = ParameterDirection.Output;
+            da.SelectCommand.Parameters.Add(param);
+            
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return Convert.ToInt32(da.SelectCommand.Parameters["@cantidadRegistros"].Value);
         }
     }
 }
