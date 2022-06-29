@@ -56,7 +56,8 @@ namespace Vistas
             {
                 TrabajarVenta.delete_venta(Convert.ToInt32(dgvVentas.CurrentRow.Cells["Ven_Nro"].Value));
                 FrmListadoVentas_Load(null, null);
-                    
+
+                MessageBox.Show("La venta ha eliminada correctamente");
             }
         }
 
