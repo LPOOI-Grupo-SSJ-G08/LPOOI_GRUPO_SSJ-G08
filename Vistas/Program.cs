@@ -20,11 +20,13 @@ namespace Vistas
             //Application.Run(new FrmListadoVentas());
             //Application.Run(new FrmGestionClientes());
             //Application.Run(new FrmBuscarCliente());
-
+            //Application.Run(new FrmLogin());
+            
             var fLogin = new FrmLogin();
             fLogin.FormClosed += FormClosed;
             fLogin.Show();
             Application.Run();
+             
         }
 
         static void FormClosed(object sender, FormClosedEventArgs e)

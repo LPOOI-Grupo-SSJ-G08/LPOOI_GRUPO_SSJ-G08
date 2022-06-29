@@ -30,6 +30,7 @@
         {
             this.btnSalir = new System.Windows.Forms.Button();
             this.pnlCabecera = new System.Windows.Forms.Panel();
+            this.imgUsuarioMain = new System.Windows.Forms.PictureBox();
             this.lblRolActual = new System.Windows.Forms.Label();
             this.lblUsuarioActual = new System.Windows.Forms.Label();
             this.pnlContenedor = new System.Windows.Forms.Panel();
@@ -42,6 +43,7 @@
             this.btnObrasSociales = new System.Windows.Forms.Button();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlCabecera.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgUsuarioMain)).BeginInit();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +67,7 @@
             // pnlCabecera
             // 
             this.pnlCabecera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
+            this.pnlCabecera.Controls.Add(this.imgUsuarioMain);
             this.pnlCabecera.Controls.Add(this.lblRolActual);
             this.pnlCabecera.Controls.Add(this.lblUsuarioActual);
             this.pnlCabecera.Controls.Add(this.btnSalir);
@@ -72,6 +75,15 @@
             this.pnlCabecera.Name = "pnlCabecera";
             this.pnlCabecera.Size = new System.Drawing.Size(884, 60);
             this.pnlCabecera.TabIndex = 5;
+            // 
+            // imgUsuarioMain
+            // 
+            this.imgUsuarioMain.Location = new System.Drawing.Point(591, 0);
+            this.imgUsuarioMain.Name = "imgUsuarioMain";
+            this.imgUsuarioMain.Size = new System.Drawing.Size(68, 60);
+            this.imgUsuarioMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgUsuarioMain.TabIndex = 7;
+            this.imgUsuarioMain.TabStop = false;
             // 
             // lblRolActual
             // 
@@ -91,7 +103,7 @@
             this.lblUsuarioActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.lblUsuarioActual.Location = new System.Drawing.Point(679, 10);
             this.lblUsuarioActual.Name = "lblUsuarioActual";
-            this.lblUsuarioActual.Size = new System.Drawing.Size(63, 16);
+            this.lblUsuarioActual.Size = new System.Drawing.Size(62, 16);
             this.lblUsuarioActual.TabIndex = 5;
             this.lblUsuarioActual.Text = "Usuario";
             // 
@@ -231,6 +243,7 @@
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.pnlCabecera.ResumeLayout(false);
             this.pnlCabecera.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgUsuarioMain)).EndInit();
             this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -251,6 +264,7 @@
         private System.Windows.Forms.Button btnListadoVentas;
         private System.Windows.Forms.Button btnObrasSociales;
         private System.Windows.Forms.Panel pnlMenu;
+        private System.Windows.Forms.PictureBox imgUsuarioMain;
 
     }
 }

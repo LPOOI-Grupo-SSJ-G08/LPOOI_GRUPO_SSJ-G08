@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace ClasesBase
 {
@@ -12,6 +13,7 @@ namespace ClasesBase
         private string usu_Contrasenia;
         private string usu_ApellidoNombre;
         private int rol_Codigo;
+        private Image usu_Imagen;
 
         public int Usu_Id
         {
@@ -43,6 +45,12 @@ namespace ClasesBase
             set { rol_Codigo = value; }
         }
 
+        public Image Usu_Imagen
+        {
+            get { return usu_Imagen; }
+            set { usu_Imagen = value; }
+        }
+
         public Usuario()
         {
 
@@ -67,7 +75,7 @@ namespace ClasesBase
 
         public override string ToString()
         {
-            return string.Format("Usuario: {0} ,Contraseña: {1},NombreCompleto: {2} , RolId: {3}",usu_NombreUsuario ,usu_Contrasenia, usu_ApellidoNombre,rol_Codigo );
+            return string.Format("Usuario: {0} ,Contraseña: {1},NombreCompleto: {2} , RolId: {3} ",usu_NombreUsuario ,usu_Contrasenia, usu_ApellidoNombre,rol_Codigo);
         }  
     }
 }

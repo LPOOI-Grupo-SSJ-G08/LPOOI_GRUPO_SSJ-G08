@@ -7,18 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ClasesBase;
+using System.IO;
 
 namespace Vistas
 {   
     public partial class FrmGestionUsuarios : Form
     {
         Usuario usuarioTmp;
+        Boolean cargoImg = false;
+
         public FrmGestionUsuarios()
         {
             InitializeComponent();
-            this.cargarUsuarios();
+            cargarUsuarios();
+            cargar_combo_roles();
             this.esconder();
             dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
+        }
+
+        private void cargar_combo_roles()
+        {
+            cmbRol.DisplayMember = "rol_descripcion";
+            cmbRol.ValueMember = "rol_codigo";
+            cmbRol.DataSource = TrabajarUsuario.get_roles();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -36,21 +47,21 @@ namespace Vistas
                     if (this.comprobarAltaModificarUsuario() && !this.comprobarUsuarioExistente(txtUsuario.Text))
                     {
                        this.setUsuario(ouser);
-                       TrabajarUsuario.agregarUsuario(ouser);
+                       if (ouser.Usu_Imagen == null)
+                           TrabajarUsuario.agregarUsuario(ouser);
+                       else
+                           TrabajarUsuario.agregarUsuarioImg(ouser);
                        this.cargarUsuarios();
                        this.esconder();
                        this.limpiarCampos();
                        this.HabilitarAcciones(false);
                     }
-                   
-
                 }
                 catch (Exception efe)
                 {
                     MessageBox.Show("Ha fallado - " + efe.Message);
                 }
         }
-
 
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {   
@@ -72,9 +83,7 @@ namespace Vistas
             catch(Exception efe)
             {
                 MessageBox.Show("Problemas al eliminar usuario " + efe);
-            }
-               
-            
+            } 
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -97,23 +106,11 @@ namespace Vistas
 
         private void setUsuario(Usuario ouser)
         {
-            int numRol = ouser.Rol_Codigo;
-            switch (cmbRol.Text)
-            {
-                case "Administrador":
-                    numRol = 0;
-                    break;
-                case "Auditor":
-                    numRol = 1;
-                    break;
-                case "Operador":
-                    numRol = 2;
-                    break;
-            }
             ouser.Usu_Contrasenia = txtContrasenia.Text;
             ouser.Usu_ApellidoNombre = txtNombreCompleto.Text;
             ouser.Usu_NombreUsuario = txtUsuario.Text;
-            ouser.Rol_Codigo = numRol;
+            ouser.Rol_Codigo = (int)cmbRol.SelectedValue;
+            ouser.Usu_Imagen = imgUsuario.Image;
         }
 
 
@@ -160,6 +157,8 @@ namespace Vistas
         private void cargarUsuarios()
         {
             dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
+            dgvListaUsuarios.Columns["Imagen"].Visible = false;
+            dgvListaUsuarios.Columns["Rol_codigo"].Visible = false;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -182,7 +181,7 @@ namespace Vistas
             txtUsuario.Clear();
             txtContrasenia.Clear();
             txtNombreCompleto.Clear();
-
+            imgUsuario.Image = null;
         }
 
 
@@ -219,27 +218,21 @@ namespace Vistas
 
         private void dgvListaUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvListaUsuarios.CurrentRow != null)
+            if (dgvListaUsuarios.CurrentRow.Cells["Id"].Value.ToString() != "")
             {
                 int valor = (int)dgvListaUsuarios.CurrentRow.Cells[0].Value;
                 this.usuarioTmp = TrabajarUsuario.buscar_usuario(valor);
-                switch (this.usuarioTmp.Rol_Codigo)
-                {
-                    case 0:
-                        cmbRol.Text = "Administrador";
-                        break;
-                    case 1:
-                        cmbRol.Text = "Auditor";
-                        break;
-                    case 2:
-                        cmbRol.Text = "Operador";
-                        break;
-                }
+                cmbRol.Text = dgvListaUsuarios.CurrentRow.Cells["rol"].Value.ToString();
                 txtUsuario.Text = this.usuarioTmp.Usu_NombreUsuario;
                 txtContrasenia.Text = this.usuarioTmp.Usu_Contrasenia;
                 txtNombreCompleto.Text = this.usuarioTmp.Usu_ApellidoNombre;
-                this.HabilitarAcciones(true);
+                if (dgvListaUsuarios.CurrentRow.Cells["Imagen"].Value.ToString() != "")
+                    imgUsuario.Image = Util.ByteToImage((byte[])dgvListaUsuarios.CurrentRow.Cells["Imagen"].Value);
+                else
+                    imgUsuario.Image = Image.FromFile(Util.CompleteImagePath("no-photo.png"));
+                    this.HabilitarAcciones(true);
             }
+            cargoImg = false;
         }
 
         private void btnModificarUsuario_Click(object sender, EventArgs e)
@@ -256,7 +249,11 @@ namespace Vistas
                         return;
                     }
                     this.setUsuario(this.usuarioTmp);
-                    TrabajarUsuario.modificar_usuario(this.usuarioTmp);
+
+                    if (!cargoImg)
+                        TrabajarUsuario.modificar_usuario(this.usuarioTmp);
+                    else
+                        TrabajarUsuario.modificar_usuarioImg(this.usuarioTmp);
                     MessageBox.Show("Usuario modificado correctamente");
                     this.cargarUsuarios();
                     this.esconder();
@@ -277,6 +274,7 @@ namespace Vistas
             this.limpiarCampos();
             this.esconder();
             this.HabilitarAcciones(false);
+            cargoImg = false;
         }
 
         private void HabilitarAcciones(bool b)
@@ -307,6 +305,18 @@ namespace Vistas
                     btn.BackColor = Color.Crimson;
                 }
             }
+        }
+
+        private void btnSeleccionarImg_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog of = new OpenFileDialog();
+            of.Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
+            if (of.ShowDialog() == DialogResult.OK)
+            {
+                //imgUsuario.ImageLocation = of.FileName;
+                imgUsuario.Image = new Bitmap(of.FileName);
+            }
+            cargoImg = true;
         }
     }
 }

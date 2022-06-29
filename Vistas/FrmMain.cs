@@ -7,6 +7,7 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ClasesBase;
 
 namespace Vistas
 {
@@ -15,6 +16,7 @@ namespace Vistas
         private Form activeForm = null;
         private static Button btnBotonActual;
         private static Button btnBotonAnterior;
+        public Usuario userMain = new Usuario();
 
         public FrmMain()
         {
@@ -68,10 +70,14 @@ namespace Vistas
         private void FrmMain_Load(object sender, EventArgs e)
         {
             FrmInicio frmInicio = new FrmInicio();
-            frmInicio.lblBienvenida.Text = "Bienvenido " + lblUsuarioActual.Text + "!";
-            frmInicio.lblRol.Text = "Se logueó con el rol " + lblRolActual.Text;
+            userMain = TrabajarUsuario.buscar_por_nombre_usuario(lblUsuarioActual.Text);
+            frmInicio.lblBienvenida.Text = "Bienvenido/a " + lblUsuarioActual.Text + "!";
+            frmInicio.lblRol.Text = "Se logueó con el rol de " + lblRolActual.Text;
             frmInicio.lblBienvenida.TextAlign = ContentAlignment.MiddleCenter;
             frmInicio.lblRol.TextAlign = ContentAlignment.MiddleCenter;
+            frmInicio.imgUsuario.Image = userMain.Usu_Imagen;
+            imgUsuarioMain.Image = userMain.Usu_Imagen;
+            imgUsuarioMain.Visible = false;
             AbrirFormHijo(frmInicio);
 
             if (lblRolActual.Text != "Auditor")
@@ -131,43 +137,57 @@ namespace Vistas
         private void btnSistema_Click(object sender, EventArgs e)
         {
             PintarBotones(btnSistema);
-            AbrirFormHijo(new FrmInicio());
+            FrmInicio frmInicio = new FrmInicio();
+            userMain = TrabajarUsuario.buscar_por_nombre_usuario(lblUsuarioActual.Text);
+            frmInicio.lblBienvenida.Text = "Bienvenido/a " + lblUsuarioActual.Text + "!";
+            frmInicio.lblRol.Text = "Se logueó con el rol de " + lblRolActual.Text;
+            frmInicio.lblBienvenida.TextAlign = ContentAlignment.MiddleCenter;
+            frmInicio.lblRol.TextAlign = ContentAlignment.MiddleCenter;
+            frmInicio.imgUsuario.Image = userMain.Usu_Imagen;
+            imgUsuarioMain.Visible = false;
+            AbrirFormHijo(frmInicio);
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             PintarBotones(btnUsuarios);
             AbrirFormHijo(new FrmGestionUsuarios());
+            imgUsuarioMain.Visible = true;
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
             PintarBotones(btnProductos);
             AbrirFormHijo(new FrmGestionProductos());
+            imgUsuarioMain.Visible = true;
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
             PintarBotones(btnClientes);
             AbrirFormHijo(new FrmGestionClientes());
+            imgUsuarioMain.Visible = true;
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
             PintarBotones(btnVentas);
             AbrirFormHijo(new FrmAltaVentas());
+            imgUsuarioMain.Visible = true;
         }
 
         private void btnListadoVentas_Click(object sender, EventArgs e)
         {
             PintarBotones(btnListadoVentas);
             AbrirFormHijo(new FrmListadoVentas());
+            imgUsuarioMain.Visible = true;
         }
 
         private void btnObrasSociales_Click(object sender, EventArgs e)
         {
             PintarBotones(btnObrasSociales);
             AbrirFormHijo(new FrmAltaObrasSociales());
+            imgUsuarioMain.Visible = true;
         }
 
     }
