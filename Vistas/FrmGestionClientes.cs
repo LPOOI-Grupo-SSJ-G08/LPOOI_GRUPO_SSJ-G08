@@ -17,16 +17,18 @@ namespace Vistas
             InitializeComponent();
         }
 
-        private void FrmGestionClientes_Load(object sender, EventArgs e)
-        {
+        private void FrmGestionClientes_Load(object sender, EventArgs e) {
             load_clientes();
             HabilitarAcciones(false);
             ttipBusqueda.SetToolTip(txtBusqueda, "Buscar por Apellido o Dirección");
+            cargarCombosObrasSociales();
         }
 
-        private void load_clientes()
-        {
-            dgwClientes.DataSource = TrabajarCliente.list_clientes();
+        private void load_clientes() {
+            int order = Convert.ToInt32(optA.Checked);
+            DataTable dt = TrabajarCliente.search_clientes_order(txtBusqueda.Text, order);
+            dgwClientes.DataSource = dt;
+            contarRegistrosDevueltos(dt);
         }
 
         private void HabilitarAcciones(bool b)
@@ -77,7 +79,8 @@ namespace Vistas
                     oCliente.Cli_Apellido = txtApellido.Text;
                     oCliente.Cli_DNI = txtDNI.Text;
                     oCliente.Cli_Direccion = txtDireccion.Text;
-                    oCliente.Os_CUIT = txtCUIT.Text;
+                    oCliente.Os_CUIT = cmbObraSocial.SelectedValue.ToString();
+                    //oCliente.Os_CUIT = txtCUIT.Text;
                     oCliente.Cli_NroCarnet = txtNroCarnet.Text;
 
                     TrabajarCliente.insert_cliente(oCliente);
@@ -112,7 +115,8 @@ namespace Vistas
                     oCliente.Cli_Nombre = txtNombre.Text;
                     oCliente.Cli_Apellido = txtApellido.Text;
                     oCliente.Cli_Direccion = txtDireccion.Text;
-                    oCliente.Os_CUIT = txtCUIT.Text;
+                    oCliente.Os_CUIT = cmbObraSocial.SelectedValue.ToString();
+                    //oCliente.Os_CUIT = txtCUIT.Text;
                     oCliente.Cli_NroCarnet = txtNroCarnet.Text;
 
                     TrabajarCliente.update_cliente(oCliente);
@@ -142,10 +146,9 @@ namespace Vistas
             realizarBusqueda();
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            load_clientes();
+        private void btnLimpiar_Click(object sender, EventArgs e) {
             txtBusqueda.Clear();
+            load_clientes();
         }
 
         private void dgwClientes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -156,7 +159,8 @@ namespace Vistas
                 txtApellido.Text = dgwClientes.CurrentRow.Cells["Apellido"].Value.ToString();
                 txtDNI.Text = dgwClientes.CurrentRow.Cells["DNI"].Value.ToString();
                 txtDireccion.Text = dgwClientes.CurrentRow.Cells["Direccion"].Value.ToString();
-                txtCUIT.Text = dgwClientes.CurrentRow.Cells["CUIT"].Value.ToString();
+                //txtCUIT.Text = dgwClientes.CurrentRow.Cells["CUIT"].Value.ToString();
+                cmbObraSocial.SelectedValue = dgwClientes.CurrentRow.Cells["CUIT"].Value.ToString();
                 txtNroCarnet.Text = dgwClientes.CurrentRow.Cells["Nro de Carnet"].Value.ToString();
 
                 HabilitarAcciones(true);
@@ -179,7 +183,7 @@ namespace Vistas
             txtApellido.Clear();
             txtNombre.Clear();
             txtDireccion.Clear();
-            txtCUIT.Clear();
+            //txtCUIT.Clear();
             txtNroCarnet.Clear();
         }
 
@@ -205,11 +209,13 @@ namespace Vistas
                 lblValidDireccion.Show();
                 bErrorFound = true;
             }
+            /*
             if (!txtCUIT.Text.All(char.IsDigit) || string.IsNullOrEmpty(txtCUIT.Text))
             {
                 lblValidCUIT.Show();
                 bErrorFound = true;
             }
+            */
             if (!txtNroCarnet.Text.All(char.IsDigit) || string.IsNullOrEmpty(txtNroCarnet.Text))
             {
                 lblValidNroCarnet.Show();
@@ -225,34 +231,85 @@ namespace Vistas
 
         private void realizarBusqueda() {
             if (txtBusqueda.Text != String.Empty) {
-                dgwClientes.DataSource = TrabajarCliente.search_clientes(txtBusqueda.Text);
+                int order = Convert.ToInt32(optA.Checked);
+                DataTable dt = TrabajarCliente.search_clientes_order(txtBusqueda.Text, order);
+                dgwClientes.DataSource = dt;
+                contarRegistrosDevueltos(dt);
             } else {
                 load_clientes();
             }
         }
 
-        private void optA_CheckedChanged(object sender, EventArgs e)
-        {
-            DataSet ds;
-            ds = TrabajarCliente.list_cliente_por_apellido('1'); // 0 para listar en ascendente 
-            dgwClientes.DataSource = ds.Tables[0];
+        private void optA_CheckedChanged(object sender, EventArgs e) {
+            DataTable dt;
+
+            if (txtBusqueda.Text.Length == 0) {
+                dt = TrabajarCliente.list_cliente_por_apellido('1'); // 0 para listar en ascendente 
+            } else {
+                int order = Convert.ToInt32(optA.Checked);
+                dt = TrabajarCliente.search_clientes_order(txtBusqueda.Text, order);
+            }
+             
+            dgwClientes.DataSource = dt;
             dgwClientes.Refresh();
+            contarRegistrosDevueltos(dt);
         }
 
-        private void optZ_CheckedChanged(object sender, EventArgs e)
-        {
-            DataSet ds;
-            ds = TrabajarCliente.list_cliente_por_apellido('0'); //1 para listar en descendente
-            dgwClientes.DataSource = ds.Tables[0];
+        private void optZ_CheckedChanged(object sender, EventArgs e) {
+            DataTable dt;
+
+            if (txtBusqueda.Text.Length == 0) {
+                dt = TrabajarCliente.list_cliente_por_apellido('0'); //1 para listar en descendente
+            } else {
+                int order = Convert.ToInt32(optA.Checked);
+                dt = TrabajarCliente.search_clientes_order(txtBusqueda.Text, order);
+            }
+
+            dgwClientes.DataSource = dt;
             dgwClientes.Refresh();
+            contarRegistrosDevueltos(dt);
         }
 
-        private void optNinguno_CheckedChanged(object sender, EventArgs e)
-        {
-            dgwClientes.DataSource = TrabajarCliente.list_clientes();
+        private void cargarCombosObrasSociales() {
+            cmbObraSocial.DisplayMember = cmbObraSocialConsulta.DisplayMember = "CUITRazonSocial";
+            cmbObraSocial.ValueMember = cmbObraSocialConsulta.ValueMember = "OS_CUIT";
+            cmbObraSocial.DataSource = getTablaObrasSocial();
+            cmbObraSocialConsulta.DataSource = getTablaObrasSocial();
+            cmbObraSocial.Refresh();
+            cmbObraSocialConsulta.Refresh();
         }
 
+        private DataTable getTablaObrasSocial() {
+            DataTable dt = TrabajarObraSocial.showAllObrasSociales();
+            dt.Columns.Add("CUITRazonSocial", typeof(string), "OS_CUIT + ' - ' + OS_RazonSocial");
+            return dt;
+        }
 
-       
+        private void cmbObraSocialConsulta_SelectionChangeCommitted(object sender, EventArgs e) {
+            txtBusqueda.Text = "";
+            int order = Convert.ToInt32(optA.Checked);
+            string cuit = cmbObraSocialConsulta.SelectedValue.ToString();
+            DataTable dt = TrabajarCliente.search_clientes_cuit_obra_social(cuit, order);
+            dgwClientes.DataSource = dt;
+            contarRegistrosDevueltos(dt);
+        }
+
+        /*
+        private void cambiarLabelsMostrarRegistros() {
+            lblMostrar1.Visible = !lblMostrar1.Visible;
+            lblMostrar2.Visible = !lblMostrar2.Visible;
+            lblCountRegistros.Visible = !lblCountRegistros.Visible;
+        }
+
+        private void cambiarMostrarRegistros() {
+            if (lblCountRegistros.Visible) {
+                cambiarLabelsMostrarRegistros();
+            }
+        }
+         * */
+
+        private void contarRegistrosDevueltos(DataTable dt) {
+            lblCountRegistros.Text = Convert.ToString(dt.Rows.Count);
+        }
     }
 }

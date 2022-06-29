@@ -35,7 +35,6 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtCUIT = new System.Windows.Forms.TextBox();
             this.txtNroCarnet = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
@@ -56,10 +55,12 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.pnlDatosCliente = new System.Windows.Forms.Panel();
+            this.cmbObraSocial = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlConsultas = new System.Windows.Forms.Panel();
-            this.optNinguno = new System.Windows.Forms.RadioButton();
+            this.lblCountRegistros = new System.Windows.Forms.Label();
+            this.cmbObraSocialConsulta = new System.Windows.Forms.ComboBox();
             this.optZ = new System.Windows.Forms.RadioButton();
             this.optA = new System.Windows.Forms.RadioButton();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -67,6 +68,9 @@
             this.lblOrden = new System.Windows.Forms.Label();
             this.pnlCabecera = new System.Windows.Forms.Panel();
             this.ttipBusqueda = new System.Windows.Forms.ToolTip(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblMostrar1 = new System.Windows.Forms.Label();
+            this.lblMostrar2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgwClientes)).BeginInit();
             this.pnlDatosCliente.SuspendLayout();
             this.pnlConsultas.SuspendLayout();
@@ -87,9 +91,9 @@
             // 
             this.dgwClientes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgwClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwClientes.Location = new System.Drawing.Point(12, 213);
+            this.dgwClientes.Location = new System.Drawing.Point(12, 210);
             this.dgwClientes.Name = "dgwClientes";
-            this.dgwClientes.Size = new System.Drawing.Size(422, 260);
+            this.dgwClientes.Size = new System.Drawing.Size(422, 252);
             this.dgwClientes.TabIndex = 0;
             this.dgwClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwClientes_CellClick);
             // 
@@ -120,13 +124,6 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(150, 20);
             this.txtDireccion.TabIndex = 3;
-            // 
-            // txtCUIT
-            // 
-            this.txtCUIT.Location = new System.Drawing.Point(117, 230);
-            this.txtCUIT.Name = "txtCUIT";
-            this.txtCUIT.Size = new System.Drawing.Size(150, 20);
-            this.txtCUIT.TabIndex = 4;
             // 
             // txtNroCarnet
             // 
@@ -343,6 +340,7 @@
             // 
             this.pnlDatosCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlDatosCliente.BackColor = System.Drawing.Color.Transparent;
+            this.pnlDatosCliente.Controls.Add(this.cmbObraSocial);
             this.pnlDatosCliente.Controls.Add(this.label1);
             this.pnlDatosCliente.Controls.Add(this.lblValidNroCarnet);
             this.pnlDatosCliente.Controls.Add(this.txtNombre);
@@ -353,7 +351,6 @@
             this.pnlDatosCliente.Controls.Add(this.lblValidDNI);
             this.pnlDatosCliente.Controls.Add(this.txtDireccion);
             this.pnlDatosCliente.Controls.Add(this.lblValidApellido);
-            this.pnlDatosCliente.Controls.Add(this.txtCUIT);
             this.pnlDatosCliente.Controls.Add(this.lblValidNombre);
             this.pnlDatosCliente.Controls.Add(this.txtNroCarnet);
             this.pnlDatosCliente.Controls.Add(this.btnEliminar);
@@ -370,6 +367,14 @@
             this.pnlDatosCliente.Name = "pnlDatosCliente";
             this.pnlDatosCliente.Size = new System.Drawing.Size(305, 400);
             this.pnlDatosCliente.TabIndex = 11;
+            // 
+            // cmbObraSocial
+            // 
+            this.cmbObraSocial.FormattingEnabled = true;
+            this.cmbObraSocial.Location = new System.Drawing.Point(117, 230);
+            this.cmbObraSocial.Name = "cmbObraSocial";
+            this.cmbObraSocial.Size = new System.Drawing.Size(150, 21);
+            this.cmbObraSocial.TabIndex = 22;
             // 
             // label1
             // 
@@ -395,7 +400,8 @@
             // 
             this.pnlConsultas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlConsultas.BackColor = System.Drawing.Color.Transparent;
-            this.pnlConsultas.Controls.Add(this.optNinguno);
+            this.pnlConsultas.Controls.Add(this.label3);
+            this.pnlConsultas.Controls.Add(this.cmbObraSocialConsulta);
             this.pnlConsultas.Controls.Add(this.optZ);
             this.pnlConsultas.Controls.Add(this.optA);
             this.pnlConsultas.Controls.Add(this.txtBusqueda);
@@ -406,26 +412,33 @@
             this.pnlConsultas.Controls.Add(this.btnBuscar);
             this.pnlConsultas.Location = new System.Drawing.Point(12, 73);
             this.pnlConsultas.Name = "pnlConsultas";
-            this.pnlConsultas.Size = new System.Drawing.Size(422, 134);
+            this.pnlConsultas.Size = new System.Drawing.Size(422, 131);
             this.pnlConsultas.TabIndex = 23;
             // 
-            // optNinguno
+            // lblCountRegistros
             // 
-            this.optNinguno.AutoSize = true;
-            this.optNinguno.Checked = true;
-            this.optNinguno.Location = new System.Drawing.Point(161, 91);
-            this.optNinguno.Name = "optNinguno";
-            this.optNinguno.Size = new System.Drawing.Size(65, 17);
-            this.optNinguno.TabIndex = 30;
-            this.optNinguno.TabStop = true;
-            this.optNinguno.Text = "Ninguno";
-            this.optNinguno.UseVisualStyleBackColor = true;
-            this.optNinguno.CheckedChanged += new System.EventHandler(this.optNinguno_CheckedChanged);
+            this.lblCountRegistros.AutoSize = true;
+            this.lblCountRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountRegistros.Location = new System.Drawing.Point(361, 470);
+            this.lblCountRegistros.Margin = new System.Windows.Forms.Padding(0);
+            this.lblCountRegistros.Name = "lblCountRegistros";
+            this.lblCountRegistros.Size = new System.Drawing.Size(21, 13);
+            this.lblCountRegistros.TabIndex = 32;
+            this.lblCountRegistros.Text = "00";
+            // 
+            // cmbObraSocialConsulta
+            // 
+            this.cmbObraSocialConsulta.FormattingEnabled = true;
+            this.cmbObraSocialConsulta.Location = new System.Drawing.Point(244, 92);
+            this.cmbObraSocialConsulta.Name = "cmbObraSocialConsulta";
+            this.cmbObraSocialConsulta.Size = new System.Drawing.Size(167, 21);
+            this.cmbObraSocialConsulta.TabIndex = 31;
+            this.cmbObraSocialConsulta.SelectionChangeCommitted += new System.EventHandler(this.cmbObraSocialConsulta_SelectionChangeCommitted);
             // 
             // optZ
             // 
             this.optZ.AutoSize = true;
-            this.optZ.Location = new System.Drawing.Point(113, 91);
+            this.optZ.Location = new System.Drawing.Point(113, 93);
             this.optZ.Name = "optZ";
             this.optZ.Size = new System.Drawing.Size(42, 17);
             this.optZ.TabIndex = 29;
@@ -437,7 +450,8 @@
             // optA
             // 
             this.optA.AutoSize = true;
-            this.optA.Location = new System.Drawing.Point(65, 91);
+            this.optA.Checked = true;
+            this.optA.Location = new System.Drawing.Point(65, 93);
             this.optA.Name = "optA";
             this.optA.Size = new System.Drawing.Size(42, 17);
             this.optA.TabIndex = 28;
@@ -483,12 +497,44 @@
             this.pnlCabecera.Size = new System.Drawing.Size(733, 52);
             this.pnlCabecera.TabIndex = 24;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(173, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Obra Social:";
+            // 
+            // lblMostrar1
+            // 
+            this.lblMostrar1.AutoSize = true;
+            this.lblMostrar1.Location = new System.Drawing.Point(306, 470);
+            this.lblMostrar1.Margin = new System.Windows.Forms.Padding(0);
+            this.lblMostrar1.Name = "lblMostrar1";
+            this.lblMostrar1.Size = new System.Drawing.Size(57, 13);
+            this.lblMostrar1.TabIndex = 33;
+            this.lblMostrar1.Text = "Mostrando";
+            // 
+            // lblMostrar2
+            // 
+            this.lblMostrar2.AutoSize = true;
+            this.lblMostrar2.Location = new System.Drawing.Point(379, 470);
+            this.lblMostrar2.Margin = new System.Windows.Forms.Padding(0);
+            this.lblMostrar2.Name = "lblMostrar2";
+            this.lblMostrar2.Size = new System.Drawing.Size(58, 13);
+            this.lblMostrar2.TabIndex = 34;
+            this.lblMostrar2.Text = "resultados.";
+            // 
             // FrmGestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(757, 492);
+            this.Controls.Add(this.lblMostrar2);
+            this.Controls.Add(this.lblMostrar1);
+            this.Controls.Add(this.lblCountRegistros);
             this.Controls.Add(this.pnlCabecera);
             this.Controls.Add(this.pnlConsultas);
             this.Controls.Add(this.pnlDatosCliente);
@@ -504,6 +550,7 @@
             this.pnlCabecera.ResumeLayout(false);
             this.pnlCabecera.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -528,7 +575,6 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNroCarnet;
-        private System.Windows.Forms.TextBox txtCUIT;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.TextBox txtApellido;
@@ -544,9 +590,14 @@
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.ToolTip ttipBusqueda;
-        private System.Windows.Forms.RadioButton optNinguno;
         private System.Windows.Forms.RadioButton optZ;
         private System.Windows.Forms.RadioButton optA;
+        private System.Windows.Forms.ComboBox cmbObraSocial;
+        private System.Windows.Forms.ComboBox cmbObraSocialConsulta;
+        private System.Windows.Forms.Label lblCountRegistros;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMostrar1;
+        private System.Windows.Forms.Label lblMostrar2;
 
 
     }
