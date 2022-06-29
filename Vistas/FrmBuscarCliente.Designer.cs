@@ -38,6 +38,7 @@
             this.optASC = new System.Windows.Forms.RadioButton();
             this.optNinguno = new System.Windows.Forms.RadioButton();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnSeleccionarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -145,12 +146,29 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // btnSeleccionarCliente
+            // 
+            this.btnSeleccionarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
+            this.btnSeleccionarCliente.FlatAppearance.BorderSize = 0;
+            this.btnSeleccionarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionarCliente.ForeColor = System.Drawing.Color.MintCream;
+            this.btnSeleccionarCliente.Location = new System.Drawing.Point(586, 81);
+            this.btnSeleccionarCliente.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.btnSeleccionarCliente.Name = "btnSeleccionarCliente";
+            this.btnSeleccionarCliente.Size = new System.Drawing.Size(86, 27);
+            this.btnSeleccionarCliente.TabIndex = 19;
+            this.btnSeleccionarCliente.Text = "Seleccionar";
+            this.btnSeleccionarCliente.UseVisualStyleBackColor = false;
+            this.btnSeleccionarCliente.Click += new System.EventHandler(this.btnSeleccionarCliente_Click);
+            // 
             // FrmBuscarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(684, 462);
+            this.Controls.Add(this.btnSeleccionarCliente);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.optNinguno);
             this.Controls.Add(this.optASC);
@@ -183,5 +201,6 @@
         private System.Windows.Forms.RadioButton optASC;
         private System.Windows.Forms.RadioButton optNinguno;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnSeleccionarCliente;
     }
 }

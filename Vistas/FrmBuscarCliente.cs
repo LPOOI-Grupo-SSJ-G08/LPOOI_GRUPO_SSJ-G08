@@ -12,8 +12,16 @@ namespace Vistas
 {
     public partial class FrmBuscarCliente : Form
     {
+        String clienteAux;
+
         public FrmBuscarCliente()
         {
+            InitializeComponent();
+        }
+
+        public FrmBuscarCliente(String cliente)
+        {
+            this.clienteAux = cliente;
             InitializeComponent();
         }
 
@@ -68,5 +76,16 @@ namespace Vistas
             loadClientes();
         }
 
+        private void btnSeleccionarCliente_Click(object sender, EventArgs e)
+        {
+            this.clienteAux = (String)dgvClientes.CurrentRow.Cells[0].Value;
+
+            //MessageBox.Show("Cliente seleccionado " + clienteAux);
+            FrmAltaVentas frmAltaVentas = new FrmAltaVentas();
+
+            frmAltaVentas.valorCmb(this.clienteAux);
+
+            this.Close();
+        }
     }
 }
