@@ -41,5 +41,12 @@ namespace ClasesBase
             var VistasDirectory = CurrentDirectory.Substring(0, CurrentDirectory.Length - 9);
             return VistasDirectory + "\\Resources\\" + nombreImg;
         }
+
+        public static string CompleteSoundPath(string nombre)
+        {
+            var CurrentDirectory = Directory.GetCurrentDirectory();
+            var VistasDirectory = CurrentDirectory.Substring(0, CurrentDirectory.Length - 9);
+            return VistasDirectory + "\\Resources\\sounds\\" + nombre;
+        }
     }
 }
