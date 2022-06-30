@@ -47,6 +47,8 @@ namespace Vistas
                     if (this.comprobarAltaModificarUsuario() && !this.comprobarUsuarioExistente(txtUsuario.Text))
                     {
                        this.setUsuario(ouser);
+                       if (txtCorreo.Text != "")
+                           ouser.Usu_Correo = txtCorreo.Text;
                        if (ouser.Usu_Imagen == null)
                            TrabajarUsuario.agregarUsuario(ouser);
                        else
@@ -181,6 +183,7 @@ namespace Vistas
             txtUsuario.Clear();
             txtContrasenia.Clear();
             txtNombreCompleto.Clear();
+            txtCorreo.Clear();
             imgUsuario.Image = null;
         }
 
@@ -231,6 +234,7 @@ namespace Vistas
                 else
                     imgUsuario.Image = Image.FromFile(Util.CompleteImagePath("no-photo.png"));
                     this.HabilitarAcciones(true);
+                    txtCorreo.Text = dgvListaUsuarios.CurrentRow.Cells["Correo"].Value.ToString();
             }
             cargoImg = false;
         }
@@ -249,7 +253,7 @@ namespace Vistas
                         return;
                     }
                     this.setUsuario(this.usuarioTmp);
-
+                    usuarioTmp.Usu_Correo = txtCorreo.Text;
                     if (!cargoImg)
                         TrabajarUsuario.modificar_usuario(this.usuarioTmp);
                     else

@@ -72,46 +72,15 @@ namespace ClasesBase
             return iRolCodigo;
         }
 
-        public static Usuario validate_login2(string szUsername, string szPassword)
-        {
-            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
-
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT ";
-            cmd.CommandText += " * ";
-            cmd.CommandText += " FROM Usuario ";
-            cmd.CommandText += " WHERE ";
-            cmd.CommandText += " Usu_NombreUsuario=@user COLLATE SQL_Latin1_General_CP1_CS_AS AND ";
-            cmd.CommandText += " Usu_Contrasenia=@pass COLLATE SQL_Latin1_General_CP1_CS_AS";
-            cmd.CommandType = CommandType.Text;
-
-            cmd.Connection = cn;
-
-            cmd.Parameters.AddWithValue("@user", szUsername);
-            cmd.Parameters.AddWithValue("@pass", szPassword);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            Usuario user = new Usuario();
-            user.Usu_Id = dt.Rows[0].Field<int>(0);
-            user.Usu_NombreUsuario = dt.Rows[0].Field<string>(1);
-            user.Usu_Contrasenia = dt.Rows[0].Field<string>(2);
-            user.Usu_ApellidoNombre = dt.Rows[0].Field<string>(3);
-            user.Rol_Codigo = dt.Rows[0].Field<int>(4);
-            user.Usu_Imagen = Util.ByteToImage(dt.Rows[0].Field<byte[]>(5));
-
-            return user;
-        }
-
         public static void agregarUsuarioImg(Usuario usuario)
         {
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Usuario(usu_NombreUsuario,usu_Contrasenia,usu_ApellidoNombre,rol_Codigo,usu_imagen) values(@nombreUsuario,@contrasenia,@apellidoNombre,@rolCodigo,@imagen)";
+            if(usuario.Usu_Correo!=null)
+                cmd.CommandText = "INSERT INTO Usuario(usu_NombreUsuario,usu_Contrasenia,usu_ApellidoNombre,rol_Codigo,usu_imagen,usu_Correo) values(@nombreUsuario,@contrasenia,@apellidoNombre,@rolCodigo,@imagen,@correo)";
+            else
+                cmd.CommandText = "INSERT INTO Usuario(usu_NombreUsuario,usu_Contrasenia,usu_ApellidoNombre,rol_Codigo,usu_imagen) values(@nombreUsuario,@contrasenia,@apellidoNombre,@rolCodigo,@imagen)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn;
 
@@ -120,6 +89,8 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@apellidoNombre", usuario.Usu_ApellidoNombre);
             cmd.Parameters.AddWithValue("@rolCodigo", usuario.Rol_Codigo);
             cmd.Parameters.AddWithValue("@imagen", Util.ImageToByte(usuario.Usu_Imagen));
+            if (usuario.Usu_Correo != null)
+                cmd.Parameters.AddWithValue("@correo", usuario.Usu_Correo);
 
             cn.Open();
             cmd.ExecuteNonQuery();
@@ -131,7 +102,10 @@ namespace ClasesBase
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Usuario(usu_NombreUsuario,usu_Contrasenia,usu_ApellidoNombre,rol_Codigo) values(@nombreUsuario,@contrasenia,@apellidoNombre,@rolCodigo)";
+            if (usuario.Usu_Correo != null)
+                cmd.CommandText = "INSERT INTO Usuario(usu_NombreUsuario,usu_Contrasenia,usu_ApellidoNombre,rol_Codigo,usu_correo) values(@nombreUsuario,@contrasenia,@apellidoNombre,@rolCodigo,@correo)";
+            else
+                cmd.CommandText = "INSERT INTO Usuario(usu_NombreUsuario,usu_Contrasenia,usu_ApellidoNombre,rol_Codigo) values(@nombreUsuario,@contrasenia,@apellidoNombre,@rolCodigo)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn;
 
@@ -139,12 +113,13 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@contrasenia", usuario.Usu_Contrasenia);
             cmd.Parameters.AddWithValue("@apellidoNombre", usuario.Usu_ApellidoNombre);
             cmd.Parameters.AddWithValue("@rolCodigo", usuario.Rol_Codigo);
+            if (usuario.Usu_Correo != null)
+                cmd.Parameters.AddWithValue("@correo", usuario.Usu_Correo);
 
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
         }
-
         
         public static DataTable list_usuarios()
         {
@@ -158,7 +133,8 @@ namespace ClasesBase
             cmd.CommandText += "usu_contrasenia as 'Contraseña', ";
             cmd.CommandText += "usu_apellidonombre as 'Nombre Completo', ";
             cmd.CommandText += "Usuario.rol_codigo, ";
-            cmd.CommandText += "Usuario.usu_imagen as Imagen ";
+            cmd.CommandText += "Usuario.usu_imagen as Imagen, ";
+            cmd.CommandText += "Usuario.usu_correo as Correo ";
             cmd.CommandText += "FROM Usuario ";
             cmd.CommandText += "LEFT JOIN Roles ON (Roles.rol_codigo=Usuario.rol_codigo)";
             cmd.CommandType = CommandType.Text;
@@ -184,8 +160,6 @@ namespace ClasesBase
             cnn.Open();
             cmd.ExecuteNonQuery();
             cnn.Close();
-
-
         }
 
         public static void modificar_usuario( Usuario usuarioCambiado)
@@ -197,6 +171,7 @@ namespace ClasesBase
             cmd.CommandText += "' , usu_Contrasenia='" + usuarioCambiado.Usu_Contrasenia;
             cmd.CommandText += "' , usu_ApellidoNombre='" + usuarioCambiado.Usu_ApellidoNombre;
             cmd.CommandText += "' , rol_Codigo='" + usuarioCambiado.Rol_Codigo;
+            cmd.CommandText += "' , usu_correo='" + usuarioCambiado.Usu_Correo;
             cmd.CommandText += "' WHERE usu_ID='" + usuarioCambiado.Usu_Id + "'";
             
             cmd.CommandType = CommandType.Text;
@@ -299,7 +274,10 @@ namespace ClasesBase
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "update_user";
+            if(usuario.Usu_Correo==null)
+                cmd.CommandText = "update_user";
+            else
+                cmd.CommandText = "update_user_with_correo";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cn;
 
@@ -334,9 +312,31 @@ namespace ClasesBase
             param.Value = Util.ImageToByte(usuario.Usu_Imagen);
             cmd.Parameters.Add(param);
 
+            if (usuario.Usu_Correo != null)
+            param = new SqlParameter("@correo", SqlDbType.VarChar);
+            param.Direction = ParameterDirection.Input;
+            param.Value = usuario.Usu_Correo;
+            cmd.Parameters.Add(param);
+
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
+        }
+
+        public static DataTable buscarPorCorreo(string correo)
+        {
+
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM Usuario WHERE Usu_Correo = '" + correo + "';";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
         }
     }
 }

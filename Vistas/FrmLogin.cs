@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ClasesBase;
+using Microsoft.VisualBasic;
 
 namespace Vistas
 {
@@ -81,6 +82,12 @@ namespace Vistas
             {
                 //Actions on stop
             }
+        }
+
+        private void lblRecuperarPsw_Click(object sender, EventArgs e)
+        {
+            FrmCorreo fmrCorreo = new FrmCorreo();
+            fmrCorreo.Show();
         }
 
     }

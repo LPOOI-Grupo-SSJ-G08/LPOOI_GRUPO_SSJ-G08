@@ -14,6 +14,13 @@ namespace ClasesBase
         private string usu_ApellidoNombre;
         private int rol_Codigo;
         private Image usu_Imagen;
+        private string usu_Correo;
+
+        public string Usu_Correo
+        {
+            get { return usu_Correo; }
+            set { usu_Correo = value; }
+        }
 
         public int Usu_Id
         {
