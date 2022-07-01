@@ -11,7 +11,9 @@ using ClasesBase;
 namespace Vistas
 {
     public partial class FrmLogin : Form
-    { 
+    {
+        public static Usuario oUsuario = new Usuario();
+
         public FrmLogin()
         {
             InitializeComponent();
@@ -24,15 +26,11 @@ namespace Vistas
 
             if (szUsuario != String.Empty && szPassword != String.Empty)
             {
-                int iRolCodigo = TrabajarUsuario.validate_login(szUsuario, szPassword);
+                oUsuario = TrabajarUsuario.validate_login(szUsuario, szPassword);
 
-                if (iRolCodigo != 0)
+                if (oUsuario != null)
                 {
-                    //MessageBox.Show("Bienvenido " + szUsuario + "!");
-                    
                     FrmMain frmMain = new FrmMain();
-                    frmMain.lblUsuarioActual.Text = szUsuario;
-                    frmMain.lblRolActual.Text = TrabajarUsuario.get_rol(iRolCodigo);
                     
                     this.Hide();
                     frmMain.Show();

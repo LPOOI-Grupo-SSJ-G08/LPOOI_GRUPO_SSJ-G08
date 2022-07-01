@@ -69,16 +69,7 @@ namespace Vistas
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            FrmInicio frmInicio = new FrmInicio();
-            userMain = TrabajarUsuario.buscar_por_nombre_usuario(lblUsuarioActual.Text);
-            frmInicio.lblBienvenida.Text = "Bienvenido/a " + lblUsuarioActual.Text + "!";
-            frmInicio.lblRol.Text = "Se logueó con el rol de " + lblRolActual.Text;
-            frmInicio.lblBienvenida.TextAlign = ContentAlignment.MiddleCenter;
-            frmInicio.lblRol.TextAlign = ContentAlignment.MiddleCenter;
-            frmInicio.imgUsuario.Image = userMain.Usu_Imagen;
-            imgUsuarioMain.Image = userMain.Usu_Imagen;
-            imgUsuarioMain.Visible = false;
-            AbrirFormHijo(frmInicio);
+            AbrirFormInicio();
 
             if (lblRolActual.Text != "Auditor")
             {
@@ -105,6 +96,25 @@ namespace Vistas
                 cambiarColor(btnClientes);
                 cambiarColor(btnVentas);
             }
+        }
+
+        private void AbrirFormInicio()
+        {
+            FrmInicio frmInicio = new FrmInicio();
+            userMain = TrabajarUsuario.buscar_usuario(FrmLogin.oUsuario.Usu_Id);
+            frmInicio.oUsuario = userMain;
+            frmInicio.lblBienvenida.Text = "Bienvenido/a " + userMain.Usu_NombreUsuario + "!";
+            frmInicio.lblRol.Text = "Se logueó con el rol de " + lblRolActual.Text;
+            frmInicio.lblBienvenida.TextAlign = ContentAlignment.MiddleCenter;
+            frmInicio.lblRol.TextAlign = ContentAlignment.MiddleCenter;
+            frmInicio.imgUsuario.Image = userMain.Usu_Imagen;
+
+            lblUsuarioActual.Text = userMain.Usu_NombreUsuario;
+            lblRolActual.Text = TrabajarUsuario.get_rol(userMain.Rol_Codigo);
+            imgUsuarioMain.Image = userMain.Usu_Imagen;
+            imgUsuarioMain.Visible = false;
+
+            AbrirFormHijo(frmInicio);
         }
 
         private void cambiarColor(Button btn)
@@ -137,15 +147,7 @@ namespace Vistas
         private void btnSistema_Click(object sender, EventArgs e)
         {
             PintarBotones(btnSistema);
-            FrmInicio frmInicio = new FrmInicio();
-            userMain = TrabajarUsuario.buscar_por_nombre_usuario(lblUsuarioActual.Text);
-            frmInicio.lblBienvenida.Text = "Bienvenido/a " + lblUsuarioActual.Text + "!";
-            frmInicio.lblRol.Text = "Se logueó con el rol de " + lblRolActual.Text;
-            frmInicio.lblBienvenida.TextAlign = ContentAlignment.MiddleCenter;
-            frmInicio.lblRol.TextAlign = ContentAlignment.MiddleCenter;
-            frmInicio.imgUsuario.Image = userMain.Usu_Imagen;
-            imgUsuarioMain.Visible = false;
-            AbrirFormHijo(frmInicio);
+            AbrirFormInicio();
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)

@@ -45,34 +45,7 @@ namespace ClasesBase
             return szRolDescripcion;
         }
 
-        public static int validate_login(string szUsername, string szPassword)
-        {
-            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
-
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT ";
-            cmd.CommandText += " ISNULL(Rol_Codigo, 0) ";
-            cmd.CommandText += " FROM Usuario ";
-            cmd.CommandText += " WHERE ";
-            cmd.CommandText += " Usu_NombreUsuario=@user COLLATE SQL_Latin1_General_CP1_CS_AS AND ";
-            cmd.CommandText += " Usu_Contrasenia=@pass COLLATE SQL_Latin1_General_CP1_CS_AS";
-            cmd.CommandType = CommandType.Text;
-
-            cmd.Connection = cn;
-
-            cmd.Parameters.AddWithValue("@user", szUsername);
-            cmd.Parameters.AddWithValue("@pass", szPassword);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-            cn.Open();
-            int iRolCodigo = Convert.ToInt32(cmd.ExecuteScalar());
-            cn.Close();
-
-            return iRolCodigo;
-        }
-
-        public static Usuario validate_login2(string szUsername, string szPassword)
+        public static Usuario validate_login(string szUsername, string szPassword)
         {
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
@@ -96,14 +69,21 @@ namespace ClasesBase
             da.Fill(dt);
 
             Usuario user = new Usuario();
-            user.Usu_Id = dt.Rows[0].Field<int>(0);
-            user.Usu_NombreUsuario = dt.Rows[0].Field<string>(1);
-            user.Usu_Contrasenia = dt.Rows[0].Field<string>(2);
-            user.Usu_ApellidoNombre = dt.Rows[0].Field<string>(3);
-            user.Rol_Codigo = dt.Rows[0].Field<int>(4);
-            user.Usu_Imagen = Util.ByteToImage(dt.Rows[0].Field<byte[]>(5));
-
-            return user;
+            try
+            {
+                user.Usu_Id = dt.Rows[0].Field<int>(0);
+                user.Usu_NombreUsuario = dt.Rows[0].Field<string>(1);
+                user.Usu_Contrasenia = dt.Rows[0].Field<string>(2);
+                user.Usu_ApellidoNombre = dt.Rows[0].Field<string>(3);
+                user.Rol_Codigo = dt.Rows[0].Field<int>(4);
+                user.Usu_Imagen = Util.ByteToImage(dt.Rows[0].Field<byte[]>(5));
+                return user;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            
         }
 
         public static void agregarUsuarioImg(Usuario usuario)
@@ -235,13 +215,21 @@ namespace ClasesBase
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            foreach (DataRow row in dt.Rows)
+            Usuario user = new Usuario();
+            try
             {
-                Usuario usuario = new Usuario(int.Parse(row["usu_ID"].ToString()), row["usu_NombreUsuario"].ToString(), row["usu_Contrasenia"].ToString(), row["usu_ApellidoNombre"].ToString(), int.Parse(row["rol_Codigo"].ToString()));
-                return usuario;
+                user.Usu_Id = dt.Rows[0].Field<int>(0);
+                user.Usu_NombreUsuario = dt.Rows[0].Field<string>(1);
+                user.Usu_Contrasenia = dt.Rows[0].Field<string>(2);
+                user.Usu_ApellidoNombre = dt.Rows[0].Field<string>(3);
+                user.Rol_Codigo = dt.Rows[0].Field<int>(4);
+                user.Usu_Imagen = Util.ByteToImage(dt.Rows[0].Field<byte[]>(5));
+                return user;
             }
-
-            return null;
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         public static Usuario buscar_por_nombre_usuario(string nombreUsuario)
@@ -321,7 +309,7 @@ namespace ClasesBase
 
             param = new SqlParameter("@nombre", SqlDbType.VarChar);
             param.Direction = ParameterDirection.Input;
-            param.Value = usuario.Usu_NombreUsuario;
+            param.Value = usuario.Usu_ApellidoNombre;
             cmd.Parameters.Add(param);
 
             param = new SqlParameter("@rol_codigo", SqlDbType.Int);

@@ -12,10 +12,18 @@ namespace Vistas
 {
     public partial class FrmInicio : Form
     {
+        public Usuario oUsuario;
 
         public FrmInicio()
         {
             InitializeComponent();
+        }
+
+        private void btnEditarPerfil_Click(object sender, EventArgs e)
+        {
+            FrmEditarPerfil frmEditarPerfil = new FrmEditarPerfil();
+            frmEditarPerfil.oUsuario = oUsuario;
+            frmEditarPerfil.Show();
         }
 
     }
