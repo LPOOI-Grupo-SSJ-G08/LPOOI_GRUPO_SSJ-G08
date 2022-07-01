@@ -49,13 +49,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabCtlVenta = new System.Windows.Forms.TabControl();
             this.tpgDetalleVenta = new System.Windows.Forms.TabPage();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.btnAgregarNuevoProducto = new System.Windows.Forms.Button();
             this.lblSubtitle = new System.Windows.Forms.Label();
             this.tpgAgregarProducto = new System.Windows.Forms.TabPage();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tltAgregarProducto = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosSeleccionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudProdCantidad)).BeginInit();
@@ -63,6 +63,7 @@
             this.tpgDetalleVenta.SuspendLayout();
             this.tpgAgregarProducto.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCliente
@@ -336,29 +337,13 @@
             this.tpgDetalleVenta.Controls.Add(this.btnGuardarVenta);
             this.tpgDetalleVenta.Controls.Add(this.cmbClientes);
             this.tpgDetalleVenta.Controls.Add(this.lblCliente);
-            this.tpgDetalleVenta.Controls.Add(this.btnBuscarCliente);
+            this.tpgDetalleVenta.Controls.Add(this.pictureBox1);
             this.tpgDetalleVenta.Location = new System.Drawing.Point(4, 26);
             this.tpgDetalleVenta.Name = "tpgDetalleVenta";
             this.tpgDetalleVenta.Padding = new System.Windows.Forms.Padding(10);
             this.tpgDetalleVenta.Size = new System.Drawing.Size(739, 388);
             this.tpgDetalleVenta.TabIndex = 0;
             this.tpgDetalleVenta.Text = "Detalles";
-            // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
-            this.btnBuscarCliente.FlatAppearance.BorderSize = 0;
-            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarCliente.ForeColor = System.Drawing.Color.MintCream;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(276, 55);
-            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(86, 27);
-            this.btnBuscarCliente.TabIndex = 18;
-            this.btnBuscarCliente.Text = "Buscar";
-            this.btnBuscarCliente.UseVisualStyleBackColor = false;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // btnAgregarNuevoProducto
             // 
@@ -428,6 +413,20 @@
             this.panel1.Size = new System.Drawing.Size(744, 49);
             this.panel1.TabIndex = 24;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::Vistas.Properties.Resources.buscar;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Location = new System.Drawing.Point(368, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Size = new System.Drawing.Size(20, 23);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // FrmAltaVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,6 +451,7 @@
             this.tpgAgregarProducto.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,7 +460,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.ComboBox cmbClientes;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblCodProducto;
         private System.Windows.Forms.Label lblProdPrecio;
@@ -486,6 +485,7 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.ToolTip tltAgregarProducto;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnBuscarCliente;
+        internal System.Windows.Forms.ComboBox cmbClientes;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

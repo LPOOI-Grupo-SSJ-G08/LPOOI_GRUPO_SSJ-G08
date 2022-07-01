@@ -53,6 +53,7 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(684, 330);
             this.dgvClientes.TabIndex = 0;
+            
             // 
             // panel1
             // 

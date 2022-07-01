@@ -12,16 +12,9 @@ namespace Vistas
 {
     public partial class FrmBuscarCliente : Form
     {
-        String clienteAux;
 
         public FrmBuscarCliente()
         {
-            InitializeComponent();
-        }
-
-        public FrmBuscarCliente(String cliente)
-        {
-            this.clienteAux = cliente;
             InitializeComponent();
         }
 
@@ -54,7 +47,7 @@ namespace Vistas
                 loadClientes();
             }
         }
-        
+
         private void optDES_CheckedChanged(object sender, EventArgs e)
         {
             dgvClientes.DataSource = TrabajarCliente.list_cliente_por_orden('0', txtBusqueda.Text);
@@ -78,14 +71,20 @@ namespace Vistas
 
         private void btnSeleccionarCliente_Click(object sender, EventArgs e)
         {
-            this.clienteAux = (String)dgvClientes.CurrentRow.Cells[0].Value;
+            FrmAltaVentas frmAltaVentas = Owner as FrmAltaVentas;
 
-            //MessageBox.Show("Cliente seleccionado " + clienteAux);
-            FrmAltaVentas frmAltaVentas = new FrmAltaVentas();
 
-            frmAltaVentas.valorCmb(this.clienteAux);
+            if (dgvClientes.SelectedRows.Count != 0)
+            {
+                frmAltaVentas.cmbClientes.SelectedValue = dgvClientes.CurrentRow.Cells[0].Value; 
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un registro de la tabla");
+            }
+         }
 
-            this.Close();
-        }
-    }
+        
+     }
 }

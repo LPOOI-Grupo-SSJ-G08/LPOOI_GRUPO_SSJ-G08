@@ -246,25 +246,13 @@ namespace Vistas {
             btn.BackColor = ColorTranslator.FromHtml("#1B998B");
         }
 
-        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            //btnBuscarCliente.Image.Height=10px;
-            String cliente_dni ="";
-
-            FrmBuscarCliente buscarCliente = new FrmBuscarCliente(cliente_dni);
+            FrmBuscarCliente buscarCliente = new FrmBuscarCliente();
+            AddOwnedForm(buscarCliente);
             buscarCliente.Show();
-
-            
-               
- 
         }
 
-        internal void valorCmb(String cliente_dni )
-        {
-            cmbClientes.SelectedItem = cmbClientes.FindStringExact(cliente_dni);
-            //cmbClientes.ValueMember = cliente_dni;
-            MessageBox.Show("Cliente seleccionado " + cliente_dni);
-        }
         
 
     }
