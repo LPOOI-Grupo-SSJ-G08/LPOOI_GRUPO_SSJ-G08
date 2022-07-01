@@ -32,6 +32,7 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminarVenta = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLimpiarFiltros = new System.Windows.Forms.Button();
             this.lblFin = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblRegistros = new System.Windows.Forms.Label();
             this.txtRegistros = new System.Windows.Forms.TextBox();
-            this.btnEliminarVenta = new System.Windows.Forms.Button();
             this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.panel1.SuspendLayout();
@@ -101,11 +101,25 @@
             this.panel1.Size = new System.Drawing.Size(200, 400);
             this.panel1.TabIndex = 3;
             // 
+            // btnEliminarVenta
+            // 
+            this.btnEliminarVenta.BackColor = System.Drawing.Color.Crimson;
+            this.btnEliminarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarVenta.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarVenta.Location = new System.Drawing.Point(50, 343);
+            this.btnEliminarVenta.Name = "btnEliminarVenta";
+            this.btnEliminarVenta.Size = new System.Drawing.Size(100, 28);
+            this.btnEliminarVenta.TabIndex = 10;
+            this.btnEliminarVenta.Text = "Eliminar";
+            this.btnEliminarVenta.UseVisualStyleBackColor = false;
+            this.btnEliminarVenta.Click += new System.EventHandler(this.btnEliminarVenta_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(74, 12);
+            this.label1.Location = new System.Drawing.Point(76, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 20);
             this.label1.TabIndex = 9;
@@ -128,7 +142,7 @@
             // lblFin
             // 
             this.lblFin.AutoSize = true;
-            this.lblFin.Location = new System.Drawing.Point(22, 233);
+            this.lblFin.Location = new System.Drawing.Point(24, 233);
             this.lblFin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFin.Name = "lblFin";
             this.lblFin.Size = new System.Drawing.Size(24, 13);
@@ -138,7 +152,7 @@
             // lblInicio
             // 
             this.lblInicio.AutoSize = true;
-            this.lblInicio.Location = new System.Drawing.Point(22, 197);
+            this.lblInicio.Location = new System.Drawing.Point(24, 197);
             this.lblInicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInicio.Name = "lblInicio";
             this.lblInicio.Size = new System.Drawing.Size(35, 13);
@@ -148,7 +162,7 @@
             // dtpFechaInicio
             // 
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(66, 196);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(68, 196);
             this.dtpFechaInicio.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(105, 20);
@@ -157,7 +171,7 @@
             // dtpFechaFin
             // 
             this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFin.Location = new System.Drawing.Point(66, 231);
+            this.dtpFechaFin.Location = new System.Drawing.Point(68, 231);
             this.dtpFechaFin.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(105, 20);
@@ -167,7 +181,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(22, 167);
+            this.lblFecha.Location = new System.Drawing.Point(24, 167);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(101, 15);
             this.lblFecha.TabIndex = 4;
@@ -194,7 +208,7 @@
             this.btnListarVentasPorCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListarVentasPorCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarVentasPorCliente.ForeColor = System.Drawing.Color.White;
-            this.btnListarVentasPorCliente.Location = new System.Drawing.Point(60, 116);
+            this.btnListarVentasPorCliente.Location = new System.Drawing.Point(62, 116);
             this.btnListarVentasPorCliente.Name = "btnListarVentasPorCliente";
             this.btnListarVentasPorCliente.Size = new System.Drawing.Size(80, 28);
             this.btnListarVentasPorCliente.TabIndex = 2;
@@ -205,7 +219,7 @@
             // cmbClientes
             // 
             this.cmbClientes.FormattingEnabled = true;
-            this.cmbClientes.Location = new System.Drawing.Point(25, 85);
+            this.cmbClientes.Location = new System.Drawing.Point(27, 85);
             this.cmbClientes.Name = "cmbClientes";
             this.cmbClientes.Size = new System.Drawing.Size(150, 21);
             this.cmbClientes.TabIndex = 1;
@@ -214,7 +228,7 @@
             // 
             this.lblCliente.AutoSize = true;
             this.lblCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.Location = new System.Drawing.Point(22, 55);
+            this.lblCliente.Location = new System.Drawing.Point(24, 55);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(101, 15);
             this.lblCliente.TabIndex = 0;
@@ -240,20 +254,6 @@
             this.txtRegistros.Size = new System.Drawing.Size(120, 23);
             this.txtRegistros.TabIndex = 5;
             this.txtRegistros.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnEliminarVenta
-            // 
-            this.btnEliminarVenta.BackColor = System.Drawing.Color.Crimson;
-            this.btnEliminarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarVenta.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarVenta.Location = new System.Drawing.Point(50, 343);
-            this.btnEliminarVenta.Name = "btnEliminarVenta";
-            this.btnEliminarVenta.Size = new System.Drawing.Size(100, 28);
-            this.btnEliminarVenta.TabIndex = 10;
-            this.btnEliminarVenta.Text = "Eliminar";
-            this.btnEliminarVenta.UseVisualStyleBackColor = false;
-            this.btnEliminarVenta.Click += new System.EventHandler(this.btnEliminarVenta_Click);
             // 
             // FrmListadoVentas
             // 

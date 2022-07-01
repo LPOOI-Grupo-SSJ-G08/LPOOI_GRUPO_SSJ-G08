@@ -70,6 +70,10 @@ namespace Vistas
 
                 MessageBox.Show("La venta ha eliminada correctamente");
             }
+            else
+            {
+                MessageBox.Show("No se elimino la venta");
+            }
         }
 
     }
