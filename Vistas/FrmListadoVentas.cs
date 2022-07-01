@@ -59,5 +59,18 @@ namespace Vistas
             FrmListadoVentas_Load(null, null);
         }
 
+        private void btnEliminarVenta_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Está seguro de que desea eliminar este elemento?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                TrabajarVenta.delete_venta(Convert.ToInt32(dgvVentas.CurrentRow.Cells["Ven_Nro"].Value));
+                FrmListadoVentas_Load(null, null);
+
+                MessageBox.Show("La venta ha eliminada correctamente");
+            }
+        }
+
     }
 }

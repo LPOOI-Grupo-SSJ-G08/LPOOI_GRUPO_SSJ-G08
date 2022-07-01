@@ -245,5 +245,15 @@ namespace Vistas {
             Button btn = (Button)sender;
             btn.BackColor = ColorTranslator.FromHtml("#1B998B");
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            {
+                FrmBuscarCliente buscarCliente = new FrmBuscarCliente();
+                AddOwnedForm(buscarCliente);
+                buscarCliente.Show();
+            }
+
+        }
     }
 }
