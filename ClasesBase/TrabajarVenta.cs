@@ -166,5 +166,23 @@ namespace ClasesBase {
 
             return iCantidadVentas;
         }
+
+        public static void delete_venta(int iCodigo)
+        {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "delete_venta_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Connection = cn;
+
+            cmd.Parameters.AddWithValue("@codigo", iCodigo);
+
+            cn.Open();
+            cmd.ExecuteNonQuery();
+            cn.Close();
+        }
+
     }
 }

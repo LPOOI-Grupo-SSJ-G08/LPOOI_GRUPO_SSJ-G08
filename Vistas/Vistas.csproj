@@ -189,6 +189,7 @@
     <None Include="Resources\plus-square.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\buscar.png" />
     <Content Include="Resources\default-user.png" />
     <Content Include="Resources\no-photo.png" />
   </ItemGroup>

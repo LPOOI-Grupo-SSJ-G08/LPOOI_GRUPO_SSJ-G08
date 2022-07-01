@@ -68,5 +68,21 @@ namespace Vistas
             loadClientes();
         }
 
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            FrmAltaVentas frmAltaVentas = Owner as FrmAltaVentas;
+
+
+            if (dgvClientes.SelectedRows.Count != 0)
+            {
+                frmAltaVentas.cmbClientes.SelectedValue = dgvClientes.CurrentRow.Cells[0].Value;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un registro de la tabla");
+            }
+        }
+
     }
 }

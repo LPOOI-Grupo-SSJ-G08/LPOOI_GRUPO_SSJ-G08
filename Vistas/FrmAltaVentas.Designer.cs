@@ -49,12 +49,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabCtlVenta = new System.Windows.Forms.TabControl();
             this.tpgDetalleVenta = new System.Windows.Forms.TabPage();
-            this.btnAgregarNuevoProducto = new System.Windows.Forms.Button();
             this.lblSubtitle = new System.Windows.Forms.Label();
             this.tpgAgregarProducto = new System.Windows.Forms.TabPage();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tltAgregarProducto = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnAgregarNuevoProducto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosSeleccionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudProdCantidad)).BeginInit();
@@ -326,6 +327,7 @@
             // tpgDetalleVenta
             // 
             this.tpgDetalleVenta.BackColor = System.Drawing.Color.White;
+            this.tpgDetalleVenta.Controls.Add(this.btnBuscar);
             this.tpgDetalleVenta.Controls.Add(this.btnAgregarNuevoProducto);
             this.tpgDetalleVenta.Controls.Add(this.lblSubtitle);
             this.tpgDetalleVenta.Controls.Add(this.dgvProductosSeleccionados);
@@ -341,21 +343,6 @@
             this.tpgDetalleVenta.Size = new System.Drawing.Size(739, 388);
             this.tpgDetalleVenta.TabIndex = 0;
             this.tpgDetalleVenta.Text = "Detalles";
-            // 
-            // btnAgregarNuevoProducto
-            // 
-            this.btnAgregarNuevoProducto.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAgregarNuevoProducto.BackgroundImage = global::Vistas.Properties.Resources.plus;
-            this.btnAgregarNuevoProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAgregarNuevoProducto.FlatAppearance.BorderSize = 0;
-            this.btnAgregarNuevoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarNuevoProducto.Location = new System.Drawing.Point(577, 87);
-            this.btnAgregarNuevoProducto.Name = "btnAgregarNuevoProducto";
-            this.btnAgregarNuevoProducto.Size = new System.Drawing.Size(22, 22);
-            this.btnAgregarNuevoProducto.TabIndex = 17;
-            this.btnAgregarNuevoProducto.UseVisualStyleBackColor = false;
-            this.btnAgregarNuevoProducto.Click += new System.EventHandler(this.btnAgregarNuevoProducto_Click);
-            this.btnAgregarNuevoProducto.MouseHover += new System.EventHandler(this.btnAgregarNuevoProducto_MouseHover);
             // 
             // lblSubtitle
             // 
@@ -410,6 +397,37 @@
             this.panel1.Size = new System.Drawing.Size(744, 49);
             this.panel1.TabIndex = 24;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.MintCream;
+            this.btnBuscar.Image = global::Vistas.Properties.Resources.buscar;
+            this.btnBuscar.Location = new System.Drawing.Point(368, 26);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(28, 25);
+            this.btnBuscar.TabIndex = 18;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnAgregarNuevoProducto
+            // 
+            this.btnAgregarNuevoProducto.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnAgregarNuevoProducto.BackgroundImage = global::Vistas.Properties.Resources.plus;
+            this.btnAgregarNuevoProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAgregarNuevoProducto.FlatAppearance.BorderSize = 0;
+            this.btnAgregarNuevoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarNuevoProducto.Location = new System.Drawing.Point(577, 87);
+            this.btnAgregarNuevoProducto.Name = "btnAgregarNuevoProducto";
+            this.btnAgregarNuevoProducto.Size = new System.Drawing.Size(22, 22);
+            this.btnAgregarNuevoProducto.TabIndex = 17;
+            this.btnAgregarNuevoProducto.UseVisualStyleBackColor = false;
+            this.btnAgregarNuevoProducto.Click += new System.EventHandler(this.btnAgregarNuevoProducto_Click);
+            this.btnAgregarNuevoProducto.MouseHover += new System.EventHandler(this.btnAgregarNuevoProducto_MouseHover);
+            // 
             // FrmAltaVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,7 +460,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.ComboBox cmbClientes;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblCodProducto;
         private System.Windows.Forms.Label lblProdPrecio;
@@ -468,5 +485,7 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.ToolTip tltAgregarProducto;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnBuscar;
+        internal System.Windows.Forms.ComboBox cmbClientes;
     }
 }
