@@ -200,6 +200,7 @@
   <ItemGroup>
     <None Include="Resources\buscar.png" />
     <Content Include="Resources\default-user.png" />
+    <None Include="Resources\info.jpg" />
     <Content Include="Resources\no-photo.png" />
     <Content Include="Resources\sounds\sonido1.mp3" />
   </ItemGroup>

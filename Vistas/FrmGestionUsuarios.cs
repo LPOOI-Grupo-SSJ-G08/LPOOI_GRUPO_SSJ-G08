@@ -96,13 +96,13 @@ namespace Vistas
 
         private void txtNombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
-            if (txtNombreUsuario.TextLength >= 2)
-            {
-                dgvListaUsuarios.DataSource = TrabajarUsuario.buscar_usuario(txtNombreUsuario.Text);
+            DataTable dt;
+            if (txtNombreUsuario.TextLength >= 2) {
+                dt = TrabajarUsuario.buscar_usuario(txtNombreUsuario.Text);
+            } else {
+                dt = TrabajarUsuario.list_usuarios();
             }
-            else
-                dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
+            contarRegistrosDevueltos(dt);
         }
 
 
@@ -158,9 +158,11 @@ namespace Vistas
         }
         private void cargarUsuarios()
         {
-            dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
+            DataTable dt = TrabajarUsuario.list_usuarios();
+            dgvListaUsuarios.DataSource = dt;
             dgvListaUsuarios.Columns["Imagen"].Visible = false;
             dgvListaUsuarios.Columns["Rol_codigo"].Visible = false;
+            contarRegistrosDevueltos(dt);
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -321,6 +323,10 @@ namespace Vistas
                 imgUsuario.Image = new Bitmap(of.FileName);
             }
             cargoImg = true;
+        }
+
+        private void contarRegistrosDevueltos(DataTable dt) {
+            lblCountRegistros.Text = Convert.ToString(dt.Rows.Count);
         }
     }
 }

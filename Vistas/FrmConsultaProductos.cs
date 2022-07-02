@@ -18,28 +18,24 @@ namespace Vistas {
         private void FrmConsultaProductos_Load(object sender, EventArgs e) {
             cargarComboClientes();
             cargarTodosProductosVendidos();
-            lblRegistros.Hide();
-            txtRegistros.Hide();
         }
 
         private void btnBuscarPorFechas_Click(object sender, EventArgs e) {
             DateTime fechaInicial = Convert.ToDateTime(dtpFechaInicial.Text);
             DateTime fechaFinal = Convert.ToDateTime(dtpFechaFinal.Text);
             DataSet ds = TrabajarProducto.list_productos_vendidos_rango_fechas(fechaInicial, fechaFinal);
-            txtRegistros.Text = TrabajarProducto.getCantidadProductosByFecha(fechaInicial, fechaFinal).ToString();
+            //txtRegistros.Text = TrabajarProducto.getCantidadProductosByFecha(fechaInicial, fechaFinal).ToString();
             dgvProductos.DataSource = ds.Tables[0];
             dgvProductos.Refresh();
-            lblRegistros.Show();
-            txtRegistros.Show();
+            contarRegistrosDevueltos(ds.Tables[0]);
         }
 
         private void cmbClientes_SelectionChangeCommitted(object sender, EventArgs e) {
             DataSet ds = TrabajarProducto.list_productos_vendidos_por_cliente(cmbClientes.SelectedValue.ToString());
-            txtRegistros.Text = TrabajarProducto.getCantidadProductosByCliente(cmbClientes.SelectedValue.ToString()).ToString();
+            //txtRegistros.Text = TrabajarProducto.getCantidadProductosByCliente(cmbClientes.SelectedValue.ToString()).ToString();
             dgvProductos.DataSource = ds.Tables[0];
             dgvProductos.Refresh();
-            lblRegistros.Show();
-            txtRegistros.Show();
+            contarRegistrosDevueltos(ds.Tables[0]);
         }
 
         private void cargarComboClientes() {
@@ -52,15 +48,17 @@ namespace Vistas {
 
         private void cargarTodosProductosVendidos() {
             DataSet ds = TrabajarProducto.list_todos_productos_vendidos();
-            txtRegistros.Text = "";
             dgvProductos.DataSource = ds.Tables[0];
             dgvProductos.Refresh();
+            contarRegistrosDevueltos(ds.Tables[0]);
         }
 
         private void btnLimpiarFiltros_Click(object sender, EventArgs e) {
             cargarTodosProductosVendidos();
-            lblRegistros.Hide();
-            txtRegistros.Hide();
+        }
+
+        private void contarRegistrosDevueltos(DataTable dt) {
+            lblCountRegistros.Text = Convert.ToString(dt.Rows.Count);
         }
     }
 }

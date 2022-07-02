@@ -39,7 +39,6 @@
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
-            this.btnListadoVentas = new System.Windows.Forms.Button();
             this.btnObrasSociales = new System.Windows.Forms.Button();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlCabecera.SuspendLayout();
@@ -54,9 +53,9 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(772, 10);
+            this.btnSalir.Location = new System.Drawing.Point(825, 20);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(80, 40);
+            this.btnSalir.Size = new System.Drawing.Size(80, 35);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -71,14 +70,15 @@
             this.pnlCabecera.Controls.Add(this.lblRolActual);
             this.pnlCabecera.Controls.Add(this.lblUsuarioActual);
             this.pnlCabecera.Controls.Add(this.btnSalir);
+            this.pnlCabecera.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCabecera.Location = new System.Drawing.Point(0, 0);
             this.pnlCabecera.Name = "pnlCabecera";
-            this.pnlCabecera.Size = new System.Drawing.Size(884, 60);
+            this.pnlCabecera.Size = new System.Drawing.Size(924, 74);
             this.pnlCabecera.TabIndex = 5;
             // 
             // imgUsuarioMain
             // 
-            this.imgUsuarioMain.Location = new System.Drawing.Point(591, 0);
+            this.imgUsuarioMain.Location = new System.Drawing.Point(644, 7);
             this.imgUsuarioMain.Name = "imgUsuarioMain";
             this.imgUsuarioMain.Size = new System.Drawing.Size(68, 60);
             this.imgUsuarioMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -90,7 +90,7 @@
             this.lblRolActual.AutoSize = true;
             this.lblRolActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRolActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.lblRolActual.Location = new System.Drawing.Point(680, 33);
+            this.lblRolActual.Location = new System.Drawing.Point(733, 40);
             this.lblRolActual.Name = "lblRolActual";
             this.lblRolActual.Size = new System.Drawing.Size(26, 13);
             this.lblRolActual.TabIndex = 6;
@@ -101,7 +101,7 @@
             this.lblUsuarioActual.AutoSize = true;
             this.lblUsuarioActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuarioActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.lblUsuarioActual.Location = new System.Drawing.Point(679, 10);
+            this.lblUsuarioActual.Location = new System.Drawing.Point(732, 17);
             this.lblUsuarioActual.Name = "lblUsuarioActual";
             this.lblUsuarioActual.Size = new System.Drawing.Size(62, 16);
             this.lblUsuarioActual.TabIndex = 5;
@@ -109,7 +109,7 @@
             // 
             // pnlContenedor
             // 
-            this.pnlContenedor.Location = new System.Drawing.Point(139, 66);
+            this.pnlContenedor.Location = new System.Drawing.Point(167, 89);
             this.pnlContenedor.Name = "pnlContenedor";
             this.pnlContenedor.Size = new System.Drawing.Size(745, 496);
             this.pnlContenedor.TabIndex = 7;
@@ -117,12 +117,13 @@
             // btnSistema
             // 
             this.btnSistema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btnSistema.FlatAppearance.BorderSize = 0;
             this.btnSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSistema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnSistema.Location = new System.Drawing.Point(7, 8);
+            this.btnSistema.Location = new System.Drawing.Point(11, 0);
             this.btnSistema.Name = "btnSistema";
-            this.btnSistema.Size = new System.Drawing.Size(120, 60);
+            this.btnSistema.Size = new System.Drawing.Size(143, 70);
             this.btnSistema.TabIndex = 0;
             this.btnSistema.Text = "Sistema";
             this.btnSistema.UseVisualStyleBackColor = false;
@@ -131,12 +132,13 @@
             // btnUsuarios
             // 
             this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btnUsuarios.FlatAppearance.BorderSize = 0;
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnUsuarios.Location = new System.Drawing.Point(7, 78);
+            this.btnUsuarios.Location = new System.Drawing.Point(11, 85);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(120, 60);
+            this.btnUsuarios.Size = new System.Drawing.Size(143, 70);
             this.btnUsuarios.TabIndex = 1;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = false;
@@ -145,12 +147,13 @@
             // btnProductos
             // 
             this.btnProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btnProductos.FlatAppearance.BorderSize = 0;
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnProductos.Location = new System.Drawing.Point(7, 148);
+            this.btnProductos.Location = new System.Drawing.Point(11, 170);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(120, 60);
+            this.btnProductos.Size = new System.Drawing.Size(143, 70);
             this.btnProductos.TabIndex = 2;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = false;
@@ -159,12 +162,13 @@
             // btnClientes
             // 
             this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btnClientes.FlatAppearance.BorderSize = 0;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnClientes.Location = new System.Drawing.Point(7, 218);
+            this.btnClientes.Location = new System.Drawing.Point(11, 255);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(120, 60);
+            this.btnClientes.Size = new System.Drawing.Size(143, 70);
             this.btnClientes.TabIndex = 3;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
@@ -173,40 +177,28 @@
             // btnVentas
             // 
             this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btnVentas.FlatAppearance.BorderSize = 0;
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnVentas.Location = new System.Drawing.Point(7, 288);
+            this.btnVentas.Location = new System.Drawing.Point(11, 340);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(120, 60);
+            this.btnVentas.Size = new System.Drawing.Size(143, 70);
             this.btnVentas.TabIndex = 4;
             this.btnVentas.Text = "Ventas";
             this.btnVentas.UseVisualStyleBackColor = false;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
-            // btnListadoVentas
-            // 
-            this.btnListadoVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.btnListadoVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListadoVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListadoVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnListadoVentas.Location = new System.Drawing.Point(7, 358);
-            this.btnListadoVentas.Name = "btnListadoVentas";
-            this.btnListadoVentas.Size = new System.Drawing.Size(120, 60);
-            this.btnListadoVentas.TabIndex = 5;
-            this.btnListadoVentas.Text = "Listado de ventas";
-            this.btnListadoVentas.UseVisualStyleBackColor = false;
-            this.btnListadoVentas.Click += new System.EventHandler(this.btnListadoVentas_Click);
-            // 
             // btnObrasSociales
             // 
             this.btnObrasSociales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btnObrasSociales.FlatAppearance.BorderSize = 0;
             this.btnObrasSociales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnObrasSociales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnObrasSociales.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnObrasSociales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnObrasSociales.Location = new System.Drawing.Point(7, 428);
+            this.btnObrasSociales.Location = new System.Drawing.Point(11, 425);
             this.btnObrasSociales.Name = "btnObrasSociales";
-            this.btnObrasSociales.Size = new System.Drawing.Size(120, 60);
+            this.btnObrasSociales.Size = new System.Drawing.Size(143, 70);
             this.btnObrasSociales.TabIndex = 6;
             this.btnObrasSociales.Text = "Obras Sociales";
             this.btnObrasSociales.UseVisualStyleBackColor = false;
@@ -218,14 +210,14 @@
             this.pnlMenu.Controls.Add(this.btnSistema);
             this.pnlMenu.Controls.Add(this.btnObrasSociales);
             this.pnlMenu.Controls.Add(this.btnUsuarios);
-            this.pnlMenu.Controls.Add(this.btnListadoVentas);
             this.pnlMenu.Controls.Add(this.btnProductos);
             this.pnlMenu.Controls.Add(this.btnVentas);
             this.pnlMenu.Controls.Add(this.btnClientes);
             this.pnlMenu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlMenu.Location = new System.Drawing.Point(0, 66);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 89);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(136, 496);
+            this.pnlMenu.Padding = new System.Windows.Forms.Padding(8, 0, 4, 0);
+            this.pnlMenu.Size = new System.Drawing.Size(161, 496);
             this.pnlMenu.TabIndex = 7;
             // 
             // FrmMain
@@ -233,7 +225,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(884, 562);
+            this.ClientSize = new System.Drawing.Size(924, 597);
             this.Controls.Add(this.pnlContenedor);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlCabecera);
@@ -261,7 +253,6 @@
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnVentas;
-        private System.Windows.Forms.Button btnListadoVentas;
         private System.Windows.Forms.Button btnObrasSociales;
         private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.PictureBox imgUsuarioMain;

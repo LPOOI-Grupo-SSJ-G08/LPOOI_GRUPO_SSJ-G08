@@ -197,5 +197,21 @@ namespace ClasesBase
 
             return iCantidadVentas;
         }
+
+        public static DataTable searchProductosCategoriaDescripcion(string textBuscar) {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand("SelectProductosSearch", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@textBuscar", textBuscar);
+
+            DataTable dt = new DataTable();
+
+            cn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            dt.Load(dr);
+            cn.Close();
+
+            return dt;
+        }
     }
 }
