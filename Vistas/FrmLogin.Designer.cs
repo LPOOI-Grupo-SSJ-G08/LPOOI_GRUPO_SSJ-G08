@@ -35,6 +35,7 @@
             this.imgPassword = new System.Windows.Forms.PictureBox();
             this.imgUsuario = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblRecuperarPsw = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).BeginInit();
             this.panel1.SuspendLayout();
@@ -114,6 +115,7 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.lblRecuperarPsw);
             this.panel1.Controls.Add(this.txtUsuario);
             this.panel1.Controls.Add(this.imgPassword);
             this.panel1.Controls.Add(this.btnIngresar);
@@ -124,6 +126,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(450, 385);
             this.panel1.TabIndex = 7;
+            // 
+            // lblRecuperarPsw
+            // 
+            this.lblRecuperarPsw.AutoSize = true;
+            this.lblRecuperarPsw.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecuperarPsw.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblRecuperarPsw.Location = new System.Drawing.Point(63, 235);
+            this.lblRecuperarPsw.Name = "lblRecuperarPsw";
+            this.lblRecuperarPsw.Size = new System.Drawing.Size(325, 25);
+            this.lblRecuperarPsw.TabIndex = 7;
+            this.lblRecuperarPsw.Text = "¿Olvidaste tu usuario o contraseña?";
+            this.lblRecuperarPsw.Click += new System.EventHandler(this.lblRecuperarPsw_Click);
             // 
             // FrmLogin
             // 
@@ -138,6 +152,7 @@
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -154,6 +169,7 @@
         private System.Windows.Forms.PictureBox imgUsuario;
         private System.Windows.Forms.PictureBox imgPassword;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblRecuperarPsw;
     }
 }
 

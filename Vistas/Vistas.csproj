@@ -58,6 +58,12 @@
     <Compile Include="FrmBuscarCliente.Designer.cs">
       <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCorreo.Designer.cs">
+      <DependentUpon>FrmCorreo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBuscarCliente.resx">
       <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCorreo.resx">
+      <DependentUpon>FrmCorreo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionProductos.resx">
       <DependentUpon>FrmGestionProductos.cs</DependentUpon>
@@ -192,6 +201,18 @@
     <None Include="Resources\buscar.png" />
     <Content Include="Resources\default-user.png" />
     <Content Include="Resources\no-photo.png" />
+    <Content Include="Resources\sounds\sonido1.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

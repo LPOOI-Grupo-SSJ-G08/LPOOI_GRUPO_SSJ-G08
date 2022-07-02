@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ClasesBase;
+using Microsoft.VisualBasic;
 
 namespace Vistas
 {
@@ -61,8 +62,33 @@ namespace Vistas
         {
             btnIngresar.BackColor = Color.SeaGreen;
         }
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+           PlayFile(Util.CompleteSoundPath("sonido1.mp3"));
+        }
 
-        
+        WMPLib.WindowsMediaPlayer Player;
+        private void PlayFile(String url)
+        {
+            Player = new WMPLib.WindowsMediaPlayer();
+            Player.PlayStateChange += Player_PlayStateChange;
+            Player.URL = url;
+            Player.controls.play();
+        }
+
+        private void Player_PlayStateChange(int NewState)
+        {
+            if ((WMPLib.WMPPlayState)NewState == WMPLib.WMPPlayState.wmppsStopped)
+            {
+                //Actions on stop
+            }
+        }
+
+        private void lblRecuperarPsw_Click(object sender, EventArgs e)
+        {
+            FrmCorreo fmrCorreo = new FrmCorreo();
+            fmrCorreo.Show();
+        }
 
     }
 }
