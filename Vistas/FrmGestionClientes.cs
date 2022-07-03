@@ -311,5 +311,18 @@ namespace Vistas
         private void contarRegistrosDevueltos(DataTable dt) {
             lblCountRegistros.Text = Convert.ToString(dt.Rows.Count);
         }
+
+        private void btnPdf_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string nombrePdf = folderBrowserDialog1.SelectedPath + "\\Clientes_" + DateTime.Now.ToString("dd-MM-yyyy") + "_" + DateTime.Now.ToString("HHmmss");
+                int resp = Util.PDFWriter((DataTable)dgwClientes.DataSource, nombrePdf);
+                if (resp == 0)
+                    MessageBox.Show("¡Archivo creado correctamente!");
+                else
+                    MessageBox.Show("Error al crear el archivo");
+            }
+        }
     }
 }

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.btnSalir = new System.Windows.Forms.Button();
             this.pnlCabecera = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.imgUsuarioMain = new System.Windows.Forms.PictureBox();
             this.lblRolActual = new System.Windows.Forms.Label();
             this.lblUsuarioActual = new System.Windows.Forms.Label();
@@ -42,11 +43,10 @@
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlCabecera.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUsuarioMain)).BeginInit();
             this.pnlMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -56,10 +56,9 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(1100, 25);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(825, 20);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(107, 43);
+            this.btnSalir.Size = new System.Drawing.Size(80, 35);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -77,17 +76,26 @@
             this.pnlCabecera.Controls.Add(this.btnSalir);
             this.pnlCabecera.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCabecera.Location = new System.Drawing.Point(0, 0);
-            this.pnlCabecera.Margin = new System.Windows.Forms.Padding(4);
             this.pnlCabecera.Name = "pnlCabecera";
-            this.pnlCabecera.Size = new System.Drawing.Size(1232, 91);
+            this.pnlCabecera.Size = new System.Drawing.Size(924, 74);
             this.pnlCabecera.TabIndex = 5;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, -14);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(159, 98);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
             // 
             // imgUsuarioMain
             // 
-            this.imgUsuarioMain.Location = new System.Drawing.Point(859, 9);
-            this.imgUsuarioMain.Margin = new System.Windows.Forms.Padding(4);
+            this.imgUsuarioMain.Location = new System.Drawing.Point(644, 7);
             this.imgUsuarioMain.Name = "imgUsuarioMain";
-            this.imgUsuarioMain.Size = new System.Drawing.Size(91, 74);
+            this.imgUsuarioMain.Size = new System.Drawing.Size(68, 60);
             this.imgUsuarioMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgUsuarioMain.TabIndex = 7;
             this.imgUsuarioMain.TabStop = false;
@@ -97,10 +105,9 @@
             this.lblRolActual.AutoSize = true;
             this.lblRolActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRolActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.lblRolActual.Location = new System.Drawing.Point(977, 49);
-            this.lblRolActual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRolActual.Location = new System.Drawing.Point(733, 40);
             this.lblRolActual.Name = "lblRolActual";
-            this.lblRolActual.Size = new System.Drawing.Size(32, 17);
+            this.lblRolActual.Size = new System.Drawing.Size(26, 13);
             this.lblRolActual.TabIndex = 6;
             this.lblRolActual.Text = "Rol";
             // 
@@ -109,19 +116,17 @@
             this.lblUsuarioActual.AutoSize = true;
             this.lblUsuarioActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuarioActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.lblUsuarioActual.Location = new System.Drawing.Point(976, 21);
-            this.lblUsuarioActual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsuarioActual.Location = new System.Drawing.Point(732, 17);
             this.lblUsuarioActual.Name = "lblUsuarioActual";
-            this.lblUsuarioActual.Size = new System.Drawing.Size(74, 20);
+            this.lblUsuarioActual.Size = new System.Drawing.Size(62, 16);
             this.lblUsuarioActual.TabIndex = 5;
             this.lblUsuarioActual.Text = "Usuario";
             // 
             // pnlContenedor
             // 
-            this.pnlContenedor.Location = new System.Drawing.Point(223, 110);
-            this.pnlContenedor.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlContenedor.Location = new System.Drawing.Point(167, 89);
             this.pnlContenedor.Name = "pnlContenedor";
-            this.pnlContenedor.Size = new System.Drawing.Size(993, 610);
+            this.pnlContenedor.Size = new System.Drawing.Size(745, 496);
             this.pnlContenedor.TabIndex = 7;
             // 
             // btnSistema
@@ -129,12 +134,11 @@
             this.btnSistema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.btnSistema.FlatAppearance.BorderSize = 0;
             this.btnSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSistema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnSistema.Location = new System.Drawing.Point(15, 0);
-            this.btnSistema.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSistema.Location = new System.Drawing.Point(6, 0);
             this.btnSistema.Name = "btnSistema";
-            this.btnSistema.Size = new System.Drawing.Size(191, 86);
+            this.btnSistema.Size = new System.Drawing.Size(148, 70);
             this.btnSistema.TabIndex = 0;
             this.btnSistema.Text = "Sistema";
             this.btnSistema.UseVisualStyleBackColor = false;
@@ -150,11 +154,10 @@
             this.pnlMenu.Controls.Add(this.btnVentas);
             this.pnlMenu.Controls.Add(this.btnClientes);
             this.pnlMenu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlMenu.Location = new System.Drawing.Point(0, 110);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 89);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Padding = new System.Windows.Forms.Padding(11, 0, 5, 0);
-            this.pnlMenu.Size = new System.Drawing.Size(215, 610);
+            this.pnlMenu.Padding = new System.Windows.Forms.Padding(8, 0, 4, 0);
+            this.pnlMenu.Size = new System.Drawing.Size(161, 496);
             this.pnlMenu.TabIndex = 7;
             // 
             // btnObrasSociales
@@ -162,14 +165,13 @@
             this.btnObrasSociales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.btnObrasSociales.FlatAppearance.BorderSize = 0;
             this.btnObrasSociales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnObrasSociales.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnObrasSociales.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnObrasSociales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnObrasSociales.Image = global::Vistas.Properties.Resources.icono_obrasocial;
+            this.btnObrasSociales.Image = global::Vistas.Properties.Resources.icono_salud_37;
             this.btnObrasSociales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnObrasSociales.Location = new System.Drawing.Point(15, 523);
-            this.btnObrasSociales.Margin = new System.Windows.Forms.Padding(4);
+            this.btnObrasSociales.Location = new System.Drawing.Point(6, 425);
             this.btnObrasSociales.Name = "btnObrasSociales";
-            this.btnObrasSociales.Size = new System.Drawing.Size(191, 86);
+            this.btnObrasSociales.Size = new System.Drawing.Size(148, 70);
             this.btnObrasSociales.TabIndex = 6;
             this.btnObrasSociales.Text = "Obras Sociales";
             this.btnObrasSociales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -182,14 +184,13 @@
             this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.btnUsuarios.FlatAppearance.BorderSize = 0;
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnUsuarios.Image = global::Vistas.Properties.Resources.icono_usuario;
+            this.btnUsuarios.Image = global::Vistas.Properties.Resources.icono_user_37;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(15, 105);
-            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUsuarios.Location = new System.Drawing.Point(6, 85);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(191, 86);
+            this.btnUsuarios.Size = new System.Drawing.Size(148, 70);
             this.btnUsuarios.TabIndex = 1;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -202,14 +203,13 @@
             this.btnProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.btnProductos.FlatAppearance.BorderSize = 0;
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnProductos.Image = global::Vistas.Properties.Resources.icono_producto;
+            this.btnProductos.Image = global::Vistas.Properties.Resources.icono_product_37;
             this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.Location = new System.Drawing.Point(15, 209);
-            this.btnProductos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProductos.Location = new System.Drawing.Point(6, 170);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(191, 86);
+            this.btnProductos.Size = new System.Drawing.Size(148, 70);
             this.btnProductos.TabIndex = 2;
             this.btnProductos.Text = "Productos";
             this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -222,14 +222,13 @@
             this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.btnVentas.FlatAppearance.BorderSize = 0;
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnVentas.Image = global::Vistas.Properties.Resources.icono_carrito;
+            this.btnVentas.Image = global::Vistas.Properties.Resources.icono_carrito_37;
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(15, 418);
-            this.btnVentas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVentas.Location = new System.Drawing.Point(6, 340);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(191, 86);
+            this.btnVentas.Size = new System.Drawing.Size(148, 70);
             this.btnVentas.TabIndex = 4;
             this.btnVentas.Text = "Ventas";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -242,14 +241,13 @@
             this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.btnClientes.FlatAppearance.BorderSize = 0;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnClientes.Image = global::Vistas.Properties.Resources.icono_cliente;
+            this.btnClientes.Image = global::Vistas.Properties.Resources.icons8_mostrador_de_facturación_37;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(15, 314);
-            this.btnClientes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClientes.Location = new System.Drawing.Point(6, 255);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(191, 86);
+            this.btnClientes.Size = new System.Drawing.Size(148, 70);
             this.btnClientes.TabIndex = 3;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -257,35 +255,24 @@
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, -17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(212, 120);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1232, 735);
+            this.ClientSize = new System.Drawing.Size(924, 597);
             this.Controls.Add(this.pnlContenedor);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlCabecera);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.pnlCabecera.ResumeLayout(false);
             this.pnlCabecera.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUsuarioMain)).EndInit();
             this.pnlMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -11,10 +11,10 @@ using Microsoft.VisualBasic;
 
 namespace Vistas
 {
+
     public partial class FrmLogin : Form
     {
         WMPLib.WindowsMediaPlayer Player;
-        private Boolean firstLogin = true;
 
         public FrmLogin()
         {
@@ -65,21 +65,17 @@ namespace Vistas
         {
             btnIngresar.BackColor = Color.SeaGreen;
         }
+       
         private void FrmLogin_Load(object sender, EventArgs e)
         {
            PlayFile(Util.CompleteSoundPath("sonido1.mp3"));
         }
-
         
         private void PlayFile(String url)
         {
-            if (firstLogin)
-            {
                 Player = new WMPLib.WindowsMediaPlayer();
                 Player.URL = url;
                 Player.controls.play();
-                firstLogin = false;
-            }
         }
 
         private void lblRecuperarPsw_Click(object sender, EventArgs e)

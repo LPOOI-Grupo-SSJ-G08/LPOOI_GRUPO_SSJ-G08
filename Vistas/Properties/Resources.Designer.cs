@@ -74,37 +74,51 @@ namespace Vistas.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap icono_carrito {
+        internal static System.Drawing.Bitmap icono_carrito_37 {
             get {
-                object obj = ResourceManager.GetObject("icono-carrito", resourceCulture);
+                object obj = ResourceManager.GetObject("icono-carrito-37", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap icono_cliente {
+        internal static System.Drawing.Bitmap icono_product_37 {
             get {
-                object obj = ResourceManager.GetObject("icono-cliente", resourceCulture);
+                object obj = ResourceManager.GetObject("icono-product-37", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap icono_obrasocial {
+        internal static System.Drawing.Bitmap icono_salud_37 {
             get {
-                object obj = ResourceManager.GetObject("icono-obrasocial", resourceCulture);
+                object obj = ResourceManager.GetObject("icono-salud-37", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap icono_producto {
+        internal static System.Drawing.Bitmap icono_user_37 {
             get {
-                object obj = ResourceManager.GetObject("icono-producto", resourceCulture);
+                object obj = ResourceManager.GetObject("icono-user-37", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap icono_usuario {
+        internal static System.Drawing.Bitmap icono_user_371 {
             get {
-                object obj = ResourceManager.GetObject("icono-usuario", resourceCulture);
+                object obj = ResourceManager.GetObject("icono-user-371", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icons8_mostrador_de_facturación_37 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-mostrador-de-facturación-37", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icons8_pdf_20__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pdf-20 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -39,6 +39,8 @@
             this.lblMostrar2 = new System.Windows.Forms.Label();
             this.lblMostrar1 = new System.Windows.Forms.Label();
             this.lblCountRegistros = new System.Windows.Forms.Label();
+            this.btnPdf = new System.Windows.Forms.Button();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -119,7 +121,7 @@
             this.dgvProductos.AllowUserToAddRows = false;
             this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(19, 183);
+            this.dgvProductos.Location = new System.Drawing.Point(19, 175);
             this.dgvProductos.Margin = new System.Windows.Forms.Padding(10);
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
@@ -188,7 +190,7 @@
             this.btnLimpiarFiltros.FlatAppearance.BorderSize = 0;
             this.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarFiltros.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLimpiarFiltros.Location = new System.Drawing.Point(319, 146);
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(319, 144);
             this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
             this.btnLimpiarFiltros.Size = new System.Drawing.Size(90, 24);
@@ -200,7 +202,7 @@
             // lblMostrar2
             // 
             this.lblMostrar2.AutoSize = true;
-            this.lblMostrar2.Location = new System.Drawing.Point(652, 440);
+            this.lblMostrar2.Location = new System.Drawing.Point(652, 435);
             this.lblMostrar2.Margin = new System.Windows.Forms.Padding(0);
             this.lblMostrar2.Name = "lblMostrar2";
             this.lblMostrar2.Size = new System.Drawing.Size(58, 13);
@@ -210,7 +212,7 @@
             // lblMostrar1
             // 
             this.lblMostrar1.AutoSize = true;
-            this.lblMostrar1.Location = new System.Drawing.Point(579, 440);
+            this.lblMostrar1.Location = new System.Drawing.Point(579, 435);
             this.lblMostrar1.Margin = new System.Windows.Forms.Padding(0);
             this.lblMostrar1.Name = "lblMostrar1";
             this.lblMostrar1.Size = new System.Drawing.Size(57, 13);
@@ -221,18 +223,38 @@
             // 
             this.lblCountRegistros.AutoSize = true;
             this.lblCountRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountRegistros.Location = new System.Drawing.Point(634, 440);
+            this.lblCountRegistros.Location = new System.Drawing.Point(634, 435);
             this.lblCountRegistros.Margin = new System.Windows.Forms.Padding(0);
             this.lblCountRegistros.Name = "lblCountRegistros";
             this.lblCountRegistros.Size = new System.Drawing.Size(21, 13);
             this.lblCountRegistros.TabIndex = 35;
             this.lblCountRegistros.Text = "00";
             // 
+            // btnPdf
+            // 
+            this.btnPdf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
+            this.btnPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPdf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPdf.ForeColor = System.Drawing.Color.White;
+            this.btnPdf.Image = global::Vistas.Properties.Resources.icons8_pdf_20__1_;
+            this.btnPdf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPdf.Location = new System.Drawing.Point(19, 428);
+            this.btnPdf.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPdf.Name = "btnPdf";
+            this.btnPdf.Size = new System.Drawing.Size(100, 30);
+            this.btnPdf.TabIndex = 39;
+            this.btnPdf.Text = "Generar";
+            this.btnPdf.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPdf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPdf.UseVisualStyleBackColor = false;
+            this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
+            // 
             // FrmConsultaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 462);
+            this.Controls.Add(this.btnPdf);
             this.Controls.Add(this.lblMostrar2);
             this.Controls.Add(this.lblMostrar1);
             this.Controls.Add(this.lblCountRegistros);
@@ -242,6 +264,7 @@
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmConsultaProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConsultaProductos";
             this.Load += new System.EventHandler(this.FrmConsultaProductos_Load);
             this.groupBox1.ResumeLayout(false);
@@ -274,5 +297,7 @@
         private System.Windows.Forms.Label lblMostrar2;
         private System.Windows.Forms.Label lblMostrar1;
         private System.Windows.Forms.Label lblCountRegistros;
+        private System.Windows.Forms.Button btnPdf;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }

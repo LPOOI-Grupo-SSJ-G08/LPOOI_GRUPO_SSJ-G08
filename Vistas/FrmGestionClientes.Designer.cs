@@ -71,6 +71,8 @@
             this.ttipBusqueda = new System.Windows.Forms.ToolTip(this.components);
             this.lblMostrar1 = new System.Windows.Forms.Label();
             this.lblMostrar2 = new System.Windows.Forms.Label();
+            this.btnPdf = new System.Windows.Forms.Button();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgwClientes)).BeginInit();
             this.pnlDatosCliente.SuspendLayout();
             this.pnlConsultas.SuspendLayout();
@@ -531,12 +533,32 @@
             this.lblMostrar2.TabIndex = 34;
             this.lblMostrar2.Text = "resultados.";
             // 
+            // btnPdf
+            // 
+            this.btnPdf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
+            this.btnPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPdf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPdf.ForeColor = System.Drawing.Color.White;
+            this.btnPdf.Image = global::Vistas.Properties.Resources.icons8_pdf_20__1_;
+            this.btnPdf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPdf.Location = new System.Drawing.Point(0, 465);
+            this.btnPdf.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPdf.Name = "btnPdf";
+            this.btnPdf.Size = new System.Drawing.Size(100, 30);
+            this.btnPdf.TabIndex = 40;
+            this.btnPdf.Text = "Generar";
+            this.btnPdf.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPdf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPdf.UseVisualStyleBackColor = false;
+            this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
+            // 
             // FrmGestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(757, 492);
+            this.Controls.Add(this.btnPdf);
             this.Controls.Add(this.lblMostrar2);
             this.Controls.Add(this.lblMostrar1);
             this.Controls.Add(this.lblCountRegistros);
@@ -604,6 +626,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblMostrar1;
         private System.Windows.Forms.Label lblMostrar2;
+        private System.Windows.Forms.Button btnPdf;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
 
 
     }
