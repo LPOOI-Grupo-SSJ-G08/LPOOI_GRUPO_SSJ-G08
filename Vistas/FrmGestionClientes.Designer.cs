@@ -59,16 +59,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlConsultas = new System.Windows.Forms.Panel();
-            this.lblCountRegistros = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.cmbObraSocialConsulta = new System.Windows.Forms.ComboBox();
             this.optZ = new System.Windows.Forms.RadioButton();
             this.optA = new System.Windows.Forms.RadioButton();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.lblOrden = new System.Windows.Forms.Label();
+            this.lblCountRegistros = new System.Windows.Forms.Label();
             this.pnlCabecera = new System.Windows.Forms.Panel();
             this.ttipBusqueda = new System.Windows.Forms.ToolTip(this.components);
-            this.label3 = new System.Windows.Forms.Label();
             this.lblMostrar1 = new System.Windows.Forms.Label();
             this.lblMostrar2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgwClientes)).BeginInit();
@@ -80,8 +80,8 @@
             // lblGestionClientes
             // 
             this.lblGestionClientes.AutoSize = true;
-            this.lblGestionClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionClientes.Location = new System.Drawing.Point(252, 14);
+            this.lblGestionClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionClientes.Location = new System.Drawing.Point(292, 16);
             this.lblGestionClientes.Name = "lblGestionClientes";
             this.lblGestionClientes.Size = new System.Drawing.Size(173, 24);
             this.lblGestionClientes.TabIndex = 2;
@@ -89,45 +89,50 @@
             // 
             // dgwClientes
             // 
+            this.dgwClientes.AllowUserToAddRows = false;
+            this.dgwClientes.AllowUserToDeleteRows = false;
             this.dgwClientes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgwClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwClientes.Location = new System.Drawing.Point(12, 210);
+            this.dgwClientes.Location = new System.Drawing.Point(0, 199);
+            this.dgwClientes.MultiSelect = false;
             this.dgwClientes.Name = "dgwClientes";
-            this.dgwClientes.Size = new System.Drawing.Size(422, 252);
+            this.dgwClientes.ReadOnly = true;
+            this.dgwClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgwClientes.Size = new System.Drawing.Size(434, 263);
             this.dgwClientes.TabIndex = 0;
             this.dgwClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwClientes_CellClick);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(117, 50);
+            this.txtNombre.Location = new System.Drawing.Point(123, 50);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(150, 20);
             this.txtNombre.TabIndex = 0;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(117, 95);
+            this.txtApellido.Location = new System.Drawing.Point(123, 95);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(150, 20);
             this.txtApellido.TabIndex = 1;
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(117, 140);
+            this.txtDNI.Location = new System.Drawing.Point(123, 140);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(150, 20);
             this.txtDNI.TabIndex = 2;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(117, 185);
+            this.txtDireccion.Location = new System.Drawing.Point(123, 185);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(150, 20);
             this.txtDireccion.TabIndex = 3;
             // 
             // txtNroCarnet
             // 
-            this.txtNroCarnet.Location = new System.Drawing.Point(117, 275);
+            this.txtNroCarnet.Location = new System.Drawing.Point(123, 275);
             this.txtNroCarnet.Name = "txtNroCarnet";
             this.txtNroCarnet.Size = new System.Drawing.Size(150, 20);
             this.txtNroCarnet.TabIndex = 5;
@@ -135,7 +140,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(64, 53);
+            this.lblNombre.Location = new System.Drawing.Point(70, 53);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(47, 13);
             this.lblNombre.TabIndex = 6;
@@ -144,7 +149,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(64, 98);
+            this.lblApellido.Location = new System.Drawing.Point(70, 98);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(47, 13);
             this.lblApellido.TabIndex = 7;
@@ -153,7 +158,7 @@
             // lblDNI
             // 
             this.lblDNI.AutoSize = true;
-            this.lblDNI.Location = new System.Drawing.Point(82, 143);
+            this.lblDNI.Location = new System.Drawing.Point(88, 143);
             this.lblDNI.Name = "lblDNI";
             this.lblDNI.Size = new System.Drawing.Size(29, 13);
             this.lblDNI.TabIndex = 8;
@@ -162,7 +167,7 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(56, 188);
+            this.lblDireccion.Location = new System.Drawing.Point(62, 188);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(55, 13);
             this.lblDireccion.TabIndex = 9;
@@ -171,7 +176,7 @@
             // lblCUIT
             // 
             this.lblCUIT.AutoSize = true;
-            this.lblCUIT.Location = new System.Drawing.Point(76, 233);
+            this.lblCUIT.Location = new System.Drawing.Point(82, 233);
             this.lblCUIT.Name = "lblCUIT";
             this.lblCUIT.Size = new System.Drawing.Size(35, 13);
             this.lblCUIT.TabIndex = 10;
@@ -180,7 +185,7 @@
             // lblNroCarnet
             // 
             this.lblNroCarnet.AutoSize = true;
-            this.lblNroCarnet.Location = new System.Drawing.Point(35, 278);
+            this.lblNroCarnet.Location = new System.Drawing.Point(41, 278);
             this.lblNroCarnet.Name = "lblNroCarnet";
             this.lblNroCarnet.Size = new System.Drawing.Size(76, 13);
             this.lblNroCarnet.TabIndex = 11;
@@ -192,7 +197,7 @@
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnAgregar.Location = new System.Drawing.Point(53, 329);
+            this.btnAgregar.Location = new System.Drawing.Point(58, 345);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 12;
@@ -206,7 +211,7 @@
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnCancelar.Location = new System.Drawing.Point(179, 329);
+            this.btnCancelar.Location = new System.Drawing.Point(184, 345);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 13;
@@ -220,7 +225,7 @@
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnGuardar.Location = new System.Drawing.Point(53, 366);
+            this.btnGuardar.Location = new System.Drawing.Point(58, 382);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 14;
@@ -234,7 +239,7 @@
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnEliminar.Location = new System.Drawing.Point(179, 366);
+            this.btnEliminar.Location = new System.Drawing.Point(184, 382);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 15;
@@ -246,7 +251,7 @@
             // 
             this.lblValidNombre.AutoSize = true;
             this.lblValidNombre.ForeColor = System.Drawing.Color.Red;
-            this.lblValidNombre.Location = new System.Drawing.Point(114, 73);
+            this.lblValidNombre.Location = new System.Drawing.Point(120, 73);
             this.lblValidNombre.Name = "lblValidNombre";
             this.lblValidNombre.Size = new System.Drawing.Size(155, 13);
             this.lblValidNombre.TabIndex = 16;
@@ -257,7 +262,7 @@
             // 
             this.lblValidApellido.AutoSize = true;
             this.lblValidApellido.ForeColor = System.Drawing.Color.Red;
-            this.lblValidApellido.Location = new System.Drawing.Point(114, 118);
+            this.lblValidApellido.Location = new System.Drawing.Point(120, 118);
             this.lblValidApellido.Name = "lblValidApellido";
             this.lblValidApellido.Size = new System.Drawing.Size(155, 13);
             this.lblValidApellido.TabIndex = 17;
@@ -268,7 +273,7 @@
             // 
             this.lblValidDNI.AutoSize = true;
             this.lblValidDNI.ForeColor = System.Drawing.Color.Red;
-            this.lblValidDNI.Location = new System.Drawing.Point(114, 163);
+            this.lblValidDNI.Location = new System.Drawing.Point(120, 163);
             this.lblValidDNI.Name = "lblValidDNI";
             this.lblValidDNI.Size = new System.Drawing.Size(130, 13);
             this.lblValidDNI.TabIndex = 18;
@@ -279,7 +284,7 @@
             // 
             this.lblValidDireccion.AutoSize = true;
             this.lblValidDireccion.ForeColor = System.Drawing.Color.Red;
-            this.lblValidDireccion.Location = new System.Drawing.Point(114, 208);
+            this.lblValidDireccion.Location = new System.Drawing.Point(120, 208);
             this.lblValidDireccion.Name = "lblValidDireccion";
             this.lblValidDireccion.Size = new System.Drawing.Size(131, 13);
             this.lblValidDireccion.TabIndex = 19;
@@ -290,7 +295,7 @@
             // 
             this.lblValidCUIT.AutoSize = true;
             this.lblValidCUIT.ForeColor = System.Drawing.Color.Red;
-            this.lblValidCUIT.Location = new System.Drawing.Point(114, 253);
+            this.lblValidCUIT.Location = new System.Drawing.Point(120, 253);
             this.lblValidCUIT.Name = "lblValidCUIT";
             this.lblValidCUIT.Size = new System.Drawing.Size(123, 13);
             this.lblValidCUIT.TabIndex = 20;
@@ -301,7 +306,7 @@
             // 
             this.lblValidNroCarnet.AutoSize = true;
             this.lblValidNroCarnet.ForeColor = System.Drawing.Color.Red;
-            this.lblValidNroCarnet.Location = new System.Drawing.Point(114, 298);
+            this.lblValidNroCarnet.Location = new System.Drawing.Point(120, 298);
             this.lblValidNroCarnet.Name = "lblValidNroCarnet";
             this.lblValidNroCarnet.Size = new System.Drawing.Size(123, 13);
             this.lblValidNroCarnet.TabIndex = 21;
@@ -314,7 +319,7 @@
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnBuscar.Location = new System.Drawing.Point(285, 45);
+            this.btnBuscar.Location = new System.Drawing.Point(291, 45);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(60, 21);
             this.btnBuscar.TabIndex = 9;
@@ -324,11 +329,11 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
+            this.btnLimpiar.BackColor = System.Drawing.Color.Crimson;
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnLimpiar.Location = new System.Drawing.Point(351, 45);
+            this.btnLimpiar.Location = new System.Drawing.Point(357, 45);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(60, 21);
             this.btnLimpiar.TabIndex = 10;
@@ -363,15 +368,15 @@
             this.pnlDatosCliente.Controls.Add(this.lblDireccion);
             this.pnlDatosCliente.Controls.Add(this.lblNroCarnet);
             this.pnlDatosCliente.Controls.Add(this.lblCUIT);
-            this.pnlDatosCliente.Location = new System.Drawing.Point(440, 73);
+            this.pnlDatosCliente.Location = new System.Drawing.Point(440, 62);
             this.pnlDatosCliente.Name = "pnlDatosCliente";
-            this.pnlDatosCliente.Size = new System.Drawing.Size(305, 400);
+            this.pnlDatosCliente.Size = new System.Drawing.Size(317, 421);
             this.pnlDatosCliente.TabIndex = 11;
             // 
             // cmbObraSocial
             // 
             this.cmbObraSocial.FormattingEnabled = true;
-            this.cmbObraSocial.Location = new System.Drawing.Point(117, 230);
+            this.cmbObraSocial.Location = new System.Drawing.Point(123, 230);
             this.cmbObraSocial.Name = "cmbObraSocial";
             this.cmbObraSocial.Size = new System.Drawing.Size(150, 21);
             this.cmbObraSocial.TabIndex = 22;
@@ -390,7 +395,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(172, 7);
+            this.label2.Location = new System.Drawing.Point(177, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 22;
@@ -410,26 +415,24 @@
             this.pnlConsultas.Controls.Add(this.label2);
             this.pnlConsultas.Controls.Add(this.btnLimpiar);
             this.pnlConsultas.Controls.Add(this.btnBuscar);
-            this.pnlConsultas.Location = new System.Drawing.Point(12, 73);
+            this.pnlConsultas.Location = new System.Drawing.Point(0, 62);
             this.pnlConsultas.Name = "pnlConsultas";
-            this.pnlConsultas.Size = new System.Drawing.Size(422, 131);
+            this.pnlConsultas.Size = new System.Drawing.Size(434, 131);
             this.pnlConsultas.TabIndex = 23;
             // 
-            // lblCountRegistros
+            // label3
             // 
-            this.lblCountRegistros.AutoSize = true;
-            this.lblCountRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountRegistros.Location = new System.Drawing.Point(361, 470);
-            this.lblCountRegistros.Margin = new System.Windows.Forms.Padding(0);
-            this.lblCountRegistros.Name = "lblCountRegistros";
-            this.lblCountRegistros.Size = new System.Drawing.Size(21, 13);
-            this.lblCountRegistros.TabIndex = 32;
-            this.lblCountRegistros.Text = "00";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(179, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Obra Social:";
             // 
             // cmbObraSocialConsulta
             // 
             this.cmbObraSocialConsulta.FormattingEnabled = true;
-            this.cmbObraSocialConsulta.Location = new System.Drawing.Point(244, 92);
+            this.cmbObraSocialConsulta.Location = new System.Drawing.Point(250, 92);
             this.cmbObraSocialConsulta.Name = "cmbObraSocialConsulta";
             this.cmbObraSocialConsulta.Size = new System.Drawing.Size(167, 21);
             this.cmbObraSocialConsulta.TabIndex = 31;
@@ -438,7 +441,7 @@
             // optZ
             // 
             this.optZ.AutoSize = true;
-            this.optZ.Location = new System.Drawing.Point(113, 93);
+            this.optZ.Location = new System.Drawing.Point(119, 93);
             this.optZ.Name = "optZ";
             this.optZ.Size = new System.Drawing.Size(42, 17);
             this.optZ.TabIndex = 29;
@@ -451,7 +454,7 @@
             // 
             this.optA.AutoSize = true;
             this.optA.Checked = true;
-            this.optA.Location = new System.Drawing.Point(65, 93);
+            this.optA.Location = new System.Drawing.Point(71, 93);
             this.optA.Name = "optA";
             this.optA.Size = new System.Drawing.Size(42, 17);
             this.optA.TabIndex = 28;
@@ -462,7 +465,7 @@
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(126, 45);
+            this.txtBusqueda.Location = new System.Drawing.Point(132, 45);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(150, 20);
             this.txtBusqueda.TabIndex = 27;
@@ -471,7 +474,7 @@
             // lblBusqueda
             // 
             this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Location = new System.Drawing.Point(11, 49);
+            this.lblBusqueda.Location = new System.Drawing.Point(17, 49);
             this.lblBusqueda.Name = "lblBusqueda";
             this.lblBusqueda.Size = new System.Drawing.Size(109, 13);
             this.lblBusqueda.TabIndex = 26;
@@ -480,36 +483,38 @@
             // lblOrden
             // 
             this.lblOrden.AutoSize = true;
-            this.lblOrden.Location = new System.Drawing.Point(11, 95);
+            this.lblOrden.Location = new System.Drawing.Point(17, 95);
             this.lblOrden.Name = "lblOrden";
             this.lblOrden.Size = new System.Drawing.Size(48, 13);
             this.lblOrden.TabIndex = 25;
             this.lblOrden.Text = "Ordenar:";
             // 
+            // lblCountRegistros
+            // 
+            this.lblCountRegistros.AutoSize = true;
+            this.lblCountRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountRegistros.Location = new System.Drawing.Point(346, 470);
+            this.lblCountRegistros.Margin = new System.Windows.Forms.Padding(0);
+            this.lblCountRegistros.Name = "lblCountRegistros";
+            this.lblCountRegistros.Size = new System.Drawing.Size(21, 13);
+            this.lblCountRegistros.TabIndex = 32;
+            this.lblCountRegistros.Text = "00";
+            // 
             // pnlCabecera
             // 
-            this.pnlCabecera.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlCabecera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
             this.pnlCabecera.Controls.Add(this.lblGestionClientes);
+            this.pnlCabecera.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCabecera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.pnlCabecera.Location = new System.Drawing.Point(12, 15);
+            this.pnlCabecera.Location = new System.Drawing.Point(0, 0);
             this.pnlCabecera.Name = "pnlCabecera";
-            this.pnlCabecera.Size = new System.Drawing.Size(733, 52);
+            this.pnlCabecera.Size = new System.Drawing.Size(757, 56);
             this.pnlCabecera.TabIndex = 24;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(173, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Obra Social:";
             // 
             // lblMostrar1
             // 
             this.lblMostrar1.AutoSize = true;
-            this.lblMostrar1.Location = new System.Drawing.Point(306, 470);
+            this.lblMostrar1.Location = new System.Drawing.Point(291, 470);
             this.lblMostrar1.Margin = new System.Windows.Forms.Padding(0);
             this.lblMostrar1.Name = "lblMostrar1";
             this.lblMostrar1.Size = new System.Drawing.Size(57, 13);
@@ -519,7 +524,7 @@
             // lblMostrar2
             // 
             this.lblMostrar2.AutoSize = true;
-            this.lblMostrar2.Location = new System.Drawing.Point(379, 470);
+            this.lblMostrar2.Location = new System.Drawing.Point(364, 470);
             this.lblMostrar2.Margin = new System.Windows.Forms.Padding(0);
             this.lblMostrar2.Name = "lblMostrar2";
             this.lblMostrar2.Size = new System.Drawing.Size(58, 13);
@@ -539,6 +544,7 @@
             this.Controls.Add(this.pnlConsultas);
             this.Controls.Add(this.pnlDatosCliente);
             this.Controls.Add(this.dgwClientes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmGestionClientes";
             this.Text = "FrmGestionClientes";
             this.Load += new System.EventHandler(this.FrmGestionClientes_Load);

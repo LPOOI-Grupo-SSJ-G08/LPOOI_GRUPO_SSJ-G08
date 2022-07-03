@@ -176,13 +176,6 @@ namespace Vistas
             imgUsuarioMain.Visible = true;
         }
 
-        private void btnListadoVentas_Click(object sender, EventArgs e)
-        {
-            PintarBotones(btnListadoVentas);
-            AbrirFormHijo(new FrmListadoVentas());
-            imgUsuarioMain.Visible = true;
-        }
-
         private void btnObrasSociales_Click(object sender, EventArgs e)
         {
             PintarBotones(btnObrasSociales);

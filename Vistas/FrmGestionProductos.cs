@@ -25,7 +25,9 @@ namespace Vistas
 
         private void CargarProductos()
         {
-            dgvProductos.DataSource = TrabajarProducto.list_productos();
+            DataTable dt = TrabajarProducto.list_productos();
+            dgvProductos.DataSource = dt;
+            contarRegistrosDevueltos(dt);
         }
 
         private void HabilitarAcciones(bool b)
@@ -188,6 +190,7 @@ namespace Vistas
             ds = TrabajarProducto.list_productos_por('0'); // 0 para listar por descripcion
             dgvProductos.DataSource = ds.Tables[0];
             dgvProductos.Refresh();
+            contarRegistrosDevueltos(ds.Tables[0]);
         }
 
         private void optCategoria_CheckedChanged(object sender, EventArgs e)
@@ -196,13 +199,17 @@ namespace Vistas
             ds = TrabajarProducto.list_productos_por('1'); //1 para listar por categoria
             dgvProductos.DataSource = ds.Tables[0];
             dgvProductos.Refresh();
+            contarRegistrosDevueltos(ds.Tables[0]);
         }
 
         private void optNinguno_CheckedChanged(object sender, EventArgs e)
         {
-            dgvProductos.DataSource = TrabajarProducto.list_productos();
+            CargarProductos();
         }
- 
+
+        private void contarRegistrosDevueltos(DataTable dt) {
+            lblCountRegistros.Text = Convert.ToString(dt.Rows.Count);
+        }
         
     }
 }

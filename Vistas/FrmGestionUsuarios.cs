@@ -22,7 +22,7 @@ namespace Vistas
             cargarUsuarios();
             cargar_combo_roles();
             this.esconder();
-            dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
+            //dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
         }
 
         private void cargar_combo_roles()
@@ -96,15 +96,19 @@ namespace Vistas
 
         private void txtNombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
-            if (txtNombreUsuario.TextLength >= 2)
-            {
-                dgvListaUsuarios.DataSource = TrabajarUsuario.buscar_usuario(txtNombreUsuario.Text);
-            }
-            else
-                dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
+            realizarBusquedaUsuarios();
         }
 
+        private void realizarBusquedaUsuarios() {
+            DataTable dt;
+            if (txtNombreUsuario.TextLength >= 2) {
+                dt = TrabajarUsuario.buscar_usuario(txtNombreUsuario.Text);
+            } else {
+                dt = TrabajarUsuario.list_usuarios();
+            }
+            dgvListaUsuarios.DataSource = dt;
+            contarRegistrosDevueltos(dt);
+        }
 
         private void setUsuario(Usuario ouser)
         {
@@ -158,9 +162,11 @@ namespace Vistas
         }
         private void cargarUsuarios()
         {
-            dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
+            DataTable dt = TrabajarUsuario.list_usuarios();
+            dgvListaUsuarios.DataSource = dt;
             dgvListaUsuarios.Columns["Imagen"].Visible = false;
             dgvListaUsuarios.Columns["Rol_codigo"].Visible = false;
+            contarRegistrosDevueltos(dt);
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -262,6 +268,7 @@ namespace Vistas
                     this.cargarUsuarios();
                     this.esconder();
                     this.HabilitarAcciones(false);
+                    this.limpiarCampos();
                 }
 
             }
@@ -321,6 +328,19 @@ namespace Vistas
                 imgUsuario.Image = new Bitmap(of.FileName);
             }
             cargoImg = true;
+        }
+
+        private void contarRegistrosDevueltos(DataTable dt) {
+            lblCountRegistros.Text = Convert.ToString(dt.Rows.Count);
+        }
+
+        private void btnBuscarUsuario_Click(object sender, EventArgs e) {
+            realizarBusquedaUsuarios();
+        }
+
+        private void btnLimpiarFiltrosBuscar_Click(object sender, EventArgs e) {
+            cargarUsuarios();
+            txtNombreUsuario.Text = "";
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Vistas {
         }
 
         private void FrmAltaVentas_Load(object sender, EventArgs e) {
-            CargarClientes();
+            //CargarClientes();
             CargarProductos(); 
             setDateTimePicker();
             setValuesDefaultVentaDetalle(); 
@@ -38,6 +38,7 @@ namespace Vistas {
             dgvProductosSeleccionados.DataSource = ProductosDetalles;
         }
 
+        /*
         private void CargarClientes() {
             cmbClientes.DisplayMember = "NombreCompleto";
             cmbClientes.ValueMember = "Cli_DNI";
@@ -47,6 +48,7 @@ namespace Vistas {
 
             label2.Text = cmbClientes.ValueMember;
         }
+         * */
 
         private void setDateTimePicker() {
             dtpFechaVenta.MinDate = DateTime.Today;
@@ -57,12 +59,14 @@ namespace Vistas {
         private void CargarProductos() {
             //cmbProductos.DisplayMember = "CodigoDescripcion";
             //cmbProductos.ValueMember = "Prod_Codigo";
-            DataTable dt = TrabajarVenta.getAllProductos();
+            DataTable dt = TrabajarProducto.list_productos();
             Productos = dt;
+            /*
             Productos.Columns["Prod_Codigo"].ColumnName = "Código";
             Productos.Columns["Prod_Categoria"].ColumnName = "Categoría";
             Productos.Columns["Prod_Descripcion"].ColumnName = "Descripción";
             Productos.Columns["Prod_Precio"].ColumnName = "Precio";
+             * */
             dgvProductos.DataSource = Productos;
             //dt.Columns.Add("CodigoDescripcion", typeof(string), "Prod_codigo + ' - ' + Prod_Descripcion");
             //cmbProductos.DataSource = dt;
@@ -78,6 +82,9 @@ namespace Vistas {
         private void setValuesDefault() {
             dtpFechaVenta.MinDate = DateTime.Today;
             IniciarDetalleProductos();
+            txtClienteDNI.Text = "";
+            txtClienteApellido.Text = "";
+            txtClienteNombre.Text = "";
         }
 
         private void ActualizarPrecio() {
@@ -145,7 +152,8 @@ namespace Vistas {
         private void GuardarVenta() {
             try {
                 Venta oVenta = new Venta();
-                oVenta.Cli_DNI = cmbClientes.SelectedValue.ToString();
+                //oVenta.Cli_DNI = cmbClientes.SelectedValue.ToString();
+                oVenta.Cli_DNI = txtClienteDNI.Text;
                 oVenta.Ven_Fecha = dtpFechaVenta.Value;
 
                 //Guardo la Venta realizada y obtengo el ID de la misma
@@ -193,7 +201,7 @@ namespace Vistas {
         private void dgvProductos_SelectionChanged(object sender, EventArgs e) {
             if(dgvProductos.SelectedRows.Count > 0) {
                 int filaActual = dgvProductos.CurrentRow.Index;
-                txtProdCodigo.Text = dgvProductos.Rows[filaActual].Cells["Código"].Value.ToString();
+                txtProdCodigo.Text = dgvProductos.Rows[filaActual].Cells["Codigo"].Value.ToString();
                 txtProdPrecio.Text = dgvProductos.Rows[filaActual].Cells["Precio"].Value.ToString();
                 ActualizarPrecio();
             }
@@ -210,10 +218,14 @@ namespace Vistas {
         private void btnGuardarVenta_Click(object sender, EventArgs e) {
             //Verifico que hayan productos cargados en el detalle
             if (ProductosSeleccionadosEstaVacio()) {
-                var dialogResult = MessageBox.Show("¿Guardar venta?", "Guardar", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes) {
-                    GuardarVenta();
-                    setValuesDefault();
+                if (txtClienteDNI.Text.Length > 0) {
+                    var dialogResult = MessageBox.Show("¿Guardar venta?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes) {
+                        GuardarVenta();
+                        setValuesDefault();
+                    }
+                } else {
+                    MessageBox.Show("Debe seleccionar un cliente", "Seleccionar Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             } else {
                 MessageBox.Show("No se seleccionó ningún producto.\nDebe agregar al menos uno.", "¡Atención! Sin Productos", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -254,6 +266,23 @@ namespace Vistas {
                 buscarCliente.Show();
             }
 
+        }
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e) {
+            if (txtBusquedaProducto.Text.Length > 0) {
+                string text = Convert.ToString(txtBusquedaProducto.Text);
+                dgvProductos.DataSource = TrabajarProducto.searchProductosCategoriaDescripcion(text);
+            }
+        }
+
+        private void btnLimpiarFiltrosBuscar_Click(object sender, EventArgs e) {
+            CargarProductos();
+            txtBusquedaProducto.Text = "";
+        }
+
+        private void btnConsultarVentas_Click(object sender, EventArgs e) {
+            FrmListadoVentas frm = new FrmListadoVentas();
+            frm.Show();
         }
     }
 }
