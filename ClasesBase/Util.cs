@@ -13,7 +13,7 @@ namespace ClasesBase
         public static byte[] ImageToByte(Image img)
         {
             if (img != null)
-            { 
+            {
                 byte[] byteArray = new byte[0];
                 using (MemoryStream stream = new MemoryStream())
                 {
@@ -50,31 +50,5 @@ namespace ClasesBase
             return VistasDirectory + "\\Resources\\sounds\\" + nombre;
         }
 
-        public static void SendEmail(string _subject, MailAddress _from, MailAddress _to, List<MailAddress> _cc, List<MailAddress> _bcc = null)
-    {
-        string Text = "";
-        SmtpClient mailClient = new SmtpClient("Mailhost");
-        MailMessage msgMail;
-        Text = "Stuff";
-        msgMail = new MailMessage();
-        msgMail.From = _from;
-        msgMail.To.Add(_to);
-        foreach (MailAddress addr in _cc)
-        {
-            msgMail.CC.Add(addr);
-        }
-        if (_bcc != null)
-        {
-            foreach (MailAddress addr in _bcc)
-            {
-                msgMail.Bcc.Add(addr);
-            }
-        }
-        msgMail.Subject = _subject;
-        msgMail.Body = Text;
-        msgMail.IsBodyHtml = true;
-        mailClient.Send(msgMail);
-        msgMail.Dispose();
-            }
     }
 }

@@ -328,5 +328,10 @@ namespace Vistas
         private void contarRegistrosDevueltos(DataTable dt) {
             lblCountRegistros.Text = Convert.ToString(dt.Rows.Count);
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -201,6 +201,11 @@
     <None Include="Resources\buscar.png" />
     <Content Include="Resources\default-user.png" />
     <None Include="Resources\info.jpg" />
+    <None Include="Resources\icono-usuario.png" />
+    <None Include="Resources\icono-producto.png" />
+    <None Include="Resources\icono-cliente.png" />
+    <None Include="Resources\icono-carrito.png" />
+    <None Include="Resources\icono-obrasocial.png" />
     <Content Include="Resources\no-photo.png" />
     <Content Include="Resources\sounds\sonido1.mp3" />
   </ItemGroup>

@@ -72,7 +72,7 @@ namespace Vistas
                 // Enviar E-mail
                 client.Send(msg);
                 MessageBox.Show("Si su correo se encuentra registrado, \nle llegará el nombre de usuario \ny contraseña asociado al mismo");
-
+                client.Dispose();
             }
             catch (Exception error)
             {
