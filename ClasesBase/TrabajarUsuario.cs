@@ -186,7 +186,20 @@ namespace ClasesBase
 
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM Usuario WHERE Usu_NombreUsuario LIKE '%" + usu_NombreUsuario + "%';";
+
+            cmd.CommandText = "SELECT ";
+            cmd.CommandText += "usu_id as 'Id', ";
+            cmd.CommandText += "Roles.rol_descripcion as 'Rol', ";
+            cmd.CommandText += "usu_nombreusuario as 'Usuario', ";
+            cmd.CommandText += "usu_contrasenia as 'Contraseña', ";
+            cmd.CommandText += "usu_apellidonombre as 'Nombre Completo', ";
+            cmd.CommandText += "Usuario.rol_codigo, ";
+            cmd.CommandText += "Usuario.usu_imagen as Imagen, ";
+            cmd.CommandText += "Usuario.usu_correo as Correo ";
+            cmd.CommandText += "FROM Usuario ";
+            cmd.CommandText += "LEFT JOIN Roles ON (Roles.rol_codigo=Usuario.rol_codigo) ";
+
+            cmd.CommandText += "WHERE Usu_NombreUsuario LIKE '%" + usu_NombreUsuario + "%';";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn;
 
