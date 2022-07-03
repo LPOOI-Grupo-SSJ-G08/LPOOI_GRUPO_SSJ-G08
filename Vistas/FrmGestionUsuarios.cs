@@ -334,6 +334,28 @@ namespace Vistas
             lblCountRegistros.Text = Convert.ToString(dt.Rows.Count);
         }
 
+<<<<<<< HEAD
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPdf_Click(object sender, EventArgs e)
+        {
+            var savefiledialoge = new SaveFileDialog();
+            savefiledialoge.DefaultExt = ".pdf";
+            if (savefiledialoge.ShowDialog() == DialogResult.OK)
+            {
+                DataTable tabla = (DataTable)dgvListaUsuarios.DataSource;
+                tabla.Columns.Remove("Imagen");
+                tabla.Columns.Remove("rol_codigo");
+                int resp = Util.PDFWriter(tabla, savefiledialoge.FileName, "USUARIOS");
+                if (resp == 0)
+                    MessageBox.Show("¡Archivo creado correctamente!");
+                else
+                    MessageBox.Show("Error al crear el archivo");
+            }
+=======
         private void btnBuscarUsuario_Click(object sender, EventArgs e) {
             realizarBusquedaUsuarios();
         }
@@ -341,6 +363,7 @@ namespace Vistas
         private void btnLimpiarFiltrosBuscar_Click(object sender, EventArgs e) {
             cargarUsuarios();
             txtNombreUsuario.Text = "";
+>>>>>>> master
         }
     }
 }

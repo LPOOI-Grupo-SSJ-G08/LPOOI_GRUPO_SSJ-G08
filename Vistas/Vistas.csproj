@@ -158,18 +158,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -201,6 +201,13 @@
     <None Include="Resources\buscar.png" />
     <Content Include="Resources\default-user.png" />
     <None Include="Resources\info.jpg" />
+    <None Include="Resources\icons8-pdf-20 %281%29.png" />
+    <None Include="Resources\icono-user-37.png" />
+    <None Include="Resources\icono-product-37.png" />
+    <None Include="Resources\icons8-mostrador-de-facturación-37.png" />
+    <None Include="Resources\icono-user-371.png" />
+    <None Include="Resources\icono-carrito-37.png" />
+    <None Include="Resources\icono-salud-37.png" />
     <Content Include="Resources\no-photo.png" />
     <Content Include="Resources\sounds\sonido1.mp3" />
   </ItemGroup>

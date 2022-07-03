@@ -11,8 +11,11 @@ using Microsoft.VisualBasic;
 
 namespace Vistas
 {
+
     public partial class FrmLogin : Form
-    { 
+    {
+        WMPLib.WindowsMediaPlayer Player;
+
         public FrmLogin()
         {
             InitializeComponent();
@@ -62,26 +65,17 @@ namespace Vistas
         {
             btnIngresar.BackColor = Color.SeaGreen;
         }
+       
         private void FrmLogin_Load(object sender, EventArgs e)
         {
            PlayFile(Util.CompleteSoundPath("sonido1.mp3"));
         }
-
-        WMPLib.WindowsMediaPlayer Player;
+        
         private void PlayFile(String url)
         {
-            Player = new WMPLib.WindowsMediaPlayer();
-            Player.PlayStateChange += Player_PlayStateChange;
-            Player.URL = url;
-            Player.controls.play();
-        }
-
-        private void Player_PlayStateChange(int NewState)
-        {
-            if ((WMPLib.WMPPlayState)NewState == WMPLib.WMPPlayState.wmppsStopped)
-            {
-                //Actions on stop
-            }
+                Player = new WMPLib.WindowsMediaPlayer();
+                Player.URL = url;
+                Player.controls.play();
         }
 
         private void lblRecuperarPsw_Click(object sender, EventArgs e)

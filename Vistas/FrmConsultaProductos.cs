@@ -60,5 +60,19 @@ namespace Vistas {
         private void contarRegistrosDevueltos(DataTable dt) {
             lblCountRegistros.Text = Convert.ToString(dt.Rows.Count);
         }
+
+        private void btnPdf_Click(object sender, EventArgs e)
+        {
+            var savefiledialoge = new SaveFileDialog();
+            savefiledialoge.DefaultExt = ".pdf";
+            if (savefiledialoge.ShowDialog() == DialogResult.OK)
+            {
+                int resp = Util.PDFWriter((DataTable)dgvProductos.DataSource, savefiledialoge.FileName, "PRODUCTOS");
+                if (resp == 0)
+                    MessageBox.Show("¡Archivo creado correctamente!");
+                else
+                    MessageBox.Show("Error al crear el archivo");
+            }
+        }
     }
 }
