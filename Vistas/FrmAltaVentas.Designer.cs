@@ -90,7 +90,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(23, 38);
+            this.lblFecha.Location = new System.Drawing.Point(29, 38);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(41, 15);
             this.lblFecha.TabIndex = 2;
@@ -116,7 +116,7 @@
             // 
             // txtProdPrecio
             // 
-            this.txtProdPrecio.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtProdPrecio.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtProdPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProdPrecio.Location = new System.Drawing.Point(110, 138);
             this.txtProdPrecio.Name = "txtProdPrecio";
@@ -144,7 +144,7 @@
             // 
             // txtProdTotal
             // 
-            this.txtProdTotal.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtProdTotal.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtProdTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProdTotal.Location = new System.Drawing.Point(110, 228);
             this.txtProdTotal.Name = "txtProdTotal";
@@ -231,14 +231,14 @@
             // dtpFechaVenta
             // 
             this.dtpFechaVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaVenta.Location = new System.Drawing.Point(70, 35);
+            this.dtpFechaVenta.Location = new System.Drawing.Point(76, 35);
             this.dtpFechaVenta.Name = "dtpFechaVenta";
             this.dtpFechaVenta.Size = new System.Drawing.Size(150, 21);
             this.dtpFechaVenta.TabIndex = 16;
             // 
             // txtProdCodigo
             // 
-            this.txtProdCodigo.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtProdCodigo.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtProdCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProdCodigo.Location = new System.Drawing.Point(110, 93);
             this.txtProdCodigo.Name = "txtProdCodigo";
@@ -359,7 +359,7 @@
             this.lblSubtitle.Location = new System.Drawing.Point(143, 15);
             this.lblSubtitle.Margin = new System.Windows.Forms.Padding(3, 15, 3, 15);
             this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(184, 16);
+            this.lblSubtitle.Size = new System.Drawing.Size(186, 16);
             this.lblSubtitle.TabIndex = 16;
             this.lblSubtitle.Text = "Productos seleccionados";
             // 
@@ -385,7 +385,7 @@
             this.panel3.Controls.Add(this.lblFecha);
             this.panel3.Location = new System.Drawing.Point(479, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(239, 306);
+            this.panel3.Size = new System.Drawing.Size(255, 306);
             this.panel3.TabIndex = 19;
             // 
             // groupBox1
@@ -435,8 +435,10 @@
             // 
             // txtClienteNombre
             // 
+            this.txtClienteNombre.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtClienteNombre.Location = new System.Drawing.Point(70, 118);
             this.txtClienteNombre.Name = "txtClienteNombre";
+            this.txtClienteNombre.ReadOnly = true;
             this.txtClienteNombre.Size = new System.Drawing.Size(150, 20);
             this.txtClienteNombre.TabIndex = 21;
             // 
@@ -451,8 +453,10 @@
             // 
             // txtClienteDNI
             // 
+            this.txtClienteDNI.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtClienteDNI.Location = new System.Drawing.Point(70, 30);
             this.txtClienteDNI.Name = "txtClienteDNI";
+            this.txtClienteDNI.ReadOnly = true;
             this.txtClienteDNI.Size = new System.Drawing.Size(150, 20);
             this.txtClienteDNI.TabIndex = 19;
             // 
@@ -467,8 +471,10 @@
             // 
             // txtClienteApellido
             // 
+            this.txtClienteApellido.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtClienteApellido.Location = new System.Drawing.Point(70, 74);
             this.txtClienteApellido.Name = "txtClienteApellido";
+            this.txtClienteApellido.ReadOnly = true;
             this.txtClienteApellido.Size = new System.Drawing.Size(150, 20);
             this.txtClienteApellido.TabIndex = 20;
             // 
