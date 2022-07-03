@@ -53,7 +53,7 @@ namespace ClasesBase
             return VistasDirectory + "\\Resources\\sounds\\" + nombre;
         }
 
-        public static int PDFWriter(DataTable dt, string nombrePdf)
+        public static int PDFWriter(DataTable dt, string nombrePdf, string contenido)
         {
             try
             {
@@ -61,6 +61,32 @@ namespace ClasesBase
                 PdfWriter.GetInstance(document, new FileStream(nombrePdf, FileMode.Create));
                 document.Open();
 
+                string Titulo = "REGISTROS DE " + contenido;
+                string fechaActual = DateTime.Now.ToShortDateString();
+                string horaActual = DateTime.Now.ToString("h:mm tt");
+
+                //Primer tabla con Fecha y Hora
+                PdfPTable tabla1 = new PdfPTable(2);
+                tabla1.DefaultCell.Padding = 3;
+                tabla1.SpacingBefore = 10;
+                tabla1.WidthPercentage = 80;
+                tabla1.HorizontalAlignment = Element.ALIGN_CENTER;
+
+                PdfPCell cCodigo = new PdfPCell(new Phrase(1, "FECHA DE EMISIÓN: " + fechaActual));
+                cCodigo.Border = PdfPCell.NO_BORDER;
+                cCodigo.HorizontalAlignment = Element.ALIGN_LEFT;
+                tabla1.AddCell(cCodigo);
+                PdfPCell cFecha = new PdfPCell(new Phrase(2, "HORA DE EMISIÓN: " + horaActual));
+                cFecha.Border = PdfPCell.NO_BORDER;
+                cFecha.HorizontalAlignment = Element.ALIGN_RIGHT;
+                tabla1.AddCell(cFecha);
+
+                //Creacion de titulos
+                Paragraph titulo = new Paragraph(string.Format(Titulo), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(27, 153, 139)));
+                titulo.Alignment = Element.ALIGN_CENTER;
+
+                
+                //Cracion de Tabla 
                 PdfPTable table = new PdfPTable(dt.Columns.Count);
                 table.WidthPercentage = 100;
 
@@ -71,7 +97,7 @@ namespace ClasesBase
 
                     cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                     cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
-                    cell.BackgroundColor = new iTextSharp.text.BaseColor(51, 102, 102);
+                    cell.BackgroundColor = new iTextSharp.text.BaseColor(27, 153, 139);
 
                     table.AddCell(cell);
                 }
@@ -90,6 +116,11 @@ namespace ClasesBase
                         table.AddCell(cell);
                     }
                 }
+
+                document.Add(tabla1);
+                document.Add(new Chunk());
+                document.Add(titulo);
+                document.Add(new Chunk());
                 document.Add(table);
                 document.Close();
 

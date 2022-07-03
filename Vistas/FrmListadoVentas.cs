@@ -86,10 +86,11 @@ namespace Vistas
 
         private void btnPdf_Click(object sender, EventArgs e)
         {
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            var savefiledialoge = new SaveFileDialog();
+            savefiledialoge.DefaultExt = ".pdf";
+            if (savefiledialoge.ShowDialog() == DialogResult.OK)
             {
-                string nombrePdf = folderBrowserDialog1.SelectedPath + "\\Ventas_" + DateTime.Now.ToString("dd-MM-yyyy") + "_" + DateTime.Now.ToString("HHmmss");
-                int resp = Util.PDFWriter((DataTable)dgvVentas.DataSource, nombrePdf);
+                int resp = Util.PDFWriter((DataTable)dgvVentas.DataSource, savefiledialoge.FileName, "VENTAS");
                 if (resp == 0)
                     MessageBox.Show("¡Archivo creado correctamente!");
                 else

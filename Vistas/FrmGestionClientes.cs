@@ -314,15 +314,17 @@ namespace Vistas
 
         private void btnPdf_Click(object sender, EventArgs e)
         {
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            var savefiledialoge = new SaveFileDialog();
+            savefiledialoge.DefaultExt = ".pdf";
+            if (savefiledialoge.ShowDialog() == DialogResult.OK)
             {
-                string nombrePdf = folderBrowserDialog1.SelectedPath + "\\Clientes_" + DateTime.Now.ToString("dd-MM-yyyy") + "_" + DateTime.Now.ToString("HHmmss");
-                int resp = Util.PDFWriter((DataTable)dgwClientes.DataSource, nombrePdf);
+                int resp = Util.PDFWriter((DataTable)dgwClientes.DataSource, savefiledialoge.FileName, "CLIENTES");
                 if (resp == 0)
                     MessageBox.Show("¡Archivo creado correctamente!");
                 else
                     MessageBox.Show("Error al crear el archivo");
             }
         }
+
     }
 }

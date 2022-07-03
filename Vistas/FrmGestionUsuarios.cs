@@ -336,10 +336,14 @@ namespace Vistas
 
         private void btnPdf_Click(object sender, EventArgs e)
         {
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            var savefiledialoge = new SaveFileDialog();
+            savefiledialoge.DefaultExt = ".pdf";
+            if (savefiledialoge.ShowDialog() == DialogResult.OK)
             {
-                string nombrePdf = folderBrowserDialog1.SelectedPath + "\\Usuarios_" + DateTime.Now.ToString("dd-MM-yyyy") + "_" + DateTime.Now.ToString("HHmmss");
-                int resp = Util.PDFWriter((DataTable)dgvListaUsuarios.DataSource, nombrePdf);
+                DataTable tabla = (DataTable)dgvListaUsuarios.DataSource;
+                tabla.Columns.Remove("Imagen");
+                tabla.Columns.Remove("rol_codigo");
+                int resp = Util.PDFWriter(tabla, savefiledialoge.FileName, "USUARIOS");
                 if (resp == 0)
                     MessageBox.Show("¡Archivo creado correctamente!");
                 else
