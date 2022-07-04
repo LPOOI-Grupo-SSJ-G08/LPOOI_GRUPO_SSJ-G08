@@ -542,7 +542,7 @@
             this.btnPdf.Image = global::Vistas.Properties.Resources.icons8_pdf_20__1_;
             this.btnPdf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPdf.Location = new System.Drawing.Point(0, 465);
-            this.btnPdf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPdf.Margin = new System.Windows.Forms.Padding(2);
             this.btnPdf.Name = "btnPdf";
             this.btnPdf.Size = new System.Drawing.Size(100, 30);
             this.btnPdf.TabIndex = 40;

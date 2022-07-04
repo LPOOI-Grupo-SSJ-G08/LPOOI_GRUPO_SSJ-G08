@@ -80,7 +80,6 @@ namespace Vistas
                     oCliente.Cli_DNI = txtDNI.Text;
                     oCliente.Cli_Direccion = txtDireccion.Text;
                     oCliente.Os_CUIT = cmbObraSocial.SelectedValue.ToString();
-                    //oCliente.Os_CUIT = txtCUIT.Text;
                     oCliente.Cli_NroCarnet = txtNroCarnet.Text;
 
                     TrabajarCliente.insert_cliente(oCliente);
@@ -116,7 +115,6 @@ namespace Vistas
                     oCliente.Cli_Apellido = txtApellido.Text;
                     oCliente.Cli_Direccion = txtDireccion.Text;
                     oCliente.Os_CUIT = cmbObraSocial.SelectedValue.ToString();
-                    //oCliente.Os_CUIT = txtCUIT.Text;
                     oCliente.Cli_NroCarnet = txtNroCarnet.Text;
 
                     TrabajarCliente.update_cliente(oCliente);
@@ -159,7 +157,6 @@ namespace Vistas
                 txtApellido.Text = dgwClientes.CurrentRow.Cells["Apellido"].Value.ToString();
                 txtDNI.Text = dgwClientes.CurrentRow.Cells["DNI"].Value.ToString();
                 txtDireccion.Text = dgwClientes.CurrentRow.Cells["Direccion"].Value.ToString();
-                //txtCUIT.Text = dgwClientes.CurrentRow.Cells["CUIT"].Value.ToString();
                 cmbObraSocial.SelectedValue = dgwClientes.CurrentRow.Cells["CUIT"].Value.ToString();
                 txtNroCarnet.Text = dgwClientes.CurrentRow.Cells["Nro de Carnet"].Value.ToString();
 
@@ -183,7 +180,6 @@ namespace Vistas
             txtApellido.Clear();
             txtNombre.Clear();
             txtDireccion.Clear();
-            //txtCUIT.Clear();
             txtNroCarnet.Clear();
         }
 
@@ -191,6 +187,13 @@ namespace Vistas
         {
             if (txtDNI.Text.Length != 8)
             {
+                lblValidDNI.Text = "Debe contener 8 números";
+                lblValidDNI.Show();
+                bErrorFound = true;
+            }
+            else if(TrabajarCliente.buscar_cliente_dni(txtDNI.Text) != null)
+            {
+                lblValidDNI.Text = "Ya se encuentra registrado";
                 lblValidDNI.Show();
                 bErrorFound = true;
             }
@@ -209,13 +212,6 @@ namespace Vistas
                 lblValidDireccion.Show();
                 bErrorFound = true;
             }
-            /*
-            if (!txtCUIT.Text.All(char.IsDigit) || string.IsNullOrEmpty(txtCUIT.Text))
-            {
-                lblValidCUIT.Show();
-                bErrorFound = true;
-            }
-            */
             if (!txtNroCarnet.Text.All(char.IsDigit) || string.IsNullOrEmpty(txtNroCarnet.Text))
             {
                 lblValidNroCarnet.Show();

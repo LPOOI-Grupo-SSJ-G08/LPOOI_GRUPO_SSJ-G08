@@ -214,5 +214,27 @@ namespace ClasesBase
 
             return Convert.ToInt32(da.SelectCommand.Parameters["@cantidadRegistros"].Value);
         }
+
+        public static Cliente buscar_cliente_dni(string dniCliente)
+        {
+
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM Cliente WHERE Cli_DNI =" + dniCliente + ";";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                Cliente cliente = new Cliente(row["Cli_Nombre"].ToString(), row["Cli_Apellido"].ToString(), row["Cli_DNI"].ToString(), row["Cli_Direccion"].ToString(), row["OS_CUIT"].ToString(), row["Cli_NroCarnet"].ToString());
+                return cliente;
+            }
+
+            return null;
+        }
     }
 }
