@@ -174,8 +174,10 @@ namespace Vistas
             }
             if (!txtPrecio.Text.All(char.IsDigit) || string.IsNullOrEmpty(txtPrecio.Text))            
             {
-                lblValidPrecio.Show();
-                bErrorFound = true;
+                if (!System.Text.RegularExpressions.Regex.IsMatch(txtPrecio.Text, "^[0-9]+(\\,[0-9]{1,2})?$")) {
+                    lblValidPrecio.Show();
+                    bErrorFound = true;
+                } 
             }
         }
 
