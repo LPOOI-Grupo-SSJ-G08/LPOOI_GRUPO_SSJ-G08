@@ -59,18 +59,18 @@ namespace Vistas
 
         private void btnEliminarVenta_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("¿Está seguro de que desea eliminar este elemento?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult dialogResult = MessageBox.Show("¿Está seguro de que desea eliminar este registro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (dialogResult == DialogResult.Yes)
             {
                 TrabajarVenta.delete_venta(Convert.ToInt32(dgvVentas.CurrentRow.Cells["Nro. Venta"].Value));
                 FrmListadoVentas_Load(null, null);
 
-                MessageBox.Show("La venta ha eliminada correctamente");
+                MessageBox.Show("La venta ha eliminada correctamente", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("No se elimino la venta");
+                MessageBox.Show("No se elimino la venta", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -92,7 +92,7 @@ namespace Vistas
             {
                 int resp = Util.PDFWriter((DataTable)dgvVentas.DataSource, savefiledialoge.FileName, "VENTAS");
                 if (resp == 0)
-                    MessageBox.Show("¡Archivo creado correctamente!");
+                    MessageBox.Show("¡Archivo creado correctamente!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Error al crear el archivo");
             }

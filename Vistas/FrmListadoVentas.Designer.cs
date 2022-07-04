@@ -82,7 +82,7 @@
             this.dgvVentas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentas.Location = new System.Drawing.Point(19, 174);
-            this.dgvVentas.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.dgvVentas.Margin = new System.Windows.Forms.Padding(10);
             this.dgvVentas.MultiSelect = false;
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
@@ -125,7 +125,7 @@
             this.dtpFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaInicio.Location = new System.Drawing.Point(65, 30);
-            this.dtpFechaInicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaInicio.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(100, 20);
             this.dtpFechaInicio.TabIndex = 5;
@@ -135,7 +135,7 @@
             this.dtpFechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaFin.Location = new System.Drawing.Point(228, 30);
-            this.dtpFechaFin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaFin.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(100, 20);
             this.dtpFechaFin.TabIndex = 0;
@@ -148,7 +148,7 @@
             this.btnListarVentasPorFechas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarVentasPorFechas.ForeColor = System.Drawing.Color.White;
             this.btnListarVentasPorFechas.Location = new System.Drawing.Point(343, 29);
-            this.btnListarVentasPorFechas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnListarVentasPorFechas.Margin = new System.Windows.Forms.Padding(2);
             this.btnListarVentasPorFechas.Name = "btnListarVentasPorFechas";
             this.btnListarVentasPorFechas.Size = new System.Drawing.Size(65, 22);
             this.btnListarVentasPorFechas.TabIndex = 3;
@@ -176,7 +176,7 @@
             this.groupBox2.Size = new System.Drawing.Size(272, 65);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Productos vendidos por cliente";
+            this.groupBox2.Text = "Ventas realizadas por cliente";
             // 
             // label3
             // 
@@ -202,7 +202,7 @@
             this.groupBox1.Size = new System.Drawing.Size(427, 65);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Productos vendidos entre";
+            this.groupBox1.Text = "Ventas realizadas entr";
             // 
             // label2
             // 
@@ -264,7 +264,7 @@
             this.btnPdf.Image = global::Vistas.Properties.Resources.icons8_pdf_20__1_;
             this.btnPdf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPdf.Location = new System.Drawing.Point(19, 427);
-            this.btnPdf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPdf.Margin = new System.Windows.Forms.Padding(2);
             this.btnPdf.Name = "btnPdf";
             this.btnPdf.Size = new System.Drawing.Size(100, 30);
             this.btnPdf.TabIndex = 41;
@@ -291,7 +291,7 @@
             this.Controls.Add(this.dgvVentas);
             this.Controls.Add(this.pnlEncabezado);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmListadoVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultas";

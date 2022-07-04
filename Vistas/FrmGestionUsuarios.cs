@@ -38,10 +38,10 @@ namespace Vistas
             Usuario ouser = new Usuario();
             if(comprobarAltaModificarUsuario())
             {
-                var dialogoConfirmacion = MessageBox.Show("Desea Agregar a este usuario?", "Confirmar", MessageBoxButtons.YesNo);
+                var dialogoConfirmacion = MessageBox.Show("¿Desea Agregar a este usuario?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogoConfirmacion == DialogResult.No)
                 {
-                    MessageBox.Show("Usuario no agregado");
+                    MessageBox.Show("Usuario no agregado", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 try
@@ -72,16 +72,16 @@ namespace Vistas
         {   
             try
             {
-                var dialogoConfirmacion = MessageBox.Show("Desea eliminar a " + dgvListaUsuarios.CurrentRow.Cells[1].Value+"?", "Confirmar", MessageBoxButtons.YesNo);
+                var dialogoConfirmacion = MessageBox.Show("¿Desea eliminar a " + dgvListaUsuarios.CurrentRow.Cells[1].Value+"?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogoConfirmacion == DialogResult.No)
                 {
-                    MessageBox.Show("Usuario no eliminado");
+                    MessageBox.Show("Usuario no eliminado", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
                 TrabajarUsuario.baja_usuarios((int)dgvListaUsuarios.CurrentRow.Cells[0].Value);
                 dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
-                MessageBox.Show("Usuario eliminado correctamente");
+                MessageBox.Show("Usuario eliminado correctamente", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 limpiarCampos();
                 this.HabilitarAcciones(false);
             }
@@ -209,7 +209,7 @@ namespace Vistas
                     return false;
                 else
                 {
-                    MessageBox.Show("El usuario ya existe en el sistema");
+                    MessageBox.Show("El usuario ya existe en el sistema", "Usuario existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return true;
                 }
             }
@@ -219,7 +219,7 @@ namespace Vistas
         {
             if (TrabajarUsuario.comprobar_NombreUsuarioExistente(nombreUsuario))
             {
-                MessageBox.Show("El usuario ya existe en el sistema");
+                MessageBox.Show("El usuario ya existe en el sistema", "Usuario existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
             }
             else
@@ -255,10 +255,10 @@ namespace Vistas
 
                 if (this.comprobarAltaModificarUsuario() && !this.comprobarUsuarioExistenteModificar(txtNombreUsuario.Text))
                 {
-                    var dialogoConfirmacion = MessageBox.Show("Desea modificar a este usuario?", "Confirmar", MessageBoxButtons.YesNo);
+                    var dialogoConfirmacion = MessageBox.Show("¿Desea modificar a este usuario?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialogoConfirmacion == DialogResult.No)
                     {
-                        MessageBox.Show("Usuario no modificado");
+                        //MessageBox.Show("Usuario no modificado");
                         return;
                     }
                     this.setUsuario(this.usuarioTmp);
@@ -267,7 +267,7 @@ namespace Vistas
                         TrabajarUsuario.modificar_usuario(this.usuarioTmp);
                     else
                         TrabajarUsuario.modificar_usuarioImg(this.usuarioTmp);
-                    MessageBox.Show("Usuario modificado correctamente");
+                    MessageBox.Show("Usuario modificado correctamente", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.cargarUsuarios();
                     this.esconder();
                     this.HabilitarAcciones(false);
@@ -348,7 +348,7 @@ namespace Vistas
                 tabla.Columns.Remove("rol_codigo");
                 int resp = Util.PDFWriter(tabla, savefiledialoge.FileName, "USUARIOS");
                 if (resp == 0)
-                    MessageBox.Show("¡Archivo creado correctamente!");
+                    MessageBox.Show("¡Archivo creado correctamente!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Error al crear el archivo");
             }

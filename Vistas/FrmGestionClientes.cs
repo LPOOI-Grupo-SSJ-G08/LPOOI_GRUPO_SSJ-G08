@@ -322,7 +322,7 @@ namespace Vistas
             {
                 int resp = Util.PDFWriter((DataTable)dgwClientes.DataSource, savefiledialoge.FileName, "CLIENTES");
                 if (resp == 0)
-                    MessageBox.Show("¡Archivo creado correctamente!");
+                    MessageBox.Show("¡Archivo creado correctamente!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Error al crear el archivo");
             }

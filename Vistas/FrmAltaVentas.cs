@@ -112,7 +112,7 @@ namespace Vistas {
                 //Seleccionar el panel activo luego de añadir un producto
                 tabCtlVenta.SelectedTab = tpgDetalleVenta;
             } else {
-                MessageBox.Show("Seleccione un producto", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Seleccione un producto", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -171,7 +171,7 @@ namespace Vistas {
                     TrabajarVenta.agregarDetalleVenta(oVentaDetalle);
                 }
 
-                MessageBox.Show("Venta guardada exitosamente", "Guardado");
+                MessageBox.Show("Venta guardada exitosamente", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             } catch (Exception e) {
                 MessageBox.Show("Exception: " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
