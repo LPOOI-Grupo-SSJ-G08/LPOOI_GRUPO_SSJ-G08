@@ -34,7 +34,6 @@
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLimpiarFiltrosBuscar = new System.Windows.Forms.Button();
-            this.btnBuscarUsuario = new System.Windows.Forms.Button();
             this.lblConsultas = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -82,7 +81,7 @@
             this.btnModificarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnModificarUsuario.Location = new System.Drawing.Point(73, 394);
-            this.btnModificarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificarUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarUsuario.Name = "btnModificarUsuario";
             this.btnModificarUsuario.Size = new System.Drawing.Size(70, 24);
             this.btnModificarUsuario.TabIndex = 1;
@@ -99,7 +98,7 @@
             this.btnEliminarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnEliminarUsuario.Location = new System.Drawing.Point(167, 394);
-            this.btnEliminarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarUsuario.Name = "btnEliminarUsuario";
             this.btnEliminarUsuario.Size = new System.Drawing.Size(70, 24);
             this.btnEliminarUsuario.TabIndex = 2;
@@ -112,15 +111,15 @@
             this.txtNombreUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNombreUsuario.Location = new System.Drawing.Point(144, 57);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
-            this.txtNombreUsuario.Size = new System.Drawing.Size(150, 20);
+            this.txtNombreUsuario.Size = new System.Drawing.Size(205, 20);
             this.txtNombreUsuario.TabIndex = 5;
+            this.txtNombreUsuario.TextChanged += new System.EventHandler(this.txtNombreUsuario_TextChanged);
             this.txtNombreUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreUsuario_KeyPress);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.btnLimpiarFiltrosBuscar);
-            this.panel1.Controls.Add(this.btnBuscarUsuario);
             this.panel1.Controls.Add(this.lblConsultas);
             this.panel1.Controls.Add(this.txtNombreUsuario);
             this.panel1.Controls.Add(this.label1);
@@ -128,6 +127,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(428, 97);
             this.panel1.TabIndex = 7;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnLimpiarFiltrosBuscar
             // 
@@ -136,30 +136,14 @@
             this.btnLimpiarFiltrosBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarFiltrosBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarFiltrosBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLimpiarFiltrosBuscar.Location = new System.Drawing.Point(369, 57);
-            this.btnLimpiarFiltrosBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiarFiltrosBuscar.Location = new System.Drawing.Point(360, 57);
+            this.btnLimpiarFiltrosBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiarFiltrosBuscar.Name = "btnLimpiarFiltrosBuscar";
             this.btnLimpiarFiltrosBuscar.Size = new System.Drawing.Size(60, 21);
             this.btnLimpiarFiltrosBuscar.TabIndex = 27;
             this.btnLimpiarFiltrosBuscar.Text = "Limpiar";
             this.btnLimpiarFiltrosBuscar.UseVisualStyleBackColor = false;
             this.btnLimpiarFiltrosBuscar.Click += new System.EventHandler(this.btnLimpiarFiltrosBuscar_Click);
-            // 
-            // btnBuscarUsuario
-            // 
-            this.btnBuscarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
-            this.btnBuscarUsuario.FlatAppearance.BorderSize = 0;
-            this.btnBuscarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarUsuario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBuscarUsuario.Location = new System.Drawing.Point(301, 57);
-            this.btnBuscarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnBuscarUsuario.Name = "btnBuscarUsuario";
-            this.btnBuscarUsuario.Size = new System.Drawing.Size(60, 21);
-            this.btnBuscarUsuario.TabIndex = 26;
-            this.btnBuscarUsuario.Text = "Buscar";
-            this.btnBuscarUsuario.UseVisualStyleBackColor = false;
-            this.btnBuscarUsuario.Click += new System.EventHandler(this.btnBuscarUsuario_Click);
             // 
             // lblConsultas
             // 
@@ -207,7 +191,7 @@
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.txtUsuario);
             this.panel3.Location = new System.Drawing.Point(433, 62);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(311, 430);
             this.panel3.TabIndex = 9;
@@ -242,7 +226,7 @@
             // 
             // btnSeleccionarImg
             // 
-            this.btnSeleccionarImg.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSeleccionarImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(153)))), ((int)(((byte)(139)))));
             this.btnSeleccionarImg.FlatAppearance.BorderSize = 0;
             this.btnSeleccionarImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionarImg.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -259,7 +243,7 @@
             // 
             this.imgUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imgUsuario.Location = new System.Drawing.Point(127, 271);
-            this.imgUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.imgUsuario.Name = "imgUsuario";
             this.imgUsuario.Size = new System.Drawing.Size(60, 60);
             this.imgUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -284,7 +268,7 @@
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnLimpiar.Location = new System.Drawing.Point(167, 356);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(70, 24);
             this.btnLimpiar.TabIndex = 20;
@@ -311,7 +295,7 @@
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnAgregar.Location = new System.Drawing.Point(73, 356);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(70, 24);
             this.btnAgregar.TabIndex = 9;
@@ -364,20 +348,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(76, 57);
+            this.label3.Location = new System.Drawing.Point(66, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Usuario:";
+            this.label3.Text = "Usuario: * ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 106);
+            this.label4.Location = new System.Drawing.Point(51, 106);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Contraseña:";
+            this.label4.Text = "Contraseña: *";
             // 
             // txtContrasenia
             // 
@@ -390,20 +374,20 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 154);
+            this.label5.Location = new System.Drawing.Point(21, 154);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 13);
+            this.label5.Size = new System.Drawing.Size(101, 13);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Nombre Completo:";
+            this.label5.Text = "Nombre Completo: *";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(94, 203);
+            this.label6.Location = new System.Drawing.Point(89, 203);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.Size = new System.Drawing.Size(33, 13);
             this.label6.TabIndex = 3;
-            this.label6.Text = "Rol:";
+            this.label6.Text = "Rol: *";
             // 
             // txtUsuario
             // 
@@ -489,7 +473,7 @@
             this.btnPdf.Image = global::Vistas.Properties.Resources.icons8_pdf_20__1_;
             this.btnPdf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPdf.Location = new System.Drawing.Point(0, 462);
-            this.btnPdf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPdf.Margin = new System.Windows.Forms.Padding(2);
             this.btnPdf.Name = "btnPdf";
             this.btnPdf.Size = new System.Drawing.Size(100, 30);
             this.btnPdf.TabIndex = 40;
@@ -566,7 +550,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ToolTip tltInfo;
         private System.Windows.Forms.Button btnLimpiarFiltrosBuscar;
-        private System.Windows.Forms.Button btnBuscarUsuario;
         private System.Windows.Forms.Label label1;
     }
 }
