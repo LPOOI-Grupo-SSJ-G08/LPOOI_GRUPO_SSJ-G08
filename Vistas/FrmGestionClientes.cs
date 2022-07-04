@@ -185,7 +185,13 @@ namespace Vistas
 
         private void ValidateTextBoxs(ref bool bErrorFound)
         {
-            if (txtDNI.Text.Length != 8)
+            if (!txtDNI.Text.All(char.IsDigit))
+            {
+                lblValidDNI.Text = "Este campo es numérico";
+                lblValidDNI.Show();
+                bErrorFound = true;
+            }
+            else if (txtDNI.Text.Length != 8)
             {
                 lblValidDNI.Text = "Debe contener 8 números";
                 lblValidDNI.Show();
