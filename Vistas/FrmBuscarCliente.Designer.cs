@@ -94,17 +94,10 @@
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.MintCream;
-<<<<<<< HEAD
-            this.btnSeleccionar.Location = new System.Drawing.Point(668, 98);
-            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(4, 18, 4, 4);
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(187, 37);
-=======
             this.btnSeleccionar.Location = new System.Drawing.Point(532, 71);
             this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(140, 34);
->>>>>>> master
             this.btnSeleccionar.TabIndex = 15;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
