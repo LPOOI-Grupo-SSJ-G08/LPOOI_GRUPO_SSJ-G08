@@ -36,7 +36,8 @@ namespace Vistas
         private void btnAgregar_Click(object sender, EventArgs e)
         {   
             Usuario ouser = new Usuario();
-
+            if(comprobarAltaModificarUsuario())
+            {
                 var dialogoConfirmacion = MessageBox.Show("Desea Agregar a este usuario?", "Confirmar", MessageBoxButtons.YesNo);
                 if (dialogoConfirmacion == DialogResult.No)
                 {
@@ -45,7 +46,7 @@ namespace Vistas
                 }
                 try
                 {
-                    if (this.comprobarAltaModificarUsuario() && !this.comprobarUsuarioExistente(txtUsuario.Text))
+                    if (!this.comprobarUsuarioExistente(txtUsuario.Text))
                     {
                        this.setUsuario(ouser);
                        if (txtCorreo.Text != "")
@@ -64,6 +65,7 @@ namespace Vistas
                 {
                     MessageBox.Show("Ha fallado - " + efe.Message);
                 }
+            }  
         }
 
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
@@ -351,13 +353,20 @@ namespace Vistas
                     MessageBox.Show("Error al crear el archivo");
             }
         }
-        private void btnBuscarUsuario_Click(object sender, EventArgs e) {
-            realizarBusquedaUsuarios();
-        }
 
         private void btnLimpiarFiltrosBuscar_Click(object sender, EventArgs e) {
             cargarUsuarios();
             txtNombreUsuario.Text = "";
+        }
+
+        private void txtNombreUsuario_TextChanged(object sender, EventArgs e)
+        {
+            realizarBusquedaUsuarios();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
