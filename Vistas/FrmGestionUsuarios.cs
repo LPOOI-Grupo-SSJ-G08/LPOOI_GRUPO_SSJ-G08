@@ -22,6 +22,7 @@ namespace Vistas
             cargarUsuarios();
             cargar_combo_roles();
             this.esconder();
+            HabilitarAcciones(false);
             //dgvListaUsuarios.DataSource = TrabajarUsuario.list_usuarios();
         }
 

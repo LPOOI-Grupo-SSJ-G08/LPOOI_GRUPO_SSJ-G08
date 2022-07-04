@@ -18,6 +18,8 @@ namespace Vistas
         private static Button btnBotonAnterior;
         public Usuario userMain = new Usuario();
 
+        private bool clickCerrarSesion = false;
+
         public FrmMain()
         {
             InitializeComponent();
@@ -28,16 +30,7 @@ namespace Vistas
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            DialogResult dialogoResult = MessageBox.Show("¿Está seguro de que desea salir?", "Confirmación", 
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogoResult == DialogResult.Yes)
-            {
-                this.activeForm.Close();
-                FrmLogin frmLogin = new FrmLogin();
-                frmLogin.Activate();
-                frmLogin.Show();
-                this.Close();
-            }
+            cerrarSesion();
         }
 
         internal void AbrirFormHijo(Form frmHijo)
@@ -181,6 +174,25 @@ namespace Vistas
             PintarBotones(btnObrasSociales);
             AbrirFormHijo(new FrmAltaObrasSociales());
             imgUsuarioMain.Visible = true;
+        }
+
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e) {
+            cerrarSesion();
+        }
+
+        private void cerrarSesion() {
+            if (!clickCerrarSesion) {
+                DialogResult dialogoResult = MessageBox.Show("¿Está seguro de que desea salir?", "Confirmación",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogoResult == DialogResult.Yes) {
+                    clickCerrarSesion = true;
+                    this.activeForm.Close();
+                    FrmLogin frmLogin = new FrmLogin();
+                    frmLogin.Activate();
+                    frmLogin.Show();
+                    this.Close();
+                }
+            }
         }
 
     }
