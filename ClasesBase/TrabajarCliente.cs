@@ -217,10 +217,10 @@ namespace ClasesBase
 
         public static Cliente buscar_cliente_dni(string dniCliente)
         {
-
+            
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM Cliente WHERE Cli_DNI =" + dniCliente + ";";
+            cmd.CommandText = "SELECT * FROM Cliente WHERE Cli_DNI=" + dniCliente;
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn;
 

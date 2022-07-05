@@ -67,7 +67,12 @@ namespace Vistas
             HideErrorLabels();
             bool bErrorFound = false;
             ValidateTextBoxs(ref bErrorFound);
-
+            if(txtDNI.Text != "" && TrabajarCliente.buscar_cliente_dni(txtDNI.Text) != null)
+            {
+                lblValidDNI.Text = "Ya se encuentra registrado";
+                lblValidDNI.Show();
+                bErrorFound = true;
+            }
             if (!bErrorFound)
             {
                 DialogResult dialogoResult = MessageBox.Show("¿Está seguro de que desea agregar este elemento?",
@@ -132,11 +137,17 @@ namespace Vistas
                 "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogoResult == DialogResult.Yes)
             {
-                TrabajarCliente.delete_cliente(txtDNI.Text);
+                try
+                {
+                    TrabajarCliente.delete_cliente(txtDNI.Text);
 
-                load_clientes();
-                HabilitarAcciones(false);
-                ClearTextBoxs();
+                    load_clientes();
+                    HabilitarAcciones(false);
+                    ClearTextBoxs();
+                }
+                catch (Exception err) {
+                    MessageBox.Show("No se puede eliminar el cliente. Elimine antes sus ventas registradas.\n\n" + err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -197,12 +208,7 @@ namespace Vistas
                 lblValidDNI.Show();
                 bErrorFound = true;
             }
-            else if(TrabajarCliente.buscar_cliente_dni(txtDNI.Text) != null)
-            {
-                lblValidDNI.Text = "Ya se encuentra registrado";
-                lblValidDNI.Show();
-                bErrorFound = true;
-            }
+            
             if (txtApellido.Text.Length < 3)
             {
                 lblValidApellido.Show();

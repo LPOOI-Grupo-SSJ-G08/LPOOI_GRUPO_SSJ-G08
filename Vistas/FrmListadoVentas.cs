@@ -63,10 +63,17 @@ namespace Vistas
 
             if (dialogResult == DialogResult.Yes)
             {
-                TrabajarVenta.delete_venta(Convert.ToInt32(dgvVentas.CurrentRow.Cells["Nro. Venta"].Value));
-                FrmListadoVentas_Load(null, null);
+                try
+                {
+                    TrabajarVenta.delete_venta(Convert.ToInt32(dgvVentas.CurrentRow.Cells["Nro. Venta"].Value));
+                    FrmListadoVentas_Load(null, null);
 
-                MessageBox.Show("La venta ha eliminada correctamente", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("La venta ha eliminada correctamente", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex) {
+                    MessageBox.Show("No se puede eliminar la venta.\n\n" + ex.Message, "Venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
             }
             else
             {
